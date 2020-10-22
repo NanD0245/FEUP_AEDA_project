@@ -143,6 +143,168 @@ aeda2020_portagens/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/build
 .PHONY : aeda2020_portagens/fast
 
+Classes/Employees.o: Classes/Employees.cpp.o
+
+.PHONY : Classes/Employees.o
+
+# target to build an object file
+Classes/Employees.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Employees.cpp.o
+.PHONY : Classes/Employees.cpp.o
+
+Classes/Employees.i: Classes/Employees.cpp.i
+
+.PHONY : Classes/Employees.i
+
+# target to preprocess a source file
+Classes/Employees.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Employees.cpp.i
+.PHONY : Classes/Employees.cpp.i
+
+Classes/Employees.s: Classes/Employees.cpp.s
+
+.PHONY : Classes/Employees.s
+
+# target to generate assembly for a file
+Classes/Employees.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Employees.cpp.s
+.PHONY : Classes/Employees.cpp.s
+
+Classes/Lanes.o: Classes/Lanes.cpp.o
+
+.PHONY : Classes/Lanes.o
+
+# target to build an object file
+Classes/Lanes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Lanes.cpp.o
+.PHONY : Classes/Lanes.cpp.o
+
+Classes/Lanes.i: Classes/Lanes.cpp.i
+
+.PHONY : Classes/Lanes.i
+
+# target to preprocess a source file
+Classes/Lanes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Lanes.cpp.i
+.PHONY : Classes/Lanes.cpp.i
+
+Classes/Lanes.s: Classes/Lanes.cpp.s
+
+.PHONY : Classes/Lanes.s
+
+# target to generate assembly for a file
+Classes/Lanes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Lanes.cpp.s
+.PHONY : Classes/Lanes.cpp.s
+
+Classes/Toll.o: Classes/Toll.cpp.o
+
+.PHONY : Classes/Toll.o
+
+# target to build an object file
+Classes/Toll.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o
+.PHONY : Classes/Toll.cpp.o
+
+Classes/Toll.i: Classes/Toll.cpp.i
+
+.PHONY : Classes/Toll.i
+
+# target to preprocess a source file
+Classes/Toll.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.i
+.PHONY : Classes/Toll.cpp.i
+
+Classes/Toll.s: Classes/Toll.cpp.s
+
+.PHONY : Classes/Toll.s
+
+# target to generate assembly for a file
+Classes/Toll.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.s
+.PHONY : Classes/Toll.cpp.s
+
+Classes/TollsNetwork.o: Classes/TollsNetwork.cpp.o
+
+.PHONY : Classes/TollsNetwork.o
+
+# target to build an object file
+Classes/TollsNetwork.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/TollsNetwork.cpp.o
+.PHONY : Classes/TollsNetwork.cpp.o
+
+Classes/TollsNetwork.i: Classes/TollsNetwork.cpp.i
+
+.PHONY : Classes/TollsNetwork.i
+
+# target to preprocess a source file
+Classes/TollsNetwork.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/TollsNetwork.cpp.i
+.PHONY : Classes/TollsNetwork.cpp.i
+
+Classes/TollsNetwork.s: Classes/TollsNetwork.cpp.s
+
+.PHONY : Classes/TollsNetwork.s
+
+# target to generate assembly for a file
+Classes/TollsNetwork.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/TollsNetwork.cpp.s
+.PHONY : Classes/TollsNetwork.cpp.s
+
+Classes/Type.o: Classes/Type.cpp.o
+
+.PHONY : Classes/Type.o
+
+# target to build an object file
+Classes/Type.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Type.cpp.o
+.PHONY : Classes/Type.cpp.o
+
+Classes/Type.i: Classes/Type.cpp.i
+
+.PHONY : Classes/Type.i
+
+# target to preprocess a source file
+Classes/Type.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Type.cpp.i
+.PHONY : Classes/Type.cpp.i
+
+Classes/Type.s: Classes/Type.cpp.s
+
+.PHONY : Classes/Type.s
+
+# target to generate assembly for a file
+Classes/Type.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Type.cpp.s
+.PHONY : Classes/Type.cpp.s
+
+Classes/Vehicle.o: Classes/Vehicle.cpp.o
+
+.PHONY : Classes/Vehicle.o
+
+# target to build an object file
+Classes/Vehicle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Vehicle.cpp.o
+.PHONY : Classes/Vehicle.cpp.o
+
+Classes/Vehicle.i: Classes/Vehicle.cpp.i
+
+.PHONY : Classes/Vehicle.i
+
+# target to preprocess a source file
+Classes/Vehicle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Vehicle.cpp.i
+.PHONY : Classes/Vehicle.cpp.i
+
+Classes/Vehicle.s: Classes/Vehicle.cpp.s
+
+.PHONY : Classes/Vehicle.s
+
+# target to generate assembly for a file
+Classes/Vehicle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Vehicle.cpp.s
+.PHONY : Classes/Vehicle.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +341,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... aeda2020_portagens"
+	@echo "... Classes/Employees.o"
+	@echo "... Classes/Employees.i"
+	@echo "... Classes/Employees.s"
+	@echo "... Classes/Lanes.o"
+	@echo "... Classes/Lanes.i"
+	@echo "... Classes/Lanes.s"
+	@echo "... Classes/Toll.o"
+	@echo "... Classes/Toll.i"
+	@echo "... Classes/Toll.s"
+	@echo "... Classes/TollsNetwork.o"
+	@echo "... Classes/TollsNetwork.i"
+	@echo "... Classes/TollsNetwork.s"
+	@echo "... Classes/Type.o"
+	@echo "... Classes/Type.i"
+	@echo "... Classes/Type.s"
+	@echo "... Classes/Vehicle.o"
+	@echo "... Classes/Vehicle.i"
+	@echo "... Classes/Vehicle.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
