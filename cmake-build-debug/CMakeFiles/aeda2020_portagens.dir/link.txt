@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/aeda2020_portagens.dir/main.cpp.o  -o aeda2020_portagens 
