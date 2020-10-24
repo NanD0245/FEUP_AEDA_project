@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class Toll {
     /*
      * nome
@@ -13,11 +15,19 @@ class Toll {
      * tipo (entrada/saida)
      * vias
     */
-    Type type;
-    std::vector<Lanes> lanes;
 public:
+    Toll(string name, string geolocal, string type);
     static void printHello();
 };
+
+class TollEntrance : public Toll {
+
+};
+
+class TollOut : public Toll {
+
+};
+
 
 
 #endif //AEDA2020_PORTAGENS_TOLL_H

@@ -5,13 +5,18 @@
 #ifndef AEDA2020_PORTAGENS_EMPLOYEES_H
 #define AEDA2020_PORTAGENS_EMPLOYEES_H
 
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Employer;
 
 class Employees {
-
-};
-
-class Employer : public Employees {
-
+protected:
+    vector<Employer *> employees;
+public:
+    Employees() {};
 };
 
 

@@ -3,3 +3,7 @@
 //
 
 #include "Vehicle.h"
+
+using namespace std;
+
+Vehicle::Vehicle(string plate, int v_class): plate(plate), vehicle_class(v_class) {}

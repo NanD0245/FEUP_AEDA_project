@@ -82,16 +82,52 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Employee.cpp">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Employee.h">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Employees.cpp">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Employees.h">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
-		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Lanes.cpp">
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.cpp">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
-		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Lanes.h">
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.h">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highways.cpp">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highways.h">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Lane.cpp">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Lane.h">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.cpp">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.h">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movements.cpp">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movements.h">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.cpp">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.h">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Toll.cpp">
@@ -100,22 +136,16 @@
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Toll.h">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
-		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/TollsNetwork.cpp">
-			<Option target="aeda2020_portagens"/>
-		</Unit>
-		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/TollsNetwork.h">
-			<Option target="aeda2020_portagens"/>
-		</Unit>
-		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Type.cpp">
-			<Option target="aeda2020_portagens"/>
-		</Unit>
-		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Type.h">
-			<Option target="aeda2020_portagens"/>
-		</Unit>
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.cpp">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.h">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/VehiclesClasses.cpp">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/VehiclesClasses.h">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/main.cpp">
