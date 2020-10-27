@@ -26,21 +26,18 @@ public:
 };
 
 class Motorbike:public Vehicle{
-    float tax;
 public:
     Motorbike();
     int getClass(){return 1;} const;
 };
 
 class Car:public Vehicle{
-    float tax;
 public:
     Car();
     int getClass(){return 2;} const;
 };
 
 class HeavyPassengers:public Vehicle{
-    float tax;
 public:
     HeavyPassengers();
     int getClass(){return 3;} const;
@@ -48,7 +45,6 @@ public:
 };
 
 class HeavyMerch:public Vehicle{
-    float tax;
 public:
     HeavyMerch();
     int getClass(){return 4;} const;
