@@ -7,10 +7,12 @@
 
 
 class VehiclesClasses {
-
+    float tax;
+public:
+    Ve
 };
 
-class VehiclesClasse1 {  //motas
+class VehiclesClasse1:public VehiclesClasses {  //motas
 
 };
 
