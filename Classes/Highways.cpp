@@ -3,3 +3,9 @@
 //
 
 #include "Highways.h"
+
+Highways::Highways() {highways.clear();}
+
+bool Highways::addHighway() {
+
+}

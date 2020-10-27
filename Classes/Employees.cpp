@@ -6,6 +6,6 @@
 
 using namespace std;
 
-Employer::Employer(string name) : employer_name(name) {
-    employees.push_back(this);
+Employees::Employees() {
+    employees.clear();
 }

@@ -11,43 +11,44 @@ using namespace std;
 
 class Vehicle {
     string plate;
-    bool lanetype;
+    int v_class;
+    bool greenlane;
     float distance;
     //int road;
 public:
     Vehicle(string plate, int v_class);
-    void defineLaneType(string lt);
+    void defineLaneType(bool greenlane);
     int getBestLane();
 
-    float getDistance(){return distance;}const;
-    virtual int getClass(){} const;
-    string getPlate(){return plate;}const;
-    bool getLaneType(){return lanetype;}const;
+    float getDistance() const {return distance;}
+    //virtual int getClass() const;
+    string getPlate() const {return plate;}
+    bool getGreenLaneBool() const {return greenlane;}
 };
 
 class Motorbike:public Vehicle{
 public:
     Motorbike();
-    int getClass(){return 1;} const;
+    int getClass() const {return 1;}
 };
 
 class Car:public Vehicle{
 public:
     Car();
-    int getClass(){return 2;} const;
+    int getClass() const {return 2;}
 };
 
 class HeavyPassengers:public Vehicle{
 public:
     HeavyPassengers();
-    int getClass(){return 3;} const;
+    int getClass() const {return 3;}
 
 };
 
 class HeavyMerch:public Vehicle{
 public:
     HeavyMerch();
-    int getClass(){return 4;} const;
+    int getClass() const {return 4;}
 };
 
 

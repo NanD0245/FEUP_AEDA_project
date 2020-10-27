@@ -9,7 +9,6 @@
 class VehiclesClasses {
     float tax;
 public:
-    Ve
 };
 
 class VehiclesClasse1:public VehiclesClasses {  //motas

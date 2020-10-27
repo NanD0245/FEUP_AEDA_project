@@ -8,12 +8,6 @@
 using namespace std;
 
 class Toll {
-    /*
-     * nome
-     * localização geográfica
-     * tipo (entrada/saida)
-     * vias
-    */
     string name;
     string geolocal;
     float highway_kilometer;
@@ -26,6 +20,9 @@ public:
     string getGeolocal() const;
     float getKilometer() const;
     bool getType() const;
+    bool addLane(Lane * l1);
+    bool removeLane(Lane * l1);
+    bool operator==(const Toll& l2) const;
 };
 
 /*class TollEntrance : public Toll {

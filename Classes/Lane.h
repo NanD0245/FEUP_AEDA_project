@@ -4,9 +4,10 @@
 
 #ifndef AEDA2020_PORTAGENS_LANE_H
 #define AEDA2020_PORTAGENS_LANE_H
-#import "Employee.h"
+#include "Employee.h"
 
 class Lane {
+protected:
     int lane_number;
     bool type;
     bool greenlane;
@@ -15,6 +16,7 @@ public:
     int getLaneNumber() const;
     bool getType() const;
     bool getGreenLane() const;
+    bool operator==(const Lane &l2) const;
 };
 
 /*class LaneEntrance : public Lane {
