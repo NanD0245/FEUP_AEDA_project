@@ -11,13 +11,13 @@ class Lane {
     bool type;
     bool greenlane;
 public:
-    Lane();
+    Lane(int lane_number, bool type, bool greenlane);
     int getLaneNumber() const;
     bool getType() const;
     bool getGreenLane() const;
 };
 
-class LaneEntrance : public Lane {
+/*class LaneEntrance : public Lane {
 
 };
 
@@ -27,13 +27,14 @@ class LaneOut : public Lane {
 
 class LaneGreen : public LaneOut {
 
-};
+};*/
 
 class LaneEmployee : public Lane {
-    Employee e1;
+    Employee* employee;
 public:
-    LaneEmployee();
-    void SetEmployee(Employee* e);
+    LaneEmployee(int lane_number, bool type, bool greenlane, Employee* e);
+    void setEmployee(Employee* e);
+    Employee * getEmployee() const;
     //void changeEmployee();
 };
 
