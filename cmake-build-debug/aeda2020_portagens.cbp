@@ -142,12 +142,6 @@
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.h">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
-		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/VehiclesClasses.cpp">
-			<Option target="aeda2020_portagens"/>
-		</Unit>
-		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/VehiclesClasses.h">
-			<Option target="aeda2020_portagens"/>
-		</Unit>
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/main.cpp">
 			<Option target="aeda2020_portagens"/>
 		</Unit>

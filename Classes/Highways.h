@@ -11,8 +11,8 @@ class Highways {
     vector<Highway *> highways;
 public:
     Highways();
-    bool addHighway();
-    bool removeHighway();
+    bool addHighway(Highway * l1);
+    bool removeHighway(Highway * l1);
 };
 
 

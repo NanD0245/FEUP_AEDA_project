@@ -12,7 +12,15 @@ Highway::Highway(string name) : name(name) {
 
 string Highway::getName() const {return name;}
 
-void Highway::addToll(Toll *t1) {tolls.push_back(t1);}
+bool Highway::addToll(Toll *t1) {
+    for (size_t i = 0; i < tolls.size(); i++) {
+        if (*tolls[i] == *t1) {
+            return false;
+        }
+    }
+    tolls.push_back(t1);
+    return true;
+}
 
 bool Highway::removeToll(Toll *t1) {
     for (size_t i = 0; i < tolls.size(); i++) {

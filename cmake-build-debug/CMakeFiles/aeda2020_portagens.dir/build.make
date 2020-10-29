@@ -194,22 +194,9 @@ CMakeFiles/aeda2020_portagens.dir/Classes/Lane.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aeda2020_portagens.dir/Classes/Lane.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Lane.cpp -o CMakeFiles/aeda2020_portagens.dir/Classes/Lane.cpp.s
 
-CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.o: CMakeFiles/aeda2020_portagens.dir/flags.make
-CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.o: ../Classes/VehiclesClasses.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.o -c /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/VehiclesClasses.cpp
-
-CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/VehiclesClasses.cpp > CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.i
-
-CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/VehiclesClasses.cpp -o CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.s
-
 CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o: CMakeFiles/aeda2020_portagens.dir/flags.make
 CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o: ../Classes/Movement.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o -c /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.cpp
 
 CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.i: cmake_force
@@ -222,7 +209,7 @@ CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.s: cmake_force
 
 CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.o: CMakeFiles/aeda2020_portagens.dir/flags.make
 CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.o: ../Classes/Movements.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.o -c /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movements.cpp
 
 CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.i: cmake_force
@@ -244,7 +231,6 @@ aeda2020_portagens_OBJECTS = \
 "CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o" \
 "CMakeFiles/aeda2020_portagens.dir/Classes/Highways.cpp.o" \
 "CMakeFiles/aeda2020_portagens.dir/Classes/Lane.cpp.o" \
-"CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.o" \
 "CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o" \
 "CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.o"
 
@@ -260,12 +246,11 @@ aeda2020_portagens: CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.
 aeda2020_portagens: CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o
 aeda2020_portagens: CMakeFiles/aeda2020_portagens.dir/Classes/Highways.cpp.o
 aeda2020_portagens: CMakeFiles/aeda2020_portagens.dir/Classes/Lane.cpp.o
-aeda2020_portagens: CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.o
 aeda2020_portagens: CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o
 aeda2020_portagens: CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.o
 aeda2020_portagens: CMakeFiles/aeda2020_portagens.dir/build.make
 aeda2020_portagens: CMakeFiles/aeda2020_portagens.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable aeda2020_portagens"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable aeda2020_portagens"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/aeda2020_portagens.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

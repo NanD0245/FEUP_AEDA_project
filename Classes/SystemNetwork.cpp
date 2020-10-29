@@ -3,3 +3,10 @@
 //
 
 #include "SystemNetwork.h"
+
+using namespace std;
+
+SystemNetwork::SystemNetwork() {
+    highways = new Highways();
+    movements = new Movements();
+}

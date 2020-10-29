@@ -413,33 +413,6 @@ Classes/Vehicle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Vehicle.cpp.s
 .PHONY : Classes/Vehicle.cpp.s
 
-Classes/VehiclesClasses.o: Classes/VehiclesClasses.cpp.o
-
-.PHONY : Classes/VehiclesClasses.o
-
-# target to build an object file
-Classes/VehiclesClasses.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.o
-.PHONY : Classes/VehiclesClasses.cpp.o
-
-Classes/VehiclesClasses.i: Classes/VehiclesClasses.cpp.i
-
-.PHONY : Classes/VehiclesClasses.i
-
-# target to preprocess a source file
-Classes/VehiclesClasses.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.i
-.PHONY : Classes/VehiclesClasses.cpp.i
-
-Classes/VehiclesClasses.s: Classes/VehiclesClasses.cpp.s
-
-.PHONY : Classes/VehiclesClasses.s
-
-# target to generate assembly for a file
-Classes/VehiclesClasses.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/VehiclesClasses.cpp.s
-.PHONY : Classes/VehiclesClasses.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -506,9 +479,6 @@ help:
 	@echo "... Classes/Vehicle.o"
 	@echo "... Classes/Vehicle.i"
 	@echo "... Classes/Vehicle.s"
-	@echo "... Classes/VehiclesClasses.o"
-	@echo "... Classes/VehiclesClasses.i"
-	@echo "... Classes/VehiclesClasses.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
