@@ -15,11 +15,24 @@ bool Lane::getGreenLane() const {return greenlane;};
 
 int Lane::getLaneNumber() const {return lane_number;}
 
+string Lane::getInfo() const {
+    return to_string(lane_number) + " - " + to_string(type) + " - " + to_string(greenlane);
+}
+
 LaneEmployee::LaneEmployee(int lane_number, bool type, bool greenlane, Employee* e) : Lane(lane_number,type,greenlane), employee(e) {}
 
 void LaneEmployee::setEmployee(Employee* e) {employee = e;}
 
 Employee * LaneEmployee::getEmployee() const {return employee;}
+
+string LaneEmployee::getInfo() const {
+    return to_string(lane_number) + " - " + to_string(type) + " - " + to_string(greenlane) + " - " + employee->getInfo();
+}
+
+
+
+
+
 
 bool Lane::operator==(const Lane &l2) const {
     return (lane_number == l2.getLaneNumber() && type == l2.getType() && greenlane == l2.getGreenLane());

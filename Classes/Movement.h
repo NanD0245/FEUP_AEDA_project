@@ -9,23 +9,6 @@
 #include "Highways.h"
 
 class Movement {
-    /*
-     * bool type
-     *
-     * entrada:
-     * veiculo
-     * autoestrada + portagem + via (entrada)
-     * hora
-     *
-     * saida:
-     * veiculo
-     * distancia
-     * preço
-     * (*)entrada
-     * autoestrada + portagem + via (saida)
-     * hora
-     *
-     */
 protected:
     bool type;
     Vehicle* vehicle;

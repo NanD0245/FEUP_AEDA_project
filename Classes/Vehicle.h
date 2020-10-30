@@ -21,34 +21,38 @@ public:
     int getBestLane();
 
     float getDistance() const {return distance;}
-    //virtual int getClass() const;
     string getPlate() const {return plate;}
     bool getGreenLaneBool() const {return greenlane;}
+    //virtual int getClass() const;
+    //virtual string getInfo() const;
 };
 
 class Motorbike:public Vehicle{
 public:
     Motorbike();
     int getClass() const {return 1;}
+    string getInfo();
 };
 
 class Car:public Vehicle{
 public:
     Car();
     int getClass() const {return 2;}
+    string getInfo();
 };
 
 class HeavyPassengers:public Vehicle{
 public:
     HeavyPassengers();
     int getClass() const {return 3;}
-
+    string getInfo();
 };
 
 class HeavyMerch:public Vehicle{
 public:
     HeavyMerch();
     int getClass() const {return 4;}
+    string getInfo();
 };
 
 

@@ -20,6 +20,7 @@ public:
     string getGeolocal() const;
     float getKilometer() const;
     bool getType() const;
+    string getInfo() const;
     bool addLane(Lane * l1);
     bool removeLane(Lane * l1);
     bool operator==(const Toll& l2) const;

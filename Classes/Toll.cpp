@@ -21,6 +21,10 @@ string Toll::getGeolocal() const {return geolocal;}
 
 float Toll::getKilometer() const {return highway_kilometer;}
 
+string Toll::getInfo() const {
+    return name + " - " + geolocal + " - " + to_string(highway_kilometer) + " - " + to_string(type);
+}
+
 bool Toll::addLane(Lane* l1) {
     if (l1->getType() == type) {
         for (size_t i = 0; i < lanes.size(); i++) {

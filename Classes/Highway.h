@@ -13,6 +13,7 @@ class Highway {
 public:
     Highway(string name);
     string getName() const;
+    string getInfo() const;
     bool addToll(Toll * t1);
     bool removeToll(Toll * t1);
     bool operator==(const Highway &l2);

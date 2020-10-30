@@ -11,13 +11,14 @@
 
 using namespace std;
 
-
+static int code = 0;
 
 class Employees {
-protected:
     vector<Employee *> employees;
 public:
     Employees();
+    bool addEmployee(string name);
+    bool removeEmployee(Employee e1);
 };
 
 

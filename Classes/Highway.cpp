@@ -10,6 +10,10 @@ Highway::Highway(string name) : name(name) {
     tolls.clear();
 }
 
+string Highway::getInfo() const {
+    return name;
+}
+
 string Highway::getName() const {return name;}
 
 bool Highway::addToll(Toll *t1) {
