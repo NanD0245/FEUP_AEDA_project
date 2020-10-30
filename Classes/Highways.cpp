@@ -6,6 +6,14 @@
 
 Highways::Highways() {highways.clear();}
 
+Highway * Highways::getHighway(Highway *l1) {
+    for (size_t i = 0; i < highways.size(); i++) {
+        if (l1->getInfo() == highways[i]->getInfo())
+            return highways[i];
+    }
+    return nullptr;
+}
+
 bool Highways::addHighway(Highway * l1) {
     for (size_t i = 0; i < highways.size(); i++) {
         if (*(highways[i]) == *l1 )

@@ -25,6 +25,15 @@ string Toll::getInfo() const {
     return name + " - " + geolocal + " - " + to_string(highway_kilometer) + " - " + to_string(type);
 }
 
+Lane * Toll::getLane(Lane *l1) {
+    for (size_t i = 0; i < lanes.size();i++) {
+        if(l1->getInfo() == lanes[i]->getInfo()) {
+            return lanes[i];
+        }
+    }
+    return nullptr;
+}
+
 bool Toll::addLane(Lane* l1) {
     if (l1->getType() == type) {
         for (size_t i = 0; i < lanes.size(); i++) {

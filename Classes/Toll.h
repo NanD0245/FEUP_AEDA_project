@@ -21,6 +21,7 @@ public:
     float getKilometer() const;
     bool getType() const;
     string getInfo() const;
+    Lane * getLane(Lane * l1);
     bool addLane(Lane * l1);
     bool removeLane(Lane * l1);
     bool operator==(const Toll& l2) const;

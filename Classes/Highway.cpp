@@ -16,6 +16,14 @@ string Highway::getInfo() const {
 
 string Highway::getName() const {return name;}
 
+Toll * Highway::getToll(Toll *t1) {
+    for (size_t i = 0; i < tolls.size(); i++) {
+        if (t1->getInfo() == tolls[i]->getInfo())
+            return tolls[i];
+    }
+    return nullptr;
+}
+
 bool Highway::addToll(Toll *t1) {
     for (size_t i = 0; i < tolls.size(); i++) {
         if (*tolls[i] == *t1) {
