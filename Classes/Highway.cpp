@@ -6,15 +6,13 @@
 
 using namespace std;
 
-Highway::Highway(string name) : name(name) {
-    tolls.clear();
-}
+Highway::Highway(string name) : name(name) { tolls.clear(); }
 
-string Highway::getInfo() const {
-    return name;
-}
+string Highway::getInfo() const { return name; }
 
 string Highway::getName() const {return name;}
+
+void Highway::setName(const string new_name) { name = new_name; }
 
 Toll * Highway::getToll(Toll *t1) {
     for (size_t i = 0; i < tolls.size(); i++) {
@@ -44,6 +42,4 @@ bool Highway::removeToll(Toll *t1) {
     return false;
 }
 
-bool Highway::operator==(const Highway &l2) {
-    return name == l2.getName();
-}
+bool Highway::operator==(const Highway &l2) { return name == l2.getName(); }

@@ -14,6 +14,7 @@ public:
     Highway(string name);
     string getName() const;
     string getInfo() const;
+    void setName(const string new_name);
     Toll * getToll(Toll * t1);
     bool addToll(Toll * t1);
     bool removeToll(Toll * t1);

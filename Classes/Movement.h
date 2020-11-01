@@ -18,13 +18,19 @@ protected:
     string date;
 public:
     Movement(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, string &date);
+    bool getType() const;
     Vehicle * getVehicle() const;
     Highway * getHighway() const;
     Toll * getToll() const;
     Lane * getLane() const;
     string getDate() const;
-    bool getType() const;
     virtual string getInfo() const;
+    void setType(const bool new_type);
+    void setVehicle(const Vehicle* new_vehicle);
+    void setHighway(const Highway* new_highway);
+    void setToll(const Toll* new_toll);
+    void setLane(const Lane* new _lane);
+    void setDate(const string date);
     //virtual bool operator==(const Movement m1);
 };
 
