@@ -143,6 +143,33 @@ aeda2020_portagens/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/build
 .PHONY : aeda2020_portagens/fast
 
+Classes/Date.o: Classes/Date.cpp.o
+
+.PHONY : Classes/Date.o
+
+# target to build an object file
+Classes/Date.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Date.cpp.o
+.PHONY : Classes/Date.cpp.o
+
+Classes/Date.i: Classes/Date.cpp.i
+
+.PHONY : Classes/Date.i
+
+# target to preprocess a source file
+Classes/Date.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Date.cpp.i
+.PHONY : Classes/Date.cpp.i
+
+Classes/Date.s: Classes/Date.cpp.s
+
+.PHONY : Classes/Date.s
+
+# target to generate assembly for a file
+Classes/Date.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Date.cpp.s
+.PHONY : Classes/Date.cpp.s
+
 Classes/Employee.o: Classes/Employee.cpp.o
 
 .PHONY : Classes/Employee.o
@@ -413,6 +440,33 @@ Classes/Vehicle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Vehicle.cpp.s
 .PHONY : Classes/Vehicle.cpp.s
 
+Classes/Vehicles.o: Classes/Vehicles.cpp.o
+
+.PHONY : Classes/Vehicles.o
+
+# target to build an object file
+Classes/Vehicles.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Vehicles.cpp.o
+.PHONY : Classes/Vehicles.cpp.o
+
+Classes/Vehicles.i: Classes/Vehicles.cpp.i
+
+.PHONY : Classes/Vehicles.i
+
+# target to preprocess a source file
+Classes/Vehicles.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Vehicles.cpp.i
+.PHONY : Classes/Vehicles.cpp.i
+
+Classes/Vehicles.s: Classes/Vehicles.cpp.s
+
+.PHONY : Classes/Vehicles.s
+
+# target to generate assembly for a file
+Classes/Vehicles.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Vehicles.cpp.s
+.PHONY : Classes/Vehicles.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -449,6 +503,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... aeda2020_portagens"
+	@echo "... Classes/Date.o"
+	@echo "... Classes/Date.i"
+	@echo "... Classes/Date.s"
 	@echo "... Classes/Employee.o"
 	@echo "... Classes/Employee.i"
 	@echo "... Classes/Employee.s"
@@ -479,6 +536,9 @@ help:
 	@echo "... Classes/Vehicle.o"
 	@echo "... Classes/Vehicle.i"
 	@echo "... Classes/Vehicle.s"
+	@echo "... Classes/Vehicles.o"
+	@echo "... Classes/Vehicles.i"
+	@echo "... Classes/Vehicles.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

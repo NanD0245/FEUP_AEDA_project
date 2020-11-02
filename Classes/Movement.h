@@ -7,6 +7,7 @@
 
 #include "Vehicle.h"
 #include "Highways.h"
+#include "Date.h"
 
 class Movement {
 protected:
@@ -15,14 +16,14 @@ protected:
     Highway* highway;
     Toll* toll;
     Lane* lane;
-    string date;
+    Date* date;
 public:
-    Movement(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, string &date);
+    Movement(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, Date* date);
     Vehicle * getVehicle() const;
     Highway * getHighway() const;
     Toll * getToll() const;
     Lane * getLane() const;
-    string getDate() const;
+    Date * getDate() const;
     bool getType() const;
     virtual string getInfo() const;
     //virtual bool operator==(const Movement m1);
@@ -30,7 +31,7 @@ public:
 
 class MovementEntry : public Movement {
 public:
-    MovementEntry(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, string &date);
+    MovementEntry(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, Date* date);
     string getInfo() const;
     //bool operator==(const MovementEntry &m1);
 };
@@ -41,7 +42,7 @@ class MovementOut : public Movement {
     float price;
 
 public:
-    MovementOut(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, string &date, MovementEntry * entry, float distance, float price);
+    MovementOut(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, Date* date, MovementEntry * entry, float distance, float price);
     MovementEntry * getEntry() const;
     float getDistance() const;
     float getPrice() const;

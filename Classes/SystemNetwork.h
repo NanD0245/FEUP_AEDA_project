@@ -3,13 +3,14 @@
 
 #include "Highways.h"
 #include "Movements.h"
-#include "Vehicle.h"
+#include "Vehicles.h"
 
 using namespace std;
 
 class SystemNetwork {
     Highways* highways;
     Movements* movements;
+    Vehicles* vehicles;
 
 public:
     SystemNetwork();

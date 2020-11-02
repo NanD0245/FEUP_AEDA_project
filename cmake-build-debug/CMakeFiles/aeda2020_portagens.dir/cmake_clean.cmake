@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/aeda2020_portagens.dir/Classes/Date.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Employee.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Employees.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o"
@@ -9,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Vehicle.cpp.o"
+  "CMakeFiles/aeda2020_portagens.dir/Classes/Vehicles.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/main.cpp.o"
   "aeda2020_portagens"
   "aeda2020_portagens.pdb"

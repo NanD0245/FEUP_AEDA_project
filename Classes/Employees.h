@@ -6,20 +6,23 @@
 #define AEDA2020_PORTAGENS_EMPLOYEES_H
 
 #include "Employee.h"
+#include <iostream>
 #include <string>
 #include <vector>
 
 using namespace std;
 
-static int code = 0;
-
 class Employees {
     vector<Employee *> employees;
+    int code;
 public:
     Employees();
+    int getNumEmployees() const;
+    Employee * getEmployee(int code);
     bool addEmployee(string name);
-    bool removeEmployee(Employee e1);
+    bool removeEmployee(int code);
 };
+
 
 
 #endif //AEDA2020_PORTAGENS_EMPLOYEES_H

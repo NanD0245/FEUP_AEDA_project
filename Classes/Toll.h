@@ -21,7 +21,11 @@ public:
     float getKilometer() const;
     bool getType() const;
     string getInfo() const;
+    int count() const;
     Lane * getLane(Lane * l1);
+    bool addGreenLane();
+    bool addEmployeeLane(Employee *E);
+    bool addEntranceLane();
     bool addLane(Lane * l1);
     bool removeLane(Lane * l1);
     bool operator==(const Toll& l2) const;
