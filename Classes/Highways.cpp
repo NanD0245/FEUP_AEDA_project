@@ -6,25 +6,33 @@
 
 Highways::Highways() {highways.clear();}
 
-Highway * Highways::getHighway(Highway *l1) {
+Highway * Highways::getHighway(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
-        if (l1->getInfo() == highways[i]->getInfo())
+        if (name == highways[i]->getName())
             return highways[i];
     }
     return nullptr;
 }
 
-bool Highways::addHighway(Highway * l1) {
+int Highways::getNumHighways() const {return highways.size();}
+
+Highway * Highways::getHighwayIndex(int i) {
+    if (i < highways.size())
+        return highways[i];
+    return nullptr;
+}
+
+bool Highways::addHighway(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
-        if (*(highways[i]) == *l1 )
+        if (name == highways[i]->getName())
             return false;
     }
     return true;
 }
 
-bool Highways::removeHighway(Highway * l1) {
+bool Highways::removeHighway(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
-        if (*(highways[i]) == *l1) {
+        if (name == highways[i]->getName()) {
             highways.erase(highways.begin() + i);
             return true;
         }

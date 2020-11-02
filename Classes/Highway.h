@@ -14,9 +14,11 @@ public:
     Highway(string name);
     string getName() const;
     string getInfo() const;
-    void setName(const string new_name);
-    Toll * getToll(Toll * t1);
-    bool addToll(Toll * t1);
+    void setName(string new_name);
+    int getNumTolls() const;
+    Toll * getToll(string name);
+    Toll * getTollIndex(int i);
+    bool addToll(string name, string geolocal, float highway_kilometer,bool type);
     bool removeToll(Toll * t1);
     bool operator==(const Highway &l2);
 };

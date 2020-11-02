@@ -6,9 +6,10 @@
 
 using namespace std;
 
+IdentNum Employees::code = 0;
+
 Employees::Employees() {
     employees.clear();
-    code = 0;
 }
 
 int Employees::getNumEmployees() const {return employees.size();}
@@ -37,6 +38,19 @@ Employee * Employees::getEmployee(int code) {
         if (employees[i]->getCode() == code)
             return employees[i];
     }
-    cout << "Employee not found" << endl;
+    return nullptr;
+}
+
+Employee * Employees::getEmployee(string name) {
+    for (size_t i=0 ; i < employees.size(); i++) {
+        if (employees[i]->getName() == name)
+            return employees[i];
+    }
+    return nullptr;
+}
+
+Employee * Employees::getEmployeeIndex(int i) {
+    if (i < employees.size())
+        return employees[i];
     return nullptr;
 }

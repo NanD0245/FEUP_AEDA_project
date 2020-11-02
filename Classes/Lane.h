@@ -9,24 +9,23 @@ using namespace std;
 class Lane {
 protected:
     int lane_number;
-    bool type;
     bool green_lane;
 public:
-    Lane(int lane_number, bool type, bool green_lane);
+    Lane(int lane_number, bool green_lane);
     int getLaneNumber() const;
-    bool getType() const;
     bool getGreenLane() const;
     virtual string getInfo() const;
-    void setLaneNumber(const int new_lane_number);
-    void setType(const bool new_type);
-    void setGreenLane(const bool new_green_lane);
+    void setLaneNumber(int new_lane_number);
+    void setGreenLane(bool new_green_lane);
+    virtual Employee * getEmployee() const {return nullptr;};
+    virtual void setEmployee(Employee* e) {};
     bool operator==(const Lane &l2) const;
 };
 
 class LaneEmployee : public Lane {
     Employee* employee;
 public:
-    LaneEmployee(int lane_number, bool type, bool green_lane, Employee* e);
+    LaneEmployee(int lane_number, bool green_lane, Employee* e);
     void setEmployee(Employee* e);
     Employee * getEmployee() const;
     string getInfo() const;

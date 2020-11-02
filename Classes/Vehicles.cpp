@@ -46,9 +46,19 @@ Vehicle * Vehicles::getVehicle(string plate) {
     return nullptr;
 }
 
-Vehicle * Vehicles::getVehicle(int i) {
+Vehicle * Vehicles::getVehicleIndex(int i) {
     if (i < vehicles.size())
         return vehicles[i];
     return nullptr;
+}
+
+bool Vehicles::removeVehicle(string plate) {
+    for (size_t i = 0; i < vehicles.size(); i++) {
+        if (vehicles[i]->getPlate() == plate) {
+            vehicles.erase(vehicles.begin()+i);
+            return true;
+        }
+    }
+    return false;
 }
 

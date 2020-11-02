@@ -11,9 +11,11 @@ class Highways {
     vector<Highway *> highways;
 public:
     Highways();
-    Highway * getHighway(Highway * l1);
-    bool addHighway(Highway * l1);
-    bool removeHighway(Highway * l1);
+    Highway * getHighway(string name);
+    Highway * getHighwayIndex(int i);
+    int getNumHighways() const;
+    bool addHighway(string name);
+    bool removeHighway(string name);
 };
 
 

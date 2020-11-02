@@ -14,21 +14,40 @@ string Highway::getName() const {return name;}
 
 void Highway::setName(const string new_name) { name = new_name; }
 
-Toll * Highway::getToll(Toll *t1) {
+
+Toll * Highway::getToll(string name) {
     for (size_t i = 0; i < tolls.size(); i++) {
-        if (t1->getInfo() == tolls[i]->getInfo())
+        if (name == tolls[i]->getName())
             return tolls[i];
     }
     return nullptr;
 }
 
-bool Highway::addToll(Toll *t1) {
-    for (size_t i = 0; i < tolls.size(); i++) {
-        if (*tolls[i] == *t1) {
-            return false;
+Toll * Highway::getTollIndex(int i) {
+    if (i < getNumTolls())
+        return tolls[i];
+    return nullptr;
+}
+
+bool Highway::addToll(string name, string geolocal, float highway_kilometer,bool type) {
+    if (!type) {
+        Toll *t1 = new TollEntrance(name, geolocal, highway_kilometer);
+        for (size_t i = 0; i < tolls.size(); i++) {
+            if (tolls[i]->getInfo() == t1->getInfo()) {
+                return false;
+            }
         }
+        tolls.push_back(t1);
     }
-    tolls.push_back(t1);
+    else {
+        Toll *t1 = new TollOut(name, geolocal, highway_kilometer);
+        for (size_t i = 0; i < tolls.size(); i++) {
+            if (tolls[i]->getInfo() == t1->getInfo()) {
+                return false;
+            }
+        }
+        tolls.push_back(t1);
+    }
     return true;
 }
 
@@ -41,5 +60,8 @@ bool Highway::removeToll(Toll *t1) {
     }
     return false;
 }
+
+int Highway::getNumTolls() const {return tolls.size();}
+
 
 bool Highway::operator==(const Highway &l2) { return name == l2.getName(); }

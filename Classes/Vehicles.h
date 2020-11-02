@@ -19,9 +19,9 @@ public:
     int getNumVehicles() const;
     bool addVehicle(string plate, int v_class);
     bool addVehicle(string plate, int v_class, bool greenlane);
-    //bool removeVehicle(string plate);
+    bool removeVehicle(string plate);
     Vehicle * getVehicle(string plate);
-    Vehicle * getVehicle(int i);
+    Vehicle * getVehicleIndex(int i);
     void setTaxes(float a, float b, float c, float d);
 };
 

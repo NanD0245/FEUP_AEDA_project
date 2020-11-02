@@ -12,13 +12,17 @@
 
 using namespace std;
 
+typedef int IdentNum;
+
 class Employees {
     vector<Employee *> employees;
-    int code;
+    static IdentNum code;
 public:
     Employees();
     int getNumEmployees() const;
     Employee * getEmployee(int code);
+    Employee * getEmployee(string name);
+    Employee * getEmployeeIndex(int i);
     bool addEmployee(string name);
     bool removeEmployee(int code);
 };

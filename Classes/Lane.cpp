@@ -7,34 +7,30 @@
 
 using namespace std;
 
-Lane::Lane(int lane_number, bool type, bool green_lane) : lane_number(lane_number), type(type), green_lane(green_lane) {}
+Lane::Lane(int lane_number, bool green_lane) : lane_number(lane_number), green_lane(green_lane) {}
 
 int Lane::getLaneNumber() const {return lane_number;}
-
-bool Lane::getType() const {return type;};
 
 bool Lane::getGreenLane() const {return green_lane;};
 
 string Lane::getInfo() const {
-    return to_string(lane_number) + " - " + to_string(type) + " - " + to_string(green_lane);
+    return to_string(lane_number) + " - " + to_string(green_lane);
 }
 
 void Lane::setLaneNumber(const int new_lane_number) { lane_number = new_lane_number; }
 
-void Lane::setType(const bool new_type) { type = new_type; }
-
 void Lane::setGreenLane(const bool new_green_lane) { green_lane = new_green_lane; }
 
-LaneEmployee::LaneEmployee(int lane_number, bool type, bool greenlane, Employee* e) : Lane(lane_number,type,greenlane), employee(e) {}
+LaneEmployee::LaneEmployee(int lane_number, bool greenlane, Employee* e) : Lane(lane_number,greenlane), employee(e) {}
 
 void LaneEmployee::setEmployee(Employee* e) {employee = e;}
 
 Employee * LaneEmployee::getEmployee() const {return employee;}
 
 string LaneEmployee::getInfo() const {
-    return to_string(lane_number) + " - " + to_string(type) + " - " + to_string(green_lane) + " - " + employee->getInfo();
+    return to_string(lane_number) + " - " + to_string(green_lane) + " - " + employee->getInfo();
 }
 
 bool Lane::operator==(const Lane &l2) const {
-    return (lane_number == l2.getLaneNumber() && type == l2.getType() && green_lane == l2.getGreenLane());
+    return (lane_number == l2.getLaneNumber() && green_lane == l2.getGreenLane());
 }
