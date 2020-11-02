@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-<<<<<<< HEAD
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Date.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Date.cpp.o"
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Employee.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Employee.cpp.o"
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Employees.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Employees.cpp.o"
@@ -18,19 +17,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Vehicle.cpp.o"
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicles.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Vehicles.cpp.o"
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/main.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/main.cpp.o"
-=======
-  "C:/Users/35193/Desktop/aeda2020-portagens/Classes/Employee.cpp" "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Employee.cpp.obj"
-  "C:/Users/35193/Desktop/aeda2020-portagens/Classes/Employees.cpp" "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Employees.cpp.obj"
-  "C:/Users/35193/Desktop/aeda2020-portagens/Classes/Highway.cpp" "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.obj"
-  "C:/Users/35193/Desktop/aeda2020-portagens/Classes/Highways.cpp" "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Highways.cpp.obj"
-  "C:/Users/35193/Desktop/aeda2020-portagens/Classes/Lane.cpp" "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Lane.cpp.obj"
-  "C:/Users/35193/Desktop/aeda2020-portagens/Classes/Movement.cpp" "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.obj"
-  "C:/Users/35193/Desktop/aeda2020-portagens/Classes/Movements.cpp" "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.obj"
-  "C:/Users/35193/Desktop/aeda2020-portagens/Classes/SystemNetwork.cpp" "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.obj"
-  "C:/Users/35193/Desktop/aeda2020-portagens/Classes/Toll.cpp" "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.obj"
-  "C:/Users/35193/Desktop/aeda2020-portagens/Classes/Vehicle.cpp" "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Vehicle.cpp.obj"
-  "C:/Users/35193/Desktop/aeda2020-portagens/main.cpp" "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/main.cpp.obj"
->>>>>>> refs/remotes/origin/master
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

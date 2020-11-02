@@ -20,15 +20,15 @@ protected:
 public:
 
 
-    Movement(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, string &date);
+    Movement(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, Date *date);
     bool getType() const;
     Vehicle * getVehicle() const;
     Highway * getHighway() const;
     Toll * getToll() const;
     Lane * getLane() const;
     Date * getDate() const;
-    bool getType() const;
-    string getDate() const;
+    //bool getType() const;
+    //string getDate() const;
     virtual string getInfo() const;
     void setType(const bool new_type);
     void setVehicle(const Vehicle* new_vehicle);
