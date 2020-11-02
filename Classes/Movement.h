@@ -18,14 +18,29 @@ protected:
     Lane* lane;
     Date* date;
 public:
+<<<<<<< HEAD
     Movement(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, Date* date);
+=======
+    Movement(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, string &date);
+    bool getType() const;
+>>>>>>> refs/remotes/origin/master
     Vehicle * getVehicle() const;
     Highway * getHighway() const;
     Toll * getToll() const;
     Lane * getLane() const;
+<<<<<<< HEAD
     Date * getDate() const;
     bool getType() const;
+=======
+    string getDate() const;
+>>>>>>> refs/remotes/origin/master
     virtual string getInfo() const;
+    void setType(const bool new_type);
+    void setVehicle(const Vehicle* new_vehicle);
+    void setHighway(const Highway* new_highway);
+    void setToll(const Toll* new_toll);
+    void setLane(const Lane* new_lane);
+    void setDate(const string date);
     //virtual bool operator==(const Movement m1);
 };
 

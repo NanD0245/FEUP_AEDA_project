@@ -10,20 +10,23 @@ class Lane {
 protected:
     int lane_number;
     bool type;
-    bool greenlane;
+    bool green_lane;
 public:
-    Lane(int lane_number, bool type, bool greenlane);
+    Lane(int lane_number, bool type, bool green_lane);
     int getLaneNumber() const;
     bool getType() const;
     bool getGreenLane() const;
     virtual string getInfo() const;
+    void setLaneNumber(const int new_lane_number);
+    void setType(const bool new_type);
+    void setGreenLane(const bool new_green_lane);
     bool operator==(const Lane &l2) const;
 };
 
 class LaneEmployee : public Lane {
     Employee* employee;
 public:
-    LaneEmployee(int lane_number, bool type, bool greenlane, Employee* e);
+    LaneEmployee(int lane_number, bool type, bool green_lane, Employee* e);
     void setEmployee(Employee* e);
     Employee * getEmployee() const;
     string getInfo() const;
