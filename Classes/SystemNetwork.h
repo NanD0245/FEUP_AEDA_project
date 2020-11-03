@@ -5,6 +5,9 @@
 #include "Movements.h"
 #include "Vehicles.h"
 
+#include <iostream>
+#include <fstream>
+
 using namespace std;
 
 class SystemNetwork {
@@ -19,8 +22,7 @@ public:
      *
      * CRUD Highway
      * CRUD Toll
-     * CRUD Lane
-     * CRUD Vehicle
+     * CRUD Lane     * CRUD Vehicle
      * CRUD Employee
      * Find Employee
      *
@@ -35,6 +37,8 @@ public:
      *
      *
      */
+    void read(string file);
+    void write(string file);
 };
 
 

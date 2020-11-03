@@ -13,12 +13,14 @@ class Vehicle {
     string plate;
     int v_class;
     bool greenlane;
+    float tax;
 public:
-    Vehicle(string plate, int v_class);
+    Vehicle(string plate, int v_class, float tax);
     void defineLaneType(bool greenlane);
     string getPlate() const {return plate;}
     bool getGreenLaneBool() const {return greenlane;}
     int getClass() const {return v_class;}
+    float getTax() const {return tax;}
     string getInfo() const;
 };
 

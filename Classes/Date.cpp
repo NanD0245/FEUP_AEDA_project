@@ -51,3 +51,27 @@ Date::Date(string& date) : s_date(date) { //"year/month/day hour:minute:second"
         }
     }
 }
+
+int getYear() {return year;}
+
+int getMonth() {return month;}
+
+int getDay() {return day;}
+
+int getHour() {return hour;}
+
+int getMinute() {return minute;}
+
+int getSecond() {return second;}
+
+int setYear(const int new_year) { year = new_year; }
+
+int setMonth(const int new_month) { month = new_month; }
+
+int setDay(const int new_day) { day = new_day; }
+
+int setHour(const int new_hour) { hour = new_hour; }
+
+int setMinute(const int new_minute) { minute = new_minute; }
+
+int setSecond(const int new_second) { second = new_second; }

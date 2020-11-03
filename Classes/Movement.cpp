@@ -21,7 +21,7 @@ Vehicle * Movement::getVehicle() const {return vehicle;}
 bool Movement::getType() const {return type;}
 
 string Movement::getInfo() const {
-    return date->getInfo() + " - " + to_string(type) + " - " + highway->getInfo() + " - " + toll->getInfo() + " - " + lane->getInfo(); // falta veiculo
+    return date->getInfo() + " - " + to_string(type) + " - " + highway->getInfo() + " - " + toll->getInfo() + " - " + lane->getInfo()+ " - " + vehicle->getInfo();
 }
 
 MovementEntry::MovementEntry(Vehicle *vehicle1, Highway *highway1, Toll *toll1, Lane *lane1, Date *date) : Movement(vehicle1,highway1,toll1,lane1, date) {
@@ -29,7 +29,7 @@ MovementEntry::MovementEntry(Vehicle *vehicle1, Highway *highway1, Toll *toll1, 
 }
 
 string MovementEntry::getInfo() const {
-    return date->getInfo() + " - " + to_string(type) + " - " + highway->getInfo() + " - " + toll->getInfo() + " - " + lane->getInfo(); // falta veiculo
+    return Movement::getInfo();
 }
 
 /*bool MovementEntry::operator==(const MovementEntry &m1) {
@@ -39,8 +39,10 @@ string MovementEntry::getInfo() const {
 }*/
 
 MovementOut::MovementOut(Vehicle *vehicle1, Highway *highway1, Toll *toll1, Lane *lane1, Date * date,
-                         MovementEntry *entry, float distance, float price) : Movement(vehicle1,highway1,toll1,lane1, date), entry(entry), distance(distance), price(price) {
+                         MovementEntry *entry) : Movement(vehicle1,highway1,toll1,lane1, date), entry(entry) {
     type = true;
+    this->distance = abs(toll1->getKilometer() - entry->getToll()->getKilometer());
+    this->price = distance*vehicle1->getTax();
 }
 
 float MovementOut::getDistance() const {return distance;}
@@ -56,6 +58,5 @@ float MovementOut::getPrice() const {return price;}
 }*/
 
 string MovementOut::getInfo() const {
-    return date->getInfo() + " - " + to_string(type) + " - " + highway->getInfo() + " - " + toll->getInfo() + " - " + lane->getInfo() +
-    " - " + to_string(distance) + " - " + to_string(price) + " - " + entry->getInfo();
+    return Movement::getInfo() + " - " + to_string(distance) + " - " + to_string(price) + " - " + entry->getInfo();
 }

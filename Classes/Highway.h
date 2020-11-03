@@ -26,6 +26,7 @@ public:
      * preço
      * quantoas veiculos estao na autoestrada
      */
+    friend class SystemNetwork; //apagar?
 };
 
 

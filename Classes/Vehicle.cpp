@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Vehicle::Vehicle(string plate, int v_class): plate(plate), v_class(v_class) {}
+Vehicle::Vehicle(string plate, int v_class, float tax): plate(plate), v_class(v_class), tax(tax) {}
 
 void Vehicle::defineLaneType(bool greenlane){this->greenlane=greenlane;}
 
