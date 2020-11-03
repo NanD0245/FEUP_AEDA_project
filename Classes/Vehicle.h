@@ -13,42 +13,16 @@ class Vehicle {
     string plate;
     int v_class;
     bool greenlane;
+    float tax;
 public:
-    Vehicle(string plate, int v_class);
+    Vehicle(string plate, int v_class, float tax);
     void defineLaneType(bool greenlane);
     string getPlate() const {return plate;}
     bool getGreenLaneBool() const {return greenlane;}
     int getClass() const {return v_class;}
+    float getTax() const {return tax;}
     string getInfo() const;
 };
-
-/*class Motorbike:public Vehicle{
-public:
-    Motorbike();
-    int getClass() const {return 0;}
-    string getInfo();
-};
-
-class Car:public Vehicle{
-public:
-    Car();
-    int getClass() const {return 1;}
-    string getInfo();
-};
-
-class HeavyPassengers:public Vehicle{
-public:
-    HeavyPassengers();
-    int getClass() const {return 2;}
-    string getInfo();
-};
-
-class HeavyMerch:public Vehicle{
-public:
-    HeavyMerch();
-    int getClass() const {return 3;}
-    string getInfo();
-};*/
 
 
 #endif //AEDA2020_PORTAGENS_VEHICLE_H

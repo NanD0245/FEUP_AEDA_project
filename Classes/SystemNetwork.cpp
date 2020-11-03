@@ -9,6 +9,7 @@ using namespace std;
 SystemNetwork::SystemNetwork() {
     highways = new Highways();
     movements = new Movements();
+    vehicles = new Vehicles();
 }
 
 void SystemNetwork::write(string file){

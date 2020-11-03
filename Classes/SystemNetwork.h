@@ -17,6 +17,26 @@ class SystemNetwork {
 
 public:
     SystemNetwork();
+    /*
+     * Get Taxes
+     *
+     * CRUD Highway
+     * CRUD Toll
+     * CRUD Lane     * CRUD Vehicle
+     * CRUD Employee
+     * Find Employee
+     *
+     * Enter Toll
+     * Leave Toll
+     *
+     * Search Movements/Prices/Distances of:
+     *      Highway
+     *      Toll
+     *      Lane
+     *      Vehicle
+     *
+     *
+     */
     void read(string file);
     void write(string file);
 };

@@ -27,12 +27,12 @@ public:
     int getMinute() const;
     int getSecond() const;
     string getInfo() const;
-    int setYear(const int new_year);
-    int setMonth(const int new_month);
-    int setDay(const int new_day);
-    int setHour(const int new_hour);
-    int setMinute(const int new_minute);
-    int setSecond(const int new_second);
+    void setYear(const int new_year);
+    void setMonth(const int new_month);
+    void setDay(const int new_day);
+    void setHour(const int new_hour);
+    void setMinute(const int new_minute);
+    void setSecond(const int new_second);
 };
 
 

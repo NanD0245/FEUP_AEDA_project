@@ -24,7 +24,7 @@ bool Vehicles::addVehicle(string plate, int v_class) {
             return false;
         }
     }
-    auto * a1 = new Vehicle(plate,v_class);
+    auto * a1 = new Vehicle(plate,v_class,taxes[v_class]);
     vehicles.push_back(a1);
     return true;
 }

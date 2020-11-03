@@ -26,5 +26,4 @@ public:
     friend class SystemNetwork;
 };
 
-
 #endif //AEDA2020_PORTAGENS_VEHICLES_H
