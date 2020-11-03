@@ -52,26 +52,28 @@ Date::Date(string& date) : s_date(date) { //"year/month/day hour:minute:second"
     }
 }
 
-int getYear() {return year;}
+int Date::getYear() const {return year;}
 
-int getMonth() {return month;}
+int Date::getMonth() const {return month;}
 
-int getDay() {return day;}
+int Date::getDay() const {return day;}
 
-int getHour() {return hour;}
+int Date::getHour() const {return hour;}
 
-int getMinute() {return minute;}
+int Date::getMinute() const {return minute;}
 
-int getSecond() {return second;}
+int Date::getSecond() const {return second;}
 
-int setYear(const int new_year) { year = new_year; }
+string Date::getInfo() const {return s_date;}
 
-int setMonth(const int new_month) { month = new_month; }
+void Date::setYear(const int new_year) { year = new_year; }
 
-int setDay(const int new_day) { day = new_day; }
+void Date::setMonth(const int new_month) { month = new_month; }
 
-int setHour(const int new_hour) { hour = new_hour; }
+void Date::setDay(const int new_day) { day = new_day; }
 
-int setMinute(const int new_minute) { minute = new_minute; }
+void Date::setHour(const int new_hour) { hour = new_hour; }
 
-int setSecond(const int new_second) { second = new_second; }
+void Date::setMinute(const int new_minute) { minute = new_minute; }
+
+void Date::setSecond(const int new_second) { second = new_second; }
