@@ -61,6 +61,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/JetBrains/CLion 2020.2.3/bin/cmake/win/share/cmake-3.17/Modules/Compiler/GNU-C-DetermineCompiler.cmake"
   "C:/Program Files/JetBrains/CLion 2020.2.3/bin/cmake/win/share/cmake-3.17/Modules/Compiler/GNU-C.cmake"
   "C:/Program Files/JetBrains/CLion 2020.2.3/bin/cmake/win/share/cmake-3.17/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake"
+  "C:/Program Files/JetBrains/CLion 2020.2.3/bin/cmake/win/share/cmake-3.17/Modules/Compiler/GNU-CXX-FeatureTests.cmake"
   "C:/Program Files/JetBrains/CLion 2020.2.3/bin/cmake/win/share/cmake-3.17/Modules/Compiler/GNU-CXX.cmake"
   "C:/Program Files/JetBrains/CLion 2020.2.3/bin/cmake/win/share/cmake-3.17/Modules/Compiler/GNU-FindBinUtils.cmake"
   "C:/Program Files/JetBrains/CLion 2020.2.3/bin/cmake/win/share/cmake-3.17/Modules/Compiler/GNU.cmake"
@@ -107,6 +108,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeRCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeSystem.cmake"
+  "CMakeFiles/feature_tests.cxx"
   )
 
 # The corresponding makefile is:

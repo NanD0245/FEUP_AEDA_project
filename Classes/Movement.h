@@ -32,6 +32,7 @@ public:
     void setToll(const Toll* new_toll);
     void setLane(const Lane* new_lane);
     void setDate(const string date);
+    friend class SystemNetwork;
     //virtual bool operator==(const Movement m1);
 };
 

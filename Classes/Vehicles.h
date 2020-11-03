@@ -23,6 +23,7 @@ public:
     Vehicle * getVehicle(string plate);
     Vehicle * getVehicleIndex(int i);
     void setTaxes(float a, float b, float c, float d);
+    friend class SystemNetwork;
 };
 
 

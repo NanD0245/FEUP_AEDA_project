@@ -8,6 +8,7 @@
 #include "Highway.h"
 
 class Highways {
+protected:
     vector<Highway *> highways;
 public:
     Highways();
@@ -16,6 +17,7 @@ public:
     int getNumHighways() const;
     bool addHighway(string name);
     bool removeHighway(string name);
+    friend class SystemNetwork;
 };
 
 

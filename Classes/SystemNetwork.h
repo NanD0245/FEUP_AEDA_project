@@ -5,6 +5,9 @@
 #include "Movements.h"
 #include "Vehicles.h"
 
+#include <iostream>
+#include <fstream>
+
 using namespace std;
 
 class SystemNetwork {
@@ -14,6 +17,8 @@ class SystemNetwork {
 
 public:
     SystemNetwork();
+    void read(string file);
+    void write(string file);
 };
 
 
