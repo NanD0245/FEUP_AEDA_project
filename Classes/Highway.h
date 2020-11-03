@@ -21,6 +21,11 @@ public:
     bool addToll(string name, string geolocal, float highway_kilometer,bool type);
     bool removeToll(Toll * t1);
     bool operator==(const Highway &l2);
+    /*
+     * distancia entre 2 carros
+     * preço
+     * quantoas veiculos estao na autoestrada
+     */
 };
 
 

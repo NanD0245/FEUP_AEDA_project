@@ -9,4 +9,5 @@ using namespace std;
 SystemNetwork::SystemNetwork() {
     highways = new Highways();
     movements = new Movements();
+    vehicles = new Vehicles();
 }

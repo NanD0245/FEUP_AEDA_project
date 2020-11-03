@@ -22,33 +22,5 @@ public:
     string getInfo() const;
 };
 
-/*class Motorbike:public Vehicle{
-public:
-    Motorbike();
-    int getClass() const {return 0;}
-    string getInfo();
-};
-
-class Car:public Vehicle{
-public:
-    Car();
-    int getClass() const {return 1;}
-    string getInfo();
-};
-
-class HeavyPassengers:public Vehicle{
-public:
-    HeavyPassengers();
-    int getClass() const {return 2;}
-    string getInfo();
-};
-
-class HeavyMerch:public Vehicle{
-public:
-    HeavyMerch();
-    int getClass() const {return 3;}
-    string getInfo();
-};*/
-
 
 #endif //AEDA2020_PORTAGENS_VEHICLE_H

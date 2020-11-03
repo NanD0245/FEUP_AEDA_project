@@ -25,5 +25,4 @@ public:
     void setTaxes(float a, float b, float c, float d);
 };
 
-
 #endif //AEDA2020_PORTAGENS_VEHICLES_H
