@@ -11,9 +11,6 @@ SystemNetwork::SystemNetwork() {
     movements = new Movements();
 }
 
-void SystemNetwork::read(string file){
-
-}
 void SystemNetwork::write(string file){
     vector<Toll *> t;
     vector<Lane *> l;
@@ -48,6 +45,14 @@ void SystemNetwork::write(string file){
         f<<"Vehicle nr"<<i+1<<": "<<endl;
         f<<vehicles->vehicles[i]->getInfo()<<endl;
     }
+
+    f.close();
+}
+
+void SystemNetwork::read(string file) {
+    ifstream f(file);
+
+
 
     f.close();
 }
