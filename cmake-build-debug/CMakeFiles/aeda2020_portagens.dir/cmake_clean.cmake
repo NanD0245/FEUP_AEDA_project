@@ -8,7 +8,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o"
-  "CMakeFiles/aeda2020_portagens.dir/Classes/Test.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Utils.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Vehicle.cpp.o"

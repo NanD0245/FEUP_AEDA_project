@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/lib/googletest-master/googlemock/include -isystem /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/lib/googletest-master/googletest/include -isystem /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/lib/googletest-master/googletest 
+CXX_INCLUDES = 
 

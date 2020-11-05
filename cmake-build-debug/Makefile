@@ -76,41 +76,6 @@ CMAKE_BINARY_DIR = /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aed
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/mim/Documents/CLion/clion-2020.1.1/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/mim/Documents/CLion/clion-2020.1.1/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/mim/Documents/CLion/clion-2020.1.1/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/mim/Documents/CLion/clion-2020.1.1/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/mim/Documents/CLion/clion-2020.1.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -122,27 +87,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/mim/Documents/CLion/clion-2020.1.1/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/mim/Documents/CLion/clion-2020.1.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/mim/Documents/CLion/clion-2020.1.1/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -188,58 +142,6 @@ aeda2020_portagens: cmake_check_build_system
 aeda2020_portagens/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/build
 .PHONY : aeda2020_portagens/fast
-
-#=============================================================================
-# Target rules for targets named gmock_main
-
-# Build rule for target.
-gmock_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
-.PHONY : gmock_main
-
-# fast build rule for target.
-gmock_main/fast:
-	$(MAKE) $(MAKESILENT) -f lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build
-.PHONY : gmock_main/fast
-
-#=============================================================================
-# Target rules for targets named gmock
-
-# Build rule for target.
-gmock: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
-.PHONY : gmock
-
-# fast build rule for target.
-gmock/fast:
-	$(MAKE) $(MAKESILENT) -f lib/googletest-master/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest-master/googlemock/CMakeFiles/gmock.dir/build
-.PHONY : gmock/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) $(MAKESILENT) -f lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
-
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) $(MAKESILENT) -f lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
 
 Classes/Date.o: Classes/Date.cpp.o
 
@@ -484,33 +386,6 @@ Classes/SystemNetwork.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.s
 .PHONY : Classes/SystemNetwork.cpp.s
 
-Classes/Test.o: Classes/Test.cpp.o
-
-.PHONY : Classes/Test.o
-
-# target to build an object file
-Classes/Test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Test.cpp.o
-.PHONY : Classes/Test.cpp.o
-
-Classes/Test.i: Classes/Test.cpp.i
-
-.PHONY : Classes/Test.i
-
-# target to preprocess a source file
-Classes/Test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Test.cpp.i
-.PHONY : Classes/Test.cpp.i
-
-Classes/Test.s: Classes/Test.cpp.s
-
-.PHONY : Classes/Test.s
-
-# target to generate assembly for a file
-Classes/Test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Test.cpp.s
-.PHONY : Classes/Test.cpp.s
-
 Classes/Toll.o: Classes/Toll.cpp.o
 
 .PHONY : Classes/Toll.o
@@ -653,16 +528,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... aeda2020_portagens"
-	@echo "... gmock"
-	@echo "... gmock_main"
-	@echo "... gtest"
-	@echo "... gtest_main"
 	@echo "... Classes/Date.o"
 	@echo "... Classes/Date.i"
 	@echo "... Classes/Date.s"
@@ -690,9 +557,6 @@ help:
 	@echo "... Classes/SystemNetwork.o"
 	@echo "... Classes/SystemNetwork.i"
 	@echo "... Classes/SystemNetwork.s"
-	@echo "... Classes/Test.o"
-	@echo "... Classes/Test.i"
-	@echo "... Classes/Test.s"
 	@echo "... Classes/Toll.o"
 	@echo "... Classes/Toll.i"
 	@echo "... Classes/Toll.s"

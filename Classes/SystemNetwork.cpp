@@ -197,7 +197,6 @@ void SystemNetwork::manageMovements() {
     int index;
     do {
         index = utils->ShowMenu({"Add a entry movement on a highway", "Add a exit movement of the highway"});
-        cout << "sai" << endl;
         switch(index) {
             case 1:
                 cout << "\033[2J\033[H";
@@ -678,6 +677,7 @@ int SystemNetwork::adviceEntryLane(Toll * toll, Date * date) {
             index = i;
         }
     }
+    return index;
 }
 
 void SystemNetwork::addEntryMovement() {

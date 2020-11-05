@@ -13,7 +13,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o"
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movements.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.o"
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o"
-  "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Test.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Test.cpp.o"
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Toll.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o"
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Utils.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Utils.cpp.o"
   "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.cpp" "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/CMakeFiles/aeda2020_portagens.dir/Classes/Vehicle.cpp.o"
@@ -24,15 +23,10 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../lib/googletest-master/googlemock/include"
-  "../lib/googletest-master/googletest/include"
-  "../lib/googletest-master/googletest"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
