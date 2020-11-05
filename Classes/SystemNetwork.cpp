@@ -705,6 +705,7 @@ void SystemNetwork::addEntryMovement() {
             cout << "ERROR: The plate can't be a empty string." << endl;
             getline(cin, s_plate);
         }
+        if (s_plate == "EXIT") continue;
         if (!vehicles->checkPlate(s_plate)) {
             cout << "Vehicle is not registed. To advance input vehicle class" << endl;
             index = utils->ShowMenu({"Classe 1 - Motas", "Classe 2 - Light vehicle (passengers or goods)", "Class 3 - Bus", "Class 4 - Heavy goods vehicle "});
@@ -762,6 +763,7 @@ void SystemNetwork::addExitMovement() {
             cout << "ERROR: The plate can't be a empty string." << endl;
             getline(cin, s_plate);
         }
+        if (s_plate == "EXIT") continue;
         cout << movements->getNumMovements() << endl;
         for (size_t i = movements->getNumMovements() - 1 ; i > -1; i-- ) {
             if (s_plate == movements->getMovementIndex(i)->getVehicle()->getPlate()) {
