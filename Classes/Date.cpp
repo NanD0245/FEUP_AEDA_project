@@ -25,7 +25,6 @@ Date::Date(string& date) : s_date(date) { //"day/month/year hour:minute:second"
             if (i == date.length()-1)
                 s = date;
         }
-        cout << date << endl;
         switch (count) {
             case 0:
                 day = stoi(s, nullptr);

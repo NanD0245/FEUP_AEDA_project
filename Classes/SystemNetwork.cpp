@@ -236,10 +236,9 @@ void SystemNetwork::readHighways() {
 }
 
 void SystemNetwork::updateHighway() {
-    string s_index, s_name;
+    string s_index, s_name, s_menu;
     int index;
-    readHighways();
-    index = utils->getNumber(highways->getNumHighways())-1;
+    index = chooseIndexHighway();
     if (index > -1)
         while (s_name != "EXIT") {
             cout << "Input the highway name: (if you want to exit without create any highway please input EXIT)" << endl;
@@ -265,8 +264,7 @@ bool SystemNetwork::updateHighway(int index, string s_name) {
 void SystemNetwork::deleteHighway() {
     string s_index, s_name;
     int index;
-    readHighways();
-    index = utils->getNumber(highways->getNumHighways())-1;
+    index = chooseIndexHighway();
     if (index > -1)
         if (highways->removeHighway(index))
             cout << "Highway deleted with success!" << endl;
@@ -279,8 +277,7 @@ bool SystemNetwork::deleteHighway(int index) {
 
 Highway* SystemNetwork::chooseHighway() {
     int index;
-    readHighways();
-    index = utils->getNumber(highways->getNumHighways()) -1;
+    index = chooseIndexHighway();
     while((index < -1)) {
         cout << "Invalid Number." << endl;
         index = utils->getNumber(highways->getNumHighways()) -1;
@@ -288,6 +285,16 @@ Highway* SystemNetwork::chooseHighway() {
     if (index == -1)
         return nullptr;
     return highways->getHighwayIndex(index);
+}
+
+int SystemNetwork::chooseIndexHighway() const {
+    string s_menu;
+    vector<string> v1;
+    for (int i = 0; i < highways->getNumHighways(); i++) {
+        s_menu = to_string(i+1) + " - " + highways->getHighwayIndex(i)->getName();
+        v1.push_back(s_menu);
+    }
+    return utils->ShowMenu(v1)-1;
 }
 
 void SystemNetwork::createToll(Highway *highway) {
@@ -337,8 +344,7 @@ void SystemNetwork::updateToll(Highway *highway) {
     int index, toll_index;
     float kilometer;
     string s_name;
-    readTolls(highway);
-    toll_index = utils->getNumber(highway->getNumTolls()) - 1;
+    toll_index = chooseIndexToll(highway);
     index = utils->ShowMenu({"Toll's name","Toll's geographic location", "Toll's highway kilometer", "Toll's type"});
     switch (index) {
         case 1:
@@ -384,16 +390,14 @@ void SystemNetwork::updateToll(Highway *highway) {
 
 void SystemNetwork::deleteToll(Highway *highway) {
     int toll_index;
-    readTolls(highway);
-    toll_index = utils->getNumber(highway->getNumTolls())-1;
+    toll_index = chooseIndexToll(highway);
     if (highway->removeToll(toll_index))
         cout << "Toll removed with success!" << endl;
 }
 
 Toll * SystemNetwork::chooseToll(Highway* highway) {
     int index;
-    readTolls(highway);
-    index = utils->getNumber(highway->getNumTolls()) -1;
+    index = chooseIndexToll(highway);
     while((index < -1)) {
         cout << "Invalid Number." << endl;
         index = utils->getNumber(highway->getNumTolls()) -1;
@@ -401,6 +405,18 @@ Toll * SystemNetwork::chooseToll(Highway* highway) {
     if (index == -1)
         return nullptr;
     return highway->getTollIndex(index);
+}
+
+int SystemNetwork::chooseIndexToll(Highway* highway) const {
+    string s_type, s_menu;
+    vector<string> v1;
+    cout << "Tolls: " << highway->getNumTolls() << endl;
+    for (size_t i = 0; i < highway->getNumTolls(); i++) {
+        s_type = highway->getTollIndex(i)->getType() ? "exit" : "entrance";
+        s_menu = to_string(i+1) + " - " + highway->getTollIndex(i)->getName() + " " + highway->getTollIndex(i)->getGeolocal() + " " + to_string(highway->getTollIndex(i)->getKilometer()) + " " + s_type;
+        v1.push_back(s_menu);
+    }
+    return utils->ShowMenu(v1)-1;
 }
 
 void SystemNetwork::createLane(Toll *toll) {
@@ -420,7 +436,7 @@ void SystemNetwork::createLane(Toll *toll) {
                 cout << "ERROR: It's necessary to have at least one employee to add a normal lane in a exit toll." << endl;
             }
             else {
-                //readEmployees();
+                readEmployees();
                 index = utils->getNumber(employees->getNumEmployees())-1;
                 if (index > -1) {
                     toll->addLane(employees->getEmployeeIndex(index));
@@ -433,7 +449,7 @@ void SystemNetwork::createLane(Toll *toll) {
 
 void SystemNetwork::readLanes(Toll *toll) {
     string s_type;
-    cout << "Tolls: " << toll->getNumLanes() << endl;
+    cout << "Lanes: " << toll->getNumLanes() << endl;
     for (size_t i = 0; i < toll->getNumLanes(); i++) {
         s_type = toll->getLane(i)->getGreenLane() ? "Green lane" : "Normal lane";
         if (toll->getLane(i)->getEmployee() == nullptr)
@@ -446,13 +462,11 @@ void SystemNetwork::readLanes(Toll *toll) {
 void SystemNetwork::updateLane(Toll *toll) {
     int lane_index, index;
     if (toll->getType()) {
-        readLanes(toll);
-        lane_index = utils->getNumber(toll->getNumLanes())-1;
+        lane_index = chooseIndexLane(toll);
         if (toll->getLane(lane_index)->getGreenLane()) {
             index = utils->ShowMenu({"Green to normal lane"});
             if (index == 1) {
-                //readEmployees();
-                index = utils->getNumber(employees->getNumEmployees())-1;
+                index = chooseIndexEmployee();
                 toll->setGreenLaneFalse(toll->getLane(lane_index),employees->getEmployeeIndex(index));
                 cout << "Lane updated with success!" << endl;
             }
@@ -464,8 +478,7 @@ void SystemNetwork::updateLane(Toll *toll) {
                 cout << "Lane updated with success!" << endl;
             }
             else if (index == 2) {
-                //readEmployees();
-                index = utils->getNumber(employees->getNumEmployees())-1;
+                index = chooseIndexEmployee();
                 if (index > -1) {
                     toll->getLane(lane_index)->setEmployee(employees->getEmployeeIndex(index));
                     cout << "Lane's employee updated with success!" << endl;
@@ -480,16 +493,14 @@ void SystemNetwork::updateLane(Toll *toll) {
 
 void SystemNetwork::deleteLane(Toll *toll) {
     int lane_index;
-    readLanes(toll);
-    lane_index = utils->getNumber(toll->getNumLanes())-1;
+    lane_index = chooseIndexLane(toll);
     if (toll->removeLane(lane_index))
         cout << "Toll removed with success!" << endl;
 }
 
 Lane* SystemNetwork::chooseLane(Toll* toll) {
     int index, min ,counter = 0;
-    readLanes(toll);
-    index = utils->getNumber(toll->getNumLanes()) -1;
+    index = chooseIndexLane(toll);
     while((index < -1)) {
         cout << "Invalid Number." << endl;
         index = utils->getNumber(toll->getNumLanes()) -1;
@@ -497,6 +508,21 @@ Lane* SystemNetwork::chooseLane(Toll* toll) {
     if (index == -1)
         return nullptr;
     return toll->getLane(index);
+}
+
+int SystemNetwork::chooseIndexLane(Toll* toll) const {
+    string s_type, s_menu;
+    vector<string> v1;
+    cout << "Lanes: " << toll->getNumLanes() << endl;
+    for (size_t i = 0; i < toll->getNumLanes(); i++) {
+        s_type = toll->getLane(i)->getGreenLane() ? "Green lane" : "Normal lane";
+        if (toll->getLane(i)->getEmployee() == nullptr)
+            s_menu = to_string(i+1) + " - " + to_string(toll->getLane(i)->getLaneNumber()) + " " + s_type;
+        else
+            s_menu =  to_string(i+1) + " - " + to_string(toll->getLane(i)->getLaneNumber()) + " " + s_type + " " + toll->getLane(i)->getEmployee()->getName() + " " + to_string(toll->getLane(i)->getEmployee()->getCode());
+        v1.push_back(s_menu);
+    }
+    return utils->ShowMenu(v1)-1;
 }
 
 void SystemNetwork::createEmployee() {
@@ -516,8 +542,7 @@ void SystemNetwork::createEmployee() {
 void SystemNetwork::updateEmployee() {
     string s_index, s_name;
     int index;
-    readEmployees();
-    index = utils->getNumber(employees->getNumEmployees())-1;
+    index = chooseIndexEmployee();
     if (index > -1)
         while (s_name != "EXIT") {
             cout << "Input the employee name: (if you want to exit without create any employee please input EXIT)" << endl;
@@ -534,8 +559,7 @@ void SystemNetwork::updateEmployee() {
 
 void SystemNetwork::deleteEmployee() {
     int index;
-    readEmployees();
-    index = utils->getNumber(employees->getNumEmployees())-1;
+    index = chooseIndexEmployee();
     if (index != -1) {
         employees->removeEmployee(index);
         cout << "Employee deleted with success!" << endl;
@@ -543,11 +567,23 @@ void SystemNetwork::deleteEmployee() {
 }
 
 void SystemNetwork::readEmployees() {
+
     cout << "Employees: " << employees->getNumEmployees() << endl;
 
     for (int i = 0; i <employees->getNumEmployees(); i++) {
         cout << i+1 << " - " << employees->getEmployeeIndex(i)->getName() << " " << employees->getEmployeeIndex(i)->getCode() << endl;
     }
+}
+
+int SystemNetwork::chooseIndexEmployee() const {
+    string s_menu;
+    vector<string> v1;
+    cout << "Employees: " << employees->getNumEmployees() << endl;
+    for (int i = 0; i <employees->getNumEmployees(); i++) {
+        s_menu = to_string(i+1) + " - " + employees->getEmployeeIndex(i)->getName() + " " + to_string(employees->getEmployeeIndex(i)->getCode());
+        v1.push_back(s_menu);
+    }
+    return utils->ShowMenu(v1);
 }
 
 void SystemNetwork::createVehicle() {
@@ -584,8 +620,7 @@ void SystemNetwork::createVehicle() {
 void SystemNetwork::updateVehicle() {
     string s_index, s_plate;
     int v_index,index;
-    readVehicles();
-    v_index = utils->getNumber(vehicles->getNumVehicles())-1;
+    v_index = chooseIndexVehicle();
     if (v_index > -1) {
         index = utils->ShowMenu({"Plate", "Vehicle class", "Type of lanes to travel"});
         switch (index) {
@@ -630,8 +665,7 @@ void SystemNetwork::updateVehicle() {
 
 void SystemNetwork::deleteVehicle() {
     int index;
-    readVehicles();
-    index = utils->getNumber(vehicles->getNumVehicles())-1;
+    index = chooseIndexVehicle();
     if (index <= -1) {
         vehicles->removeVehicle(index);
         cout << "Vehicle deleted with success!" << endl;
@@ -649,11 +683,26 @@ void SystemNetwork::readVehicles() {
     }
 }
 
+int SystemNetwork::chooseIndexVehicle() const {
+    string string1, s_menu;
+    vector<string> v1;
+    cout << "Vehicles: " << vehicles->getNumVehicles() << endl;
+    for (int i = 0; i < vehicles->getNumVehicles(); i++) {
+        if (vehicles->getVehicleIndex(i)->getGreenLaneBool())
+            string1 = "Exit";
+        else string1 = "Entrance";
+        s_menu = to_string(i+1) + " - " + vehicles->getVehicleIndex(i)->getPlate() + " " + to_string(vehicles->getVehicleIndex(i)->getClass()) + " " + string1 + " " + to_string(vehicles->getVehicleIndex(i)->getTax());
+    }
+}
+
 void SystemNetwork::getTaxesFromUser() {
     float taxe[4];
     for (int i = 0; i < 4; i++) {
         cout << "Input the tax (euro per kilometer) for the class " << i+1 << endl;
-        taxe[i] = utils->getFloat();
+        float a = utils->getFloat();
+        if (a == -1)
+            break;
+        else taxe[i] = a;
     }
     vehicles->setTaxes(taxe[0],taxe[1],taxe[2],taxe[3]);
 }
@@ -683,7 +732,7 @@ int SystemNetwork::adviceEntryLane(Toll * toll, Date * date) {
 void SystemNetwork::addEntryMovement() {
 
     string s_plate;
-    int index, lane_index;
+    int index = -1, lane_index;
     Vehicle* vehicle = nullptr;
 
     Highway* highway = nullptr;
@@ -692,13 +741,13 @@ void SystemNetwork::addEntryMovement() {
     time_t timer = time(0);
     tm *now = localtime(&timer);
     string s_date = to_string(now->tm_mday) + "/" + to_string(now->tm_mon) + "/" + to_string(now->tm_year+1900)  + " " + to_string(now->tm_hour) + ":" + to_string(now->tm_min) + ":" + to_string(now->tm_sec);
-    cout << s_date << endl;
     Date* date = new Date(s_date);
-
-    if (movements->getNumMovements() == 0) {
-        getTaxesFromUser();
-    }
-    while (s_plate != "EXIT" || index != 0) {
+    while (s_plate != "EXIT" && index != 0) {
+        if (vehicles->getTaxes(1) == -1 || vehicles->getTaxes(2) == -1 || vehicles->getTaxes(3) == -1 || vehicles->getTaxes(4) == -1) {
+            cout << "ERROR: Before this you have to input the taxes for the vehicle's classes" << index << endl;
+            s_plate = "EXIT";
+            continue;
+        }
         cout << "Please input the plate of the vehicle: (if you want to exit without create any vehicle please input EXIT)" << endl;
         getline(cin, s_plate);
         while (s_plate.empty()) {
@@ -757,6 +806,11 @@ void SystemNetwork::addExitMovement() {
     Highway* highway = nullptr;
     Toll *toll = nullptr;
     while (s_plate != "EXIT") {
+        if (movements->getNumMovements() == 0) {
+            cout << "ERROR: Before you do this you have to add a entry movement" << endl;
+            s_plate = "EXIT";
+            continue;
+        }
         cout << "Please input the plate of the vehicle: (if you want to exit without create any vehicle please input EXIT)" << endl;
         getline(cin, s_plate);
         while (s_plate.empty()) {

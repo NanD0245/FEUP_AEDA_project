@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
 
     do {
         cout << "\033[2J\033[H";
-        index = utils.ShowMenu({"Manage Movements", "Manage Highways", "Manage Employees" ,"Manage Vehicles", "Statistics"});
+        index = utils.ShowMenu({"Manage Movements", "Manage Highways", "Manage Employees" ,"Manage Vehicles","Input Taxes for vehicles", "Statistics"});
         switch (index) {
             case(1):
                 cout << "\033[2J\033[H";
@@ -48,6 +48,8 @@ int main(int argc, char* argv[]) {
                 system.manageVehicle();
                 break;
             case 5:
+                cout << "\033[2J\033[H";
+                system.getTaxesFromUser();
                 break;
         }
     } while (index);
