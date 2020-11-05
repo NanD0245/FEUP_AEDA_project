@@ -5,6 +5,7 @@
 #ifndef AEDA2020_PORTAGENS_DATE_H
 #define AEDA2020_PORTAGENS_DATE_H
 
+#include <iostream>
 #include <string>
 #include <sstream>
 
@@ -33,6 +34,7 @@ public:
     void setHour(const int new_hour);
     void setMinute(const int new_minute);
     void setSecond(const int new_second);
+    bool operator==(Date d1) const;
 };
 
 

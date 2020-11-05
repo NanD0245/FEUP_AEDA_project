@@ -19,10 +19,12 @@ public:
     int getNumVehicles() const;
     bool addVehicle(string plate, int v_class);
     bool addVehicle(string plate, int v_class, bool greenlane);
-    bool removeVehicle(string plate);
+    bool removeVehicle(int i);
     Vehicle * getVehicle(string plate);
     Vehicle * getVehicleIndex(int i);
     void setTaxes(float a, float b, float c, float d);
+    float getTaxes(int v_class);
+    bool checkPlate(string plate);
     friend class SystemNetwork;
 };
 

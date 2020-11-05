@@ -61,7 +61,22 @@ bool Highway::removeToll(Toll *t1) {
     return false;
 }
 
+bool Highway::removeToll(int i) {
+    if (i >= tolls.size())
+        return false;
+    tolls.erase(tolls.begin()+i);
+    return true;
+}
+
 int Highway::getNumTolls() const {return tolls.size();}
+
+bool Highway::checkTollName(string name) {
+    for (size_t i = 0; i < tolls.size(); i++) {
+        if (name == tolls[i]->getName())
+            return false;
+    }
+    return true;
+}
 
 
 bool Highway::operator==(const Highway &l2) { return name == l2.getName(); }

@@ -14,4 +14,10 @@ string Vehicle::getInfo() const {
     return plate + " - " + to_string(v_class) + " - " + to_string(greenlane);
 }
 
+void Vehicle::setGreenLaneTrue() {greenlane = true;}
 
+void Vehicle::setGreenLaneFalse() {greenlane = false;}
+
+void Vehicle::setVehicleClass(int v_class) {this->v_class = v_class;}
+
+void Vehicle::setPlate(string plate) {this->plate = plate;}

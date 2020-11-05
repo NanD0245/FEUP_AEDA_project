@@ -15,21 +15,23 @@ Toll::Toll(string name, string geolocal, float highway_kilometer, bool type) : n
 
 bool Toll::getType() const {return type;}
 
+void Toll::setType(bool type) {this->type = type;}
+
 string Toll::getName() const {return name;}
+
+void Toll::setName(string name) {this->name = name;}
 
 string Toll::getGeolocal() const {return geolocal;}
 
+void Toll::setGeolocal(string geolocal) {this->geolocal = geolocal;}
+
 float Toll::getKilometer() const {return highway_kilometer;}
+
+void Toll::setKilometer(float kilometer) {this->highway_kilometer = kilometer;}
 
 string Toll::getInfo() const {
     return name + " - " + geolocal + " - " + to_string(highway_kilometer) + " - " + to_string(type);
 }
-
-/*Lane * Toll::getLane(int i) {
-    if (i < lanes.size())
-        return lanes[i];
-    return nullptr;
-}*/
 
 int Toll::getNumLanes() const {return lanes.size();}
 
@@ -60,7 +62,7 @@ bool Toll::operator==(const Toll& l2) const {
 TollEntrance::TollEntrance(string name, string geolocal, float highway_kilometer) : Toll(name,geolocal,highway_kilometer,false) {}
 
 void TollEntrance::addLane() {
-    int n_lane = lanes.size() + 1;
+    int n_lane = lanes.size();
     auto *l1 = new Lane(n_lane, false);
     lanes.push_back(l1);
 }
@@ -68,14 +70,31 @@ void TollEntrance::addLane() {
 TollOut::TollOut(string name, string geolocal, float highway_kilometer) : Toll(name,geolocal,highway_kilometer,true) {}
 
 void TollOut::addLane() {
-    int n_lane = lanes.size() + 1;
+    int n_lane = lanes.size();
     auto *l1 = new Lane(n_lane, true);
     lanes.push_back(l1);
 }
 
 void TollOut::addLane(Employee *e) {
-    int n_lane = lanes.size() + 1;
+    int n_lane = lanes.size();
     auto *l1 = new LaneEmployee(n_lane, false, e);
     lanes.push_back(l1);
 }
 
+void Toll::setGreenLaneTrue(Lane * lane) {
+    int index = lane->getLaneNumber();
+    lanes.erase(lanes.begin() + index);
+    auto *l1 = new Lane(index, true);
+    lanes.insert(lanes.begin()+index,l1);
+    for (size_t i = 0; i < lanes.size(); i++)
+        lanes[i]->setLaneNumber(i);
+}
+
+void Toll::setGreenLaneFalse(Lane *lane, Employee *e) {
+    int index = lane->getLaneNumber();
+    lanes.erase(lanes.begin()+index);
+    auto *l1 = new LaneEmployee(index,false,e);
+    lanes.insert(lanes.begin()+index, l1);
+    for (size_t i = 0; i < lanes.size(); i++)
+        lanes[i]->setLaneNumber(i);
+}

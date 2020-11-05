@@ -413,6 +413,33 @@ Classes/Toll.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.s
 .PHONY : Classes/Toll.cpp.s
 
+Classes/Utils.o: Classes/Utils.cpp.o
+
+.PHONY : Classes/Utils.o
+
+# target to build an object file
+Classes/Utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Utils.cpp.o
+.PHONY : Classes/Utils.cpp.o
+
+Classes/Utils.i: Classes/Utils.cpp.i
+
+.PHONY : Classes/Utils.i
+
+# target to preprocess a source file
+Classes/Utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Utils.cpp.i
+.PHONY : Classes/Utils.cpp.i
+
+Classes/Utils.s: Classes/Utils.cpp.s
+
+.PHONY : Classes/Utils.s
+
+# target to generate assembly for a file
+Classes/Utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Utils.cpp.s
+.PHONY : Classes/Utils.cpp.s
+
 Classes/Vehicle.o: Classes/Vehicle.cpp.o
 
 .PHONY : Classes/Vehicle.o
@@ -533,6 +560,9 @@ help:
 	@echo "... Classes/Toll.o"
 	@echo "... Classes/Toll.i"
 	@echo "... Classes/Toll.s"
+	@echo "... Classes/Utils.o"
+	@echo "... Classes/Utils.i"
+	@echo "... Classes/Utils.s"
 	@echo "... Classes/Vehicle.o"
 	@echo "... Classes/Vehicle.i"
 	@echo "... Classes/Vehicle.s"
