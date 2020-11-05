@@ -14,3 +14,7 @@ bool Movements::addMovement(Movement *m1) {
     movements.push_back(m1);
     return true;
 }
+
+Movement * Movements::getMovementIndex(int i) {
+    return movements[i];
+}

@@ -8,15 +8,17 @@
 #include "Highway.h"
 
 class Highways {
-protected:
     vector<Highway *> highways;
 public:
     Highways();
     Highway * getHighway(string name);
     Highway * getHighwayIndex(int i);
+    bool checkHighwayName(string name);
     int getNumHighways() const;
+    vector<Highway *> getHighways();
     bool addHighway(string name);
     bool removeHighway(string name);
+    bool removeHighway(int i);
     friend class SystemNetwork;
 };
 

@@ -24,13 +24,11 @@ bool Employees::addEmployee(string name) {
     return true;
 }
 
-bool Employees::removeEmployee(int code) {
-    for (size_t i = 0; i < employees.size(); i++)
-        if (code == employees[i]->getCode()) {
-            employees.erase(employees.begin()+i);
-            return true;
-        }
-    return false;
+bool Employees::removeEmployee(int i) {
+    if (i>=employees.size())
+        return false;
+    employees.erase(employees.begin()+i);
+    return true;
 }
 
 Employee * Employees::getEmployee(int code) {
@@ -53,4 +51,12 @@ Employee * Employees::getEmployeeIndex(int i) {
     if (i < employees.size())
         return employees[i];
     return nullptr;
+}
+
+bool Employees::checkEmployeeName(string name) {
+    for (size_t i = 0; i < employees.size(); i++) {
+        if (employees[i]->getName() == name)
+            return false;
+    }
+    return true;
 }

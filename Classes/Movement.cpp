@@ -39,7 +39,7 @@ string MovementEntry::getInfo() const {
 }*/
 
 MovementOut::MovementOut(Vehicle *vehicle1, Highway *highway1, Toll *toll1, Lane *lane1, Date * date,
-                         MovementEntry *entry) : Movement(vehicle1,highway1,toll1,lane1, date), entry(entry) {
+                         Movement *entry) : Movement(vehicle1,highway1,toll1,lane1, date), entry(entry) {
     type = true;
     this->distance = abs(toll1->getKilometer() - entry->getToll()->getKilometer());
     this->price = distance*vehicle1->getTax();
@@ -47,7 +47,7 @@ MovementOut::MovementOut(Vehicle *vehicle1, Highway *highway1, Toll *toll1, Lane
 
 float MovementOut::getDistance() const {return distance;}
 
-MovementEntry * MovementOut::getEntry() const {return entry;}
+Movement * MovementOut::getEntry() const {return entry;}
 
 float MovementOut::getPrice() const {return price;}
 

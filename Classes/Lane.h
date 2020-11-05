@@ -16,7 +16,8 @@ public:
     bool getGreenLane() const;
     virtual string getInfo() const;
     void setLaneNumber(int new_lane_number);
-    void setGreenLane(bool new_green_lane);
+    //void setGreenLaneTrue();
+    //void setGreenLaneFalse(Employee* e);
     virtual Employee * getEmployee() const {return nullptr;};
     virtual void setEmployee(Employee* e) {};
     bool operator==(const Lane &l2) const;

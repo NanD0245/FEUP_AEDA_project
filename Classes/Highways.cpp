@@ -27,6 +27,8 @@ bool Highways::addHighway(string name) {
         if (name == highways[i]->getName())
             return false;
     }
+    auto *a1 = new Highway(name);
+    highways.push_back(a1);
     return true;
 }
 
@@ -38,4 +40,19 @@ bool Highways::removeHighway(string name) {
         }
     }
     return false;
+}
+
+bool Highways::removeHighway(int i) {
+    if (i >= highways.size())
+        return false;
+    highways.erase(highways.begin()+i);
+    return true;
+}
+
+bool Highways::checkHighwayName(string name) {
+    for (size_t i = 0; i < highways.size(); i++) {
+        if (name == highways[i]->getName())
+            return false;
+    }
+    return true;
 }

@@ -44,13 +44,13 @@ public:
 };
 
 class MovementOut : public Movement {
-    MovementEntry * entry;
+    Movement * entry;
     float distance;
     float price;
 
 public:
-    MovementOut(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, Date* date, MovementEntry * entry);
-    MovementEntry * getEntry() const;
+    MovementOut(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, Date* date, Movement * entry);
+    Movement * getEntry() const;
     float getDistance() const;
     float getPrice() const;
     string getInfo() const;

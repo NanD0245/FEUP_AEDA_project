@@ -52,13 +52,19 @@ Vehicle * Vehicles::getVehicleIndex(int i) {
     return nullptr;
 }
 
-bool Vehicles::removeVehicle(string plate) {
-    for (size_t i = 0; i < vehicles.size(); i++) {
-        if (vehicles[i]->getPlate() == plate) {
-            vehicles.erase(vehicles.begin()+i);
-            return true;
-        }
-    }
-    return false;
+bool Vehicles::removeVehicle(int i) {
+    if (i >= vehicles.size())
+        return false;
+    vehicles.erase(vehicles.begin()+i);
+    return true;
 }
 
+bool Vehicles::checkPlate(string plate) {
+    for (size_t i = 0; i < vehicles.size(); i++) {
+        if (vehicles[i]->getPlate() == plate)
+            return false;
+    }
+    return true;
+}
+
+float Vehicles::getTaxes(int v_class) {return taxes[v_class-1];}

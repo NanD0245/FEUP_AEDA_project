@@ -4,7 +4,9 @@
 
 #include "Date.h"
 
-Date::Date(string& date) : s_date(date) { //"year/month/day hour:minute:second"
+using namespace std;
+
+Date::Date(string& date) : s_date(date) { //"day/month/year hour:minute:second"
     int count = 0;
     while (count != 6) {
         int index;
@@ -17,12 +19,13 @@ Date::Date(string& date) : s_date(date) { //"year/month/day hour:minute:second"
             }
             else if (date[i] == ' ') {
                 s = date.substr(0,i);
-                date.erase(0,i+2);
+                date.erase(0,i+1);
                 break;
             }
             if (i == date.length()-1)
                 s = date;
         }
+        cout << date << endl;
         switch (count) {
             case 0:
                 day = stoi(s, nullptr);
@@ -77,3 +80,7 @@ void Date::setHour(const int new_hour) { hour = new_hour; }
 void Date::setMinute(const int new_minute) { minute = new_minute; }
 
 void Date::setSecond(const int new_second) { second = new_second; }
+
+bool Date::operator==(Date d1) const {
+    return year == d1.getYear() && month == d1.getMonth() && day == d1.getDay();
+}

@@ -19,8 +19,6 @@ string Lane::getInfo() const {
 
 void Lane::setLaneNumber(const int new_lane_number) { lane_number = new_lane_number; }
 
-void Lane::setGreenLane(const bool new_green_lane) { green_lane = new_green_lane; }
-
 LaneEmployee::LaneEmployee(int lane_number, bool greenlane, Employee* e) : Lane(lane_number,greenlane), employee(e) {}
 
 void LaneEmployee::setEmployee(Employee* e) {employee = e;}
