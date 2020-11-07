@@ -35,6 +35,7 @@ public:
     void updateHighway();
     void deleteHighway();
     Highway* chooseHighway();
+    int chooseIndexHighway() const;
     bool createHighway(string s_name); //apenas para testes
     bool updateHighway(int index, string name); //apenas para testes
     bool deleteHighway(int index); //apenas para testes
@@ -43,23 +44,27 @@ public:
     void readTolls(Highway * highway);
     void updateToll(Highway * highway);
     void deleteToll(Highway * highway);
+    int chooseIndexToll(Highway * highway) const;
     Toll* chooseToll(Highway* highway);
 
     void createLane(Toll* toll);
     void readLanes(Toll* toll);
     void updateLane(Toll* toll);
     void deleteLane(Toll* toll);
+    int chooseIndexLane(Toll* toll) const;
     Lane* chooseLane(Toll* toll);
 
     void createEmployee();
     void readEmployees();
     void updateEmployee();
     void deleteEmployee();
+    int chooseIndexEmployee() const;
 
     void createVehicle();
     void readVehicles();
     void updateVehicle();
     void deleteVehicle();
+    int chooseIndexVehicle() const;
 
     int adviceEntryLane(Toll * toll, Date * date);
     void getTaxesFromUser();

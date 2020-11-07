@@ -6,7 +6,12 @@
 
 using namespace std;
 
-Vehicles::Vehicles() {vehicles.clear();}
+Vehicles::Vehicles() {
+    vehicles.clear();
+    for (int i = 0; i < 4; i++) {
+        taxes[i] = -1;
+    }
+}
 
 void Vehicles::setTaxes(float a, float b, float c, float d) {
     taxes[0] = a;
