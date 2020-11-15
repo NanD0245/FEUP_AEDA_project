@@ -9,8 +9,6 @@
 using namespace std;
 
 int Utils::ShowMenu(vector<string> menu) {
-    string s_index;
-    int index;
     for (size_t i = 0; i < menu.size(); i++) {
         cout << (i+1) << " - " << menu[i] << endl;
     }
@@ -73,6 +71,13 @@ float Utils::getFloat() {
     return index;
 }
 
+void Utils::waitForInput() {
+    string a;
+    cout << '\n' << "Press a key to continue...";
+    getline(cin, a);
+    cout << "\x1b[A";
+    //cout << "\033[2J\033[H";
+}
 /*string Utils::getString() {
     string s_name;
     while (s_name != "EXIT") {
@@ -84,3 +89,4 @@ float Utils::getFloat() {
         }
         cout << "ERROR: name of highway already exist." << endl;
     }}*/
+

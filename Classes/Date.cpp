@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Date::Date(string& date) : s_date(date) { //"day/month/year hour:minute:second"
+Date::Date(string date) : s_date(date) { //"day/month/year hour:minute:second"
     int count = 0;
     while (count != 6) {
         int index;
