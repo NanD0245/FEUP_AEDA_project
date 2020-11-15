@@ -29,6 +29,12 @@ public:
     void manageEmployee();
     void manageVehicle();
     void manageMovements();
+    void manageReadMovements();
+    void manageMovementsHighway();
+    void manageMovementsToll(Highway* highway);
+    void manageMovementsLane(Toll* toll);
+    void manageMovementsCar();
+    void manageStatistics();
 
     void createHighway();
     void readHighways();
@@ -36,9 +42,6 @@ public:
     void deleteHighway();
     Highway* chooseHighway();
     int chooseIndexHighway() const;
-    bool createHighway(string s_name); //apenas para testes
-    bool updateHighway(int index, string name); //apenas para testes
-    bool deleteHighway(int index); //apenas para testes
 
     void createToll(Highway * highway);
     void readTolls(Highway * highway);
@@ -67,20 +70,32 @@ public:
     int chooseIndexVehicle() const;
 
     int adviceEntryLane(Toll * toll, Date * date);
+    int adviceOutLane(Vehicle* vehicle, Toll * toll, Date * date);
     void getTaxesFromUser();
     void addEntryMovement();
     void addExitMovement();
+    void showMovementsByHighwayName(); //alphabetic + worth
+    void showMovementsByHighwayWorth();
+    void showMovementsByDate();
+    void showMovementsByTollName(Highway* highway);//alphabetic + types + worth
+    void showMovementsByTollType(Highway* highway);
+    void showMovementsByTollWorth(Highway* highway);
+    void showMovementsbyLaneNumber(Toll * toll); //worth
+    void showMovementsbyLaneWorth(Toll * toll);
+    void showCarMovements();
+    void showMovementsbyCarDistance();
+    void showMovementsbyTotalPrice();
+    void showEmployeeMovements();
 
-    /*
-     * Leave Toll
-     *
-     * Search Movements/Prices/Distances of:
-     *      Highway
-     *      Toll
-     *      Lane
-     *      Vehicle
-     *
-     */
+    void carSpentMoreMoney();
+    void BestWorthHighway();
+    void BestWorthToll();
+    void BestWorthLane();
+    void HighwayMoreMoves();
+    void TollMoreMoves();
+    void LaneMoreMoves();
+    void DayMoreMoves();
+
     void read(string file);
     void write(string file);
 };

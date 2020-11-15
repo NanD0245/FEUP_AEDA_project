@@ -20,7 +20,7 @@ class Date {
     int minute;
     int second;
 public:
-    Date(string& date); //"day/month/year hour:minute:second"
+    Date(string date); //"day/month/year hour:minute:second"
     int getYear() const;
     int getMonth() const;
     int getDay() const;
