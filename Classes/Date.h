@@ -35,6 +35,7 @@ public:
     void setMinute(const int new_minute);
     void setSecond(const int new_second);
     bool operator==(Date d1) const;
+    bool operator>(Date d1) const;
 };
 
 

@@ -17,6 +17,7 @@ public:
     bool addMovement(Movement* m1);
     friend class SystemNetwork;
     Movement * getMovementIndex(int i);
+    vector<Movement *> getMovements();
     int getNumMovements() const {return movements.size();}
     //void ordenarData()
 };
