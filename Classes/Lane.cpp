@@ -9,6 +9,11 @@ using namespace std;
 
 Lane::Lane(int lane_number, bool green_lane) : lane_number(lane_number), green_lane(green_lane) {}
 
+Lane::Lane(){
+    lane_number=0;
+    green_lane=false;
+}
+
 int Lane::getLaneNumber() const {return lane_number;}
 
 bool Lane::getGreenLane() const {return green_lane;};
@@ -26,7 +31,7 @@ void LaneEmployee::setEmployee(Employee* e) {employee = e;}
 Employee * LaneEmployee::getEmployee() const {return employee;}
 
 string LaneEmployee::getInfo() const {
-    return to_string(lane_number) + " - " + to_string(green_lane) + " - " + employee->getInfo();
+    return Lane::getInfo() + " - " + employee->getInfo();
 }
 
 bool Lane::operator==(const Lane &l2) const {

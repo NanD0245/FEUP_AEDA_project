@@ -19,6 +19,7 @@ public:
     Toll * getToll(string name);
     Toll * getTollIndex(int i);
     bool addToll(string name, string geolocal, float highway_kilometer,bool type);
+    bool addToll(Toll *t);
     bool removeToll(Toll * t1);
     bool removeToll(int i);
     bool checkTollName(string name);

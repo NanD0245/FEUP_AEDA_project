@@ -24,6 +24,10 @@ bool Employees::addEmployee(string name) {
     return true;
 }
 
+bool Employees::addEmployee(Employee * e){
+    employees.push_back(e);
+}
+
 bool Employees::removeEmployee(int i) {
     if (i>=employees.size())
         return false;

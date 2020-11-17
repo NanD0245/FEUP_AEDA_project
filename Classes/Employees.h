@@ -25,6 +25,7 @@ public:
     Employee * getEmployeeIndex(int i);
     bool checkEmployeeName(string name);
     bool addEmployee(string name);
+    bool addEmployee(Employee * e);
     bool removeEmployee(int i);
 };
 

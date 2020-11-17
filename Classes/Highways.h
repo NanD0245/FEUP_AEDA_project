@@ -17,6 +17,7 @@ public:
     int getNumHighways() const;
     vector<Highway *> getHighways();
     bool addHighway(string name);
+    void addHighway(Highway * h);
     bool removeHighway(string name);
     bool removeHighway(int i);
     friend class SystemNetwork;

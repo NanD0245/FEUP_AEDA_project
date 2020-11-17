@@ -51,6 +51,10 @@ bool Highway::addToll(string name, string geolocal, float highway_kilometer,bool
     return true;
 }
 
+bool Highway::addToll(Toll *t){
+    tolls.push_back(t);
+}
+
 bool Highway::removeToll(Toll *t1) {
     for (size_t i = 0; i < tolls.size(); i++) {
         if (*tolls[i] == *t1) {

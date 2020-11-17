@@ -97,7 +97,8 @@ public:
     void LaneMoreMoves();
 
     void read(string file);
-    void write(string file);
+    void write();
+    void ungetstr(ifstream &f);
 };
 
 

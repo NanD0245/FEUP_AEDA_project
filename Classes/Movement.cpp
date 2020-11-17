@@ -46,7 +46,12 @@ string MovementEntry::getInfo() const {
 MovementOut::MovementOut(Vehicle *vehicle1, Highway *highway1, Toll *toll1, Lane *lane1, Date * date,
                          Movement *entry) : Movement(vehicle1,highway1,toll1,lane1, date), entry(entry) {
     type = true;
-    this->distance = abs(toll1->getKilometer() - entry->getToll()->getKilometer());
+    if(toll1->getKilometer() - entry->getToll()->getKilometer()==0){
+        this->distance =toll1->getKilometer() - entry->getToll()->getKilometer();
+    }
+    else {
+        this->distance =-(toll1->getKilometer() - entry->getToll()->getKilometer());
+    }
     this->price = distance*vehicle1->getTax();
 }
 
