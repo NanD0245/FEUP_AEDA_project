@@ -9,11 +9,11 @@
 using namespace std;
 
 int Utils::ShowMenu(vector<string> menu) {
+    cout << "Please choose one of the options below: " << endl << endl;
     for (size_t i = 0; i < menu.size(); i++) {
         cout << (i+1) << " - " << menu[i] << endl;
     }
-    cout << "0 - Exit" << endl;
-
+    cout << "0 - Exit" << endl << endl;
     return getNumber(menu.size());
 }
 
@@ -78,15 +78,7 @@ void Utils::waitForInput() {
     cout << "\x1b[A";
     //cout << "\033[2J\033[H";
 }
-/*string Utils::getString() {
-    string s_name;
-    while (s_name != "EXIT") {
-        cout << "Input the highway name: (if you want to exit without create any highway please input EXIT)" << endl;
-        getline(cin, s_name);
-        if (s_name != "EXIT" && highways->addHighway(s_name)) {
-            cout << "Highway created with sucess!" << endl;
-            break;
-        }
-        cout << "ERROR: name of highway already exist." << endl;
-    }}*/
 
+void Utils::clrScreen() {
+    cout << "\033[2J\033[H";
+}

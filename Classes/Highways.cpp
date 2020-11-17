@@ -54,7 +54,7 @@ bool Highways::removeHighway(int i) {
 bool Highways::checkHighwayName(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
         if (name == highways[i]->getName())
-            return false;
+            return true;
     }
-    return true;
+    return false;
 }

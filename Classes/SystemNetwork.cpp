@@ -61,22 +61,23 @@ void SystemNetwork::manageHighways() {
         index = utils->ShowMenu({"Create Highway", "Update Highway", "Delete Highway", "Read Highways", "Manage Highway"});
         switch(index) {
             case 1:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 createHighway();
                 break;
             case 2:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 updateHighway();
                 break;
             case 3:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 deleteHighway();
                 break;
             case 4:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 readHighways();
                 break;
             case 5:
+                utils->clrScreen();
                 auto *h1 = chooseHighway();
                 if (h1 == nullptr)
                     break;
@@ -92,23 +93,23 @@ void SystemNetwork::manageHighway(Highway* highway) {
         index = utils->ShowMenu({"Create Toll", "Update Toll", "Delete Toll", "Read Tolls","Manage Toll"});
         switch(index) {
             case 1:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 createToll(highway);
                 break;
             case 2:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 updateToll(highway);
                 break;
             case 3:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 deleteToll(highway);
                 break;
             case 4:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 readTolls(highway);
                 break;
             case 5:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 auto *t1 = chooseToll(highway);
                 if (t1 == nullptr)
                     break;
@@ -124,19 +125,19 @@ void SystemNetwork::manageToll(Toll *toll) {
         index = utils->ShowMenu({"Create Lane", "Update Lane", "Delete Lane", "Read Lanes"});
         switch(index) {
             case 1:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 createLane(toll);
                 break;
             case 2:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 updateLane(toll);
                 break;
             case 3:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 deleteLane(toll);
                 break;
             case 4:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 readLanes(toll);
                 break;
         }
@@ -149,19 +150,19 @@ void SystemNetwork::manageEmployee() {
         index = utils->ShowMenu({"Create Employee", "Update Employee", "Delete Employee", "Read Employees"});
         switch(index) {
             case 1:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 createEmployee();
                 break;
             case 2:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 updateEmployee();
                 break;
             case 3:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 deleteEmployee();
                 break;
             case 4:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 readEmployees();
                 break;
         }
@@ -174,19 +175,19 @@ void SystemNetwork::manageVehicle() {
         index = utils->ShowMenu({"Register Vehicle", "Update Vehicle", "Delete Vehicle", "Read Vehicles"});
         switch(index) {
             case 1:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 createVehicle();
                 break;
             case 2:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 updateVehicle();
                 break;
             case 3:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 deleteVehicle();
                 break;
             case 4:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 readVehicles();
                 break;
         }
@@ -199,15 +200,15 @@ void SystemNetwork::manageMovements() {
         index = utils->ShowMenu({"Add a entry movement on a highway", "Add a exit movement of the highway", "Read Movements"});
         switch(index) {
             case 1:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 addEntryMovement();
                 break;
             case 2:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 addExitMovement();
                 break;
             case 3:
-                cout << "\033[2J\033[H";
+                utils->clrScreen();
                 manageReadMovements();
                 break;
         }
@@ -222,19 +223,24 @@ void SystemNetwork::manageReadMovements() {
         index = utils->ShowMenu({"All movements", "Highway movements", "Toll movements", "Vehicle Movements", "Employee Movements"});
         switch (index) {
             case 1:
+                utils->clrScreen();
                 manageMovementsHighway();
                 //cout << index << " asdasd" << endl;
                 break;
             case 2:
+                utils->clrScreen();
                 manageMovementsToll();
                 break;
             case 3:
+                utils->clrScreen();
                 manageMovementsLane();
                 break;
             case 4:
+                utils->clrScreen();
                 manageMovementsCar();
                 break;
             case 5:
+                utils->clrScreen();
                 showEmployeeMovements();
                 break;
         }
@@ -247,12 +253,15 @@ void SystemNetwork::manageMovementsHighway() {
         index = utils->ShowMenu({"By highway name", "By price", "By date"});
         switch (index) {
             case 1:
+                utils->clrScreen();
                 showMovementsByHighwayName();
                 break;
             case 2:
+                utils->clrScreen();
                 showMovementsByHighwayPrice();
                 break;
             case 3:
+                utils->clrScreen();
                 showMovementsByDate();
                 break;
         }
@@ -266,16 +275,19 @@ void SystemNetwork::manageMovementsToll() {
         index = utils->ShowMenu({"By toll name", "By toll worth", "By toll type"});
         switch (index) {
             case 1:
+                utils->clrScreen();
                 a1 = chooseHighway();
                 if (a1 == nullptr) break;
                 showMovementsByTollName(a1);
                 break;
             case 2:
+                utils->clrScreen();
                 a1 = chooseHighway();
                 if (a1 == nullptr) break;
                 showMovementsByTollPrice(a1);
                 break;
             case 3:
+                utils->clrScreen();
                 a1 = chooseHighway();
                 if (a1 == nullptr) break;
                 showMovementsByTollType(a1);
@@ -292,6 +304,7 @@ void SystemNetwork::manageMovementsLane() {
         index = utils->ShowMenu({"By lane number", "By lane price"});
         switch (index) {
             case 1:
+                utils->clrScreen();
                 a1 = chooseHighway();
                 if (a1 == nullptr) break;
                 t1 = chooseToll(a1);
@@ -299,6 +312,7 @@ void SystemNetwork::manageMovementsLane() {
                 showMovementsbyLaneNumber(t1);
                 break;
             case 2:
+                utils->clrScreen();
                 a1 = chooseHighway();
                 if (a1 == nullptr) break;
                 t1 = chooseToll(a1);
@@ -315,12 +329,15 @@ void SystemNetwork::manageMovementsCar() {
         index = utils->ShowMenu({"By price", "By car distance", "By date"});
         switch (index) {
             case 1:
+                utils->clrScreen();
                 showCarMovementsbyPrice();
                 break;
             case 2:
+                utils->clrScreen();
                 showCarMovementsbyDistance();
                 break;
             case 3:
+                utils->clrScreen();
                 showCarMovementsbyDate();
                 break;
         }
@@ -335,24 +352,31 @@ void SystemNetwork::manageStatistics() {
                                  "Lane with more movements"});
         switch (index) {
             case 1:
+                utils->clrScreen();
                 BestWorthHighway();
                 break;
             case 2:
+                utils->clrScreen();
                 BestWorthToll();
                 break;
             case 3:
+                utils->clrScreen();
                 BestWorthLane();
                 break;
             case 4:
+                utils->clrScreen();
                 carSpentMoreMoney();
                 break;
             case 5:
+                utils->clrScreen();
                 HighwayMoreMoves();
                 break;
             case 6:
+                utils->clrScreen();
                 TollMoreMoves();
                 break;
             case 7:
+                utils->clrScreen();
                 LaneMoreMoves();
                 break;
         }
@@ -960,7 +984,22 @@ void SystemNetwork::addEntryMovement() {
                 vehicle = new Vehicle(s_plate,index,vehicles->getTaxes(index));
             else continue;
         }
-        else vehicle = vehicles->getVehicle(s_plate);
+        else {
+            for (int i = movements->getNumMovements() - 1; i > -1; i--) {
+                if (movements->getMovementIndex(i)->getVehicle()->getPlate() == s_plate) {
+                    if (movements->getMovementIndex(i)->getType()) {
+                        cout << "entrei" << endl;
+                        vehicle = vehicles->getVehicle(s_plate);
+                    }
+                    break;
+                }
+            }
+        }
+        if (vehicle == nullptr) {
+            cout << "ERROR: This vehicle is already in a highway." << endl;
+            continue;
+        }
+        //else vehicle = vehicles->getVehicle(s_plate);
         do {
             highway = chooseHighway();
             if (highway == nullptr) {
@@ -986,7 +1025,7 @@ void SystemNetwork::addEntryMovement() {
             if (toll->getNumLanes() == 0) {
                 cout << "ERROR: This toll don't have any lane." << endl;
             }
-        } while(toll->getNumLanes() == 0);
+        } while(toll->getNumLanes() == 0 || toll->getType());
         if (s_plate == "EXIT") continue;
         lane_index = adviceEntryLane(toll, date);
         cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
@@ -1023,13 +1062,15 @@ void SystemNetwork::addExitMovement() {
             getline(cin, s_plate);
         }
         if (s_plate == "EXIT") continue;
-        cout << movements->getNumMovements() << endl;
-        for (size_t i = movements->getNumMovements() - 1 ; i > -1; i-- ) {
+        //cout << movements->getNumMovements() << endl;
+        for (int i = movements->getNumMovements() - 1; i > -1; i-- ) {
+            cout << "entrei" << endl;
+            cout << movements->getMovementIndex(i)->getDate()->getInfo();
             if (s_plate == movements->getMovementIndex(i)->getVehicle()->getPlate()) {
                 if (!movements->getMovementIndex(i)->getType()) {
                     entry = movements->getMovementIndex(i);
+                    break;
                 }
-                break;
             }
         }
         if (entry == nullptr) {
@@ -1050,7 +1091,7 @@ void SystemNetwork::addExitMovement() {
             if (toll->getNumLanes() == 0) {
                 cout << "ERROR: This toll don't have any lane." << endl;
             }
-        } while(toll->getNumLanes() == 0);
+        } while(toll->getNumLanes() == 0 || !toll->getType());
         if (s_plate == "EXIT") continue;
         time_t timer = time(0);
         tm *now = localtime(&timer);
