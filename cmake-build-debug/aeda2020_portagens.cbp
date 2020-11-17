@@ -100,6 +100,12 @@
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Employees.h">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Exceptions.cpp">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Exceptions.h">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.cpp">
 			<Option target="aeda2020_portagens"/>
 		</Unit>

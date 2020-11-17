@@ -73,9 +73,9 @@ int Highway::getNumTolls() const {return tolls.size();}
 bool Highway::checkTollName(string name) {
     for (size_t i = 0; i < tolls.size(); i++) {
         if (name == tolls[i]->getName())
-            return false;
+            return true;
     }
-    return true;
+    return false;
 }
 
 

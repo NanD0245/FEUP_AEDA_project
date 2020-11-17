@@ -105,33 +105,33 @@ int main(int argc, char* argv[]) {
     system.movements->addMovement(new MovementOut(v5,h2,t6,l11,d1,system.movements->getMovementIndex(8)));
 
 
-
     do {
-        cout << "\033[2J\033[H";
+        utils.clrScreen();
+        cout << "TOLL MANAGEMENT SYSTEM" << endl << endl;
         index = utils.ShowMenu({"Manage Movements", "Manage Highways", "Manage Employees" ,"Manage Vehicles","Input Taxes for vehicles", "Statistics"});
         switch (index) {
             case(1):
-                cout << "\033[2J\033[H";
+                utils.clrScreen();
                 system.manageMovements();
                 break;
             case(2):
-                cout << "\033[2J\033[H";
+                utils.clrScreen();
                 system.manageHighways();
                 break;
             case(3):
-                cout << "\033[2J\033[H";
+                utils.clrScreen();
                 system.manageEmployee();
                 break;
             case(4):
-                cout << "\033[2J\033[H";
+                utils.clrScreen();
                 system.manageVehicle();
                 break;
             case 5:
-                cout << "\033[2J\033[H";
+                utils.clrScreen();
                 system.getTaxesFromUser();
                 break;
             case 6:
-                cout << "\033[2J\033[H";
+                utils.clrScreen();
                 system.manageStatistics();
                 break;
         }

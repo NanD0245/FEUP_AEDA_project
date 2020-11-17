@@ -67,9 +67,9 @@ bool Vehicles::removeVehicle(int i) {
 bool Vehicles::checkPlate(string plate) {
     for (size_t i = 0; i < vehicles.size(); i++) {
         if (vehicles[i]->getPlate() == plate)
-            return false;
+            return true;
     }
-    return true;
+    return false;
 }
 
 float Vehicles::getTaxes(int v_class) {return taxes[v_class-1];}

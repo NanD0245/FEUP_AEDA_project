@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/aeda2020_portagens.dir/Classes/Date.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Employee.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Employees.cpp.o"
+  "CMakeFiles/aeda2020_portagens.dir/Classes/Exceptions.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Highways.cpp.o"
   "CMakeFiles/aeda2020_portagens.dir/Classes/Lane.cpp.o"
