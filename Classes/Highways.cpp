@@ -16,6 +16,8 @@ Highway * Highways::getHighway(string name) {
 
 int Highways::getNumHighways() const {return highways.size();}
 
+vector<Highway *> Highways::getHighways() {return highways;}
+
 Highway * Highways::getHighwayIndex(int i) {
     if (i < highways.size())
         return highways[i];

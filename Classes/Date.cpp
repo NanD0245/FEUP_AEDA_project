@@ -83,3 +83,29 @@ void Date::setSecond(const int new_second) { second = new_second; }
 bool Date::operator==(Date d1) const {
     return year == d1.getYear() && month == d1.getMonth() && day == d1.getDay();
 }
+
+bool Date::operator>(Date d1) const {
+    if (year > d1.getYear())
+        return true;
+    else if (year == d1.getYear()) {
+        if (month > d1.getMonth())
+            return true;
+        else if (month == d1.getMonth()) {
+            if (day > d1.getDay())
+                return true;
+            else if (day == d1.getDay()){
+                if (hour > d1.getHour())
+                    return true;
+                else if (hour == d1.getHour()) {
+                    if (minute > d1.getMinute()) {
+                        return true;
+                    }
+                    else if (minute == d1.getMinute())
+                        if (second >= d1.getSecond())
+                            return true;
+                }
+            }
+        }
+    }
+    return false;
+}

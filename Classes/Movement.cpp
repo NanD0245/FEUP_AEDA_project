@@ -21,8 +21,13 @@ Vehicle * Movement::getVehicle() const {return vehicle;}
 bool Movement::getType() const {return type;}
 
 string Movement::getInfo() const {
+    //cout << getPrice() << endl;
     return date->getInfo() + " - " + to_string(type) + " - " + highway->getInfo() + " - " + toll->getInfo() + " - " + lane->getInfo()+ " - " + vehicle->getInfo();
 }
+
+float Movement::getPrice() const {return -1;}
+
+float Movement::getDistance() const {return -1;}
 
 MovementEntry::MovementEntry(Vehicle *vehicle1, Highway *highway1, Toll *toll1, Lane *lane1, Date *date) : Movement(vehicle1,highway1,toll1,lane1, date) {
     type = false;
@@ -58,5 +63,6 @@ float MovementOut::getPrice() const {return price;}
 }*/
 
 string MovementOut::getInfo() const {
+    //cout << getPrice() << endl;
     return Movement::getInfo() + " - " + to_string(distance) + " - " + to_string(price) + " - " + entry->getInfo();
 }

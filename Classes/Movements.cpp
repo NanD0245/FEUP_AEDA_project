@@ -18,3 +18,5 @@ bool Movements::addMovement(Movement *m1) {
 Movement * Movements::getMovementIndex(int i) {
     return movements[i];
 }
+
+vector<Movement *> Movements::getMovements() {return movements;}

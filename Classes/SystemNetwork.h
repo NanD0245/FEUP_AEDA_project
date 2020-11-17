@@ -10,6 +10,7 @@
 #include <iostream>
 #include <fstream>
 #include <ctime>
+#include <algorithm>
 
 using namespace std;
 
@@ -31,8 +32,8 @@ public:
     void manageMovements();
     void manageReadMovements();
     void manageMovementsHighway();
-    void manageMovementsToll(Highway* highway);
-    void manageMovementsLane(Toll* toll);
+    void manageMovementsToll();
+    void manageMovementsLane();
     void manageMovementsCar();
     void manageStatistics();
 
@@ -75,16 +76,16 @@ public:
     void addEntryMovement();
     void addExitMovement();
     void showMovementsByHighwayName(); //alphabetic + worth
-    void showMovementsByHighwayWorth();
+    void showMovementsByHighwayPrice();
     void showMovementsByDate();
     void showMovementsByTollName(Highway* highway);//alphabetic + types + worth
     void showMovementsByTollType(Highway* highway);
-    void showMovementsByTollWorth(Highway* highway);
+    void showMovementsByTollPrice(Highway* highway);
     void showMovementsbyLaneNumber(Toll * toll); //worth
-    void showMovementsbyLaneWorth(Toll * toll);
-    void showCarMovements();
-    void showMovementsbyCarDistance();
-    void showMovementsbyTotalPrice();
+    void showMovementsbyLanePrice(Toll * toll);
+    void showCarMovementsbyDate();
+    void showCarMovementsbyDistance();
+    void showCarMovementsbyPrice();
     void showEmployeeMovements();
 
     void carSpentMoreMoney();
@@ -94,7 +95,6 @@ public:
     void HighwayMoreMoves();
     void TollMoreMoves();
     void LaneMoreMoves();
-    void DayMoreMoves();
 
     void read(string file);
     void write(string file);

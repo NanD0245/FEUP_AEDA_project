@@ -26,6 +26,8 @@ public:
     Lane * getLane() const;
     Date * getDate() const;
     virtual string getInfo() const;
+    virtual float getDistance() const;
+    virtual float getPrice() const;
     void setType(const bool new_type);
     void setVehicle(const Vehicle* new_vehicle);
     void setHighway(const Highway* new_highway);
