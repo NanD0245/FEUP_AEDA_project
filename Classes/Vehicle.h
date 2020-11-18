@@ -9,6 +9,15 @@
 
 using namespace std;
 
+/**
+ * The Vehicle class is a class that gives information about
+ * the vehicle its driver is using.
+ *
+ * @param plate
+ * @param v_class
+ * @param greenlane (bool) is true if the car driver would rather use green lanes than non green, and false otherwise
+ * @param tax
+ */
 class Vehicle {
     string plate;
     int v_class;

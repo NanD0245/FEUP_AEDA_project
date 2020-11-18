@@ -11,6 +11,17 @@
 
 using namespace std;
 
+/**
+ * The Date class is a class that provides a date that can
+ * be used and/or compared to other dates
+ *
+ * When initialized, the user inputs a string in the format
+ * "day/month/year hour:minute:second" that is then converted to
+ * corresponding variables that will be used later on.
+ *
+ * @param s_date corresponds to the string inputted by the user when they initialize
+ * the Date class and is in the format referred above
+ */
 class Date {
     string s_date;
     int year;
@@ -20,7 +31,7 @@ class Date {
     int minute;
     int second;
 public:
-    Date(string date); //"day/month/year hour:minute:second"
+    Date(string date);
     int getYear() const;
     int getMonth() const;
     int getDay() const;

@@ -9,7 +9,13 @@
 
 using namespace std;
 
-
+/**
+ * The class Employee is a class that has basic information about each
+ * and every worker
+ *
+ * Each Employee has a name and a code, which are used to identify them
+ * 
+ */
 class Employee {
     string name;
     int code;
