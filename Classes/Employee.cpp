@@ -1,7 +1,3 @@
-//
-// Created by mim on 24/10/20.
-//
-
 #include "Employee.h"
 
 Employee::Employee(string name, int code) : name(name), code(code) {}
