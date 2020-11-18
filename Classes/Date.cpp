@@ -6,10 +6,6 @@
 
 using namespace std;
 
-/*!
- * @brief Constructor of date class, initializes date to be equal to the string provided
- * @arg date string that provides the date in the following format: "day/month/year hour:minute:second"
- */
 Date::Date(string date) : s_date(date) { //"day/month/year hour:minute:second"
     int count = 0;
     while (count != 6) {
@@ -58,7 +54,6 @@ Date::Date(string date) : s_date(date) { //"day/month/year hour:minute:second"
     }
 }
 
-
 int Date::getYear() const {return year;}
 
 int Date::getMonth() const {return month;}
@@ -71,38 +66,12 @@ int Date::getMinute() const {return minute;}
 
 int Date::getSecond() const {return second;}
 
-/*!
- * @return current info - info is the string provided when one initializes the constructor
- * info has the following format: "day/month/year hour:minute:second"
- */
 string Date::getInfo() const {return s_date;}
 
-void Date::setYear(const int new_year) { year = new_year; }
-
-void Date::setMonth(const int new_month) { month = new_month; }
-
-void Date::setDay(const int new_day) { day = new_day; }
-
-void Date::setHour(const int new_hour) { hour = new_hour; }
-
-void Date::setMinute(const int new_minute) { minute = new_minute; }
-
-void Date::setSecond(const int new_second) { second = new_second; }
-
-/**
- * @brief Overloads the '==' operator to be able to know if two different dates are the same
- * @arg d1 Object of class Date to compare the current object to
- * @return true if the year, month and day are the same on both objects, false otherwise
- */
 bool Date::operator==(Date d1) const {
     return year == d1.getYear() && month == d1.getMonth() && day == d1.getDay();
 }
 
-/**
- * @brief overloads the '>' operator to be able to know if one date is after the other
- * @arg d1 Object of class Date to compare the current object to
- * @return true if current date is after date of object d1, false otherwise
- */
 bool Date::operator>(Date d1) const {
     if (year > d1.getYear())
         return true;
