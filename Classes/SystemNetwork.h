@@ -6,6 +6,7 @@
 #include "Vehicles.h"
 #include "Employees.h"
 #include "Utils.h"
+#include "Exceptions.h"
 
 #include <iostream>
 #include <fstream>
@@ -84,8 +85,8 @@ public:
     void showMovementsbyLaneNumber(Toll * toll); //worth
     void showMovementsbyLanePrice(Toll * toll);
     void showCarMovementsbyDate();
-    void showCarMovementsbyDistance();
-    void showCarMovementsbyPrice();
+    void showCarMovementsbyDistance(); //mostrar distancia total
+    void showCarMovementsbyPrice(); //mostrar preço total
     void showEmployeeMovements();
 
     void carSpentMoreMoney();
