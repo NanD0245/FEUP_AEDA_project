@@ -16,8 +16,8 @@ int main(int argc, char* argv[]) {
     SystemNetwork system;
     Utils utils;
     int index;
-    system.read("systemNetworks.txt");
-    /*system.highways->addHighway("A1");
+    //system.read("systemNetworks.txt");
+    system.highways->addHighway("A1");
     Highway* h1 = system.highways->getHighwayIndex(0);
     system.highways->addHighway("A2");
     Highway* h2 = system.highways->getHighwayIndex(1);
@@ -101,7 +101,7 @@ int main(int argc, char* argv[]) {
     system.movements->addMovement(new MovementEntry(v4,h2,t5,l9,d1));
     system.movements->addMovement(new MovementOut(v4,h2,t8,l15,d1,system.movements->getMovementIndex(6)));
     system.movements->addMovement(new MovementEntry(v5,h2,t7,l14,d1));
-    system.movements->addMovement(new MovementOut(v5,h2,t6,l11,d1,system.movements->getMovementIndex(8)));*/
+    system.movements->addMovement(new MovementOut(v5,h2,t6,l11,d1,system.movements->getMovementIndex(8)));
 
     //system.read("systemNetworks.txt");
     do {
@@ -135,6 +135,6 @@ int main(int argc, char* argv[]) {
                 break;
         }
     } while (index);
-    system.write();
+    //system.write();
     return 0;
 }
