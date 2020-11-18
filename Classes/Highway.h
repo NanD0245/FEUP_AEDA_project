@@ -1,19 +1,37 @@
-//
-// Created by mim on 24/10/20.
-//
-
 #ifndef AEDA2020_PORTAGENS_HIGHWAY_H
 #define AEDA2020_PORTAGENS_HIGHWAY_H
 
 #include "Toll.h"
 
+/**
+ * Highway class is a class that aggregates different Tolls.
+ *
+ * Each toll's information is stored in their corresponding Toll object,
+ * which is then processed in the vector 'tolls' using Highway's methods.
+ *
+ * @param tolls contains all the Tolls that belong to the current Highway
+ * @param name is the name of the Highway object
+ */
 class Highway {
     string name;
     vector<Toll *> tolls;
 public:
+    /**
+     * The constructor of Highway class initializes the 'tolls' container as empty
+     * @param name sets Highway's 'name'
+     */
     Highway(string name);
+
+    /**
+     * @return object's name
+     */
     string getName() const;
+
     string getInfo() const;
+
+    /**
+     * @return string with the format: "Highway Name:" + name
+     */
     string showHighway() const;
     void setName(string new_name);
     int getNumTolls() const;

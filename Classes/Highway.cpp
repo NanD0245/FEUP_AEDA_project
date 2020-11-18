@@ -1,7 +1,3 @@
-//
-// Created by mim on 24/10/20.
-//
-
 #include "Highway.h"
 
 using namespace std;
@@ -17,7 +13,6 @@ string Highway::showHighway() const {
 string Highway::getName() const {return name;}
 
 void Highway::setName(const string new_name) { name = new_name; }
-
 
 Toll * Highway::getToll(string name) {
     for (size_t i = 0; i < tolls.size(); i++) {
@@ -85,6 +80,5 @@ bool Highway::checkTollName(string name) {
     }
     return false;
 }
-
 
 bool Highway::operator==(const Highway &l2) { return name == l2.getName(); }

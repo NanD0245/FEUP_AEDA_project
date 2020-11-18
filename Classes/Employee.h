@@ -1,7 +1,3 @@
-//
-// Created by mim on 24/10/20.
-//
-
 #ifndef AEDA2020_PORTAGENS_EMPLOYEE_H
 #define AEDA2020_PORTAGENS_EMPLOYEE_H
 
@@ -47,15 +43,15 @@ public:
     int getCode() const;
 
     /**
-     * @return string that has the name and the code of the current object
+     * @return string with the format: name + " - " + code
      */
     string getInfo();
 
     /**
-     * @return string with object's name and code
+     * @return string with the format: "Employee Name: " + name + " - " + "Employee Code: " +  code
      */
     string showEmployee();
-
+ 
     /**
      * @param new_name sets name (can't be an empty string nor equal to any other name)
      */
