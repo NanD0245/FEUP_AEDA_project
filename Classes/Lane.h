@@ -15,6 +15,7 @@ public:
     int getLaneNumber() const;
     bool getGreenLane() const;
     virtual string getInfo() const;
+    virtual string showLane() const;
     void setLaneNumber(int new_lane_number);
     //void setGreenLaneTrue();
     //void setGreenLaneFalse(Employee* e);
@@ -30,6 +31,7 @@ public:
     void setEmployee(Employee* e);
     Employee * getEmployee() const;
     string getInfo() const;
+    string showLane() const;
     //void changeEmployee();
 };
 

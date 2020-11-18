@@ -10,6 +10,10 @@ Highway::Highway(string name) : name(name) { tolls.clear(); }
 
 string Highway::getInfo() const { return name; }
 
+string Highway::showHighway() const {
+    return "Highway Name: " + name;
+}
+
 string Highway::getName() const {return name;}
 
 void Highway::setName(const string new_name) { name = new_name; }

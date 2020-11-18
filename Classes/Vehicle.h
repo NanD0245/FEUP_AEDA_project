@@ -22,6 +22,7 @@ public:
     int getClass() const {return v_class;}
     float getTax() const {return tax;}
     string getInfo() const;
+    string showVehicle() const;
     void setPlate(string plate);
     void setVehicleClass(int v_class);
     void setGreenLaneTrue();

@@ -26,6 +26,7 @@ public:
     Lane * getLane() const;
     Date * getDate() const;
     virtual string getInfo() const;
+    virtual string showMovement() const;
     virtual float getDistance() const;
     virtual float getPrice() const;
     void setType(const bool new_type);
@@ -42,6 +43,7 @@ class MovementEntry : public Movement {
 public:
     MovementEntry(Vehicle* vehicle1, Highway* highway1, Toll* toll1, Lane* lane1, Date* date);
     string getInfo() const;
+    string showMovement() const;
     //bool operator==(const MovementEntry &m1);
 };
 
@@ -56,6 +58,7 @@ public:
     float getDistance() const;
     float getPrice() const;
     string getInfo() const;
+    string showMovement() const;
     //bool operator==(const MovementOut &m1);
 };
 

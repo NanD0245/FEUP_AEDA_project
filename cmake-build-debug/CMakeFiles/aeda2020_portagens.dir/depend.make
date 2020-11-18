@@ -11,9 +11,6 @@ CMakeFiles/aeda2020_portagens.dir/Classes/Employees.cpp.o: ../Classes/Employee.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Employees.cpp.o: ../Classes/Employees.cpp
 CMakeFiles/aeda2020_portagens.dir/Classes/Employees.cpp.o: ../Classes/Employees.h
 
-CMakeFiles/aeda2020_portagens.dir/Classes/Exceptions.cpp.o: ../Classes/Exceptions.cpp
-CMakeFiles/aeda2020_portagens.dir/Classes/Exceptions.cpp.o: ../Classes/Exceptions.h
-
 CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o: ../Classes/Employee.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o: ../Classes/Highway.cpp
 CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o: ../Classes/Highway.h

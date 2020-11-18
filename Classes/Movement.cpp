@@ -21,8 +21,13 @@ Vehicle * Movement::getVehicle() const {return vehicle;}
 bool Movement::getType() const {return type;}
 
 string Movement::getInfo() const {
-    //cout << getPrice() << endl;
     return date->getInfo() + " - " + to_string(type) + " - " + highway->getInfo() + " - " + toll->getInfo() + " - " + lane->getInfo()+ " - " + vehicle->getInfo();
+}
+
+string Movement::showMovement() const {
+    string s_type = type ? "Exit" : "Entrance";
+    return date->getInfo() + " - Movement Type: " + s_type + " - Highway Name: " + highway->getName() +
+                    " - Toll Name: " + toll->getName() + " - Lane Number: " + to_string(lane->getLaneNumber()) + " - Vehicle Plate: " + vehicle->getPlate();
 }
 
 float Movement::getPrice() const {return -1;}
@@ -35,6 +40,10 @@ MovementEntry::MovementEntry(Vehicle *vehicle1, Highway *highway1, Toll *toll1, 
 
 string MovementEntry::getInfo() const {
     return Movement::getInfo();
+}
+
+string MovementEntry::showMovement() const {
+    return Movement::showMovement();
 }
 
 /*bool MovementEntry::operator==(const MovementEntry &m1) {
@@ -65,4 +74,8 @@ float MovementOut::getPrice() const {return price;}
 string MovementOut::getInfo() const {
     //cout << getPrice() << endl;
     return Movement::getInfo() + " - " + to_string(distance) + " - " + to_string(price) + " - " + entry->getInfo();
+}
+
+string MovementOut::showMovement() const {
+    return Movement::showMovement() + " - Distance: " + to_string(distance) + " - Price: " + to_string(price) + "\n\t\t" + "Entry Movement: " + entry->showMovement();
 }

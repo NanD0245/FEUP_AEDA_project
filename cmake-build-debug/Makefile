@@ -224,33 +224,6 @@ Classes/Employees.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Employees.cpp.s
 .PHONY : Classes/Employees.cpp.s
 
-Classes/Exceptions.o: Classes/Exceptions.cpp.o
-
-.PHONY : Classes/Exceptions.o
-
-# target to build an object file
-Classes/Exceptions.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Exceptions.cpp.o
-.PHONY : Classes/Exceptions.cpp.o
-
-Classes/Exceptions.i: Classes/Exceptions.cpp.i
-
-.PHONY : Classes/Exceptions.i
-
-# target to preprocess a source file
-Classes/Exceptions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Exceptions.cpp.i
-.PHONY : Classes/Exceptions.cpp.i
-
-Classes/Exceptions.s: Classes/Exceptions.cpp.s
-
-.PHONY : Classes/Exceptions.s
-
-# target to generate assembly for a file
-Classes/Exceptions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Exceptions.cpp.s
-.PHONY : Classes/Exceptions.cpp.s
-
 Classes/Highway.o: Classes/Highway.cpp.o
 
 .PHONY : Classes/Highway.o
@@ -566,9 +539,6 @@ help:
 	@echo "... Classes/Employees.o"
 	@echo "... Classes/Employees.i"
 	@echo "... Classes/Employees.s"
-	@echo "... Classes/Exceptions.o"
-	@echo "... Classes/Exceptions.i"
-	@echo "... Classes/Exceptions.s"
 	@echo "... Classes/Highway.o"
 	@echo "... Classes/Highway.i"
 	@echo "... Classes/Highway.s"

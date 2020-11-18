@@ -33,6 +33,11 @@ string Toll::getInfo() const {
     return name + " - " + geolocal + " - " + to_string(highway_kilometer) + " - " + to_string(type);
 }
 
+string Toll::showToll() const {
+    string s_type = type ? "Exit" : "Entrance";
+    return "Toll Name: " + name + " - Geographic Location: " + geolocal + " - Highway Kilometer: " + to_string(highway_kilometer) + " - Type: " + s_type;
+}
+
 int Toll::getNumLanes() const {return lanes.size();}
 
 Lane * Toll::getLane(int i) {

@@ -18,6 +18,7 @@ public:
     string getName() const;
     int getCode() const;
     string getInfo();
+    string showEmployee();
     void setName(const string new_name);
     //void setCode(const int new_code);
 };

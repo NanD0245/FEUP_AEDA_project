@@ -14,6 +14,7 @@ public:
     Highway(string name);
     string getName() const;
     string getInfo() const;
+    string showHighway() const;
     void setName(string new_name);
     int getNumTolls() const;
     Toll * getToll(string name);

@@ -17,6 +17,11 @@ string Lane::getInfo() const {
     return to_string(lane_number) + " - " + to_string(green_lane);
 }
 
+string Lane::showLane() const {
+    string s_greenlane = green_lane ? "Exit" : "Entrance";
+    return "Lane Number: " + to_string(lane_number) + " - Greenlane: " + s_greenlane;
+}
+
 void Lane::setLaneNumber(const int new_lane_number) { lane_number = new_lane_number; }
 
 LaneEmployee::LaneEmployee(int lane_number, bool greenlane, Employee* e) : Lane(lane_number,greenlane), employee(e) {}
@@ -27,6 +32,11 @@ Employee * LaneEmployee::getEmployee() const {return employee;}
 
 string LaneEmployee::getInfo() const {
     return to_string(lane_number) + " - " + to_string(green_lane) + " - " + employee->getInfo();
+}
+
+string LaneEmployee::showLane() const {
+    string s_greenlane = green_lane ? "True" : "False";
+    return "Lane Number: " + to_string(lane_number) + " - Greenlane: " + s_greenlane + " - " + employee->showEmployee();
 }
 
 bool Lane::operator==(const Lane &l2) const {

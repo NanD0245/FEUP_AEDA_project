@@ -73,7 +73,7 @@ float Utils::getFloat() {
 
 void Utils::waitForInput() {
     string a;
-    cout << '\n' << "Press a key to continue...";
+    cout << '\n' << "Press enter to continue...";
     getline(cin, a);
     cout << "\x1b[A";
     //cout << "\033[2J\033[H";
