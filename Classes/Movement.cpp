@@ -21,7 +21,7 @@ Vehicle * Movement::getVehicle() const {return vehicle;}
 bool Movement::getType() const {return type;}
 
 string Movement::getInfo() const {
-    return date->getInfo() + " - " + to_string(type) + " - " + highway->getInfo() + " - " + toll->getInfo() + " - " + lane->getInfo()+ " - " + vehicle->getInfo();
+    return date->getInfo() + " - " + highway->getInfo() + " - " + toll->getName()+ " - " + to_string(lane->getLaneNumber())+ " - " + vehicle->getPlate();
 }
 
 string Movement::showMovement() const {

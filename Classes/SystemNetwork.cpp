@@ -93,6 +93,21 @@ void SystemNetwork::read(string file) {
 
     Toll* t;
     Lane* l;
+    Vehicle* v;
+    Date *d;
+    Highway* h;
+    Employee* e;
+
+    Toll* tt;
+    Lane* ll;
+    Vehicle* vv;
+    Date *dd;
+    Highway* hh;
+
+    MovementEntry* me;
+    MovementOut* mo;
+    float distance;
+    float price;
 
     f>>s;
     if( s=="HIGHWAYS") {
@@ -100,7 +115,7 @@ void SystemNetwork::read(string file) {
         while (s == "Highway") {
             f >> s;//discard
             f >> s;
-            Highway* h = new Highway(s);
+            h = new Highway(s);
             f >> s;
             while (s == "Toll") {//Toll
                 f >> s;//discard (nr:)
@@ -127,7 +142,7 @@ void SystemNetwork::read(string file) {
                         f >> name;
                         f >> s;//discard (-)
                         f >> code;
-                        Employee* e = new Employee(name, number);
+                        e = new Employee(name, number);
                         employees->addEmployee(e);
                         l = new LaneEmployee(number, tf, e);
                         t->addLane(l);
@@ -165,7 +180,7 @@ void SystemNetwork::read(string file) {
         }
     }
 
-    cout << highways->getHighwayIndex(0)->getToll("P2")->showToll() << endl;
+    //cout << highways->getHighwayIndex(0)->getToll("P1")->showToll() << endl;
     if(s=="VEHICLES"){
         f>>s;
         f>>tax1;
@@ -185,7 +200,8 @@ void SystemNetwork::read(string file) {
             f>>s;
         }
     }
-    //cout << "hereasd" << endl;
+
+
     if(s=="MOVEMENTS"){
         f>>s;
         while(s=="Movement"){
@@ -193,98 +209,86 @@ void SystemNetwork::read(string file) {
             f>>date1;
             f>>date2;
             date=date1+" "+date2;
-            Date *d = new Date(date);
+            d = new Date(date);
             f>>s; //discard
-            f>>s;//movement_type(mov out sempre)
-            f>>s; //discard
+
             f>>name;
-            Highway* h = highways->getHighway(name);
+            h = highways->getHighway(name);
             f>>s; //discard
+
             f>>name;
             t = h->getToll(name);
             f>>s; //discard
-            f>>s;
-            f>>s; //discard
-            f>>s;
-            f>>s; //discard
-            f>>s;
-            f>>s; //discard
-            f>>number;
-            f>>s; //discard
-            f>>s;
-            f>>s; //discard
-            Lane* l= t->getLane(number);
-            if(l->getEmployee()!=nullptr){
-                f>>s;
-                f>>s; //discard
-                f>>s;
-                f>>s; //discard
-            }
-            f>>name;
-            f>>s; //discard
-            f>>s;
-            f>>s; //discard
-            f>>s;
-            Vehicle* v=vehicles->getVehicle(name);
-            f>>s;//discard
-            float distance;
-            f>>distance;
-            float price;
-            f>>price;
 
+            f>>number;
+            l= t->getLane(number);
+            f>>s; //discard
+
+            f>>name;
+            v=vehicles->getVehicle(name);
             f>>s;//discard
+
+            f>>distance;
+            f>>s;//discard
+
+            f>>price;
+            f>>s;//discard
+
             f>>date1;
             f>>date2;
             date=date1+" "+date2;
-            Date* dd =new Date(date);
+            dd =new Date(date);
             f>>s; //discard
-            f>>s;//movement_type(mov out sempre)
-            f>>s; //discard
+
             f>>name;
-            Highway* hh=highways->getHighway(name);
+            hh=highways->getHighway(name);
             f>>s; //discard
+
             f>>name;
-            Toll* tt = h->getToll(name);
+            tt = h->getToll(name);
             f>>s; //discard
-            f>>s;
-            f>>s; //discard
-            f>>s;
-            f>>s; //discard
-            f>>s;
-            f>>s; //discard
+
             f>>number;
+            ll= t->getLane(number);
             f>>s; //discard
-            f>>s;
-            f>>s; //discard
-            Lane* ll= t->getLane(number);
-            if(l->getEmployee()!=nullptr){
-                f>>s;
-                f>>s; //discard
-                f>>s;
-                f>>s; //discard
-            }
+
             f>>name;
-            f>>s; //discard
-            f>>s;
-            f>>s; //discard
-            f>>s;
-            Vehicle *vv=vehicles->getVehicle(name);
-            MovementEntry* me = new MovementEntry(vv,hh,tt,ll,dd);
+            vv=vehicles->getVehicle(name);
+            me = new MovementEntry(vv,hh,tt,ll,dd);
             if(!movements->addMovement(me)){
                 cout<<"write movement failed!";
             }
-            cout << "helo3" << endl;
-            MovementOut* mo = new MovementOut(v,h,t,l,d,me);
+            mo = new MovementOut(v,h,t,l,d,me);
             if(!movements->addMovement(mo)){
               cout<<"write movement failed!";
             }
             f>>s;
-            cout << "sai movement" << endl;
         }
     }
-    cout<<"ahahaha";
-    //cout<<movements->getMovementIndex(0)->getInfo();
-    //cout<<"ahahaha";
+
+    if(s=="EMPLOYEES"){
+        f>>s;
+        while(s=="Employee"){
+            f>>s;//discard
+            f>>name;
+            for(int i=0;i<employees->getNumEmployees();i++){
+                if(name==employees->getEmployeeIndex(i)->getName()){
+                    f>>s;
+                    f>>s;
+                    f>>s;
+                    continue;
+                }
+            }
+            f>>s;
+            f>>code;
+            e=new Employee(name,code);
+            employees->addEmployee(e);
+            if(f.eof()){
+                break;
+            }
+            f>>s;
+        }
+    }
 
     f.close();
 
