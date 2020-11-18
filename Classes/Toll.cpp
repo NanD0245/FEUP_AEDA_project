@@ -1,3 +1,4 @@
+
 #include "Toll.h"
 #include <iostream>
 
@@ -11,6 +12,13 @@ Toll::Toll(string name, string geolocal, float highway_kilometer, bool type) : n
     else if (type == "exit") {
         this->type = true; // 1
     }*/
+}
+
+Toll::Toll(){
+    name="";
+    geolocal="";
+    highway_kilometer=0;
+    type=true;
 }
 
 bool Toll::getType() const {return type;}
@@ -72,6 +80,14 @@ void TollEntrance::addLane() {
     lanes.push_back(l1);
 }
 
+void Toll::addLane(Lane * l){
+    lanes.push_back(l);
+}
+
+void TollEntrance::addLane(Lane * l) {
+    lanes.push_back(l);
+}
+
 TollOut::TollOut(string name, string geolocal, float highway_kilometer) : Toll(name,geolocal,highway_kilometer,true) {}
 
 void TollOut::addLane() {
@@ -84,6 +100,10 @@ void TollOut::addLane(Employee *e) {
     int n_lane = lanes.size();
     auto *l1 = new LaneEmployee(n_lane, false, e);
     lanes.push_back(l1);
+}
+
+void TollOut::addLane(Lane * l) {
+    Toll::addLane(l);
 }
 
 void Toll::setGreenLaneTrue(Lane * lane) {

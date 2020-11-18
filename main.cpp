@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 //#include "Classes/Toll.h"
 #include "Classes/Employees.h"
@@ -104,7 +102,7 @@ int main(int argc, char* argv[]) {
     system.movements->addMovement(new MovementEntry(v5,h2,t7,l14,d1));
     system.movements->addMovement(new MovementOut(v5,h2,t6,l11,d1,system.movements->getMovementIndex(8)));
 
-
+    //system.read("systemNetworks.txt");
     do {
         utils.clrScreen();
         cout << "TOLL MANAGEMENT SYSTEM" << endl << endl;
@@ -136,6 +134,6 @@ int main(int argc, char* argv[]) {
                 break;
         }
     } while (index);
+    //system.write();
     return 0;
 }
-

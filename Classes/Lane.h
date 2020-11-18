@@ -12,6 +12,7 @@ protected:
     bool green_lane;
 public:
     Lane(int lane_number, bool green_lane);
+    Lane();
     int getLaneNumber() const;
     bool getGreenLane() const;
     virtual string getInfo() const;

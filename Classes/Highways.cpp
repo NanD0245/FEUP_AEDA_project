@@ -34,6 +34,10 @@ bool Highways::addHighway(string name) {
     return true;
 }
 
+void Highways::addHighway(Highway * h){
+    highways.push_back(h);
+}
+
 bool Highways::removeHighway(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
         if (name == highways[i]->getName()) {

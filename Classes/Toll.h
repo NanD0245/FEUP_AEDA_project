@@ -1,3 +1,4 @@
+
 #ifndef AEDA2020_PORTAGENS_TOLLS_H
 #define AEDA2020_PORTAGENS_TOLLS_H
 
@@ -16,6 +17,7 @@ protected:
     vector<Lane *> lanes;
 public:
     Toll(string name, string geolocal, float highway_kilometer,bool type);
+    Toll();
     string getName() const;
     void setName(string name);
     string getGeolocal() const;
@@ -30,6 +32,7 @@ public:
     void setGreenLaneTrue(Lane * lane);
     void setGreenLaneFalse(Lane * lane, Employee* e);
     virtual void addLane() {};
+    virtual void addLane(Lane * l);
     virtual void addLane(Employee * e) {};
     int getNumLanes() const;
     Lane * getLane(int i);
@@ -43,6 +46,7 @@ class TollEntrance : public Toll {
 public:
     TollEntrance(string name, string geolocal, float highway_kilometer);
     void addLane();
+    void addLane(Lane * l);
 };
 
 class TollOut : public Toll {
@@ -50,6 +54,7 @@ public:
     TollOut(string name, string geolocal, float highway_kilometer);
     void addLane();
     void addLane(Employee * e);
+    void addLane(Lane * l);
 };
 
 #endif //AEDA2020_PORTAGENS_TOLL_H

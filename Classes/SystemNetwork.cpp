@@ -14,45 +14,331 @@ SystemNetwork::SystemNetwork() {
     employees = new Employees();
 }
 
-void SystemNetwork::read(string file){
-
+void SystemNetwork::ungetstr(ifstream &f){
+    char c='a';
+    char c1='a';
+    int n=0;
+    vector<char> cv;
+    while((c!=' ')&&(n<3)){
+        f.unget();
+        f.unget();
+        f>>c;
+        if(c==c1){
+            n++;
+        }
+        c1=c;
+    }
+    if(n==3){
+        f.unget();
+    }
+    for(int i=0;i<cv.size();i++){
+        cout<<cv[i];
+    }
 }
-void SystemNetwork::write(string file){
+
+void SystemNetwork::write(){
     vector<Toll *> t;
     vector<Lane *> l;
-    ofstream f(file);
+    ofstream f("systemNetworks.txt");
 
+    f<<"HIGHWAYS"<<endl;
     for (int i = 0;i<highways->highways.size();i++){
-        f<< "Highway nr"<<i+1<<": "<<endl;
-        f << highways->highways[i]->getName() <<endl;
+        f<< "Highway nr"<<i+1<<": "<< highways->highways[i]->getName() <<endl;
         t= highways->highways[i]->tolls;
         for(int j=0;j<t.size();j++){
             f<< "  Toll nr"<<j+1<<endl;
             f<<"  "<<t[j]->getInfo()<<endl;
             l=t[j]->lanes;
             for(int k=0;k<l.size();k++){
-                f<< "    Lane nr"<<l[k]->getLaneNumber()<<endl;
+                f<< "    Lane nr:"<<l[k]->getLaneNumber()<<endl;
                 f<<"    "<<l[k]->getInfo()<<endl;
             }
         }
     }
-    f<<endl;
-    for(int i=0;i<movements->movements.size();i++){
-        f<<"Movement nr"<<i+1<<": "<<endl;
-        f<<movements->movements[i]->getInfo();
+
+    f<<endl<<"VEHICLES"<<endl;
+    f<<"Taxes:";
+    for (int j=0;j<4;j++){
+        f<<" "<<vehicles->taxes[j];
     }
     f<<endl;
     for(int i=0;i<vehicles->vehicles.size();i++){
-        f<<"Taxes:";
-        for (int j=0;j<4;j++){
-            f<<" "<<vehicles->taxes[j];
-        }
-        f<<endl;
         f<<"Vehicle nr"<<i+1<<": "<<endl;
         f<<vehicles->vehicles[i]->getInfo()<<endl;
     }
 
+    f<<endl<<"MOVEMENTS"<<endl;
+    for(int i=0;i<movements->movements.size();i++){
+        if(movements->movements[i]->type) {
+            f<<"Movement nr"<<i+1<<": "<<endl;
+            f <<movements->movements[i]->getInfo()<<endl;
+        }
+    }
+
+
+
     f.close();
+}
+
+void SystemNetwork::read(string file) {
+    ifstream f(file);
+
+    int number,code;
+    bool tf,movement_type;
+    string s,name,geolocal,plate,date1,date2;
+    float highway_kilometer,tax1,tax2,tax3,tax4;
+
+    Toll t;
+    Lane l;
+
+    f>>s;
+    if( s=="HIGHWAYS") {
+        f>>s;
+        while (s == "Highway") {
+            f >> s;//discard
+            f >> s;
+            Highway h = Highway(s);
+            f >> s;
+            while (s == "Toll") {//Toll
+                f >> s;//discard (nr:)
+                f >> name;
+                f >> s;//discard (-)
+                f >> geolocal;
+                f >> s;//discard (-)
+                f >> highway_kilometer;
+                f >> s;//discard (-)
+                f >> tf;
+                if (tf) {
+                    t = TollOut(name, geolocal, highway_kilometer);
+                } else {
+                    t = TollEntrance(name, geolocal, highway_kilometer);
+                }
+                f >> s;
+                while (s == "Lane") {//Lane
+                    f >> s;//discard (nr:)
+                    f >> number;
+                    f >> s;//discard (-)
+                    f >> tf;
+                    f >> s;
+                    if (s == "-") {
+                        f >> name;
+                        f >> s;//discard (-)
+                        f >> code;
+                        Employee e = Employee(name, number);
+                        employees->addEmployee(&e);
+                        l = LaneEmployee(number, tf, &e);
+                        t.addLane(&l);
+                        f>>s;
+                    } else {
+                        l = Lane(number, tf);
+                        t.addLane(&l);
+                    }
+
+                    if(s=="Lane"){
+                        continue;
+                    }
+                    else {
+                        break;
+                    }
+
+                }
+                h.addToll(&t);
+                if(s=="Toll"){
+                    continue;
+                }
+                else if((s=="Highway")||(s=="VEHICLES")){
+                    break;
+                }
+                else{
+                    f>>s;
+                }
+
+            }
+            highways->addHighway(&h);
+            for(int i=0;i<h.getNumTolls();i++){
+                cout<<h.getTollIndex(i)->getInfo()<<endl;
+            }
+
+            if(s=="Highway"){
+                continue;
+            }
+            else if(s=="VEHICLES"){
+                break;
+            }
+            else{
+                f>>s;
+            }
+        }
+    }
+
+
+    if(s=="VEHICLES"){
+        f>>s;
+        f>>tax1;
+        f>>tax2;
+        f>>tax3;
+        f>>tax4;
+        vehicles->setTaxes(tax1,tax2,tax3,tax4);
+        f>>s;
+        while(s=="Vehicle"){
+            f>>s; //discard
+            f>>plate;
+            f>>s; //discard
+            f>>number;
+            f>>s; //discard
+            f>>tf;
+            vehicles->addVehicle(plate,number);
+            f>>s;
+        }
+    }
+
+    if(s=="MOVEMENTS"){
+        f>>s;
+        while(s=="Movement"){
+            f>>s; //discard
+            f>>date1;
+            f>>date2;
+            s=date1+" "+date2;
+            Date d = Date(s);
+            f>>s; //discard
+            f>>s;//movement_type(mov out sempre)
+            f>>s; //discard
+            f>>name;
+            Highway h=*(highways->getHighway(name));
+            f>>s; //discard
+            f>>name;
+            Toll t = *(h.getToll(name));
+            f>>s; //discard
+            f>>s;
+            f>>s; //discard
+            f>>s;
+            f>>s; //discard
+            f>>s;
+            f>>s; //discard
+            f>>number;
+            f>>s; //discard
+            f>>s;
+            f>>s; //discard
+            Lane l=*(t.getLane(number));
+            if(l.getEmployee()!=nullptr){
+                f>>s;
+                f>>s; //discard
+                f>>s;
+                f>>s; //discard
+            }
+            name="";
+            f>>s;
+            name+=s;
+            f>>s; //discard
+            name+=s;
+            f>>s;
+            name+=s;
+            f>>s; //discard
+            name+=s;
+            f>>s;
+            name+=s;
+            Vehicle v=*(vehicles->getVehicle(name));
+            f>>s;//discard
+            float distance;
+            f>>distance;
+            float price;
+            f>>price;
+
+            f>>s;//discard
+            f>>date1;
+            f>>date2;
+            s=date1+" "+date2;
+            Date dd = Date(s);
+            f>>s; //discard
+            f>>s;//movement_type(mov out sempre)
+            f>>s; //discard
+            f>>name;
+            Highway hh=*(highways->getHighway(name));
+            f>>s; //discard
+            f>>name;
+            Toll tt = *(h.getToll(name));
+            f>>s; //discard
+            f>>s;
+            f>>s; //discard
+            f>>s;
+            f>>s; //discard
+            f>>s;
+            f>>s; //discard
+            f>>number;
+            f>>s; //discard
+            f>>s;
+            f>>s; //discard
+            Lane ll=*(t.getLane(number));
+            if(l.getEmployee()!=nullptr){
+                f>>s;
+                f>>s; //discard
+                f>>s;
+                f>>s; //discard
+            }
+            name="";
+            f>>s;
+            name+=s;
+            f>>s; //discard
+            name+=s;
+            f>>s;
+            name+=s;
+            f>>s; //discard
+            name+=s;
+            f>>s;
+            name+=s;
+            Vehicle vv=*(vehicles->getVehicle(name));
+            MovementEntry me=MovementEntry(&vv,&hh,&tt,&ll,&dd);
+            if(!movements->addMovement(&me)){
+                cout<<"write movement failed!";
+            }
+            MovementOut mo=MovementOut(&v,&h,&t,&l,&d,&me);
+            if(!movements->addMovement(&mo)){
+                cout<<"write movement failed!";
+            }
+            f>>s;
+        }
+    }
+
+    f.close();
+
+
+
+    /*vector<Toll *> tolls;
+    vector<Lane *> lanes;
+
+    cout<<"HIGHWAYS"<<endl;
+    for (int i = 0;i<highways->highways.size();i++){
+        cout<< "Highway nr"<<i+1<<": "<< highways->highways[i]->getName() <<endl;
+        tolls= highways->highways[i]->tolls;
+        for(int j=0;j<tolls.size();j++){
+            cout<< "  Toll nr"<<j+1<<endl;
+            cout<<"  "<<tolls[j]->getInfo()<<endl;
+            lanes=tolls[j]->lanes;
+            for(int k=0;k<lanes.size();k++){
+                cout<< "    Lane nr"<<lanes[k]->getLaneNumber()<<endl;
+                cout<<"    "<<lanes[k]->getInfo()<<endl;
+            }
+        }
+    }
+
+    cout<<endl<<"VEHICLES"<<endl;
+    cout<<"Taxes:";
+    for (int j=0;j<4;j++){
+        cout<<" "<<vehicles->taxes[j];
+    }
+    cout<<endl;
+    for(int i=0;i<vehicles->vehicles.size();i++){
+        cout<<"Vehicle nr"<<i+1<<": "<<endl;
+        cout<<vehicles->vehicles[i]->getInfo()<<endl;
+    }
+
+    cout<<endl<<"MOVEMENTS"<<endl;
+    for(int i=0;i<movements->movements.size();i++){
+        if(movements->movements[i]->type) {
+            cout<<"Movement nr"<<i+1<<": "<<endl;
+            cout<<movements->movements[i]->getInfo()<<endl;
+        }
+    }*/
 }
 
 void SystemNetwork::manageHighways() {
