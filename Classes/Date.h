@@ -1,7 +1,3 @@
-//
-// Created by mim on 31/10/20.
-//
-
 #ifndef AEDA2020_PORTAGENS_DATE_H
 #define AEDA2020_PORTAGENS_DATE_H
 

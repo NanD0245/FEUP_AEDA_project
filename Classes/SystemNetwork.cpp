@@ -42,16 +42,14 @@ void SystemNetwork::write(){
     ofstream f("systemNetworks.txt");
 
     f<<"HIGHWAYS"<<endl;
-    for (int i = 0;i<highways->highways.size();i++){
-        f<< "Highway nr"<<i+1<<": "<< highways->highways[i]->getName() <<endl;
-        t= highways->highways[i]->tolls;
-        for(int j=0;j<t.size();j++){
-            f<< "  Toll nr"<<j+1<<endl;
-            f<<"  "<<t[j]->getInfo()<<endl;
-            l=t[j]->lanes;
-            for(int k=0;k<l.size();k++){
-                f<< "    Lane nr:"<<l[k]->getLaneNumber()<<endl;
-                f<<"    "<<l[k]->getInfo()<<endl;
+    for (int i = 0;i<highways->getNumHighways();i++){
+        f<< "Highway nr"<<i+1<<": "<< highways->getHighwayIndex(i)->getInfo() <<endl;
+        for(int j=0;j<highways->getHighwayIndex(i)->getNumTolls();j++){
+            f<< "  Toll nr"<<j+1<<":"<<endl;
+            f<<"  "<<highways->getHighwayIndex(i)->getTollIndex(j)->getInfo()<<endl;
+            for(int k=0;k<highways->getHighwayIndex(i)->getTollIndex(j)->getNumLanes();k++){
+                f<< "    Lane nr"<<k+1<<":"<<endl;
+                f<<"    "<<highways->getHighwayIndex(i)->getTollIndex(j)->getLane(k)->getInfo()<<endl;
             }
         }
     }
@@ -59,21 +57,29 @@ void SystemNetwork::write(){
     f<<endl<<"VEHICLES"<<endl;
     f<<"Taxes:";
     for (int j=0;j<4;j++){
-        f<<" "<<vehicles->taxes[j];
+        f<<" "<<vehicles->getTaxes(j+1);
     }
     f<<endl;
-    for(int i=0;i<vehicles->vehicles.size();i++){
+    for(int i=0;i<vehicles->getNumVehicles();i++){
         f<<"Vehicle nr"<<i+1<<": "<<endl;
-        f<<vehicles->vehicles[i]->getInfo()<<endl;
+        f<<vehicles->getVehicleIndex(i)->getInfo()<<endl;
     }
 
+    int n=1;
     f<<endl<<"MOVEMENTS"<<endl;
-    for(int i=0;i<movements->movements.size();i++){
-        if(movements->movements[i]->type) {
-            f<<"Movement nr"<<i+1<<": "<<endl;
+    for(int i=0;i<movements->getNumMovements();i++){
+        if(movements->getMovements()[i]->getType()) {
+            f<<"Movement nr"<<n<<": "<<endl;
             f <<movements->movements[i]->getInfo()<<endl;
+            n++;
         }
     }
+    f<<endl<<"EMPLOYEES"<<endl;
+    for(int i=0;i<employees->getNumEmployees();i++){
+        f<<"Employee nr"<<i+1<<":"<<endl;
+        f<<employees->getEmployeeIndex(i)->getInfo()<<endl;
+    }
+
     f.close();
 }
 
@@ -1448,7 +1454,7 @@ void SystemNetwork::showMovementsByHighwayName() {
         cout << "There are no movements" << endl;
     vector<Movement*> v1 = movements->getMovements();
     sort(v1.begin(),v1.end(),[](Movement* m1,Movement* m2){
-        return (m1->getHighway()->getName() < m2->getHighway()->getName());
+        return (m1->getHighway()->getInfo() < m2->getHighway()->getInfo());
     });
     for (size_t i = 0; i < v1.size(); i++) {
         cout << i+1 << " - " << v1[i]->showMovement() << endl;
@@ -1740,7 +1746,7 @@ void SystemNetwork::BestWorthHighway() {
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         price = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
-            if (movements->getMovementIndex(j)->getType() && movements->getMovementIndex(j)->getHighway()->getName() == highways->getHighwayIndex(i)->getName())
+            if (movements->getMovementIndex(j)->getType() && movements->getMovementIndex(j)->getHighway()->getInfo() == highways->getHighwayIndex(i)->getInfo())
                 price += movements->getMovementIndex(j)->getPrice();
         }
         if (price > total_price) {
@@ -1809,7 +1815,7 @@ void SystemNetwork::HighwayMoreMoves() {
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         moves = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
-            if (movements->getMovementIndex(j)->getHighway()->getName() == highways->getHighwayIndex(i)->getName())
+            if (movements->getMovementIndex(j)->getHighway()->getInfo() == highways->getHighwayIndex(i)->getInfo())
                 moves++;
         }
         if (moves > total_moves) {

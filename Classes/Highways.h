@@ -20,7 +20,6 @@ public:
     void addHighway(Highway * h);
     bool removeHighway(string name);
     bool removeHighway(int i);
-    friend class SystemNetwork;
 };
 
 

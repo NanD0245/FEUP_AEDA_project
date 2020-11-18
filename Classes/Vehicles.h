@@ -25,7 +25,6 @@ public:
     void setTaxes(float a, float b, float c, float d);
     float getTaxes(int v_class);
     bool checkPlate(string plate);
-    friend class SystemNetwork;
 };
 
 #endif //AEDA2020_PORTAGENS_VEHICLES_H
