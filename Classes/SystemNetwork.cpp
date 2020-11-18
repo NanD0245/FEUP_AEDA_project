@@ -85,11 +85,11 @@ void SystemNetwork::read(string file) {
 
     int number,code;
     bool tf,movement_type;
-    string s,name,geolocal,plate,date1,date2;
+    string s,name,geolocal,plate,date1,date2,date;
     float highway_kilometer,tax1,tax2,tax3,tax4;
 
-    Toll t;
-    Lane l;
+    Toll* t;
+    Lane* l;
 
     f>>s;
     if( s=="HIGHWAYS") {
@@ -97,7 +97,7 @@ void SystemNetwork::read(string file) {
         while (s == "Highway") {
             f >> s;//discard
             f >> s;
-            Highway h = Highway(s);
+            Highway* h = new Highway(s);
             f >> s;
             while (s == "Toll") {//Toll
                 f >> s;//discard (nr:)
@@ -109,9 +109,9 @@ void SystemNetwork::read(string file) {
                 f >> s;//discard (-)
                 f >> tf;
                 if (tf) {
-                    t = TollOut(name, geolocal, highway_kilometer);
+                    t = new TollOut(name, geolocal, highway_kilometer);
                 } else {
-                    t = TollEntrance(name, geolocal, highway_kilometer);
+                    t = new TollEntrance(name, geolocal, highway_kilometer);
                 }
                 f >> s;
                 while (s == "Lane") {//Lane
@@ -124,14 +124,14 @@ void SystemNetwork::read(string file) {
                         f >> name;
                         f >> s;//discard (-)
                         f >> code;
-                        Employee e = Employee(name, number);
-                        employees->addEmployee(&e);
-                        l = LaneEmployee(number, tf, &e);
-                        t.addLane(&l);
+                        Employee* e = new Employee(name, number);
+                        employees->addEmployee(e);
+                        l = new LaneEmployee(number, tf, e);
+                        t->addLane(l);
                         f>>s;
                     } else {
-                        l = Lane(number, tf);
-                        t.addLane(&l);
+                        l = new Lane(number, tf);
+                        t->addLane(l);
                     }
 
                     if(s=="Lane"){
@@ -142,18 +142,16 @@ void SystemNetwork::read(string file) {
                     }
 
                 }
-                h.addToll(&t);
+                h->addToll(t);
                 if(s=="Toll"){
                     continue;
                 }
                 else {
-                    //if((s=="Highway")||(s=="VEHICLES"))
                     break;
                 }
 
             }
-            highways->addHighway(&h);
-
+            highways->addHighway(h);
             if(s=="Highway"){
                 continue;
             }
@@ -164,11 +162,7 @@ void SystemNetwork::read(string file) {
         }
     }
 
-    cout<<"fdjiaif"<<endl;
-    cout<<highways->getNumHighways()<<endl;
-    //cout<<highways->getHighwayIndex(0)->getName();
-    cout<<"wdajiw";
-
+    cout << highways->getHighwayIndex(0)->getToll("P2")->showToll() << endl;
     if(s=="VEHICLES"){
         f>>s;
         f>>tax1;
@@ -188,23 +182,23 @@ void SystemNetwork::read(string file) {
             f>>s;
         }
     }
-
+    //cout << "hereasd" << endl;
     if(s=="MOVEMENTS"){
         f>>s;
         while(s=="Movement"){
             f>>s; //discard
             f>>date1;
             f>>date2;
-            s=date1+" "+date2;
-            Date d = Date(s);
+            date=date1+" "+date2;
+            Date *d = new Date(date);
             f>>s; //discard
             f>>s;//movement_type(mov out sempre)
             f>>s; //discard
             f>>name;
-            Highway h=*(highways->getHighway(name));
+            Highway* h = highways->getHighway(name);
             f>>s; //discard
             f>>name;
-            Toll t = *(h.getToll(name));
+            t = h->getToll(name);
             f>>s; //discard
             f>>s;
             f>>s; //discard
@@ -216,8 +210,8 @@ void SystemNetwork::read(string file) {
             f>>s; //discard
             f>>s;
             f>>s; //discard
-            Lane l=*(t.getLane(number));
-            if(l.getEmployee()!=nullptr){
+            Lane* l= t->getLane(number);
+            if(l->getEmployee()!=nullptr){
                 f>>s;
                 f>>s; //discard
                 f>>s;
@@ -228,7 +222,7 @@ void SystemNetwork::read(string file) {
             f>>s;
             f>>s; //discard
             f>>s;
-            Vehicle v=*(vehicles->getVehicle(name));
+            Vehicle* v=vehicles->getVehicle(name);
             f>>s;//discard
             float distance;
             f>>distance;
@@ -238,16 +232,16 @@ void SystemNetwork::read(string file) {
             f>>s;//discard
             f>>date1;
             f>>date2;
-            s=date1+" "+date2;
-            Date dd = Date(s);
+            date=date1+" "+date2;
+            Date* dd =new Date(date);
             f>>s; //discard
             f>>s;//movement_type(mov out sempre)
             f>>s; //discard
             f>>name;
-            Highway hh=*(highways->getHighway(name));
+            Highway* hh=highways->getHighway(name);
             f>>s; //discard
             f>>name;
-            Toll tt = *(h.getToll(name));
+            Toll* tt = h->getToll(name);
             f>>s; //discard
             f>>s;
             f>>s; //discard
@@ -259,8 +253,8 @@ void SystemNetwork::read(string file) {
             f>>s; //discard
             f>>s;
             f>>s; //discard
-            Lane ll=*(t.getLane(number));
-            if(l.getEmployee()!=nullptr){
+            Lane* ll= t->getLane(number);
+            if(l->getEmployee()!=nullptr){
                 f>>s;
                 f>>s; //discard
                 f>>s;
@@ -271,16 +265,18 @@ void SystemNetwork::read(string file) {
             f>>s;
             f>>s; //discard
             f>>s;
-            Vehicle vv=*(vehicles->getVehicle(name));
-            MovementEntry me=MovementEntry(&vv,&hh,&tt,&ll,&dd);
-            if(!movements->addMovement(&me)){
+            Vehicle *vv=vehicles->getVehicle(name);
+            MovementEntry* me = new MovementEntry(vv,hh,tt,ll,dd);
+            if(!movements->addMovement(me)){
                 cout<<"write movement failed!";
             }
-            MovementOut mo=MovementOut(&v,&h,&t,&l,&d,&me);
-            if(!movements->addMovement(&mo)){
-                cout<<"write movement failed!";
+            cout << "helo3" << endl;
+            MovementOut* mo = new MovementOut(v,h,t,l,d,me);
+            if(!movements->addMovement(mo)){
+              cout<<"write movement failed!";
             }
             f>>s;
+            cout << "sai movement" << endl;
         }
     }
     cout<<"ahahaha";
