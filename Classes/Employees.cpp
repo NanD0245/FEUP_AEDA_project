@@ -34,7 +34,11 @@ bool Employees::addEmployee(string name) {
 }
 
 bool Employees::addEmployee(Employee * e){
+    for (size_t i = 0; i < employees.size(); i++)
+        if (employees[i]->getName() == e->getName())
+            return false;
     employees.push_back(e);
+    return true;
 }
 
 /**

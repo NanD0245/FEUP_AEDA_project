@@ -38,7 +38,6 @@ public:
     Lane * getLane(int i);
     bool removeLane(int i);
     bool operator==(const Toll& l2) const;
-    friend class SystemNetwork;
 
 };
 

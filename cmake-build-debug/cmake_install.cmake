@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/35193/Desktop/aeda2020-portagens
+# Install script for directory: C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/projeto1/aeda2020-portagens
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/35193/Desktop/aeda2020-portagens/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/projeto1/aeda2020-portagens/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

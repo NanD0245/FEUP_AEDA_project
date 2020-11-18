@@ -14,7 +14,6 @@ string Highway::showHighway() const {
     return "Highway Name: " + name;
 }
 
-string Highway::getName() const {return name;}
 
 void Highway::setName(const string new_name) { name = new_name; }
 
@@ -87,4 +86,4 @@ bool Highway::checkTollName(string name) {
 }
 
 
-bool Highway::operator==(const Highway &l2) { return name == l2.getName(); }
+bool Highway::operator==(const Highway &l2) { return name == l2.getInfo(); }

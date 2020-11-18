@@ -12,7 +12,6 @@ class Highway {
     vector<Toll *> tolls;
 public:
     Highway(string name);
-    string getName() const;
     string getInfo() const;
     string showHighway() const;
     void setName(string new_name);
@@ -30,7 +29,6 @@ public:
      * preço
      * quantoas veiculos estao na autoestrada
      */
-    friend class SystemNetwork; //apagar?
 };
 
 

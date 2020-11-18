@@ -26,7 +26,7 @@ string Movement::getInfo() const {
 
 string Movement::showMovement() const {
     string s_type = type ? "Exit" : "Entrance";
-    return date->getInfo() + " - Movement Type: " + s_type + " - Highway Name: " + highway->getName() +
+    return date->getInfo() + " - Movement Type: " + s_type + " - Highway Name: " + highway->getInfo() +
                     " - Toll Name: " + toll->getName() + " - Lane Number: " + to_string(lane->getLaneNumber()) + " - Vehicle Plate: " + vehicle->getPlate();
 }
 

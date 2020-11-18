@@ -8,7 +8,7 @@ Highways::Highways() {highways.clear();}
 
 Highway * Highways::getHighway(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
-        if (name == highways[i]->getName())
+        if (name == highways[i]->getInfo())
             return highways[i];
     }
     return nullptr;
@@ -26,7 +26,7 @@ Highway * Highways::getHighwayIndex(int i) {
 
 bool Highways::addHighway(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
-        if (name == highways[i]->getName())
+        if (name == highways[i]->getInfo())
             return false;
     }
     auto *a1 = new Highway(name);
@@ -40,7 +40,7 @@ void Highways::addHighway(Highway * h){
 
 bool Highways::removeHighway(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
-        if (name == highways[i]->getName()) {
+        if (name == highways[i]->getInfo()) {
             highways.erase(highways.begin() + i);
             return true;
         }
@@ -57,7 +57,7 @@ bool Highways::removeHighway(int i) {
 
 bool Highways::checkHighwayName(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
-        if (name == highways[i]->getName())
+        if (name == highways[i]->getInfo())
             return true;
     }
     return false;
