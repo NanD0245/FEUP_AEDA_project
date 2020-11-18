@@ -12,7 +12,6 @@
 
 using namespace std;
 
-typedef int IdentNum;
 
 /**
  * Employees class is a class that aggregates different workers
@@ -26,7 +25,7 @@ typedef int IdentNum;
  */
 class Employees {
     vector<Employee *> employees;
-    static IdentNum code;
+    static int code;
 public:
     Employees();
     int getNumEmployees() const;

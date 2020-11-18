@@ -6,7 +6,7 @@
 
 using namespace std;
 
-IdentNum Employees::code = 0;
+int Employees::code = 0;
 
 /**
  * The constructor of Employees class initializes the 'employees' container as empty
