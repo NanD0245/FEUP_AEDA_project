@@ -241,7 +241,15 @@ void SystemNetwork::manageReadMovements() {
                 break;
             case 5:
                 utils->clrScreen();
-                showEmployeeMovements();
+                try {
+                    showEmployeeMovements();
+                }
+                catch (DontExistAnyMovement &e) {
+                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                }
+                catch (EmployeeDoesNotExist &e) {
+                    cout << "EXCEPTION: Don't exist any employee with the name " << e.getName() << "." << endl;
+                }
                 break;
         }
     } while (index);
@@ -254,15 +262,30 @@ void SystemNetwork::manageMovementsHighway() {
         switch (index) {
             case 1:
                 utils->clrScreen();
-                showMovementsByHighwayName();
+                try {
+                    showMovementsByHighwayName();
+                }
+                catch (DontExistAnyMovement &e) {
+                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                }
                 break;
             case 2:
                 utils->clrScreen();
-                showMovementsByHighwayPrice();
+                try {
+                    showMovementsByHighwayPrice();
+                }
+                catch (DontExistAnyExitMovement &e) {
+                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                }
                 break;
             case 3:
                 utils->clrScreen();
-                showMovementsByDate();
+                try {
+                    showMovementsByDate();
+                }
+                catch (DontExistAnyMovement &e) {
+                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                }
                 break;
         }
     } while (index);
@@ -278,19 +301,34 @@ void SystemNetwork::manageMovementsToll() {
                 utils->clrScreen();
                 a1 = chooseHighway();
                 if (a1 == nullptr) break;
-                showMovementsByTollName(a1);
+                try {
+                    showMovementsByTollName(a1);
+                }
+                catch (DontExistAnyMovement &e) {
+                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                }
                 break;
             case 2:
                 utils->clrScreen();
                 a1 = chooseHighway();
                 if (a1 == nullptr) break;
-                showMovementsByTollPrice(a1);
+                try {
+                    showMovementsByTollPrice(a1);
+                }
+                catch (DontExistAnyExitMovement &e) {
+                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                }
                 break;
             case 3:
                 utils->clrScreen();
                 a1 = chooseHighway();
                 if (a1 == nullptr) break;
-                showMovementsByTollType(a1);
+                try {
+                    showMovementsByTollType(a1);
+                }
+                catch (DontExistAnyMovement &e) {
+                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                }
                 break;
         }
     } while (index);
@@ -309,7 +347,12 @@ void SystemNetwork::manageMovementsLane() {
                 if (a1 == nullptr) break;
                 t1 = chooseToll(a1);
                 if (t1 == nullptr) break;
-                showMovementsbyLaneNumber(t1);
+                try {
+                    showMovementsbyLaneNumber(t1);
+                }
+                catch (DontExistAnyMovement &e) {
+                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                }
                 break;
             case 2:
                 utils->clrScreen();
@@ -317,7 +360,12 @@ void SystemNetwork::manageMovementsLane() {
                 if (a1 == nullptr) break;
                 t1 = chooseToll(a1);
                 if (t1 == nullptr) break;
-                showMovementsbyLanePrice(t1);
+                try {
+                    showMovementsbyLanePrice(t1);
+                }
+                catch (DontExistAnyExitMovement &e) {
+                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                }
                 break;
         }
     } while(index);
@@ -330,15 +378,39 @@ void SystemNetwork::manageMovementsCar() {
         switch (index) {
             case 1:
                 utils->clrScreen();
-                showCarMovementsbyPrice();
+                try {
+                    showCarMovementsbyPrice();
+                }
+                catch (DontExistAnyExitMovement &e) {
+                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                }
+                catch (VehicleDoesNotExist &e) {
+                    cout << "EXCEPTION: Don't exist any vehicle with the plate " << e.getPlate() << "." << endl;
+                }
                 break;
             case 2:
                 utils->clrScreen();
-                showCarMovementsbyDistance();
+                try {
+                    showCarMovementsbyDistance();
+                }
+                catch (DontExistAnyExitMovement &e) {
+                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                }
+                catch (VehicleDoesNotExist &e) {
+                    cout << "EXCEPTION: Don't exist any vehicle with the plate " << e.getPlate() << "." << endl;
+                }
                 break;
             case 3:
                 utils->clrScreen();
-                showCarMovementsbyDate();
+                try {
+                    showCarMovementsbyDate();
+                }
+                catch (DontExistAnyMovement &e) {
+                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                }
+                catch (VehicleDoesNotExist &e) {
+                    cout << "EXCEPTION: Don't exist any vehicle with the plate " << e.getPlate() << "." << endl;
+                }
                 break;
         }
     } while(index);
@@ -353,31 +425,66 @@ void SystemNetwork::manageStatistics() {
         switch (index) {
             case 1:
                 utils->clrScreen();
-                BestWorthHighway();
+                try {
+                    BestWorthHighway();
+                }
+                catch (DontExistAnyExitMovement &e) {
+                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                }
                 break;
             case 2:
                 utils->clrScreen();
-                BestWorthToll();
+                try {
+                    BestWorthToll();
+                }
+                catch (DontExistAnyExitMovement &e) {
+                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                }
                 break;
             case 3:
                 utils->clrScreen();
-                BestWorthLane();
+                try {
+                    BestWorthLane();
+                }
+                catch (DontExistAnyExitMovement &e) {
+                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                }
                 break;
             case 4:
                 utils->clrScreen();
-                carSpentMoreMoney();
+                try {
+                    carSpentMoreMoney();
+                }
+                catch (DontExistAnyExitMovement &e) {
+                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                }
                 break;
             case 5:
                 utils->clrScreen();
-                HighwayMoreMoves();
+                try {
+                    HighwayMoreMoves();
+                }
+                catch (DontExistAnyMovement &e) {
+                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                }
                 break;
             case 6:
                 utils->clrScreen();
-                TollMoreMoves();
+                try {
+                    TollMoreMoves();
+                }
+                catch (DontExistAnyMovement &e) {
+                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                }
                 break;
             case 7:
                 utils->clrScreen();
-                LaneMoreMoves();
+                try {
+                    LaneMoreMoves();
+                }
+                catch (DontExistAnyMovement &e) {
+                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                }
                 break;
         }
     } while(index);
@@ -1124,7 +1231,7 @@ void SystemNetwork::addExitMovement() {
 }
 
 void SystemNetwork::showMovementsByHighwayName() {
-    //if (highways->getNumHighways() == 0) throw exception;
+    if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     if (movements->getNumMovements() == 0)
         cout << "There are no Highways" << endl;
     if (movements->getNumMovements() == 0)
@@ -1139,7 +1246,7 @@ void SystemNetwork::showMovementsByHighwayName() {
 }
 
 void SystemNetwork::showMovementsByHighwayPrice() {
-    //if (highways->getNumHighways() == 0) throw exception;
+    if (highways->getNumHighways() <= 1) throw DontExistAnyExitMovement();
     if (movements->getNumMovements() == 0)
         cout << "There are no Highways" << endl;
     if (movements->getNumMovements() == 0)
@@ -1158,6 +1265,7 @@ void SystemNetwork::showMovementsByHighwayPrice() {
 }
 
 void SystemNetwork::showMovementsByDate() {
+    if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     vector<Movement*> v1 = movements->getMovements();
     sort(v1.begin(),v1.end(),[](Movement* m1,Movement* m2){
         return (*(m1->getDate()) > *(m2->getDate()));
@@ -1168,6 +1276,7 @@ void SystemNetwork::showMovementsByDate() {
 }
 
 void SystemNetwork::showMovementsByTollName(Highway* highway) {
+    if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     vector<Movement*> v1;
     for (size_t i = 0; i < movements->getNumMovements(); i++) {
         if (movements->getMovementIndex(i)->getHighway()==highway)
@@ -1182,12 +1291,13 @@ void SystemNetwork::showMovementsByTollName(Highway* highway) {
 }
 
 void SystemNetwork::showMovementsByTollPrice(Highway *highway) {
+    if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     vector<Movement*> v1;
     for (size_t i = 0; i < movements->getNumMovements(); i++) {
         if (movements->getMovementIndex(i)->getHighway()==highway && movements->getMovementIndex(i)->getType())
             v1.push_back(movements->getMovementIndex(i));
     }
-    sort(v1.begin(),v1.end(),[](Movement* m1,Movement* m2){
+    sort(v1.begin(),v1.end(),[](Movement* m1, Movement* m2){
         return (m1->getPrice() > m2->getPrice());
     });
     for (size_t i = 0; i < v1.size(); i++) {
@@ -1196,6 +1306,7 @@ void SystemNetwork::showMovementsByTollPrice(Highway *highway) {
 }
 
 void SystemNetwork::showMovementsByTollType(Highway *highway) {
+    if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     vector<Movement*> v1;
     for (size_t i = 0; i < movements->getNumMovements(); i++) {
         if (movements->getMovementIndex(i)->getHighway()==highway)
@@ -1210,6 +1321,7 @@ void SystemNetwork::showMovementsByTollType(Highway *highway) {
 }
 
 void SystemNetwork::showMovementsbyLaneNumber(Toll *toll) {
+    if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     vector<Movement*> v1;
     for (size_t i = 0; i < movements->getNumMovements(); i++) {
         if (movements->getMovementIndex(i)->getToll()==toll )
@@ -1224,6 +1336,7 @@ void SystemNetwork::showMovementsbyLaneNumber(Toll *toll) {
 }
 
 void SystemNetwork::showMovementsbyLanePrice(Toll *toll) {
+    if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     vector<Movement*> v1;
     for (size_t i = 0; i < movements->getNumMovements(); i++) {
         if (movements->getMovementIndex(i)->getToll() == toll && movements->getMovementIndex(i)->getType())
@@ -1238,6 +1351,7 @@ void SystemNetwork::showMovementsbyLanePrice(Toll *toll) {
 }
 
 void SystemNetwork::showCarMovementsbyDate() {
+    if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     string s_plate;
     int v_class, greenlane;
     bool check = false;
@@ -1252,7 +1366,7 @@ void SystemNetwork::showCarMovementsbyDate() {
                 }
             }
             if (!check) {
-                //throw exception
+                throw VehicleDoesNotExist(s_plate);
                 break;
             }
             if (check) break;
@@ -1275,6 +1389,7 @@ void SystemNetwork::showCarMovementsbyDate() {
 }
 
 void SystemNetwork::showCarMovementsbyDistance() {
+    if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     string s_plate;
     int v_class, greenlane;
     bool check = false;
@@ -1289,7 +1404,7 @@ void SystemNetwork::showCarMovementsbyDistance() {
                 }
             }
             if (!check) {
-                //throw exception
+                throw VehicleDoesNotExist(s_plate);
                 break;
             }
             if (check) break;
@@ -1312,6 +1427,7 @@ void SystemNetwork::showCarMovementsbyDistance() {
 }
 
 void SystemNetwork::showCarMovementsbyPrice() {
+    if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     string s_plate;
     int v_class, greenlane;
     bool check = false;
@@ -1326,7 +1442,7 @@ void SystemNetwork::showCarMovementsbyPrice() {
                 }
             }
             if (!check) {
-                //throw exception
+                throw VehicleDoesNotExist(s_plate);
                 break;
             }
             if (check) break;
@@ -1349,6 +1465,7 @@ void SystemNetwork::showCarMovementsbyPrice() {
 }
 
 void SystemNetwork::showEmployeeMovements() {
+    if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     string s_name;
     bool check = false;
     while (s_name != "EXIT") {
@@ -1362,7 +1479,7 @@ void SystemNetwork::showEmployeeMovements() {
                 }
             }
             if (!check) {
-                //throw exception
+                throw EmployeeDoesNotExist(s_name);
                 break;
             }
             if (check) break;
@@ -1385,6 +1502,7 @@ void SystemNetwork::showEmployeeMovements() {
 }
 
 void SystemNetwork::carSpentMoreMoney() {
+    if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Vehicle* vehicle;
     float total_price = 0, price;
     //if (vehicles->getNumVehicles() == 0)
@@ -1404,6 +1522,7 @@ void SystemNetwork::carSpentMoreMoney() {
 }
 
 void SystemNetwork::BestWorthHighway() {
+    if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Highway* highway;
     float total_price = 0, price;
     //if (highway->getNumHighway() == 0)
@@ -1423,6 +1542,7 @@ void SystemNetwork::BestWorthHighway() {
 }
 
 void SystemNetwork::BestWorthToll() {
+    if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Toll* toll;
     float total_price = 0, price;
     //if (highway->getNumHighway() == 0)
@@ -1445,6 +1565,7 @@ void SystemNetwork::BestWorthToll() {
 }
 
 void SystemNetwork::BestWorthLane() {
+    if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Lane* lane;
     float total_price = 0, price;
     //if (highway->getNumHighway() == 0)
@@ -1470,6 +1591,7 @@ void SystemNetwork::BestWorthLane() {
 }
 
 void SystemNetwork::HighwayMoreMoves() {
+    if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     Highway* highway;
     int total_moves = 0, moves;
     //if (highway->getNumHighway() == 0)
@@ -1489,6 +1611,7 @@ void SystemNetwork::HighwayMoreMoves() {
 }
 
 void SystemNetwork::TollMoreMoves() {
+    if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     Toll* toll;
     int total_moves = 0, moves;
     //if (highway->getNumHighway() == 0)
@@ -1497,7 +1620,7 @@ void SystemNetwork::TollMoreMoves() {
         for (size_t k = 0; k < highways->getHighwayIndex(i)->getNumTolls(); k++) {
             moves = 0;
             for (size_t j = 0; j < movements->getNumMovements(); j++) {
-                if (movements->getMovementIndex(j)->getToll()->getName() == highways->getHighwayIndex(i)->getTollIndex(k)->getName())
+                if (movements->getMovementIndex(j)->getToll() == highways->getHighwayIndex(i)->getTollIndex(k))
                     moves++;
             }
             if (moves > total_moves) {
@@ -1510,18 +1633,17 @@ void SystemNetwork::TollMoreMoves() {
 }
 
 void SystemNetwork::LaneMoreMoves() { // tem erros
+    if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     Lane* lane;
     int total_moves = 0, moves;
-    //if (highway->getNumHighway() == 0)
-    //throw exception
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         for (size_t k = 0; k < highways->getHighwayIndex(i)->getNumTolls(); k++) {
             for (size_t l = 0; l < highways->getHighwayIndex(i)->getTollIndex(k)->getNumLanes(); l++) {
                 moves = 0;
                 for (size_t j = 0; j < movements->getNumMovements(); j++) {
-                    if (*movements->getMovementIndex(j)->getLane() ==
-                        *highways->getHighwayIndex(i)->getTollIndex(k)->getLane(l))
-                        moves += movements->getMovementIndex(j)->getPrice();
+                    if (movements->getMovementIndex(j)->getLane() ==
+                        highways->getHighwayIndex(i)->getTollIndex(k)->getLane(l))
+                        moves++;
                 }
                 if (moves > total_moves) {
                     total_moves = moves;

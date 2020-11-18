@@ -55,6 +55,7 @@ CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.o: ../Classes/Vehicle.h
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Date.h
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Employee.h
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Employees.h
+CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Exceptions.h
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Highway.h
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Highways.h
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Lane.h
@@ -85,6 +86,7 @@ CMakeFiles/aeda2020_portagens.dir/Classes/Vehicles.cpp.o: ../Classes/Vehicles.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Date.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Employee.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Employees.h
+CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Exceptions.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Highway.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Highways.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Lane.h
