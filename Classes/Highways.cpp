@@ -2,6 +2,8 @@
 
 Highways::Highways() {highways.clear();}
 
+int Highways::getNumHighways() const {return highways.size();}
+
 Highway * Highways::getHighway(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
         if (name == highways[i]->getInfo())
@@ -10,14 +12,20 @@ Highway * Highways::getHighway(string name) {
     return nullptr;
 }
 
-int Highways::getNumHighways() const {return highways.size();}
-
-vector<Highway *> Highways::getHighways() {return highways;}
-
 Highway * Highways::getHighwayIndex(int i) {
     if (i < highways.size())
         return highways[i];
     return nullptr;
+}
+
+vector<Highway *> Highways::getHighways() {return highways;}
+
+bool Highways::checkHighwayName(string name) {
+    for (size_t i = 0; i < highways.size(); i++) {
+        if (name == highways[i]->getInfo())
+            return true;
+    }
+    return false;
 }
 
 bool Highways::addHighway(string name) {
@@ -49,12 +57,4 @@ bool Highways::removeHighway(int i) {
         return false;
     highways.erase(highways.begin()+i);
     return true;
-}
-
-bool Highways::checkHighwayName(string name) {
-    for (size_t i = 0; i < highways.size(); i++) {
-        if (name == highways[i]->getInfo())
-            return true;
-    }
-    return false;
 }

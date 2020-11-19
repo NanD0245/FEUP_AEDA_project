@@ -39,7 +39,7 @@ public:
     void setCode(int code);
 
     /**
-     * @return the number of Employees already in the 'employees' container
+     * @return the number of employees already in the 'employees' container
      */
     int getNumEmployees() const;
 
@@ -67,7 +67,7 @@ public:
     /**
      * Checks if Employee with the name 'name' exists in the vector 'employees'
      * @param name is the string that a Employee object in 'employees' vector may have
-     * @return false if an Employee with name 'name' already exists, true otherwise
+     * @return false if an Employee with name 'name' already exists in the container, true otherwise
      */
     bool checkEmployeeName(string name);
 
@@ -77,7 +77,8 @@ public:
      * In this case, the code isn't set by the user, it is automatically assigned
      * @param name is a unique string (no other worker can have the same name)
      * that will be the name of the new Employee object
-     * @return true if it succeeded in adding a worker, false otherwise
+     * @return false if an Employee object with the same name already exists in the 'employees' vector,
+     * true otherwise (it succeeded in adding the object)
      */
     bool addEmployee(string name);
 
@@ -85,7 +86,7 @@ public:
      * addEmployee function adds a worker (that isn't already in the 'employees' container)
      * to the container 'employees'
      * @param e is an object of Employee class to add to vector 'employees'
-     * @return false if an Employee with the same name already exists in the 'employees' vector,
+     * @return false if an Employee object with the same name already exists in the 'employees' vector,
      * true otherwise (it succeeded in adding the object)
      */
     bool addEmployee(Employee * e);
@@ -94,8 +95,7 @@ public:
      * removeEmployee function removes a worker making use of its index in the
      * vector 'employee'
      * @param i is the index, in the vector 'employee', of the worker to remove from the container
-     * @return false if an Employee with the same name already exists in the 'employees' vector,
-     * true otherwise (it succeeded in adding the object)
+     * @return false if the Employee object that has the index 'i' exists and is removed, nullptr otherwise
      */
     bool removeEmployee(int i);
 };

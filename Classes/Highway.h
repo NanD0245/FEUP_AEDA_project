@@ -6,7 +6,7 @@
 /**
  * Highway class is a class that aggregates different tolls.
  *
- * Each tolls' information is stored in their corresponding Toll object,
+ * Each toll's information is stored in their corresponding Toll object,
  * which is then processed in the vector 'tolls' using Highway's methods.
  *
  * @param tolls contains all the tolls (objects from 'Toll' class) that belong to this Highway
