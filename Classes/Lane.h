@@ -62,8 +62,6 @@ public:
      * @param new_lane_number sets 'lane_number'
      */
     void setLaneNumber(int new_lane_number);
-    //void setGreenLaneTrue();
-    //void setGreenLaneFalse(Employee* e);
 
     /**
      * @param e
@@ -123,7 +121,6 @@ public:
      * "Lane Number: " + 'lane_number' + " - Greenlane: " + 'green_lane' + " - " + "Employee Name: " + 'name' + " - " + "Employee Code: " +  'code';
      */
     string showLane() const;
-    //void changeEmployee();
 };
 
 

@@ -106,11 +106,6 @@ public:
      * @return true if both Highways have the same 'name', false otherwise
      */
     bool operator==(const Highway &l2);
-    /*
-     * distancia entre 2 carros
-     * preço
-     * quantoas veiculos estao na autoestrada
-     */
 };
 
 
