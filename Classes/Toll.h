@@ -8,6 +8,15 @@
 
 using namespace std;
 
+/**
+ * The class Toll is a class that has information about each
+ * and every toll
+ *
+ * Each toll has a name, a geographic localization, a certain length, a certain number of lanes
+ * which have different amounts of vehicles. Besides that, the toll can be an entrance toll or an
+ * exit toll.
+ *
+ */
 class Toll {
 protected:
     string name;

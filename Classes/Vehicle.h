@@ -24,7 +24,7 @@ class Vehicle {
     float tax;
 public:
     /**
-     * Initializes plate, v_class and tax variables as the values inputted by the user when
+     * Initializes plate, v_class and tax attributes as the values inputted by the user when
      * the constructor is called
      *
      * @param plate is a non-empty string that will be the 'plate' attribute (e.g. 89BL32)
@@ -72,16 +72,6 @@ public:
     void defineLaneType(bool greenlane);
 
     /**
-     * @param plate sets 'plate' attribute
-     */
-    void setPlate(string plate);
-
-    /**
-     * @param v_class sets 'v_class' attribute
-     */
-    void setVehicleClass(int v_class);
-
-    /**
      * sets 'greenlane' attribute to true
      */
     void setGreenLaneTrue();
@@ -90,6 +80,15 @@ public:
      * sets 'greenlane' attribute to false
      */
     void setGreenLaneFalse();
+    /**
+     * @param v_class sets 'v_class' attribute
+     */
+    void setVehicleClass(int v_class);
+
+    /**
+     * @param plate sets 'plate' attribute
+     */
+    void setPlate(string plate);
 };
 
 

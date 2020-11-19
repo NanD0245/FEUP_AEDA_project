@@ -4,13 +4,7 @@ using namespace std;
 
 Highway::Highway(string name) : name(name) { tolls.clear(); }
 
-string Highway::getInfo() const { return name; }
-
-string Highway::showHighway() const {
-    return "Highway Name: " + name;
-}
-
-void Highway::setName(const string new_name) { name = new_name; }
+int Highway::getNumTolls() const {return tolls.size();}
 
 Toll * Highway::getToll(string name) {
     for (size_t i = 0; i < tolls.size(); i++) {
@@ -25,6 +19,14 @@ Toll * Highway::getTollIndex(int i) {
         return tolls[i];
     return nullptr;
 }
+
+string Highway::getInfo() const { return name; }
+
+string Highway::showHighway() const {
+    return "Highway Name: " + name;
+}
+
+void Highway::setName(const string new_name) { name = new_name; }
 
 bool Highway::addToll(string name, string geolocal, float highway_kilometer,bool type) {
     if (!type) {
@@ -68,8 +70,6 @@ bool Highway::removeToll(int i) {
     tolls.erase(tolls.begin()+i);
     return true;
 }
-
-int Highway::getNumTolls() const {return tolls.size();}
 
 bool Highway::checkTollName(string name) {
     for (size_t i = 0; i < tolls.size(); i++) {

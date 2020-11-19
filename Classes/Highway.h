@@ -23,21 +23,6 @@ public:
     Highway(string name);
 
     /**
-     * @return string with Highway's name
-     */
-    string getInfo() const;
-
-    /**
-     * @return string in the format: "Highway Name: " + name
-     */
-    string showHighway() const;
-
-    /**
-     * @param new_name updates the Highway's name to desired new name
-     */
-    void setName(string new_name);
-
-    /**
      * @return integer that is the number of total tolls in current Highway
      */
     int getNumTolls() const;
@@ -57,6 +42,21 @@ public:
     Toll * getTollIndex(int i);
 
     /**
+     * @return string with Highway's name
+     */
+    string getInfo() const;
+
+    /**
+     * @return string in the format: "Highway Name: " + name
+     */
+    string showHighway() const;
+
+    /**
+     * @param new_name updates the Highway's name to desired new name
+     */
+    void setName(string new_name);
+
+    /**
      * addToll function creates and adds a toll (that isn't already in the 'tolls' container)
      * @param name is a unique string that will be the name of the toll to be added
      * @param geolocal is a string that gives information about the toll's location
@@ -65,6 +65,7 @@ public:
      * @return false when the toll already exists in the 'tolls' container,
      * true otherwise (succeeded in adding the object)
      */
+
     bool addToll(string name, string geolocal, float highway_kilometer,bool type);
 
     /**

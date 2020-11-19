@@ -1,7 +1,3 @@
-//
-// Created by mim on 24/10/20.
-//
-
 #include "Lane.h"
 #include <iostream>
 
@@ -18,6 +14,8 @@ int Lane::getLaneNumber() const {return lane_number;}
 
 bool Lane::getGreenLane() const {return green_lane;};
 
+Employee * Lane::getEmployee() const {return nullptr;};
+
 string Lane::getInfo() const {
     return to_string(lane_number) + " - " + to_string(green_lane);
 }
@@ -28,6 +26,12 @@ string Lane::showLane() const {
 }
 
 void Lane::setLaneNumber(const int new_lane_number) { lane_number = new_lane_number; }
+
+bool Lane::operator==(const Lane &l2) const {
+    return (lane_number == l2.getLaneNumber() && green_lane == l2.getGreenLane());
+}
+
+
 
 LaneEmployee::LaneEmployee(int lane_number, bool greenlane, Employee* e) : Lane(lane_number,greenlane), employee(e) {}
 
@@ -42,8 +46,4 @@ string LaneEmployee::getInfo() const {
 string LaneEmployee::showLane() const {
     string s_greenlane = green_lane ? "True" : "False";
     return "Lane Number: " + to_string(lane_number) + " - Greenlane: " + s_greenlane + " - " + employee->showEmployee();
-}
-
-bool Lane::operator==(const Lane &l2) const {
-    return (lane_number == l2.getLaneNumber() && green_lane == l2.getGreenLane());
 }

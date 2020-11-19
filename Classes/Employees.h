@@ -15,9 +15,9 @@ using namespace std;
  * Each worker's information is stored in their corresponding Employee object,
  * which is then processed in the vector 'employees' using Employees' methods.
  *
- * @param employees contains all the different workers (objects from 'Employee' class)
- * @param code changes whenever a new worker('Employee') is added to the vector, so each Employee has
- * a unique code that identifies them
+ * @param employees contains all the different workers (objects from Employee class)
+ * @param code is a number that changes whenever a new worker(Employee object) is added to the vector,
+ * so each Employee has a unique code that identifies them
  */
 class Employees {
     vector<Employee *> employees;
@@ -27,6 +27,16 @@ public:
      * The constructor of Employees class initializes the 'employees' container as empty
      */
     Employees();
+
+    /**
+     * @return 'code' attribute
+     */
+    int getCode() const;
+
+    /**
+     * @param code sets 'code' attribute
+     */
+    void setCode(int code);
 
     /**
      * @return the number of Employees already in the 'employees' container
@@ -88,10 +98,6 @@ public:
      * true otherwise (it succeeded in adding the object)
      */
     bool removeEmployee(int i);
-
-    void setCode(int code);
-
-    int getCode() const {return code;}
 };
 
 

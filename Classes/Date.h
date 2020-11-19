@@ -29,57 +29,58 @@ class Date {
 public:
     /**
      * @brief Constructor of date class, initializes date to be equal to the string provided
-     * @arg date string that provides the date in the following format: "day/month/year hour:minute:second"
+     * @param date string that provides the date in the following format: "day/month/year hour:minute:second"
      */
     Date(string date);
 
     /**
-     * @return object's year
+     * @return 'year' attribute
      */
     int getYear() const;
 
     /**
-     * @return object's month
+     * @return 'month' attribute
      */
     int getMonth() const;
 
     /**
-     * @return object's day
+     * @return 'day' attribute
      */
     int getDay() const;
 
     /**
-     * @return object's hour
+     * @return 'hour' attribute
      */
     int getHour() const;
 
     /**
-     * @return object's minute
+     * @return 'minute' attribute
      */
     int getMinute() const;
 
     /**
-     * @return object's second
+     * @return 'second' attribute
      */
     int getSecond() const;
 
     /**
-     * @return current info - info is the string provided when one initializes the constructor
+     * @return current info - \n
+     * info is the string provided when one initializes the constructor \n
      * info has the following format: "day/month/year hour:minute:second"
      */
     string getInfo() const;
 
     /**
      * @brief Overloads the '==' operator to be able to know if two different dates are the same
-     * @arg d1 Object of class Date to compare the current object to
+     * @param d1 Object of class Date to compare the current object to
      * @return true if the year, month and day are the same on both objects, false otherwise
      */
     bool operator==(Date d1) const;
 
     /**
      * @brief overloads the '>' operator to be able to know if one date is after the other
-     * @arg d1 Object of class Date to compare the current object to
-     * @return true if current date is after date of object d1, false otherwise
+     * @param d1 Object of class Date to compare the current object to
+     * @return true if current date is after the date of object d1, false otherwise
      */
     bool operator>(Date d1) const;
 };
