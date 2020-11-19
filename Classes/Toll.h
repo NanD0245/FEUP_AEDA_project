@@ -37,7 +37,6 @@ public:
     void setType(bool type);
     string getInfo() const;
     string showToll() const;
-    void setLaneNumber(Lane * lane, int new_lane_number);
     void setGreenLaneTrue(Lane * lane);
     void setGreenLaneFalse(Lane * lane, Employee* e);
     virtual void addLane() {};

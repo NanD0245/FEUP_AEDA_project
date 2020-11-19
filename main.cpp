@@ -162,7 +162,7 @@ int main(int argc, char* argv[]) {
     system.movements->addMovement(new MovementEntry(v5,h2,t7,l14,d1));
     system.movements->addMovement(new MovementOut(v5,h2,t6,l11,d1,system.movements->getMovementIndex(8)));*/
 
-    system.read("systemNetworks.txt");
+    system.read("Cache/systemNetworks.txt");
     do {
         utils.clrScreen();
 

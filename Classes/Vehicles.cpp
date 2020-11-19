@@ -1,7 +1,3 @@
-//
-// Created by mim on 31/10/20.
-//
-
 #include "Vehicles.h"
 
 using namespace std;
@@ -13,6 +9,25 @@ Vehicles::Vehicles() {
     }
 }
 
+int Vehicles::getNumVehicles() const {return vehicles.size();}
+
+float Vehicles::getTaxes(int v_class) {return taxes[v_class-1];}
+
+Vehicle * Vehicles::getVehicle(string plate) {
+    for (size_t i = 0; i < vehicles.size(); i++) {
+        if (vehicles[i]->getPlate() == plate) {
+            return vehicles[i];
+        }
+    }
+    return nullptr;
+}
+
+Vehicle * Vehicles::getVehicleIndex(int i) {
+    if (i < vehicles.size())
+        return vehicles[i];
+    return nullptr;
+}
+
 void Vehicles::setTaxes(float a, float b, float c, float d) {
     taxes[0] = a;
     taxes[1] = b;
@@ -20,7 +35,13 @@ void Vehicles::setTaxes(float a, float b, float c, float d) {
     taxes[3] = d;
 }
 
-int Vehicles::getNumVehicles() const {return vehicles.size();}
+bool Vehicles::checkPlate(string plate) {
+    for (size_t i = 0; i < vehicles.size(); i++) {
+        if (vehicles[i]->getPlate() == plate)
+            return true;
+    }
+    return false;
+}
 
 bool Vehicles::addVehicle(string plate, int v_class) {
     for (size_t i = 0; i < vehicles.size(); i++) {
@@ -42,34 +63,9 @@ bool Vehicles::addVehicle(string plate, int v_class, bool greenlane) {
     return false;
 }
 
-Vehicle * Vehicles::getVehicle(string plate) {
-    for (size_t i = 0; i < vehicles.size(); i++) {
-        if (vehicles[i]->getPlate() == plate) {
-            return vehicles[i];
-        }
-    }
-    return nullptr;
-}
-
-Vehicle * Vehicles::getVehicleIndex(int i) {
-    if (i < vehicles.size())
-        return vehicles[i];
-    return nullptr;
-}
-
 bool Vehicles::removeVehicle(int i) {
     if (i >= vehicles.size())
         return false;
     vehicles.erase(vehicles.begin()+i);
     return true;
 }
-
-bool Vehicles::checkPlate(string plate) {
-    for (size_t i = 0; i < vehicles.size(); i++) {
-        if (vehicles[i]->getPlate() == plate)
-            return true;
-    }
-    return false;
-}
-
-float Vehicles::getTaxes(int v_class) {return taxes[v_class-1];}

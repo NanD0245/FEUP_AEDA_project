@@ -18,8 +18,6 @@ Highway * Highways::getHighwayIndex(int i) {
     return nullptr;
 }
 
-vector<Highway *> Highways::getHighways() {return highways;}
-
 bool Highways::checkHighwayName(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
         if (name == highways[i]->getInfo())
@@ -40,16 +38,6 @@ bool Highways::addHighway(string name) {
 
 void Highways::addHighway(Highway * h){
     highways.push_back(h);
-}
-
-bool Highways::removeHighway(string name) {
-    for (size_t i = 0; i < highways.size(); i++) {
-        if (name == highways[i]->getInfo()) {
-            highways.erase(highways.begin() + i);
-            return true;
-        }
-    }
-    return false;
 }
 
 bool Highways::removeHighway(int i) {
