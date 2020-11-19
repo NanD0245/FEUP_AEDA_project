@@ -102,7 +102,7 @@ public:
     /**
      * @brief Overloads the '==' operator to be able to know if two different Highways are the same
      * @param l2 is the object of class Highway to compare the current object to
-     * @return true if both Highways have the same 'name'
+     * @return true if both Highways have the same 'name', false otherwise
      */
     bool operator==(const Highway &l2);
     /*
