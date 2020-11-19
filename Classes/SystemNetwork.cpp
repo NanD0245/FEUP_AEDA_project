@@ -14,28 +14,6 @@ SystemNetwork::SystemNetwork() {
     employees = new Employees();
 }
 
-void SystemNetwork::ungetstr(ifstream &f){
-    char c='a';
-    char c1='a';
-    int n=0;
-    vector<char> cv;
-    while((c!=' ')&&(n<3)){
-        f.unget();
-        f.unget();
-        f>>c;
-        if(c==c1){
-            n++;
-        }
-        c1=c;
-    }
-    if(n==3){
-        f.unget();
-    }
-    for(int i=0;i<cv.size();i++){
-        cout<<cv[i];
-    }
-}
-
 void SystemNetwork::write(){
     vector<Toll *> t;
     vector<Lane *> l;
@@ -139,10 +117,20 @@ void SystemNetwork::read(string file) {
                     f >> tf;
                     f >> s;
                     if (s == "-") {
-                        f >> name;
-                        f >> s;//discard (-)
+                        f >> s;
+                        name = "";
+                        while (s != "-") {
+                            name += s + " ";
+                            f >> s;
+                        }
+                        name.pop_back();
                         f >> code;
-                        e = new Employee(name, number);
+                        if (code >= employees->getCode()) {
+                            code++;
+                            employees->setCode(code);
+                            code--;
+                        }
+                        e = new Employee(name, code);
                         employees->addEmployee(e);
                         l = new LaneEmployee(number, tf, e);
                         t->addLane(l);
@@ -265,22 +253,33 @@ void SystemNetwork::read(string file) {
             f>>s;
         }
     }
-
     if(s=="EMPLOYEES"){
         f>>s;
         while(s=="Employee"){
+            bool check = false;
             f>>s;//discard
-            f>>name;
+            name = "";
+            while (s != "-") {
+                f >> s;
+                name += s + " ";
+            }
+            name = name.substr(0,name.size()-3);
             for(int i=0;i<employees->getNumEmployees();i++){
                 if(name==employees->getEmployeeIndex(i)->getName()){
                     f>>s;
                     f>>s;
-                    f>>s;
-                    continue;
+                    check = true;
                 }
             }
-            f>>s;
+            if (check)
+                continue;
+            //f>>s;
             f>>code;
+            if (code >= employees->getCode()) {
+                code++;
+                employees->setCode(code);
+                code--;
+            }
             e=new Employee(name,code);
             employees->addEmployee(e);
             if(f.eof()){
@@ -1315,7 +1314,6 @@ void SystemNetwork::addEntryMovement() {
             for (int i = movements->getNumMovements() - 1; i > -1; i--) {
                 if (movements->getMovementIndex(i)->getVehicle()->getPlate() == s_plate) {
                     if (movements->getMovementIndex(i)->getType()) {
-                        cout << "entrei" << endl;
                         vehicle = vehicles->getVehicle(s_plate);
                     }
                     break;
@@ -1391,7 +1389,6 @@ void SystemNetwork::addExitMovement() {
         if (s_plate == "EXIT") continue;
         //cout << movements->getNumMovements() << endl;
         for (int i = movements->getNumMovements() - 1; i > -1; i-- ) {
-            cout << "entrei" << endl;
             cout << movements->getMovementIndex(i)->getDate()->getInfo();
             if (s_plate == movements->getMovementIndex(i)->getVehicle()->getPlate()) {
                 if (!movements->getMovementIndex(i)->getType()) {

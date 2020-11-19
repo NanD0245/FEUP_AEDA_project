@@ -7,6 +7,63 @@
 #include "Classes/Movements.h"
 #include "Classes/SystemNetwork.h"
 
+#ifdef _WIN32
+#ifndef UNICODE
+#define UNICODE
+#endif
+#include <windows.h>
+#include <wincon.h>
+
+// Fix compilatin on MinGW
+#ifndef DISABLE_NEWLINE_AUTO_RETURN
+#define DISABLE_NEWLINE_AUTO_RETURN 0x0008
+#endif
+
+#ifndef ENABLE_VIRTUAL_TERMINAL_INPUT
+#define ENABLE_VIRTUAL_TERMINAL_INPUT 0x0200
+#endif
+
+#ifndef ENABLE_VIRTUAL_TERMINAL_PROCESSING
+#define ENABLE_VIRTUAL_TERMINAL_PROCESSING 0x0004
+#endif
+
+bool SetupConsole() {
+	//configura a consola no Windows de modo a que os ASCII codes sejam aceites. Código retirado do Microsoft Docs:
+	//https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#example-of-enabling-virtual-terminal-processing
+	// Set output mode to handle virtual terminal sequences
+	HANDLE hIn = GetStdHandle(STD_INPUT_HANDLE);
+	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	if (hIn == INVALID_HANDLE_VALUE || hOut == INVALID_HANDLE_VALUE) {
+		return false;
+	}
+	DWORD dwOriginalInMode = 0;
+	DWORD dwOriginalOutMode = 0;
+	if (!GetConsoleMode(hIn, &dwOriginalInMode)) {
+		return false;
+	}
+	if (!GetConsoleMode(hOut, &dwOriginalOutMode)) {
+		return false;
+	}
+	DWORD dwInMode = dwOriginalInMode | ENABLE_VIRTUAL_TERMINAL_INPUT;
+	if (!SetConsoleMode(hIn, dwInMode))
+	{
+		// Failed to set VT input mode, can't do anything here.
+		return false;
+	}
+	DWORD dwOutMode = dwOriginalOutMode | ENABLE_VIRTUAL_TERMINAL_PROCESSING | DISABLE_NEWLINE_AUTO_RETURN;
+	if (!SetConsoleMode(hOut, dwOutMode)) {
+		// we failed to set both modes, try to step down mode gracefully.
+		dwOutMode = dwOriginalOutMode | ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+		if (!SetConsoleMode(hOut, dwOutMode))
+		{
+			// Failed to set any VT mode, can't do anything here.
+			return false;
+		}
+	}
+	return true;
+}
+#endif //_WIN32
+
 using namespace std;
 
 int main(int argc, char* argv[]) {
@@ -21,7 +78,7 @@ int main(int argc, char* argv[]) {
     system.highways->addHighway("A2");
     Highway* h2 = system.highways->getHighwayIndex(1);
     system.vehicles->setTaxes(0.12,0.15,0.20,0.30);
-    system.employees->addEmployee("Fernando");
+    system.employees->addEmployee("Fernando Rego");
     Employee* e1 = system.employees->getEmployee("Fernando");
     system.employees->addEmployee("Luis");
     Employee* e2 = system.employees->getEmployee("Luis");
@@ -59,7 +116,7 @@ int main(int argc, char* argv[]) {
     Lane* l1 = system.highways->getHighwayIndex(0)->getTollIndex(0)->getLane(0);
     system.highways->getHighwayIndex(0)->getTollIndex(0)->addLane();
     Lane* l2 = system.highways->getHighwayIndex(0)->getTollIndex(0)->getLane(1);
-    system.highways->getHighwayIndex(0)->getTollIndex(1)->addLane(system.employees->getEmployee("Fernando"));
+    system.highways->getHighwayIndex(0)->getTollIndex(1)->addLane(system.employees->getEmployee("Fernando Rego"));
     Lane* l3 = system.highways->getHighwayIndex(0)->getTollIndex(1)->getLane(0);
     system.highways->getHighwayIndex(0)->getTollIndex(1)->addLane();
     Lane* l4 = system.highways->getHighwayIndex(0)->getTollIndex(1)->getLane(1);
@@ -103,7 +160,7 @@ int main(int argc, char* argv[]) {
     system.movements->addMovement(new MovementOut(v5,h2,t6,l11,d1,system.movements->getMovementIndex(8)));*/
 
     system.read("systemNetworks.txt");
-    /*do {
+    do {
         utils.clrScreen();
         cout << "TOLL MANAGEMENT SYSTEM" << endl << endl;
         index = utils.ShowMenu({"Manage Movements", "Manage Highways", "Manage Employees" ,"Manage Vehicles","Input Taxes for vehicles", "Statistics"});
@@ -133,7 +190,7 @@ int main(int argc, char* argv[]) {
                 system.manageStatistics();
                 break;
         }
-    } while (index);*/
-    //system.write();
+    } while (index);
+    system.write();
     return 0;
 }

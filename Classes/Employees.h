@@ -82,6 +82,10 @@ public:
      * @return true if it succeeded in removing a worker, false otherwise
      */
     bool removeEmployee(int i);
+
+    void setCode(int code);
+
+    int getCode() const {return code;}
 };
 
 
