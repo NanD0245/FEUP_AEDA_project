@@ -8,6 +8,7 @@
 #include "Vehicle.h"
 #include "Highways.h"
 #include "Date.h"
+#include <cmath>
 
 class Movement {
 protected:
