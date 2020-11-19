@@ -62,6 +62,8 @@ Vehicle nr4:
 A4 - 3 - 1
 Vehicle nr5: 
 A5 - 4 - 1
+Vehicle nr6: 
+A6 - 3 - 1
 
 MOVEMENTS
 Movement nr1: 
