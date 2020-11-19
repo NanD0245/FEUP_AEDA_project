@@ -17,7 +17,7 @@ SystemNetwork::SystemNetwork() {
 void SystemNetwork::write(){
     vector<Toll *> t;
     vector<Lane *> l;
-    ofstream f("Cache/systemNetworks.txt");
+    ofstream f("../Cache/systemNetworks.txt");
 
     f<<"HIGHWAYS"<<endl;
     for (int i = 0;i<highways->getNumHighways();i++){
