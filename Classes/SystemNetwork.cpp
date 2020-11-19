@@ -93,14 +93,29 @@ void SystemNetwork::read(string file) {
         while (s == "Highway") {
             f >> s;//discard
             f >> s;
-            h = new Highway(s);
-            f >> s;
+            name = "";
+            while (!(s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
+                name += s + " ";
+                f >> s;
+            }
+            name.pop_back();
+            h = new Highway(name);
             while (s == "Toll") {//Toll
                 f >> s;//discard (nr:)
-                f >> name;
-                f >> s;//discard (-)
-                f >> geolocal;
-                f >> s;//discard (-)
+                f >> s;
+                name = "";
+                while (!(s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
+                    name += s + " ";
+                    f >> s;
+                }
+                name.pop_back();
+                f >> s;
+                geolocal = "";
+                while (!(s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
+                    geolocal += s + " ";
+                    f >> s;
+                }
+                geolocal.pop_back();
                 f >> highway_kilometer;
                 f >> s;//discard (-)
                 f >> tf;
@@ -162,13 +177,11 @@ void SystemNetwork::read(string file) {
                 continue;
             }
             else {
-                //if(s=="VEHICLES")
                 break;
             }
         }
     }
 
-    //cout << highways->getHighwayIndex(0)->getToll("P1")->showToll() << endl;
     if(s=="VEHICLES"){
         f>>s;
         f>>tax1;
@@ -246,7 +259,7 @@ void SystemNetwork::read(string file) {
             if(!movements->addMovement(me)){
                 cout<<"write movement failed!";
             }
-            mo = new MovementOut(v,h,t,l,d,me);
+            mo = new MovementOut(v,h,t,l,d,me,price);
             if(!movements->addMovement(mo)){
               cout<<"write movement failed!";
             }
@@ -799,6 +812,7 @@ int SystemNetwork::chooseIndexHighway() const {
         s_menu = highways->getHighwayIndex(i)->showHighway();
         v1.push_back(s_menu);
     }
+    utils->clrScreen();
     return utils->ShowMenu(v1)-1;
 }
 
@@ -929,6 +943,7 @@ int SystemNetwork::chooseIndexToll(Highway* highway) const {
         s_menu = highway->getTollIndex(i)->showToll();
         v1.push_back(s_menu);
     }
+    utils->clrScreen();
     return utils->ShowMenu(v1)-1;
 }
 
@@ -1037,6 +1052,7 @@ int SystemNetwork::chooseIndexLane(Toll* toll) const {
         s_menu = toll->getLane(i)->showLane();
         v1.push_back(s_menu);
     }
+    utils->clrScreen();
     return utils->ShowMenu(v1)-1;
 }
 
@@ -1103,6 +1119,7 @@ int SystemNetwork::chooseIndexEmployee() const {
         s_menu = employees->getEmployeeIndex(i)->showEmployee();
         v1.push_back(s_menu);
     }
+    utils->clrScreen();
     return utils->ShowMenu(v1)-1;
 }
 
@@ -1110,8 +1127,7 @@ void SystemNetwork::createVehicle() {
     string s_plate;
     int v_class, greenlane;
     while (s_plate != "EXIT") {
-        cout << "Input the vehicle plate: (if you want to exit without create any vehicle please input EXIT)" << endl;
-        getline(cin, s_plate);
+        s_plate = utils->getPlate();
         if (s_plate != "EXIT") {
 
             cout << "Choose one of the options of vehicle class: " << endl;
@@ -1130,8 +1146,11 @@ void SystemNetwork::createVehicle() {
                     utils->waitForInput();
                     break;
                 }
+                else if (greenlane == 0)
+                    s_plate = "EXIT";
             }
-
+            else if (v_class == 0)
+                s_plate = "EXIT";
         }
         if (!(s_plate == "EXIT" || v_class == 0 || greenlane == 0))
             cout << "ERROR: name of employee already exist." << endl;
@@ -1147,8 +1166,7 @@ void SystemNetwork::updateVehicle() {
         switch (index) {
             case 1:
                 while (s_plate != "EXIT") {
-                    cout<< "Input the vehicle plate: (if you want to exit without create any vehicle please input EXIT)"<< endl;
-                    getline(cin, s_plate);
+                    s_plate = utils->getPlate();
                     if (s_plate != "EXIT" && vehicles->checkPlate(s_plate)) {
                         vehicles->getVehicleIndex(v_index)->setPlate(s_plate);
                         cout << "Vehicle updated with success!" << endl;
@@ -1202,6 +1220,7 @@ void SystemNetwork::readVehicles() {
     for (int i = 0; i < vehicles->getNumVehicles(); i++) {
         cout << vehicles->getVehicleIndex(i)->showVehicle() << endl;
     }
+    utils->waitForInput();
 }
 
 int SystemNetwork::chooseIndexVehicle() const {
@@ -1217,14 +1236,21 @@ int SystemNetwork::chooseIndexVehicle() const {
 
 void SystemNetwork::getTaxesFromUser() {
     float taxe[4];
+    bool exit;
     for (int i = 0; i < 4; i++) {
-        cout << "Input the tax (euro per kilometer) for the class " << i+1 << endl;
+        cout << "Input the tax (euro per kilometer) for the class. (if you want to exit without set any tax please input EXIT) " << i+1 << endl;
         float a = utils->getFloat();
-        if (a == -1)
+        if (a == -1) {
+            exit = true;
             break;
+        }
         else taxe[i] = a;
     }
-    vehicles->setTaxes(taxe[0],taxe[1],taxe[2],taxe[3]);
+    if (!exit) {
+        vehicles->setTaxes(taxe[0], taxe[1], taxe[2], taxe[3]);
+        cout << "Taxes updated with success!" << endl;
+        utils->waitForInput();
+    }
 }
 
 int SystemNetwork::adviceEntryLane(Toll * toll, Date * date) {
@@ -1296,12 +1322,7 @@ void SystemNetwork::addEntryMovement() {
             utils->waitForInput();
             continue;
         }
-        cout << "Please input the plate of the vehicle: (if you want to exit without create any vehicle please input EXIT)" << endl;
-        getline(cin, s_plate);
-        while (s_plate.empty()) {
-            cout << "ERROR: The plate can't be a empty string." << endl;
-            getline(cin, s_plate);
-        }
+        s_plate = utils->getPlate();
         if (s_plate == "EXIT") continue;
         if (!vehicles->checkPlate(s_plate)) {
             cout << "Vehicle is not registed. To advance input vehicle class" << endl;
@@ -1311,13 +1332,17 @@ void SystemNetwork::addEntryMovement() {
             else continue;
         }
         else {
-            for (int i = movements->getNumMovements() - 1; i > -1; i--) {
+            int counter = 0;
+            for (int i = 0; i < movements->getNumMovements(); i++){
                 if (movements->getMovementIndex(i)->getVehicle()->getPlate() == s_plate) {
-                    if (movements->getMovementIndex(i)->getType()) {
-                        vehicle = vehicles->getVehicle(s_plate);
-                    }
-                    break;
+                    counter++;
                 }
+            }
+            if (counter % 2 == 1 || counter == 0) {
+                vehicle = nullptr;
+            }
+            else if (counter % 2 == 0 && counter != 0) {
+                vehicle = vehicles->getVehicle(s_plate);
             }
         }
         if (vehicle == nullptr) {
@@ -1380,20 +1405,26 @@ void SystemNetwork::addExitMovement() {
             s_plate = "EXIT";
             continue;
         }
-        cout << "Please input the plate of the vehicle: (if you want to exit without create any vehicle please input EXIT)" << endl;
-        getline(cin, s_plate);
-        while (s_plate.empty()) {
-            cout << "ERROR: The plate can't be a empty string." << endl;
-            getline(cin, s_plate);
-        }
+        s_plate = utils->getPlate();
         if (s_plate == "EXIT") continue;
         //cout << movements->getNumMovements() << endl;
-        for (int i = movements->getNumMovements() - 1; i > -1; i-- ) {
-            cout << movements->getMovementIndex(i)->getDate()->getInfo();
-            if (s_plate == movements->getMovementIndex(i)->getVehicle()->getPlate()) {
-                if (!movements->getMovementIndex(i)->getType()) {
-                    entry = movements->getMovementIndex(i);
-                    break;
+
+        int counter = 0;
+        for (int i = 0; i < movements->getNumMovements(); i++){
+            if (movements->getMovementIndex(i)->getVehicle()->getPlate() == s_plate) {
+                counter++;
+            }
+        }
+        if (counter % 2 == 0 || counter == 0) {
+            entry = nullptr;
+        }
+        if (counter % 2 == 1 && counter != 0) {
+            for (int i = movements->getNumMovements() - 1; i > -1; i-- ) {
+                if (s_plate == movements->getMovementIndex(i)->getVehicle()->getPlate()) {
+                    if (!movements->getMovementIndex(i)->getType()) {
+                        entry = movements->getMovementIndex(i);
+                        break;
+                    }
                 }
             }
         }
@@ -1460,6 +1491,7 @@ void SystemNetwork::showMovementsByHighwayName() {
     for (size_t i = 0; i < v1.size(); i++) {
         cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::showMovementsByHighwayPrice() {
@@ -1479,6 +1511,7 @@ void SystemNetwork::showMovementsByHighwayPrice() {
     for (size_t i = 0; i < v1.size(); i++) {
         cout << i+1 << " - " << v1[i]->getInfo() << endl;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::showMovementsByDate() {
@@ -1490,6 +1523,7 @@ void SystemNetwork::showMovementsByDate() {
     for (size_t i = 0; i < v1.size(); i++) {
         cout << i+1 << " - " << v1[i]->getInfo() << endl;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::showMovementsByTollName(Highway* highway) {
@@ -1505,6 +1539,7 @@ void SystemNetwork::showMovementsByTollName(Highway* highway) {
     for (size_t i = 0; i < v1.size(); i++) {
         cout << i+1 << " - " << v1[i]->getInfo() << endl;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::showMovementsByTollPrice(Highway *highway) {
@@ -1520,6 +1555,7 @@ void SystemNetwork::showMovementsByTollPrice(Highway *highway) {
     for (size_t i = 0; i < v1.size(); i++) {
         cout << i+1 << " - " << v1[i]->getInfo() << endl;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::showMovementsByTollType(Highway *highway) {
@@ -1535,6 +1571,7 @@ void SystemNetwork::showMovementsByTollType(Highway *highway) {
     for (size_t i = 0; i < v1.size(); i++) {
         cout << i+1 << " - " << v1[i]->getInfo() << endl;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::showMovementsbyLaneNumber(Toll *toll) {
@@ -1550,6 +1587,7 @@ void SystemNetwork::showMovementsbyLaneNumber(Toll *toll) {
     for (size_t i = 0; i < v1.size(); i++) {
         cout << i+1 << " - " << v1[i]->getInfo() << endl;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::showMovementsbyLanePrice(Toll *toll) {
@@ -1565,6 +1603,7 @@ void SystemNetwork::showMovementsbyLanePrice(Toll *toll) {
     for (size_t i = 0; i < v1.size(); i++) {
         cout << i+1 << " - " << v1[i]->getInfo() << endl;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::showCarMovementsbyDate() {
@@ -1573,8 +1612,7 @@ void SystemNetwork::showCarMovementsbyDate() {
     int v_class, greenlane;
     bool check = false;
     while (s_plate != "EXIT") {
-        cout << "Input the vehicle plate: (if you want to exit without create any vehicle please input EXIT)" << endl;
-        getline(cin, s_plate);
+        s_plate = utils->getPlate();
         if (s_plate != "EXIT") {
             for (size_t i = 0; i < vehicles->getNumVehicles(); i++) {
                 if (vehicles->getVehicleIndex(i)->getPlate() == s_plate) {
@@ -1602,7 +1640,7 @@ void SystemNetwork::showCarMovementsbyDate() {
             cout << i+1 << " - " << v1[i]->getInfo() << endl;
         }
     }
-
+    utils->waitForInput();
 }
 
 void SystemNetwork::showCarMovementsbyDistance() {
@@ -1611,8 +1649,7 @@ void SystemNetwork::showCarMovementsbyDistance() {
     int v_class, greenlane;
     bool check = false;
     while (s_plate != "EXIT") {
-        cout << "Input the vehicle plate: (if you want to exit without create any vehicle please input EXIT)" << endl;
-        getline(cin, s_plate);
+        s_plate = utils->getPlate();
         if (s_plate != "EXIT") {
             for (size_t i = 0; i < vehicles->getNumVehicles(); i++) {
                 if (vehicles->getVehicleIndex(i)->getPlate() == s_plate) {
@@ -1640,7 +1677,7 @@ void SystemNetwork::showCarMovementsbyDistance() {
             cout << i+1 << " - " << v1[i]->getInfo() << endl;
         }
     }
-
+    utils->waitForInput();
 }
 
 void SystemNetwork::showCarMovementsbyPrice() {
@@ -1649,8 +1686,7 @@ void SystemNetwork::showCarMovementsbyPrice() {
     int v_class, greenlane;
     bool check = false;
     while (s_plate != "EXIT") {
-        cout << "Input the vehicle plate: (if you want to exit without create any vehicle please input EXIT)" << endl;
-        getline(cin, s_plate);
+        s_plate = utils->getPlate();
         if (s_plate != "EXIT") {
             for (size_t i = 0; i < vehicles->getNumVehicles(); i++) {
                 if (vehicles->getVehicleIndex(i)->getPlate() == s_plate) {
@@ -1678,7 +1714,7 @@ void SystemNetwork::showCarMovementsbyPrice() {
             cout << i+1 << " - " << v1[i]->getInfo() << endl;
         }
     }
-
+    utils->waitForInput();
 }
 
 void SystemNetwork::showEmployeeMovements() {
@@ -1716,6 +1752,7 @@ void SystemNetwork::showEmployeeMovements() {
             cout << i+1 << " - " << v1[i]->getInfo() << endl;
         }
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::carSpentMoreMoney() {
@@ -1727,15 +1764,20 @@ void SystemNetwork::carSpentMoreMoney() {
     for (size_t i = 0; i <vehicles->getNumVehicles();i++) {
         price = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
-            if (movements->getMovementIndex(j)->getType() && movements->getMovementIndex(j)->getVehicle()->getPlate() == vehicles->getVehicleIndex(i)->getPlate())
+            if (movements->getMovementIndex(j)->getType() &&
+                movements->getMovementIndex(j)->getVehicle()->getPlate() == vehicles->getVehicleIndex(i)->getPlate()) {
+                cout << movements->getMovementIndex(j)->getType() << " "<<movements->getMovementIndex(j)->getPrice() << "------" <<endl;
                 price += movements->getMovementIndex(j)->getPrice();
+                cout << price << endl;
+            }
         }
         if (price > total_price) {
             total_price = price;
             vehicle = vehicles->getVehicleIndex(i);
         }
     }
-    cout << vehicle->getInfo() << " - Total price = " << total_price << endl;
+    cout << vehicle->showVehicle() << " - Total price = " << total_price << endl;
+    utils->waitForInput();
 }
 
 void SystemNetwork::BestWorthHighway() {
@@ -1755,7 +1797,8 @@ void SystemNetwork::BestWorthHighway() {
             highway = highways->getHighwayIndex(i);
         }
     }
-    cout << highway->getInfo() << " - Total price = " << total_price << endl;
+    cout << highway->showHighway() << " - Total price = " << total_price << endl;
+    utils->waitForInput();
 }
 
 void SystemNetwork::BestWorthToll() {
@@ -1778,7 +1821,8 @@ void SystemNetwork::BestWorthToll() {
             }
         }
     }
-    cout << toll->getInfo() << " - Total price = " << total_price << endl;
+    cout << toll->showToll() << " - Total price = " << total_price << endl;
+    utils->waitForInput();
 }
 
 void SystemNetwork::BestWorthLane() {
@@ -1804,7 +1848,8 @@ void SystemNetwork::BestWorthLane() {
             }
         }
     }
-    cout << lane->getInfo() << " - Total price = " << total_price << endl;
+    cout << lane->showLane() << " - Total price = " << total_price << endl;
+    utils->waitForInput();
 }
 
 void SystemNetwork::HighwayMoreMoves() {
@@ -1824,7 +1869,8 @@ void SystemNetwork::HighwayMoreMoves() {
             highway = highways->getHighwayIndex(i);
         }
     }
-    cout << highway->getInfo() << " - Total moves = " << total_moves << endl;
+    cout << highway->showHighway() << " - Total moves = " << total_moves << endl;
+    utils->waitForInput();
 }
 
 void SystemNetwork::TollMoreMoves() {
@@ -1846,7 +1892,8 @@ void SystemNetwork::TollMoreMoves() {
             }
         }
     }
-    cout << toll->getInfo() << " - Total moves = " << total_moves << endl;
+    cout << toll->showToll() << " - Total moves = " << total_moves << endl;
+    utils->waitForInput();
 }
 
 void SystemNetwork::LaneMoreMoves() { // tem erros
@@ -1869,5 +1916,6 @@ void SystemNetwork::LaneMoreMoves() { // tem erros
             }
         }
     }
-    cout << lane->getInfo() << " - Total moves = " << total_moves << endl;
+    cout << lane->showLane() << " - Total moves = " << total_moves << endl;
+    utils->waitForInput();
 }
