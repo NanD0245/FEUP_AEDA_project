@@ -88,6 +88,10 @@ public:
      * true otherwise (it succeeded in adding the object)
      */
     bool removeEmployee(int i);
+
+    void setCode(int code);
+
+    int getCode() const {return code;}
 };
 
 

@@ -64,3 +64,5 @@ bool Employees::checkEmployeeName(string name) {
     }
     return true;
 }
+
+void Employees::setCode(int code) {this->code = code;}

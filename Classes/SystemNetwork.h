@@ -99,7 +99,6 @@ public:
 
     void read(string file);
     void write();
-    void ungetstr(ifstream &f);
 };
 
 
