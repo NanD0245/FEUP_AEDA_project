@@ -51,7 +51,7 @@ public:
      * @return string with the format: "Employee Name: " + name + " - " + "Employee Code: " +  code
      */
     string showEmployee();
- 
+
     /**
      * @param new_name sets name (can't be an empty string nor equal to any other name)
      */
