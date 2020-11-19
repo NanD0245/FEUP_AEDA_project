@@ -14,6 +14,7 @@ public:
     int ShowMenu(vector<string> menu);
     int getNumber(int max);
     float getFloat();
+    string getPlate();
     void waitForInput();
     void clrScreen();
 };

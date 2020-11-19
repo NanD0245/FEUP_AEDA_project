@@ -9,12 +9,16 @@
 using namespace std;
 
 int Utils::ShowMenu(vector<string> menu) {
+    clrScreen();
+    cout << "TOLL MANAGEMENT SYSTEM" << endl << endl;
     cout << "Please choose one of the options below: " << endl << endl;
     for (size_t i = 0; i < menu.size(); i++) {
         cout << (i+1) << " - " << menu[i] << endl;
     }
     cout << "0 - Exit" << endl << endl;
-    return getNumber(menu.size());
+    int index = getNumber(menu.size());
+    clrScreen();
+    return index;
 }
 
 int Utils::getNumber(int max) {
@@ -69,6 +73,27 @@ float Utils::getFloat() {
         break;
     }
     return index;
+}
+
+string Utils::getPlate() {
+    string plate;
+    while (true) {
+        bool check = false;
+        cout << "Input the vehicle plate: (if you want to exit without create any vehicle please input EXIT)" << endl;
+        getline(cin, plate);
+        for (auto ch: plate) {
+            if (ch == ' ') {
+                check = true;
+                break;
+            }
+        }
+        if (plate.empty())
+            check = true;
+        if (!check)
+            break;
+        else cout << "ERROR: Invalid Input." << endl;
+    }
+    return plate;
 }
 
 void Utils::waitForInput() {

@@ -162,23 +162,19 @@ int main(int argc, char* argv[]) {
     system.read("systemNetworks.txt");
     do {
         utils.clrScreen();
-        cout << "TOLL MANAGEMENT SYSTEM" << endl << endl;
+
         index = utils.ShowMenu({"Manage Movements", "Manage Highways", "Manage Employees" ,"Manage Vehicles","Input Taxes for vehicles", "Statistics"});
         switch (index) {
             case(1):
-                utils.clrScreen();
                 system.manageMovements();
                 break;
             case(2):
-                utils.clrScreen();
                 system.manageHighways();
                 break;
             case(3):
-                utils.clrScreen();
                 system.manageEmployee();
                 break;
             case(4):
-                utils.clrScreen();
                 system.manageVehicle();
                 break;
             case 5:
@@ -186,7 +182,6 @@ int main(int argc, char* argv[]) {
                 system.getTaxesFromUser();
                 break;
             case 6:
-                utils.clrScreen();
                 system.manageStatistics();
                 break;
         }
