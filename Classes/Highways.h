@@ -9,7 +9,7 @@
  * Each highway's information is stored in their corresponding Highway object,
  * which is then processed in the vector 'highways' using Highways' methods.
  *
- * @param highways contains all the highways (objects from 'Highway' class) that exist
+ * @param highways contains all the highways (objects from Highway class) that exist
  */
 class Highways {
     vector<Highway *> highways;
@@ -39,11 +39,6 @@ public:
     Highway * getHighwayIndex(int i);
 
     /**
-     * @return 'highways' attribute
-     */
-    vector<Highway *> getHighways();
-
-    /**
      * Checks if Highway object with the name 'name' exists in the vector 'highways'
      * @param name is the string that a Highway object in 'highways' vector may have
      * @return false if a Highway object with name 'name' already exists in the container, true otherwise
@@ -70,17 +65,11 @@ public:
     void addHighway(Highway * h);
 
     /**
-     * removeHighway function removes a highway making use of its name
-     * @param name is a unique string that can be the attribute 'name' of a Highway object
-     * @return true if a Highway object with the name provided exists and is removed, nullptr otherwise
-     */
-    bool removeHighway(string name);
-
-    /**
      * removeHighway function removes a highway making use of its index in the
      * vector 'highways'
      * @param i is the index, in the vector 'highways', of the Highway object to remove from the container
-     * @return false if the Highway object that has the index 'i' exists and is removed, nullptr otherwise
+     * @return true if the Highway object with the index i was successfully removed from the
+     * container, false otherwise
      */
     bool removeHighway(int i);
 };
