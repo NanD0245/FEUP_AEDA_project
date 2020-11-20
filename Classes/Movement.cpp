@@ -1,7 +1,3 @@
-//
-// Created by mim on 24/10/20.
-//
-
 #include "Movement.h"
 
 Movement::Movement(Vehicle *vehicle1, Highway *highway1, Toll *toll1, Lane *lane1, Date *date) : vehicle(vehicle1), highway(highway1), toll(toll1), lane(lane1), date(date) {
@@ -24,15 +20,17 @@ string Movement::getInfo() const {
     return date->getInfo() + " - " + highway->getInfo() + " - " + toll->getName()+ " - " + to_string(lane->getLaneNumber())+ " - " + vehicle->getPlate();
 }
 
-string Movement::showMovement() const {
-    string s_type = type ? "Exit" : "Entrance";
-    return date->getInfo() + " - Movement Type: " + s_type + " - Highway Name: " + highway->getInfo() +
-                    " - Toll Name: " + toll->getName() + " - Lane Number: " + to_string(lane->getLaneNumber()) + " - Vehicle Plate: " + vehicle->getPlate();
-}
-
 float Movement::getPrice() const {return -1;}
 
 float Movement::getDistance() const {return -1;}
+
+string Movement::showMovement() const {
+    string s_type = type ? "Exit" : "Entrance";
+    return date->getInfo() + " - Movement Type: " + s_type + " - Highway Name: " + highway->getInfo() +
+           " - Toll Name: " + toll->getName() + " - Lane Number: " + to_string(lane->getLaneNumber()) + " - Vehicle Plate: " + vehicle->getPlate();
+}
+
+
 
 MovementEntry::MovementEntry(Vehicle *vehicle1, Highway *highway1, Toll *toll1, Lane *lane1, Date *date) : Movement(vehicle1,highway1,toll1,lane1, date) {
     type = false;
@@ -51,6 +49,8 @@ string MovementEntry::showMovement() const {
         return false;
     return (m1.getVehicle() == vehicle && m1.getLane() == lane && m1.getDate() == date);
 }*/
+
+
 
 MovementOut::MovementOut(Vehicle *vehicle1, Highway *highway1, Toll *toll1, Lane *lane1, Date * date,
                          Movement *entry) : Movement(vehicle1,highway1,toll1,lane1, date), entry(entry) {
