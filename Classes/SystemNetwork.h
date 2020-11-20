@@ -76,17 +76,17 @@ public:
     void getTaxesFromUser();
     void addEntryMovement();
     void addExitMovement();
-    void showMovementsByHighwayName(); //alphabetic + worth
+    void showMovementsByHighwayName();
     void showMovementsByHighwayPrice();
     void showMovementsByDate();
-    void showMovementsByTollName(Highway* highway);//alphabetic + types + worth
+    void showMovementsByTollName(Highway* highway);
     void showMovementsByTollType(Highway* highway);
     void showMovementsByTollPrice(Highway* highway);
-    void showMovementsbyLaneNumber(Toll * toll); //worth
+    void showMovementsbyLaneNumber(Toll * toll);
     void showMovementsbyLanePrice(Toll * toll);
     void showCarMovementsbyDate();
-    void showCarMovementsbyDistance(); //mostrar distancia total
-    void showCarMovementsbyPrice(); //mostrar preço total
+    void showCarMovementsbyDistance();
+    void showCarMovementsbyPrice();
     void showEmployeeMovements();
 
     void carSpentMoreMoney();

@@ -4,25 +4,6 @@
 #include <string>
 using namespace std;
 
-/*class DontExistAnyHighway {
-public:
-    DontExistAnyHighway() = default;;
-};
-
-class DontExistAnyToll {
-public:
-    DontExistAnyToll() = default;
-};
-
-class DontExistAnyLane {
-public:
-    DontExistAnyLane() = default;
-};
-
- class DontExistAnyVehicle {
-public:
-    DontExistAnyVehicle() = default;
-};*/
 
 class DontExistAnyMovement {
 public:

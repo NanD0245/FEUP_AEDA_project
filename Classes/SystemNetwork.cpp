@@ -1236,7 +1236,7 @@ int SystemNetwork::chooseIndexVehicle() const {
 
 void SystemNetwork::getTaxesFromUser() {
     float taxe[4];
-    bool exit;
+    bool exit = false;
     for (int i = 0; i < 4; i++) {
         cout << "Input the tax (euro per kilometer) for the class. (if you want to exit without set any tax please input EXIT) " << i+1 << endl;
         float a = utils->getFloat();
@@ -1248,6 +1248,22 @@ void SystemNetwork::getTaxesFromUser() {
     }
     if (!exit) {
         vehicles->setTaxes(taxe[0], taxe[1], taxe[2], taxe[3]);
+        for (size_t i = 0; i < vehicles->getNumVehicles(); i++) {
+            switch (vehicles->getVehicleIndex(i)->getClass()) {
+                case 1:
+                    vehicles->getVehicleIndex(i)->setTax(taxe[0]);
+                    break;
+                case 2:
+                    vehicles->getVehicleIndex(i)->setTax(taxe[1]);
+                    break;
+                case 3:
+                    vehicles->getVehicleIndex(i)->setTax(taxe[2]);
+                    break;
+                case 4:
+                    vehicles->getVehicleIndex(i)->setTax(taxe[3]);
+                    break;
+            }
+        }
         cout << "Taxes updated with success!" << endl;
         utils->waitForInput();
     }
@@ -1349,7 +1365,6 @@ void SystemNetwork::addEntryMovement() {
             cout << "ERROR: This vehicle is already in a highway." << endl;
             continue;
         }
-        //else vehicle = vehicles->getVehicle(s_plate);
         do {
             highway = chooseHighway();
             if (highway == nullptr) {
@@ -1389,6 +1404,7 @@ void SystemNetwork::addEntryMovement() {
         movements->addMovement(m1);
         break;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::addExitMovement() {
@@ -1476,6 +1492,7 @@ void SystemNetwork::addExitMovement() {
         movements->addMovement(m1);
         break;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::showMovementsByHighwayName() {
