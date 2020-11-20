@@ -103,7 +103,6 @@ void Utils::waitForInput() {
     cout << '\n' << "Press enter to continue...";
     getline(cin, a);
     cout << "\x1b[A";
-    //cout << "\033[2J\033[H";
 }
 
 

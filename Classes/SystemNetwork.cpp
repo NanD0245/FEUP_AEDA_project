@@ -284,7 +284,6 @@ void SystemNetwork::read(string file) {
             }
             if (check)
                 continue;
-            //f>>s;
             f>>code;
             if (code >= employees->getCode()) {
                 code++;
@@ -476,7 +475,6 @@ void SystemNetwork::manageReadMovements() {
             case 1:
                 utils->clrScreen();
                 manageMovementsHighway();
-                //cout << index << " asdasd" << endl;
                 break;
             case 2:
                 utils->clrScreen();
@@ -1111,7 +1109,6 @@ void SystemNetwork::readEmployees() {
     cout << "Employees: " << employees->getNumEmployees() << endl;
 
     for (int i = 0; i <employees->getNumEmployees(); i++) {
-        //cout << i+1 << " - " << employees->getEmployeeIndex(i)->getName() << " " << employees->getEmployeeIndex(i)->getCode() << endl;
         cout << i+1 << " - " << employees->getEmployeeIndex(i)->showEmployee() << endl;
     }
     utils->waitForInput();
@@ -1788,8 +1785,6 @@ void SystemNetwork::carSpentMoreMoney() {
     if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Vehicle* vehicle;
     float total_price = 0, price;
-    //if (vehicles->getNumVehicles() == 0)
-    //throw exception
     for (size_t i = 0; i <vehicles->getNumVehicles();i++) {
         price = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
@@ -1813,8 +1808,6 @@ void SystemNetwork::BestWorthHighway() {
     if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Highway* highway;
     float total_price = 0, price;
-    //if (highway->getNumHighway() == 0)
-    //throw exception
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         price = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
@@ -1834,8 +1827,6 @@ void SystemNetwork::BestWorthToll() {
     if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Toll* toll;
     float total_price = 0, price;
-    //if (highway->getNumHighway() == 0)
-    //throw exception
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         for (size_t k = 0; k < highways->getHighwayIndex(i)->getNumTolls(); k++) {
             price = 0;
@@ -1858,8 +1849,6 @@ void SystemNetwork::BestWorthLane() {
     if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Lane* lane;
     float total_price = 0, price;
-    //if (highway->getNumHighway() == 0)
-    //throw exception
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         for (size_t k = 0; k < highways->getHighwayIndex(i)->getNumTolls(); k++) {
             for (size_t l = 0; l < highways->getHighwayIndex(i)->getTollIndex(k)->getNumLanes(); l++) {
@@ -1885,8 +1874,6 @@ void SystemNetwork::HighwayMoreMoves() {
     if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     Highway* highway;
     int total_moves = 0, moves;
-    //if (highway->getNumHighway() == 0)
-    //throw exception
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         moves = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
@@ -1907,8 +1894,6 @@ void SystemNetwork::TollMoreMoves() {
     Toll* toll;
     Highway* highway;
     int total_moves = 0, moves;
-    //if (highway->getNumHighway() == 0)
-    //throw exception
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         for (size_t k = 0; k < highways->getHighwayIndex(i)->getNumTolls(); k++) {
             moves = 0;
@@ -1927,7 +1912,7 @@ void SystemNetwork::TollMoreMoves() {
     utils->waitForInput();
 }
 
-void SystemNetwork::LaneMoreMoves() { // tem erros
+void SystemNetwork::LaneMoreMoves() {
     if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     Lane* lane;
     Highway* highway;
