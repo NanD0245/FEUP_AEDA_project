@@ -1903,6 +1903,7 @@ void SystemNetwork::HighwayMoreMoves() {
 void SystemNetwork::TollMoreMoves() {
     if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     Toll* toll;
+    Highway* highway;
     int total_moves = 0, moves;
     //if (highway->getNumHighway() == 0)
     //throw exception
@@ -1916,16 +1917,19 @@ void SystemNetwork::TollMoreMoves() {
             if (moves > total_moves) {
                 total_moves = moves;
                 toll = highways->getHighwayIndex(i)->getTollIndex(k);
+                highway = highways->getHighwayIndex(i);
             }
         }
     }
-    cout << toll->showToll() << " - Total moves = " << total_moves << endl;
+    cout << highway->showHighway() << " - " << toll->showToll() << " - Total moves = " << total_moves << endl;
     utils->waitForInput();
 }
 
 void SystemNetwork::LaneMoreMoves() { // tem erros
     if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     Lane* lane;
+    Highway* highway;
+    Toll* toll;
     int total_moves = 0, moves;
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         for (size_t k = 0; k < highways->getHighwayIndex(i)->getNumTolls(); k++) {
@@ -1939,10 +1943,12 @@ void SystemNetwork::LaneMoreMoves() { // tem erros
                 if (moves > total_moves) {
                     total_moves = moves;
                     lane = highways->getHighwayIndex(i)->getTollIndex(k)->getLane(l);
+                    toll = highways->getHighwayIndex(i)->getTollIndex(k);
+                    highway = highways->getHighwayIndex(i);
                 }
             }
         }
     }
-    cout << lane->showLane() << " - Total moves = " << total_moves << endl;
+    cout << highway->showHighway() << " - Toll name: "<< toll->getName() << " - " << lane->showLane() << " - Total moves = " << total_moves << endl;
     utils->waitForInput();
 }
