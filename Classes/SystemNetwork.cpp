@@ -46,7 +46,7 @@ void SystemNetwork::write(){
     for(int i=0;i<movements->getNumMovements();i++){
         if(movements->getMovements()[i]->getType()) {
             f<<"Movement nr"<<n<<": "<<endl;
-            f <<movements->movements[i]->getInfo()<<endl;
+            f <<movements->getMovementIndex(i)->getInfo()<<endl;
             n++;
         }
     }
@@ -1137,31 +1137,32 @@ void SystemNetwork::createVehicle() {
     while (s_plate != "EXIT") {
         s_plate = utils->getPlate();
         if (s_plate != "EXIT") {
-
-            cout << "Choose the vehicle class: " << endl;
-            v_class = utils->ShowMenu({"Classe 1 - Motas", "Classe 2 - Light vehicle (passengers or goods)", "Class 3 - Bus", "Class 4 - Heavy goods vehicle "});
-            if (v_class != 0) {
-                cout << "Choose one of the options: " << endl;
-                greenlane = utils->ShowMenu({"To travel on Green lanes or Normal lanes", "To travel just on Normal lanes"});
-                if (greenlane != 0) {
-                    if (greenlane == 1) {
-                        vehicles->addVehicle(s_plate,v_class,true);
-                    }
-                    else {
-                        vehicles->addVehicle(s_plate,v_class);
-                    }
-                    cout << "Vehicle created with success!" << endl;
-                    utils->waitForInput();
-                    break;
-                }
-                else if (greenlane == 0)
+            if (!vehicles->checkPlate(s_plate)) {
+                cout << "Choose the vehicle class: " << endl;
+                v_class = utils->ShowMenu(
+                        {"Classe 1 - Motas", "Classe 2 - Light vehicle (passengers or goods)", "Class 3 - Bus",
+                         "Class 4 - Heavy goods vehicle "});
+                if (v_class != 0) {
+                    cout << "Choose one of the options: " << endl;
+                    greenlane = utils->ShowMenu(
+                            {"To travel on Green lanes or Normal lanes", "To travel just on Normal lanes"});
+                    if (greenlane != 0) {
+                        if (greenlane == 1) {
+                            vehicles->addVehicle(s_plate, v_class, true);
+                        } else {
+                            vehicles->addVehicle(s_plate, v_class);
+                        }
+                        cout << "Vehicle created with success!" << endl;
+                        utils->waitForInput();
+                        break;
+                    } else if (greenlane == 0)
+                        s_plate = "EXIT";
+                } else if (v_class == 0)
                     s_plate = "EXIT";
             }
-            else if (v_class == 0)
-                s_plate = "EXIT";
         }
         if (!(s_plate == "EXIT" || v_class == 0 || greenlane == 0))
-            cout << "ERROR: name of employee already exists." << endl;
+            cout << "ERROR: plate of vehicle already exists." << endl;
     }
 }
 
@@ -1175,14 +1176,14 @@ void SystemNetwork::updateVehicle() {
             case 1:
                 while (s_plate != "EXIT") {
                     s_plate = utils->getPlate();
-                    if (s_plate != "EXIT" && vehicles->checkPlate(s_plate)) {
+                    if (s_plate != "EXIT" && !vehicles->checkPlate(s_plate)) {
                         vehicles->getVehicleIndex(v_index)->setPlate(s_plate);
                         cout << "Vehicle updated with success!" << endl;
                         utils->waitForInput();
                         break;
                     }
                     if (s_plate != "EXIT")
-                        cout << "ERROR: name of employee already exists." << endl;
+                        cout << "ERROR: plate of vehicle already exists." << endl;
                 }
                 break;
             case 2:
@@ -1412,6 +1413,7 @@ void SystemNetwork::addEntryMovement() {
 
         auto* m1 = new MovementEntry(vehicle, highway, toll, lane, date);
         movements->addMovement(m1);
+        cout << "Entry movement created with success!" << endl;
         break;
     }
     utils->waitForInput();
@@ -1500,6 +1502,7 @@ void SystemNetwork::addExitMovement() {
 
         auto *m1 = new MovementOut(entry->getVehicle(),highway,toll,lane,date,entry);
         movements->addMovement(m1);
+        cout << "Exit movement created with success!" << endl;
         break;
     }
     utils->waitForInput();

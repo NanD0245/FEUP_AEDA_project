@@ -6,12 +6,6 @@ using namespace std;
 
 Toll::Toll(string name, string geolocal, float highway_kilometer, bool type) : name(name), geolocal(geolocal), highway_kilometer(highway_kilometer),type(type) {
     lanes.clear();
-    /*if (type == "entrance") {
-        this->type = false; // 0
-    }
-    else if (type == "exit") {
-        this->type = true; // 1
-    }*/
 }
 
 Toll::Toll(){

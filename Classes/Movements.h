@@ -18,7 +18,6 @@ using namespace std;
 class Movements {
     vector<Movement *> movements;
 public:
-    friend class SystemNetwork;
     /**
      * The constructor of Movements class initializes the 'highways' container as empty
      */

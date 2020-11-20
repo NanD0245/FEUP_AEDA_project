@@ -11,7 +11,7 @@
  * and every movement made by vehicles between Highways, Tolls and Lanes
  *
  *
- * @param type tells if it is an exit movement (leaving a Toll) or entrance (entering a Toll)
+ * @param type tells if it is an exit movement (leaving a Toll) if it's true or entrance (entering a Toll) if it's false
  * @param vehicle is the Vehicle object that made the movement
  * @param highway is the Highway object in which the movement was made
  * @param toll is the Toll object that the vehicle passed by when it made the movement
@@ -81,15 +81,6 @@ public:
            " - Toll Name: " + toll->getName() + " - Lane Number: " + lane->getLaneNumber() + " - Vehicle Plate: " + vehicle->getPlate()
      */
     virtual string showMovement() const;
-
-
-    void setType(const bool new_type);
-    void setVehicle(const Vehicle* new_vehicle);
-    void setHighway(const Highway* new_highway);
-    void setToll(const Toll* new_toll);
-    void setLane(const Lane* new_lane);
-    void setDate(const string date);
-    //virtual bool operator==(const Movement m1);
 };
 
 

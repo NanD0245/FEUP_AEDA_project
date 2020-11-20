@@ -44,12 +44,6 @@ string MovementEntry::showMovement() const {
     return Movement::showMovement();
 }
 
-/*bool MovementEntry::operator==(const MovementEntry &m1) {
-    if (m1.getType() == 1)
-        return false;
-    return (m1.getVehicle() == vehicle && m1.getLane() == lane && m1.getDate() == date);
-}*/
-
 
 
 MovementOut::MovementOut(Vehicle *vehicle1, Highway *highway1, Toll *toll1, Lane *lane1, Date * date,
@@ -72,14 +66,7 @@ Movement * MovementOut::getEntry() const {return entry;}
 
 float MovementOut::getPrice() const {return price;}
 
-/*bool MovementOut::operator==(const MovementOut &m1) {
-    if (m1.getType() == 0)
-        return false;
-    return (m1.getVehicle() == vehicle && m1.getLane() == lane && m1.getDate() == date && m1.getDistance() == distance && m1.getPrice() == price && m1.getEntry() == entry);
-}*/
-
 string MovementOut::getInfo() const {
-    //cout << getPrice() << endl;
     return Movement::getInfo() + " - " + to_string(distance) + " - " + to_string(price) + " - " + entry->getInfo();
 }
 
