@@ -1,24 +1,11 @@
-//
-// Created by mim on 03/11/20.
-//
-
 #include "Utils.h"
 
 #include <iostream>
 
 using namespace std;
 
-int Utils::ShowMenu(vector<string> menu) {
-    clrScreen();
-    cout << "TOLL MANAGEMENT SYSTEM" << endl << endl;
-    cout << "Please choose one of the options below: " << endl << endl;
-    for (size_t i = 0; i < menu.size(); i++) {
-        cout << (i+1) << " - " << menu[i] << endl;
-    }
-    cout << "0 - Exit" << endl << endl;
-    int index = getNumber(menu.size());
-    clrScreen();
-    return index;
+void Utils::clrScreen() {
+    cout << "\033[2J\033[H";
 }
 
 int Utils::getNumber(int max) {
@@ -27,7 +14,7 @@ int Utils::getNumber(int max) {
     while (true) {
         bool check = false;
         do {
-        getline(cin, s_index);
+            getline(cin, s_index);
         } while(s_index.empty());
         for (size_t i = 0; i < s_index.size(); i++) {
             if (s_index[i] < 48 || s_index[i] > 57 || s_index == "") {
@@ -47,6 +34,21 @@ int Utils::getNumber(int max) {
     }
     return index;
 }
+
+int Utils::ShowMenu(vector<string> menu) {
+    clrScreen();
+    cout << "TOLL MANAGEMENT SYSTEM" << endl << endl;
+    cout << "Please choose one of the options below: " << endl << endl;
+    for (size_t i = 0; i < menu.size(); i++) {
+        cout << (i+1) << " - " << menu[i] << endl;
+    }
+    cout << "0 - Exit" << endl << endl;
+    int index = getNumber(menu.size());
+    clrScreen();
+    return index;
+}
+
+
 
 float Utils::getFloat() {
     string s_index;
@@ -79,7 +81,7 @@ string Utils::getPlate() {
     string plate;
     while (true) {
         bool check = false;
-        cout << "Input the vehicle plate: (if you want to exit without create any vehicle please input EXIT)" << endl;
+        cout << "Input the vehicle plate: (if you want to exit without creating a vehicle please input EXIT)" << endl;
         getline(cin, plate);
         for (auto ch: plate) {
             if (ch == ' ') {
@@ -104,6 +106,4 @@ void Utils::waitForInput() {
     //cout << "\033[2J\033[H";
 }
 
-void Utils::clrScreen() {
-    cout << "\033[2J\033[H";
-}
+
