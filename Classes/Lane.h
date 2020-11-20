@@ -19,7 +19,7 @@ protected:
     bool green_lane;
 public:
     /**
-     * Initializes a lane object with the input provided by the user
+     * Initializes a new Lane object with the input provided by the user
      * @param lane_number sets 'lane_number'
      * @param green_lane sets 'green_lane'
      */
@@ -27,7 +27,7 @@ public:
 
     /**
      * Default constructor. \n
-     * Initializes a lane object with 'lane_number' attribute set to 0, and the object isn't a green lane
+     * Initializes a Lane object with 'lane_number' attribute set to 0, and the object isn't a green lane
      */
     Lane();
 

@@ -89,6 +89,10 @@ public:
      * @param plate sets 'plate' attribute
      */
     void setPlate(string plate);
+
+    /**
+     * @param tax sets 'tax' attribute
+     */
     void setTax(float tax);
 };
 
