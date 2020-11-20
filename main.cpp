@@ -28,11 +28,14 @@
 #ifndef ENABLE_VIRTUAL_TERMINAL_PROCESSING
 #define ENABLE_VIRTUAL_TERMINAL_PROCESSING 0x0004
 #endif
-
+/**
+ * configura a consola no Windows de modo a que os ASCII codes sejam aceites. Código retirado do Microsoft Docs:
+ * https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#example-of-enabling-virtual-terminal-processing
+ * Set output mode to handle virtual terminal sequences
+ * @return false if it couldn't create the console, true otherwise
+ */
 bool SetupConsole() {
-	//configura a consola no Windows de modo a que os ASCII codes sejam aceites. Código retirado do Microsoft Docs:
-	//https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#example-of-enabling-virtual-terminal-processing
-	// Set output mode to handle virtual terminal sequences
+
 	HANDLE hIn = GetStdHandle(STD_INPUT_HANDLE);
 	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	if (hIn == INVALID_HANDLE_VALUE || hOut == INVALID_HANDLE_VALUE) {

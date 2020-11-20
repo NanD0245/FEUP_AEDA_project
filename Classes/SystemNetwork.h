@@ -304,9 +304,15 @@ public:
     void getTaxesFromUser();
 
     /**
-     * Allows the user to add an Entry movement
+     * Tries to create an Entry Movement in a certain Lane object, which belongs to a TollEntrance object of a certain Highway,
+     * made by a Vehicle.
      */
     void addEntryMovement();
+
+    /**
+     * Tries to create an Exit Movement in a certain Lane object, which belongs to a TollOut object of a certain Highway,
+     * made by a Vehicle.
+     */
     void addExitMovement();
 
     /**
@@ -409,7 +415,15 @@ public:
      */
     void LaneMoreMoves();
 
+    /**
+     * reads file '../Cache/systemNetworks.txt' and creates objects that represent the information of the file
+     * @param file is a .txt file (e.g. '../Cache/systemNetworks.txt' file)
+     */
     void read(string file);
+
+    /**
+     * writes file '../Cache/systemNetworks.txt' according to the objects that make up the program's data
+     */
     void write();
 };
 

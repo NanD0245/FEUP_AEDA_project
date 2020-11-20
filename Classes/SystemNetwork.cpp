@@ -1435,7 +1435,6 @@ void SystemNetwork::addExitMovement() {
         }
         s_plate = utils->getPlate();
         if (s_plate == "EXIT") continue;
-        //cout << movements->getNumMovements() << endl;
 
         int counter = 0;
         for (int i = 0; i < movements->getNumMovements(); i++){
