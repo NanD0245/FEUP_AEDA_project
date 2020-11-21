@@ -62,6 +62,10 @@ Movement.h
 vector
 -
 
+/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.cpp
+SystemNetwork.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.h
+
 /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.h
 Highways.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highways.h
@@ -90,6 +94,12 @@ Lane.h
 string
 -
 vector
+-
+
+/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Utils.cpp
+Utils.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Utils.h
+iostream
 -
 
 /home/mim/Documents/FEUP/2ano/Cadeiras/AEDA/GIT_portagens/aeda2020-portagens/Classes/Utils.h
