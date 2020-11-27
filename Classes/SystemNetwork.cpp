@@ -861,12 +861,14 @@ void SystemNetwork::readTolls(Highway* highway) {
 }
 
 void SystemNetwork::updateToll(Highway *highway) {
-    int index, toll_index;
+    int index=0, toll_index;
     float kilometer;
     string s_name;
     toll_index = chooseIndexToll(highway);
-    index = utils->ShowMenu({"Toll's name","Toll's geographic location", "Toll's highway kilometer", "Toll's type"});
+    if (toll_index!= -1) index = utils->ShowMenu({"Toll's name","Toll's geographic location", "Toll's highway kilometer", "Toll's type"});
     switch (index) {
+        case 0:
+            break;
         case 1:
             while (s_name != "EXIT") {
                 cout << "Input the toll name: (if you want to exit without creating a toll please input EXIT)" << endl;
@@ -994,7 +996,8 @@ void SystemNetwork::updateLane(Toll *toll) {
     int lane_index, index;
     if (toll->getType()) {
         lane_index = chooseIndexLane(toll);
-        if (toll->getLane(lane_index)->getGreenLane()) {
+        if (lane_index == -1) {}
+        else if (toll->getLane(lane_index)->getGreenLane()) {
             index = utils->ShowMenu({"Green to normal lane"});
             if (index == 1) {
                 index = chooseIndexEmployee();
@@ -1022,6 +1025,7 @@ void SystemNetwork::updateLane(Toll *toll) {
     }
     else {
         cout << "This is a entrance toll so there is nothing to update." << endl;
+        utils->waitForInput();
     }
 }
 
@@ -1246,7 +1250,7 @@ void SystemNetwork::getTaxesFromUser() {
     float taxe[4];
     bool exit = false;
     for (int i = 0; i < 4; i++) {
-        cout << "Input the tax (euro per kilometer) for the class. (if you want to exit without setting a tax please input EXIT) " << i+1 << endl;
+        cout << "Input the tax (euro per kilometer) for the class " << i+1 << ". (if you want to exit without setting a tax please input EXIT) " << endl;
         float a = utils->getFloat();
         if (a == -1) {
             exit = true;
@@ -1475,7 +1479,7 @@ void SystemNetwork::addExitMovement() {
         time_t timer = time(0);
         tm *now = localtime(&timer);
         string s_date = to_string(now->tm_mday) + "/" + to_string(now->tm_mon) + "/" + to_string(now->tm_year+1900)  + " " + to_string(now->tm_hour) + ":" + to_string(now->tm_min) + ":" + to_string(now->tm_sec);
-        cout << s_date << endl;
+        //cout << s_date << endl;
         Date* date = new Date(s_date);
         lane_index = adviceOutLane(entry->getVehicle(), toll, date);
         cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
@@ -1535,7 +1539,7 @@ void SystemNetwork::showMovementsByHighwayPrice() {
         return (m1->getPrice() > m2->getPrice());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1547,7 +1551,7 @@ void SystemNetwork::showMovementsByDate() {
         return (*(m1->getDate()) > *(m2->getDate()));
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1563,7 +1567,7 @@ void SystemNetwork::showMovementsByTollName(Highway* highway) {
         return (m1->getToll()->getName() < m2->getToll()->getName());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1579,7 +1583,7 @@ void SystemNetwork::showMovementsByTollPrice(Highway *highway) {
         return (m1->getPrice() > m2->getPrice());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1595,7 +1599,7 @@ void SystemNetwork::showMovementsByTollType(Highway *highway) {
         return (m1->getToll()->getType() < m2->getToll()->getType());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1611,7 +1615,7 @@ void SystemNetwork::showMovementsbyLaneNumber(Toll *toll) {
         return (m1->getLane()->getLaneNumber() < m2->getLane()->getLaneNumber());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1627,7 +1631,7 @@ void SystemNetwork::showMovementsbyLanePrice(Toll *toll) {
         return (m1->getPrice() > m2->getPrice());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1663,7 +1667,7 @@ void SystemNetwork::showCarMovementsbyDate() {
             return (*(m1->getDate()) > *(m2->getDate()));
         });
         for (size_t i = 0; i < v1.size(); i++) {
-            cout << i+1 << " - " << v1[i]->getInfo() << endl;
+            cout << i+1 << " - " << v1[i]->showMovement() << endl;
         }
     }
     utils->waitForInput();
@@ -1700,7 +1704,7 @@ void SystemNetwork::showCarMovementsbyDistance() {
             return (m1->getDistance() > m2->getDistance());
         });
         for (size_t i = 0; i < v1.size(); i++) {
-            cout << i+1 << " - " << v1[i]->getInfo() << endl;
+            cout << i+1 << " - " << v1[i]->showMovement() << endl;
         }
     }
     utils->waitForInput();
@@ -1737,7 +1741,7 @@ void SystemNetwork::showCarMovementsbyPrice() {
             return (m1->getDistance() > m2->getDistance());
         });
         for (size_t i = 0; i < v1.size(); i++) {
-            cout << i+1 << " - " << v1[i]->getInfo() << endl;
+            cout << i+1 << " - " << v1[i]->showMovement() << endl;
         }
     }
     utils->waitForInput();
@@ -1775,7 +1779,7 @@ void SystemNetwork::showEmployeeMovements() {
             return (m1->getDate() > m2->getDate());
         });
         for (size_t i = 0; i < v1.size(); i++) {
-            cout << i+1 << " - " << v1[i]->getInfo() << endl;
+            cout << i+1 << " - " << v1[i]->showMovement() << endl;
         }
     }
     utils->waitForInput();
