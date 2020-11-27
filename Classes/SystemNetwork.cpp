@@ -1,7 +1,3 @@
-//
-// Created by mim on 24/10/20.
-//
-
 #include "SystemNetwork.h"
 
 using namespace std;
@@ -13,6 +9,8 @@ SystemNetwork::SystemNetwork() {
     utils = new Utils();
     employees = new Employees();
 }
+
+
 
 void SystemNetwork::write(){
     vector<Toll *> t;
@@ -48,7 +46,7 @@ void SystemNetwork::write(){
     for(int i=0;i<movements->getNumMovements();i++){
         if(movements->getMovements()[i]->getType()) {
             f<<"Movement nr"<<n<<": "<<endl;
-            f <<movements->movements[i]->getInfo()<<endl;
+            f <<movements->getMovementIndex(i)->getInfo()<<endl;
             n++;
         }
     }
@@ -286,7 +284,6 @@ void SystemNetwork::read(string file) {
             }
             if (check)
                 continue;
-            //f>>s;
             f>>code;
             if (code >= employees->getCode()) {
                 code++;
@@ -305,6 +302,8 @@ void SystemNetwork::read(string file) {
     f.close();
 
 }
+
+
 
 void SystemNetwork::manageHighways() {
     int index;
@@ -476,7 +475,6 @@ void SystemNetwork::manageReadMovements() {
             case 1:
                 utils->clrScreen();
                 manageMovementsHighway();
-                //cout << index << " asdasd" << endl;
                 break;
             case 2:
                 utils->clrScreen();
@@ -496,10 +494,10 @@ void SystemNetwork::manageReadMovements() {
                     showEmployeeMovements();
                 }
                 catch (DontExistAnyMovement &e) {
-                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                    cout << "EXCEPTION: There are no employee movements." << endl;
                 }
                 catch (EmployeeDoesNotExist &e) {
-                    cout << "EXCEPTION: Don't exist any employee with the name " << e.getName() << "." << endl;
+                    cout << "EXCEPTION: There are no employees with the name " << e.getName() << "." << endl;
                 }
                 break;
         }
@@ -517,7 +515,7 @@ void SystemNetwork::manageMovementsHighway() {
                     showMovementsByHighwayName();
                 }
                 catch (DontExistAnyMovement &e) {
-                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                    cout << "EXCEPTION: There are no movements." << endl;
                 }
                 break;
             case 2:
@@ -526,7 +524,7 @@ void SystemNetwork::manageMovementsHighway() {
                     showMovementsByHighwayPrice();
                 }
                 catch (DontExistAnyExitMovement &e) {
-                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                    cout << "EXCEPTION: There are no exit movements." << endl;
                 }
                 break;
             case 3:
@@ -535,7 +533,7 @@ void SystemNetwork::manageMovementsHighway() {
                     showMovementsByDate();
                 }
                 catch (DontExistAnyMovement &e) {
-                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                    cout << "EXCEPTION: There are no exit movements." << endl;
                 }
                 break;
         }
@@ -556,7 +554,7 @@ void SystemNetwork::manageMovementsToll() {
                     showMovementsByTollName(a1);
                 }
                 catch (DontExistAnyMovement &e) {
-                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                    cout << "EXCEPTION: There are no movements." << endl;
                 }
                 break;
             case 2:
@@ -567,7 +565,7 @@ void SystemNetwork::manageMovementsToll() {
                     showMovementsByTollPrice(a1);
                 }
                 catch (DontExistAnyExitMovement &e) {
-                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                    cout << "EXCEPTION: There are no exit movements." << endl;
                 }
                 break;
             case 3:
@@ -578,7 +576,7 @@ void SystemNetwork::manageMovementsToll() {
                     showMovementsByTollType(a1);
                 }
                 catch (DontExistAnyMovement &e) {
-                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                    cout << "EXCEPTION: There are no movements." << endl;
                 }
                 break;
         }
@@ -602,7 +600,7 @@ void SystemNetwork::manageMovementsLane() {
                     showMovementsbyLaneNumber(t1);
                 }
                 catch (DontExistAnyMovement &e) {
-                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                    cout << "EXCEPTION: There are no movements." << endl;
                 }
                 break;
             case 2:
@@ -615,7 +613,7 @@ void SystemNetwork::manageMovementsLane() {
                     showMovementsbyLanePrice(t1);
                 }
                 catch (DontExistAnyExitMovement &e) {
-                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                    cout << "EXCEPTION: There are no exit movements." << endl;
                 }
                 break;
         }
@@ -633,10 +631,10 @@ void SystemNetwork::manageMovementsCar() {
                     showCarMovementsbyPrice();
                 }
                 catch (DontExistAnyExitMovement &e) {
-                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                    cout << "EXCEPTION: There are no exit movements." << endl;
                 }
                 catch (VehicleDoesNotExist &e) {
-                    cout << "EXCEPTION: Don't exist any vehicle with the plate " << e.getPlate() << "." << endl;
+                    cout << "EXCEPTION: There are no vehicles with the plate " << e.getPlate() << "." << endl;
                 }
                 break;
             case 2:
@@ -645,10 +643,10 @@ void SystemNetwork::manageMovementsCar() {
                     showCarMovementsbyDistance();
                 }
                 catch (DontExistAnyExitMovement &e) {
-                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                    cout << "EXCEPTION: There are no exit movements." << endl;
                 }
                 catch (VehicleDoesNotExist &e) {
-                    cout << "EXCEPTION: Don't exist any vehicle with the plate " << e.getPlate() << "." << endl;
+                    cout << "EXCEPTION: There are no vehicles with the plate " << e.getPlate() << "." << endl;
                 }
                 break;
             case 3:
@@ -657,10 +655,10 @@ void SystemNetwork::manageMovementsCar() {
                     showCarMovementsbyDate();
                 }
                 catch (DontExistAnyMovement &e) {
-                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                    cout << "EXCEPTION: There are no movements." << endl;
                 }
                 catch (VehicleDoesNotExist &e) {
-                    cout << "EXCEPTION: Don't exist any vehicle with the plate " << e.getPlate() << "." << endl;
+                    cout << "EXCEPTION: There are no vehicles with the plate " << e.getPlate() << "." << endl;
                 }
                 break;
         }
@@ -680,7 +678,7 @@ void SystemNetwork::manageStatistics() {
                     BestWorthHighway();
                 }
                 catch (DontExistAnyExitMovement &e) {
-                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                    cout << "EXCEPTION: There are no exit movements." << endl;
                 }
                 break;
             case 2:
@@ -689,7 +687,7 @@ void SystemNetwork::manageStatistics() {
                     BestWorthToll();
                 }
                 catch (DontExistAnyExitMovement &e) {
-                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                    cout << "EXCEPTION: There are no exit movements." << endl;
                 }
                 break;
             case 3:
@@ -698,7 +696,7 @@ void SystemNetwork::manageStatistics() {
                     BestWorthLane();
                 }
                 catch (DontExistAnyExitMovement &e) {
-                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                    cout << "EXCEPTION: There are no exit movements." << endl;
                 }
                 break;
             case 4:
@@ -707,7 +705,7 @@ void SystemNetwork::manageStatistics() {
                     carSpentMoreMoney();
                 }
                 catch (DontExistAnyExitMovement &e) {
-                    cout << "EXCEPTION: Don't exist any exit movement." << endl;
+                    cout << "EXCEPTION: There are no exit movements." << endl;
                 }
                 break;
             case 5:
@@ -716,7 +714,7 @@ void SystemNetwork::manageStatistics() {
                     HighwayMoreMoves();
                 }
                 catch (DontExistAnyMovement &e) {
-                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                    cout << "EXCEPTION: There are no movements." << endl;
                 }
                 break;
             case 6:
@@ -725,7 +723,7 @@ void SystemNetwork::manageStatistics() {
                     TollMoreMoves();
                 }
                 catch (DontExistAnyMovement &e) {
-                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                    cout << "EXCEPTION: There are no movements." << endl;
                 }
                 break;
             case 7:
@@ -734,24 +732,26 @@ void SystemNetwork::manageStatistics() {
                     LaneMoreMoves();
                 }
                 catch (DontExistAnyMovement &e) {
-                    cout << "EXCEPTION: Don't exist any movement." << endl;
+                    cout << "EXCEPTION: There are no movements." << endl;
                 }
                 break;
         }
     } while(index);
 }
 
+
+
 void SystemNetwork::createHighway() {
     string s_name;
     while (s_name != "EXIT") {
-        cout << "Input the highway name: (if you want to exit without create any highway please input EXIT)" << endl;
+        cout << "Input the highway name: (if you want to exit without creating a highway please input EXIT)" << endl;
         getline(cin, s_name);
         if (s_name != "EXIT" && highways->addHighway(s_name)) {
             cout << "Highway created with success!" << endl;
             utils->waitForInput();
             break;
         }
-        cout << "ERROR: name of highway already exist." << endl;
+        cout << "ERROR: name of highway already exists." << endl;
     }
 }
 
@@ -770,7 +770,7 @@ void SystemNetwork::updateHighway() {
     index = chooseIndexHighway();
     if (index > -1)
         while (s_name != "EXIT") {
-            cout << "Input the highway name: (if you want to exit without create any highway please input EXIT)" << endl;
+            cout << "Input the highway name: (if you want to exit without updating a highway please input EXIT)" << endl;
             getline(cin, s_name);
             if (s_name != "EXIT" && highways->checkHighwayName(s_name)) {
                 highways->getHighwayIndex(index)->setName(s_name);
@@ -778,7 +778,7 @@ void SystemNetwork::updateHighway() {
                 utils->waitForInput();
                 break;
             }
-            cout << "ERROR: name of highway already exist." << endl;
+            cout << "ERROR: name of highway already exists." << endl;
         }
 }
 
@@ -816,19 +816,21 @@ int SystemNetwork::chooseIndexHighway() const {
     return utils->ShowMenu(v1)-1;
 }
 
+
+
 void SystemNetwork::createToll(Highway *highway) {
     string s_name, s_geolocal;
     float kilometer;
     int i_type;
     bool type;
     while (!(s_name == "EXIT" || kilometer == -1 || i_type == 0)) {
-        cout << "Input the toll's name: (if you want to exit without create any toll please input EXIT)" << endl;
+        cout << "Input the toll's name: (if you want to exit without creating a toll please input EXIT)" << endl;
         getline(cin, s_name);
         if (s_name != "EXIT" && highway->checkTollName(s_name)) {
-            cout << "Input the toll's geographic location: (if you want to exit without create any toll please input EXIT)"<< endl;
+            cout << "Input the toll's geographic location: (if you want to exit without creating a toll please input EXIT)"<< endl;
             getline(cin, s_geolocal);
             if (s_geolocal != "EXIT") {
-                cout << "Input the toll's highway kilometer: (if you want to exit without create any toll please input EXIT)"<< endl;
+                cout << "Input the toll's highway kilometer: (if you want to exit without creating a toll please input EXIT)"<< endl;
                 kilometer = utils->getFloat();
                 if (kilometer != -1) {
                     while(!(i_type == 1 || i_type == 2 || i_type == 0)) {
@@ -845,11 +847,9 @@ void SystemNetwork::createToll(Highway *highway) {
             }
         }
         if(!(s_name == "EXIT" || kilometer == -1 || i_type == 0))
-            cout << "ERROR: name of highway already exist." << endl;
+            cout << "ERROR: name of highway already exists." << endl;
     }
 }
-
-
 
 void SystemNetwork::readTolls(Highway* highway) {
     string s_type;
@@ -861,15 +861,17 @@ void SystemNetwork::readTolls(Highway* highway) {
 }
 
 void SystemNetwork::updateToll(Highway *highway) {
-    int index, toll_index;
+    int index=0, toll_index;
     float kilometer;
     string s_name;
     toll_index = chooseIndexToll(highway);
-    index = utils->ShowMenu({"Toll's name","Toll's geographic location", "Toll's highway kilometer", "Toll's type"});
+    if (toll_index!= -1) index = utils->ShowMenu({"Toll's name","Toll's geographic location", "Toll's highway kilometer", "Toll's type"});
     switch (index) {
+        case 0:
+            break;
         case 1:
             while (s_name != "EXIT") {
-                cout << "Input the toll name: (if you want to exit without create any toll please input EXIT)" << endl;
+                cout << "Input the toll name: (if you want to exit without creating a toll please input EXIT)" << endl;
                 getline(cin, s_name);
                 if (s_name != "EXIT" && highway->checkTollName(s_name)) {
                     highway->getTollIndex(toll_index)->setName(s_name);
@@ -878,11 +880,11 @@ void SystemNetwork::updateToll(Highway *highway) {
                     break;
                 }
                 if (s_name!="EXIT")
-                    cout << "ERROR: toll's name already exist." << endl;
+                    cout << "ERROR: toll's name already exists." << endl;
             }
             break;
         case 2:
-            cout << "Input the toll's geographic location: (if you want to exit without update any toll please input EXIT)" << endl;
+            cout << "Input the toll's geographic location: (if you want to exit without updating a toll please input EXIT)" << endl;
             getline(cin, s_name);
             if (s_name != "EXIT") {
                 highway->getTollIndex(toll_index)->setGeolocal(s_name);
@@ -898,7 +900,7 @@ void SystemNetwork::updateToll(Highway *highway) {
             break;
         case 4:
             if (highway->getTollIndex(toll_index)->getNumLanes() == 0) {
-                cout << "Not possible to update toll's type because the toll have at least one lane" << endl;
+                cout << "Not possible to update toll's type because the toll doesn't have at least one lane" << endl;
                 utils->waitForInput();
             }
             else {
@@ -947,6 +949,8 @@ int SystemNetwork::chooseIndexToll(Highway* highway) const {
     return utils->ShowMenu(v1)-1;
 }
 
+
+
 void SystemNetwork::createLane(Toll *toll) {
     int index;
     if (!toll->getType()) {
@@ -992,7 +996,8 @@ void SystemNetwork::updateLane(Toll *toll) {
     int lane_index, index;
     if (toll->getType()) {
         lane_index = chooseIndexLane(toll);
-        if (toll->getLane(lane_index)->getGreenLane()) {
+        if (lane_index == -1) {}
+        else if (toll->getLane(lane_index)->getGreenLane()) {
             index = utils->ShowMenu({"Green to normal lane"});
             if (index == 1) {
                 index = chooseIndexEmployee();
@@ -1020,6 +1025,7 @@ void SystemNetwork::updateLane(Toll *toll) {
     }
     else {
         cout << "This is a entrance toll so there is nothing to update." << endl;
+        utils->waitForInput();
     }
 }
 
@@ -1056,10 +1062,12 @@ int SystemNetwork::chooseIndexLane(Toll* toll) const {
     return utils->ShowMenu(v1)-1;
 }
 
+
+
 void SystemNetwork::createEmployee() {
     string s_name;
     while (s_name != "EXIT") {
-        cout << "Input the employee name: (if you want to exit without create any employee please input EXIT)" << endl;
+        cout << "Input the employee name: (if you want to exit without creating a employee please input EXIT)" << endl;
         getline(cin, s_name);
         if (s_name != "EXIT" && employees->addEmployee(s_name)) {
             cout << "employee created with success!" << endl;
@@ -1067,7 +1075,7 @@ void SystemNetwork::createEmployee() {
             break;
         }
         if (s_name!= "EXIT")
-            cout << "ERROR: name of employee already exist." << endl;
+            cout << "ERROR: name of employee already exists." << endl;
     }
 }
 
@@ -1077,7 +1085,7 @@ void SystemNetwork::updateEmployee() {
     index = chooseIndexEmployee();
     if (index > -1)
         while (s_name != "EXIT") {
-            cout << "Input the employee name: (if you want to exit without create any employee please input EXIT)" << endl;
+            cout << "Input the employee name: (if you want to exit without updating a employee please input EXIT)" << endl;
             getline(cin, s_name);
             if (s_name != "EXIT" && employees->checkEmployeeName(s_name)) {
                 employees->getEmployeeIndex(index)->setName(s_name);
@@ -1086,7 +1094,7 @@ void SystemNetwork::updateEmployee() {
                 break;
             }
             if (s_name != "EXIT")
-                cout << "ERROR: name of employee already exist." << endl;
+                cout << "ERROR: name of employee already exists." << endl;
         }
 }
 
@@ -1105,7 +1113,6 @@ void SystemNetwork::readEmployees() {
     cout << "Employees: " << employees->getNumEmployees() << endl;
 
     for (int i = 0; i <employees->getNumEmployees(); i++) {
-        //cout << i+1 << " - " << employees->getEmployeeIndex(i)->getName() << " " << employees->getEmployeeIndex(i)->getCode() << endl;
         cout << i+1 << " - " << employees->getEmployeeIndex(i)->showEmployee() << endl;
     }
     utils->waitForInput();
@@ -1123,37 +1130,40 @@ int SystemNetwork::chooseIndexEmployee() const {
     return utils->ShowMenu(v1)-1;
 }
 
+
+
 void SystemNetwork::createVehicle() {
     string s_plate;
     int v_class, greenlane;
     while (s_plate != "EXIT") {
         s_plate = utils->getPlate();
         if (s_plate != "EXIT") {
-
-            cout << "Choose one of the options of vehicle class: " << endl;
-            v_class = utils->ShowMenu({"Classe 1 - Motas", "Classe 2 - Light vehicle (passengers or goods)", "Class 3 - Bus", "Class 4 - Heavy goods vehicle "});
-            if (v_class != 0) {
-                cout << "Choose one of the options: " << endl;
-                greenlane = utils->ShowMenu({"To travel on Green lanes or Normal lanes", "To travel just on Normal lanes"});
-                if (greenlane != 0) {
-                    if (greenlane == 1) {
-                        vehicles->addVehicle(s_plate,v_class,true);
-                    }
-                    else {
-                        vehicles->addVehicle(s_plate,v_class);
-                    }
-                    cout << "Vehicle created with success!" << endl;
-                    utils->waitForInput();
-                    break;
-                }
-                else if (greenlane == 0)
+            if (!vehicles->checkPlate(s_plate)) {
+                cout << "Choose the vehicle class: " << endl;
+                v_class = utils->ShowMenu(
+                        {"Classe 1 - Motas", "Classe 2 - Light vehicle (passengers or goods)", "Class 3 - Bus",
+                         "Class 4 - Heavy goods vehicle "});
+                if (v_class != 0) {
+                    cout << "Choose one of the options: " << endl;
+                    greenlane = utils->ShowMenu(
+                            {"To travel on Green lanes or Normal lanes", "To travel just on Normal lanes"});
+                    if (greenlane != 0) {
+                        if (greenlane == 1) {
+                            vehicles->addVehicle(s_plate, v_class, true);
+                        } else {
+                            vehicles->addVehicle(s_plate, v_class);
+                        }
+                        cout << "Vehicle created with success!" << endl;
+                        utils->waitForInput();
+                        break;
+                    } else if (greenlane == 0)
+                        s_plate = "EXIT";
+                } else if (v_class == 0)
                     s_plate = "EXIT";
             }
-            else if (v_class == 0)
-                s_plate = "EXIT";
         }
         if (!(s_plate == "EXIT" || v_class == 0 || greenlane == 0))
-            cout << "ERROR: name of employee already exist." << endl;
+            cout << "ERROR: plate of vehicle already exists." << endl;
     }
 }
 
@@ -1167,18 +1177,18 @@ void SystemNetwork::updateVehicle() {
             case 1:
                 while (s_plate != "EXIT") {
                     s_plate = utils->getPlate();
-                    if (s_plate != "EXIT" && vehicles->checkPlate(s_plate)) {
+                    if (s_plate != "EXIT" && !vehicles->checkPlate(s_plate)) {
                         vehicles->getVehicleIndex(v_index)->setPlate(s_plate);
                         cout << "Vehicle updated with success!" << endl;
                         utils->waitForInput();
                         break;
                     }
                     if (s_plate != "EXIT")
-                        cout << "ERROR: name of employee already exist." << endl;
+                        cout << "ERROR: plate of vehicle already exists." << endl;
                 }
                 break;
             case 2:
-                cout << "Choose one of the options of vehicle class: " << endl;
+                cout << "Choose the vehicle class: " << endl;
                 index = utils->ShowMenu({"Classe 1 - Motas", "Classe 2 - Light vehicle (passengers or goods)", "Class 3 - Bus", "Class 4 - Heavy goods vehicle "});
                 if (index != 0) {
                     vehicles->getVehicleIndex(v_index)->setVehicleClass(index);
@@ -1234,11 +1244,13 @@ int SystemNetwork::chooseIndexVehicle() const {
     return utils->ShowMenu(v1)-1;
 }
 
+
+
 void SystemNetwork::getTaxesFromUser() {
     float taxe[4];
-    bool exit;
+    bool exit = false;
     for (int i = 0; i < 4; i++) {
-        cout << "Input the tax (euro per kilometer) for the class. (if you want to exit without set any tax please input EXIT) " << i+1 << endl;
+        cout << "Input the tax (euro per kilometer) for the class " << i+1 << ". (if you want to exit without setting a tax please input EXIT) " << endl;
         float a = utils->getFloat();
         if (a == -1) {
             exit = true;
@@ -1248,6 +1260,22 @@ void SystemNetwork::getTaxesFromUser() {
     }
     if (!exit) {
         vehicles->setTaxes(taxe[0], taxe[1], taxe[2], taxe[3]);
+        for (size_t i = 0; i < vehicles->getNumVehicles(); i++) {
+            switch (vehicles->getVehicleIndex(i)->getClass()) {
+                case 1:
+                    vehicles->getVehicleIndex(i)->setTax(taxe[0]);
+                    break;
+                case 2:
+                    vehicles->getVehicleIndex(i)->setTax(taxe[1]);
+                    break;
+                case 3:
+                    vehicles->getVehicleIndex(i)->setTax(taxe[2]);
+                    break;
+                case 4:
+                    vehicles->getVehicleIndex(i)->setTax(taxe[3]);
+                    break;
+            }
+        }
         cout << "Taxes updated with success!" << endl;
         utils->waitForInput();
     }
@@ -1317,7 +1345,7 @@ void SystemNetwork::addEntryMovement() {
     Date* date = new Date(s_date);
     while (s_plate != "EXIT" && index != 0) {
         if (vehicles->getTaxes(1) == -1 || vehicles->getTaxes(2) == -1 || vehicles->getTaxes(3) == -1 || vehicles->getTaxes(4) == -1) {
-            cout << "ERROR: Before this you have to input the taxes for the vehicle's classes" << index << endl;
+            cout << "ERROR: Before this you have to input the taxes for each vehicle class" << index << endl;
             s_plate = "EXIT";
             utils->waitForInput();
             continue;
@@ -1325,7 +1353,7 @@ void SystemNetwork::addEntryMovement() {
         s_plate = utils->getPlate();
         if (s_plate == "EXIT") continue;
         if (!vehicles->checkPlate(s_plate)) {
-            cout << "Vehicle is not registed. To advance input vehicle class" << endl;
+            cout << "Vehicle is not registed. To advance, input vehicle class" << endl;
             index = utils->ShowMenu({"Classe 1 - Motas", "Classe 2 - Light vehicle (passengers or goods)", "Class 3 - Bus", "Class 4 - Heavy goods vehicle "});
             if (index != 0)
                 vehicle = new Vehicle(s_plate,index,vehicles->getTaxes(index));
@@ -1349,7 +1377,6 @@ void SystemNetwork::addEntryMovement() {
             cout << "ERROR: This vehicle is already in a highway." << endl;
             continue;
         }
-        //else vehicle = vehicles->getVehicle(s_plate);
         do {
             highway = chooseHighway();
             if (highway == nullptr) {
@@ -1358,7 +1385,7 @@ void SystemNetwork::addEntryMovement() {
                 break;
             }
             if (highway->getNumTolls() == 0) {
-                cout << "ERROR: This highway don't have any toll." << endl;
+                cout << "ERROR: This highway doesn't have a toll." << endl;
             }
         } while (highway->getNumTolls() == 0);
         if (s_plate == "EXIT") continue;
@@ -1370,10 +1397,10 @@ void SystemNetwork::addEntryMovement() {
                 break;
             }
             if (toll->getType()) {
-                cout << "ERROR: This is a exit toll." << endl;
+                cout << "ERROR: This is an exit toll." << endl;
             }
             if (toll->getNumLanes() == 0) {
-                cout << "ERROR: This toll don't have any lane." << endl;
+                cout << "ERROR: This toll doesn't have a lane." << endl;
             }
         } while(toll->getNumLanes() == 0 || toll->getType());
         if (s_plate == "EXIT") continue;
@@ -1387,8 +1414,10 @@ void SystemNetwork::addEntryMovement() {
 
         auto* m1 = new MovementEntry(vehicle, highway, toll, lane, date);
         movements->addMovement(m1);
+        cout << "Entry movement created with success!" << endl;
         break;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::addExitMovement() {
@@ -1407,7 +1436,6 @@ void SystemNetwork::addExitMovement() {
         }
         s_plate = utils->getPlate();
         if (s_plate == "EXIT") continue;
-        //cout << movements->getNumMovements() << endl;
 
         int counter = 0;
         for (int i = 0; i < movements->getNumMovements(); i++){
@@ -1429,7 +1457,7 @@ void SystemNetwork::addExitMovement() {
             }
         }
         if (entry == nullptr) {
-            cout << "ERROR: Vehicle isn't in any highway." << endl;
+            cout << "ERROR: Vehicle isn't in a highway." << endl;
             utils->waitForInput();
             continue;
         }
@@ -1444,14 +1472,14 @@ void SystemNetwork::addExitMovement() {
                 cout << "ERROR: This is a entrance toll." << endl;
             }
             if (toll->getNumLanes() == 0) {
-                cout << "ERROR: This toll don't have any lane." << endl;
+                cout << "ERROR: This toll doesn't have a lane." << endl;
             }
         } while(toll->getNumLanes() == 0 || !toll->getType());
         if (s_plate == "EXIT") continue;
         time_t timer = time(0);
         tm *now = localtime(&timer);
         string s_date = to_string(now->tm_mday) + "/" + to_string(now->tm_mon) + "/" + to_string(now->tm_year+1900)  + " " + to_string(now->tm_hour) + ":" + to_string(now->tm_min) + ":" + to_string(now->tm_sec);
-        cout << s_date << endl;
+        //cout << s_date << endl;
         Date* date = new Date(s_date);
         lane_index = adviceOutLane(entry->getVehicle(), toll, date);
         cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
@@ -1462,7 +1490,7 @@ void SystemNetwork::addExitMovement() {
                 break;
             }
             if (!entry->getVehicle()->getGreenLaneBool() && lane->getGreenLane()) {
-                cout << "ERROR: This is a green lane and your car is a non green lane." << endl;
+                cout << "ERROR: This is a green lane and your car only travels on normal lanes." << endl;
             }
         } while(!entry->getVehicle()->getGreenLaneBool() && lane->getGreenLane());
 
@@ -1474,8 +1502,10 @@ void SystemNetwork::addExitMovement() {
 
         auto *m1 = new MovementOut(entry->getVehicle(),highway,toll,lane,date,entry);
         movements->addMovement(m1);
+        cout << "Exit movement created with success!" << endl;
         break;
     }
+    utils->waitForInput();
 }
 
 void SystemNetwork::showMovementsByHighwayName() {
@@ -1509,7 +1539,7 @@ void SystemNetwork::showMovementsByHighwayPrice() {
         return (m1->getPrice() > m2->getPrice());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1521,7 +1551,7 @@ void SystemNetwork::showMovementsByDate() {
         return (*(m1->getDate()) > *(m2->getDate()));
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1537,7 +1567,7 @@ void SystemNetwork::showMovementsByTollName(Highway* highway) {
         return (m1->getToll()->getName() < m2->getToll()->getName());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1553,7 +1583,7 @@ void SystemNetwork::showMovementsByTollPrice(Highway *highway) {
         return (m1->getPrice() > m2->getPrice());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1569,7 +1599,7 @@ void SystemNetwork::showMovementsByTollType(Highway *highway) {
         return (m1->getToll()->getType() < m2->getToll()->getType());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1585,7 +1615,7 @@ void SystemNetwork::showMovementsbyLaneNumber(Toll *toll) {
         return (m1->getLane()->getLaneNumber() < m2->getLane()->getLaneNumber());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1601,7 +1631,7 @@ void SystemNetwork::showMovementsbyLanePrice(Toll *toll) {
         return (m1->getPrice() > m2->getPrice());
     });
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << i+1 << " - " << v1[i]->getInfo() << endl;
+        cout << i+1 << " - " << v1[i]->showMovement() << endl;
     }
     utils->waitForInput();
 }
@@ -1637,7 +1667,7 @@ void SystemNetwork::showCarMovementsbyDate() {
             return (*(m1->getDate()) > *(m2->getDate()));
         });
         for (size_t i = 0; i < v1.size(); i++) {
-            cout << i+1 << " - " << v1[i]->getInfo() << endl;
+            cout << i+1 << " - " << v1[i]->showMovement() << endl;
         }
     }
     utils->waitForInput();
@@ -1674,7 +1704,7 @@ void SystemNetwork::showCarMovementsbyDistance() {
             return (m1->getDistance() > m2->getDistance());
         });
         for (size_t i = 0; i < v1.size(); i++) {
-            cout << i+1 << " - " << v1[i]->getInfo() << endl;
+            cout << i+1 << " - " << v1[i]->showMovement() << endl;
         }
     }
     utils->waitForInput();
@@ -1711,7 +1741,7 @@ void SystemNetwork::showCarMovementsbyPrice() {
             return (m1->getDistance() > m2->getDistance());
         });
         for (size_t i = 0; i < v1.size(); i++) {
-            cout << i+1 << " - " << v1[i]->getInfo() << endl;
+            cout << i+1 << " - " << v1[i]->showMovement() << endl;
         }
     }
     utils->waitForInput();
@@ -1722,7 +1752,7 @@ void SystemNetwork::showEmployeeMovements() {
     string s_name;
     bool check = false;
     while (s_name != "EXIT") {
-        cout << "Input the employee name: (if you want to exit without create any employee please input EXIT)" << endl;
+        cout << "Input the employee name: (if you want to exit without creating an employee please input EXIT)" << endl;
         getline(cin, s_name);
         if (s_name != "EXIT") {
             for (size_t i = 0; i < employees->getNumEmployees(); i++) {
@@ -1749,7 +1779,7 @@ void SystemNetwork::showEmployeeMovements() {
             return (m1->getDate() > m2->getDate());
         });
         for (size_t i = 0; i < v1.size(); i++) {
-            cout << i+1 << " - " << v1[i]->getInfo() << endl;
+            cout << i+1 << " - " << v1[i]->showMovement() << endl;
         }
     }
     utils->waitForInput();
@@ -1759,8 +1789,6 @@ void SystemNetwork::carSpentMoreMoney() {
     if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Vehicle* vehicle;
     float total_price = 0, price;
-    //if (vehicles->getNumVehicles() == 0)
-    //throw exception
     for (size_t i = 0; i <vehicles->getNumVehicles();i++) {
         price = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
@@ -1784,8 +1812,6 @@ void SystemNetwork::BestWorthHighway() {
     if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Highway* highway;
     float total_price = 0, price;
-    //if (highway->getNumHighway() == 0)
-    //throw exception
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         price = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
@@ -1805,8 +1831,6 @@ void SystemNetwork::BestWorthToll() {
     if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Toll* toll;
     float total_price = 0, price;
-    //if (highway->getNumHighway() == 0)
-    //throw exception
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         for (size_t k = 0; k < highways->getHighwayIndex(i)->getNumTolls(); k++) {
             price = 0;
@@ -1829,8 +1853,6 @@ void SystemNetwork::BestWorthLane() {
     if (movements->getNumMovements() <= 1) throw DontExistAnyExitMovement();
     Lane* lane;
     float total_price = 0, price;
-    //if (highway->getNumHighway() == 0)
-    //throw exception
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         for (size_t k = 0; k < highways->getHighwayIndex(i)->getNumTolls(); k++) {
             for (size_t l = 0; l < highways->getHighwayIndex(i)->getTollIndex(k)->getNumLanes(); l++) {
@@ -1856,8 +1878,6 @@ void SystemNetwork::HighwayMoreMoves() {
     if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     Highway* highway;
     int total_moves = 0, moves;
-    //if (highway->getNumHighway() == 0)
-    //throw exception
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         moves = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
@@ -1876,9 +1896,8 @@ void SystemNetwork::HighwayMoreMoves() {
 void SystemNetwork::TollMoreMoves() {
     if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     Toll* toll;
+    Highway* highway;
     int total_moves = 0, moves;
-    //if (highway->getNumHighway() == 0)
-    //throw exception
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         for (size_t k = 0; k < highways->getHighwayIndex(i)->getNumTolls(); k++) {
             moves = 0;
@@ -1889,16 +1908,19 @@ void SystemNetwork::TollMoreMoves() {
             if (moves > total_moves) {
                 total_moves = moves;
                 toll = highways->getHighwayIndex(i)->getTollIndex(k);
+                highway = highways->getHighwayIndex(i);
             }
         }
     }
-    cout << toll->showToll() << " - Total moves = " << total_moves << endl;
+    cout << highway->showHighway() << " - " << toll->showToll() << " - Total moves = " << total_moves << endl;
     utils->waitForInput();
 }
 
-void SystemNetwork::LaneMoreMoves() { // tem erros
+void SystemNetwork::LaneMoreMoves() {
     if (movements->getNumMovements() == 0) throw DontExistAnyMovement();
     Lane* lane;
+    Highway* highway;
+    Toll* toll;
     int total_moves = 0, moves;
     for (size_t i = 0; i <highways->getNumHighways();i++) {
         for (size_t k = 0; k < highways->getHighwayIndex(i)->getNumTolls(); k++) {
@@ -1912,10 +1934,12 @@ void SystemNetwork::LaneMoreMoves() { // tem erros
                 if (moves > total_moves) {
                     total_moves = moves;
                     lane = highways->getHighwayIndex(i)->getTollIndex(k)->getLane(l);
+                    toll = highways->getHighwayIndex(i)->getTollIndex(k);
+                    highway = highways->getHighwayIndex(i);
                 }
             }
         }
     }
-    cout << lane->showLane() << " - Total moves = " << total_moves << endl;
+    cout << highway->showHighway() << " - Toll name: "<< toll->getName() << " - " << lane->showLane() << " - Total moves = " << total_moves << endl;
     utils->waitForInput();
 }

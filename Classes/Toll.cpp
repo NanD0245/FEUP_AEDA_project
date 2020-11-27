@@ -6,12 +6,6 @@ using namespace std;
 
 Toll::Toll(string name, string geolocal, float highway_kilometer, bool type) : name(name), geolocal(geolocal), highway_kilometer(highway_kilometer),type(type) {
     lanes.clear();
-    /*if (type == "entrance") {
-        this->type = false; // 0
-    }
-    else if (type == "exit") {
-        this->type = true; // 1
-    }*/
 }
 
 Toll::Toll(){
@@ -21,37 +15,55 @@ Toll::Toll(){
     type=true;
 }
 
-bool Toll::getType() const {return type;}
-
-void Toll::setType(bool type) {this->type = type;}
-
 string Toll::getName() const {return name;}
 
-void Toll::setName(string name) {this->name = name;}
+bool Toll::getType() const {return type;}
 
 string Toll::getGeolocal() const {return geolocal;}
 
-void Toll::setGeolocal(string geolocal) {this->geolocal = geolocal;}
-
 float Toll::getKilometer() const {return highway_kilometer;}
-
-void Toll::setKilometer(float kilometer) {this->highway_kilometer = kilometer;}
 
 string Toll::getInfo() const {
     return name + " - " + geolocal + " - " + to_string(highway_kilometer) + " - " + to_string(type);
 }
+
+Lane * Toll::getLane(int i) {
+    if (i < lanes.size())
+        return lanes[i];
+    return nullptr;
+}
+
+int Toll::getNumLanes() const {return lanes.size();}
 
 string Toll::showToll() const {
     string s_type = type ? "Exit" : "Entrance";
     return "Toll Name: " + name + " - Geographic Location: " + geolocal + " - Highway Kilometer: " + to_string(highway_kilometer) + " - Type: " + s_type;
 }
 
-int Toll::getNumLanes() const {return lanes.size();}
+void Toll::setType(bool type) {this->type = type;}
 
-Lane * Toll::getLane(int i) {
-    if (i < lanes.size())
-        return lanes[i];
-    return nullptr;
+void Toll::setName(string name) {this->name = name;}
+
+void Toll::setGeolocal(string geolocal) {this->geolocal = geolocal;}
+
+void Toll::setKilometer(float kilometer) {this->highway_kilometer = kilometer;}
+
+void Toll::setGreenLaneTrue(Lane * lane) {
+    int index = lane->getLaneNumber();
+    lanes.erase(lanes.begin() + index);
+    auto *l1 = new Lane(index, true);
+    lanes.insert(lanes.begin()+index,l1);
+    for (size_t i = 0; i < lanes.size(); i++)
+        lanes[i]->setLaneNumber(i);
+}
+
+void Toll::setGreenLaneFalse(Lane *lane, Employee *e) {
+    int index = lane->getLaneNumber();
+    lanes.erase(lanes.begin()+index);
+    auto *l1 = new LaneEmployee(index,false,e);
+    lanes.insert(lanes.begin()+index, l1);
+    for (size_t i = 0; i < lanes.size(); i++)
+        lanes[i]->setLaneNumber(i);
 }
 
 bool Toll::removeLane(int i) {
@@ -72,6 +84,12 @@ bool Toll::operator==(const Toll& l2) const {
     return name == l2.getName() && geolocal == l2.getGeolocal() && highway_kilometer == l2.getKilometer() && type == l2.getType();
 }
 
+void Toll::addLane(Lane * l){
+    lanes.push_back(l);
+}
+
+
+
 TollEntrance::TollEntrance(string name, string geolocal, float highway_kilometer) : Toll(name,geolocal,highway_kilometer,false) {}
 
 void TollEntrance::addLane() {
@@ -80,13 +98,11 @@ void TollEntrance::addLane() {
     lanes.push_back(l1);
 }
 
-void Toll::addLane(Lane * l){
-    lanes.push_back(l);
-}
-
 void TollEntrance::addLane(Lane * l) {
     lanes.push_back(l);
 }
+
+
 
 TollOut::TollOut(string name, string geolocal, float highway_kilometer) : Toll(name,geolocal,highway_kilometer,true) {}
 
@@ -106,20 +122,6 @@ void TollOut::addLane(Lane * l) {
     Toll::addLane(l);
 }
 
-void Toll::setGreenLaneTrue(Lane * lane) {
-    int index = lane->getLaneNumber();
-    lanes.erase(lanes.begin() + index);
-    auto *l1 = new Lane(index, true);
-    lanes.insert(lanes.begin()+index,l1);
-    for (size_t i = 0; i < lanes.size(); i++)
-        lanes[i]->setLaneNumber(i);
-}
 
-void Toll::setGreenLaneFalse(Lane *lane, Employee *e) {
-    int index = lane->getLaneNumber();
-    lanes.erase(lanes.begin()+index);
-    auto *l1 = new LaneEmployee(index,false,e);
-    lanes.insert(lanes.begin()+index, l1);
-    for (size_t i = 0; i < lanes.size(); i++)
-        lanes[i]->setLaneNumber(i);
-}
+
+

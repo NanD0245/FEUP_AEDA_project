@@ -31,3 +31,5 @@ void Vehicle::setGreenLaneFalse() {greenlane = false;}
 void Vehicle::setVehicleClass(int v_class) {this->v_class = v_class;}
 
 void Vehicle::setPlate(string plate) {this->plate = plate;}
+
+void Vehicle::setTax(float tax) {this->tax = tax;}

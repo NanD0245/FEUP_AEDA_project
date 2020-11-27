@@ -59,7 +59,7 @@ public:
      * addHighway function adds a highway (that isn't already in the 'highways' container)
      * to the container 'highways'
      * @param e is an object of Highway class to add to vector 'highways'
-     * @return false if an Highway object with the same name already exists in the 'highways' vector,
+     * @return false if a Highway object with the same name already exists in the 'highways' vector,
      * true otherwise (it succeeded in adding the object)
      */
     void addHighway(Highway * h);
