@@ -139,6 +139,12 @@
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movements.h">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Onwers.cpp">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Onwers.h">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.cpp">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
@@ -182,6 +188,12 @@
 			<Option target="aeda2020_portagens"/>
 		</Unit>
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/technician.h">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Owner.cpp">
+			<Option target="aeda2020_portagens"/>
+		</Unit>
+		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Owner.h">
 			<Option target="aeda2020_portagens"/>
 		</Unit>
 		<Unit filename="/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/main.cpp">

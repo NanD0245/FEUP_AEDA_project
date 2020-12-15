@@ -14,7 +14,7 @@ public:
     bool add(Intervention i1);
     bool remove(Intervention i1);
     Intervention getIntervention();
-    
+
 };
 
 

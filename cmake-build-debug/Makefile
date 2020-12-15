@@ -386,6 +386,33 @@ Classes/Movements.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Movements.cpp.s
 .PHONY : Classes/Movements.cpp.s
 
+Classes/Onwers.o: Classes/Onwers.cpp.o
+
+.PHONY : Classes/Onwers.o
+
+# target to build an object file
+Classes/Onwers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Onwers.cpp.o
+.PHONY : Classes/Onwers.cpp.o
+
+Classes/Onwers.i: Classes/Onwers.cpp.i
+
+.PHONY : Classes/Onwers.i
+
+# target to preprocess a source file
+Classes/Onwers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Onwers.cpp.i
+.PHONY : Classes/Onwers.cpp.i
+
+Classes/Onwers.s: Classes/Onwers.cpp.s
+
+.PHONY : Classes/Onwers.s
+
+# target to generate assembly for a file
+Classes/Onwers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/Onwers.cpp.s
+.PHONY : Classes/Onwers.cpp.s
+
 Classes/SystemNetwork.o: Classes/SystemNetwork.cpp.o
 
 .PHONY : Classes/SystemNetwork.o
@@ -575,6 +602,33 @@ Classes/technician.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Classes/technician.cpp.s
 .PHONY : Classes/technician.cpp.s
 
+Owner.o: Owner.cpp.o
+
+.PHONY : Owner.o
+
+# target to build an object file
+Owner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Owner.cpp.o
+.PHONY : Owner.cpp.o
+
+Owner.i: Owner.cpp.i
+
+.PHONY : Owner.i
+
+# target to preprocess a source file
+Owner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Owner.cpp.i
+.PHONY : Owner.cpp.i
+
+Owner.s: Owner.cpp.s
+
+.PHONY : Owner.s
+
+# target to generate assembly for a file
+Owner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aeda2020_portagens.dir/build.make CMakeFiles/aeda2020_portagens.dir/Owner.cpp.s
+.PHONY : Owner.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -638,6 +692,9 @@ help:
 	@echo "... Classes/Movements.o"
 	@echo "... Classes/Movements.i"
 	@echo "... Classes/Movements.s"
+	@echo "... Classes/Onwers.o"
+	@echo "... Classes/Onwers.i"
+	@echo "... Classes/Onwers.s"
 	@echo "... Classes/SystemNetwork.o"
 	@echo "... Classes/SystemNetwork.i"
 	@echo "... Classes/SystemNetwork.s"
@@ -659,6 +716,9 @@ help:
 	@echo "... Classes/technician.o"
 	@echo "... Classes/technician.i"
 	@echo "... Classes/technician.s"
+	@echo "... Owner.o"
+	@echo "... Owner.i"
+	@echo "... Owner.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
