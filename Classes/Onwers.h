@@ -9,7 +9,7 @@
 #include "Vehicle.h"
 #include "Owner.h"
 
-struct betHash
+struct ownerHash
 {
     int operator() (const Owner& o1) const
     {
@@ -23,7 +23,7 @@ struct betHash
 };
 
 class Owners {
-    unordered_set<Owner,betHash,betHash> owners;
+    unordered_set<Owner,ownerHash,ownerHash> owners;
 public:
     Owners();
     bool addOwner(Owner o1);
