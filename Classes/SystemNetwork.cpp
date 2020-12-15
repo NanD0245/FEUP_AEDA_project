@@ -1050,6 +1050,17 @@ Lane* SystemNetwork::chooseLane(Toll* toll) {
     return toll->getLane(index);
 }
 
+Lane * SystemNetwork::chooseLane(Toll *toll, int index) {
+    index = chooseIndexLane(toll,index);
+    while((index < -1)) {
+        cout << "Invalid Number." << endl;
+        index = utils->getNumber(toll->getNumLanes()) -1;
+    }
+    if (index == -1)
+        return nullptr;
+    return toll->getLane(index);
+}
+
 int SystemNetwork::chooseIndexLane(Toll* toll) const {
     string s_type, s_menu;
     vector<string> v1;
@@ -1062,7 +1073,17 @@ int SystemNetwork::chooseIndexLane(Toll* toll) const {
     return utils->ShowMenu(v1)-1;
 }
 
-
+int SystemNetwork::chooseIndexLane(Toll* toll,int index) const {
+    string s_type, s_menu;
+    vector<string> v1;
+    cout << "Lanes: " << toll->getNumLanes() << endl;
+    for (size_t i = 0; i < toll->getNumLanes(); i++) {
+        s_menu = toll->getLane(i)->showLane();
+        v1.push_back(s_menu);
+    }
+    utils->clrScreen();
+    return utils->ShowMenu(v1,index)-1;
+}
 
 void SystemNetwork::createEmployee() {
     string s_name;
@@ -1347,7 +1368,7 @@ void SystemNetwork::addEntryMovement() {
         if (vehicles->getTaxes(1) == -1 || vehicles->getTaxes(2) == -1 || vehicles->getTaxes(3) == -1 || vehicles->getTaxes(4) == -1) {
             cout << "ERROR: Before this you have to input the taxes for each vehicle class" << index << endl;
             s_plate = "EXIT";
-            utils->waitForInput();
+            //utils->waitForInput();
             continue;
         }
         s_plate = utils->getPlate();
@@ -1381,7 +1402,7 @@ void SystemNetwork::addEntryMovement() {
             highway = chooseHighway();
             if (highway == nullptr) {
                 s_plate = "EXIT";
-                utils->waitForInput();
+                //utils->waitForInput();
                 break;
             }
             if (highway->getNumTolls() == 0) {
@@ -1393,7 +1414,7 @@ void SystemNetwork::addEntryMovement() {
             toll = chooseToll(highway);
             if (toll == nullptr) {
                 s_plate = "EXIT";
-                utils->waitForInput();
+                //utils->waitForInput();
                 break;
             }
             if (toll->getType()) {
@@ -1404,9 +1425,9 @@ void SystemNetwork::addEntryMovement() {
             }
         } while(toll->getNumLanes() == 0 || toll->getType());
         if (s_plate == "EXIT") continue;
-        lane_index = adviceEntryLane(toll, date);
-        cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
-        Lane *lane = chooseLane(toll);
+        //lane_index = adviceEntryLane(toll, date);
+        //cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
+        Lane *lane = chooseLane(toll,adviceEntryLane(toll, date));
         if (lane == nullptr) {
             s_plate = "EXIT";
             continue;
@@ -1430,7 +1451,7 @@ void SystemNetwork::addExitMovement() {
     while (s_plate != "EXIT") {
         if (movements->getNumMovements() == 0) {
             cout << "ERROR: Before you do this you have to add a entry movement" << endl;
-            utils->waitForInput();
+            //utils->waitForInput();
             s_plate = "EXIT";
             continue;
         }
@@ -1458,7 +1479,7 @@ void SystemNetwork::addExitMovement() {
         }
         if (entry == nullptr) {
             cout << "ERROR: Vehicle isn't in a highway." << endl;
-            utils->waitForInput();
+            //utils->waitForInput();
             continue;
         }
         highway = entry->getHighway();
@@ -1496,7 +1517,7 @@ void SystemNetwork::addExitMovement() {
 
         if (lane == nullptr) {
             s_plate = "EXIT";
-            utils->waitForInput();
+            //utils->waitForInput();
             continue;
         }
 

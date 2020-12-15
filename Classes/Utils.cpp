@@ -36,13 +36,27 @@ int Utils::getNumber(int max) {
 }
 
 int Utils::ShowMenu(vector<string> menu) {
-    clrScreen();
+    //clrScreen();
     cout << "TOLL MANAGEMENT SYSTEM" << endl << endl;
     cout << "Please choose one of the options below: " << endl << endl;
     for (size_t i = 0; i < menu.size(); i++) {
         cout << (i+1) << " - " << menu[i] << endl;
     }
     cout << "0 - Exit" << endl << endl;
+    int index = getNumber(menu.size());
+    clrScreen();
+    return index;
+}
+
+int Utils::ShowMenu(vector<string> menu, int lane_index) {
+    //clrScreen();
+    cout << "TOLL MANAGEMENT SYSTEM" << endl << endl;
+    cout << "Please choose one of the options below: " << endl << endl;
+    for (size_t i = 0; i < menu.size(); i++) {
+        cout << (i+1) << " - " << menu[i] << endl;
+    }
+    cout << "0 - Exit" << endl << endl;
+    cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
     int index = getNumber(menu.size());
     clrScreen();
     return index;

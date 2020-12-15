@@ -223,12 +223,16 @@ public:
      */
     int chooseIndexLane(Toll* toll) const;
 
+    int chooseIndexLane(Toll* toll,int index) const;
+
     /**
      * Allows the user to input a number (index) which selects a Lane. As long as the index isn't -1, if it's an invalid number
      * the program continues to ask the user for a valid index.
      * @return nullptr if index is -1, the selected Lane otherwise
      */
     Lane* chooseLane(Toll* toll);
+
+    Lane* chooseLane(Toll* toll, int index);
 
     /**
      * Allows the user to create an Employee object.

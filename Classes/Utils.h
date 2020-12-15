@@ -38,6 +38,8 @@ public:
      */
     int ShowMenu(vector<string> menu);
 
+    int ShowMenu(vector<string> menu, int lane_index);
+
     /**
      * Allows the user to input a float to use in some Classes' methods
      * @return float inputted by the user
