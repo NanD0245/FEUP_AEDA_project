@@ -19,14 +19,14 @@ using namespace std;
  * @param code is a number that changes whenever a new worker(Employee object) is added to the vector,
  * so each Employee has a unique code that identifies them
  */
-class Employees {
+class EmployeeRecord {
     vector<Employee *> employees;
     static int code;
 public:
     /**
      * The constructor of Employees class initializes the 'employees' container as empty
      */
-    Employees();
+    EmployeeRecord();
 
     /**
      * @return 'code' attribute

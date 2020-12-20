@@ -1,10 +1,10 @@
 #ifndef AEDA2020_PORTAGENS_SYSTEMNETWORK_H
 #define AEDA2020_PORTAGENS_SYSTEMNETWORK_H
 
-#include "Highways.h"
-#include "Movements.h"
-#include "Vehicles.h"
-#include "Employees.h"
+#include "HighwayRecord.h"
+#include "MovementRecord.h"
+#include "VehicleRecord.h"
+#include "EmployeeRecord.h"
 #include "Utils.h"
 #include "Exceptions.h"
 
@@ -29,11 +29,11 @@ using namespace std;
  */
 class SystemNetwork {
 public:
-    Highways* highways;
-    Movements* movements;
-    Vehicles* vehicles;
+    HighwayRecord* highways;
+    MovementRecord* movements;
+    VehicleRecord* vehicles;
     Utils* utils;
-    Employees* employees;
+    EmployeeRecord* employees;
 
     /**
      * The SystemNetwork constructor initializes all of its attributes using its' corresponding classes' constructors.

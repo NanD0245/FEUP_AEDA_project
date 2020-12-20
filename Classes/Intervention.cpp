@@ -2,7 +2,7 @@
 // Created by mim on 15/12/20.
 //
 
-#include "intervention.h"
+#include "Intervention.h"
 
 Intervention::Intervention(string type, Technician technician, Date date, float duration, bool state) : type(type),
                                 technician(technician), date(date), duration(duration), state(state) {};

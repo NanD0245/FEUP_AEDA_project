@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include "Date.h"
-#include "technician.h"
+#include "Technician.h"
 
 class Intervention {
     string type; // revisão ; avaria(eletrónica ; informática)

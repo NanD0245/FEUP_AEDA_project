@@ -22,12 +22,12 @@ struct ownerHash
     }
 };
 
-class Owners {
+class OwnerRecord {
     unordered_set<Owner,ownerHash,ownerHash> owners;
 public:
-    Owners();
+    OwnerRecord();
     bool addOwner(Owner o1);
 };
 
 
-#endif //DATE_CPP_ONWERS_H
+#endif //AEDA2020_PORTAGENS_ONWERS_H

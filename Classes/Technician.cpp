@@ -2,7 +2,7 @@
 // Created by mim on 15/12/20.
 //
 
-#include "technician.h"
+#include "Technician.h"
 
 Technician::Technician(string name, string specialty) : name(name), specialty(specialty) {}
 

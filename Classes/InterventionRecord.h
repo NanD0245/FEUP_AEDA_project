@@ -5,10 +5,10 @@
 #ifndef AEDA2020_PORTAGENS_INTERVENTIONRECORDS_H
 #define AEDA2020_PORTAGENS_INTERVENTIONRECORDS_H
 
-#include "intervention.h"
+#include "Intervention.h"
 #include "bst.h"
 
-class InterventionRecords {
+class InterventionRecord {
     BST<Intervention> bst;
 public:
     bool add(Intervention i1);

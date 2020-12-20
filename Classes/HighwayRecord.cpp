@@ -1,10 +1,10 @@
-#include "Highways.h"
+#include "HighwayRecord.h"
 
-Highways::Highways() {highways.clear();}
+HighwayRecord::HighwayRecord() {highways.clear();}
 
-int Highways::getNumHighways() const {return highways.size();}
+int HighwayRecord::getNumHighways() const {return highways.size();}
 
-Highway * Highways::getHighway(string name) {
+Highway * HighwayRecord::getHighway(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
         if (name == highways[i]->getInfo())
             return highways[i];
@@ -12,13 +12,13 @@ Highway * Highways::getHighway(string name) {
     return nullptr;
 }
 
-Highway * Highways::getHighwayIndex(int i) {
+Highway * HighwayRecord::getHighwayIndex(int i) {
     if (i < highways.size())
         return highways[i];
     return nullptr;
 }
 
-bool Highways::checkHighwayName(string name) {
+bool HighwayRecord::checkHighwayName(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
         if (name == highways[i]->getInfo())
             return true;
@@ -26,7 +26,7 @@ bool Highways::checkHighwayName(string name) {
     return false;
 }
 
-bool Highways::addHighway(string name) {
+bool HighwayRecord::addHighway(string name) {
     for (size_t i = 0; i < highways.size(); i++) {
         if (name == highways[i]->getInfo())
             return false;
@@ -36,11 +36,11 @@ bool Highways::addHighway(string name) {
     return true;
 }
 
-void Highways::addHighway(Highway * h){
+void HighwayRecord::addHighway(Highway * h){
     highways.push_back(h);
 }
 
-bool Highways::removeHighway(int i) {
+bool HighwayRecord::removeHighway(int i) {
     if (i >= highways.size())
         return false;
     highways.erase(highways.begin()+i);

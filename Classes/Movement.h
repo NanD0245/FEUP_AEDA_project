@@ -2,7 +2,7 @@
 #define AEDA2020_PORTAGENS_MOVEMENT_H
 
 #include "Vehicle.h"
-#include "Highways.h"
+#include "HighwayRecord.h"
 #include "Date.h"
 #include <cmath>
 

@@ -3,11 +3,11 @@
 using namespace std;
 
 SystemNetwork::SystemNetwork() {
-    highways = new Highways();
-    movements = new Movements();
-    vehicles = new Vehicles();
+    highways = new HighwayRecord();
+    movements = new MovementRecord();
+    vehicles = new VehicleRecord();
     utils = new Utils();
-    employees = new Employees();
+    employees = new EmployeeRecord();
 }
 
 
