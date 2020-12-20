@@ -9,6 +9,7 @@ class Technician {
     string name;
     string specialty; // revisão ; avaria(eletrónica ; informática)
     float performance; //tempo médio
+    int num_intervetion;
 public:
     Technician(string name, string specialty);
     string getName() const;
@@ -17,6 +18,8 @@ public:
     void setSpecialty(string specialty);
     float getPerformance() const;
     void setPerformance(float performance);
+    int getNumIntervetion() const;
+    void addIntervention();
 
 };
 

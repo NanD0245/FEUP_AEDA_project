@@ -9,11 +9,11 @@
 #include "bst.h"
 
 class InterventionRecord {
-    BST<Intervention> bst;
+    BST<Intervention> interventions;
 public:
-    bool add(Intervention i1);
-    bool remove(Intervention i1);
-    Intervention getIntervention();
+    InterventionRecord();
+    bool addIntervetion(Intervention i1);
+    bool removeIntervention(Intervention i1);
 
 };
 

@@ -93,3 +93,17 @@ bool Date::operator>(Date d1) const {
     }
     return false;
 }
+
+bool Date::operator<(Date d1) const {
+    if (year < d1.getYear())
+        return true;
+    else if (year == d1.getYear() && month < d1.getMonth())
+        return true;
+    else if (year == d1.getYear() && month == d1.getMonth() && day < d1.getDay())
+        return true;
+    return false;
+}
+
+bool Date::equal(Date d1) const {
+    return year == d1.getYear() && month == d1.getMonth() && day == d1.getDay();
+}

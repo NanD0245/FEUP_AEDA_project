@@ -7,6 +7,7 @@
 #include "EmployeeRecord.h"
 #include "Utils.h"
 #include "Exceptions.h"
+#include "InterventionRecord.h"
 
 #include <iostream>
 #include <fstream>
@@ -28,12 +29,15 @@ using namespace std;
  * @param employees is the Employee object that stores all the different Employee objects and their info
  */
 class SystemNetwork {
-public:
+
     HighwayRecord* highways;
     MovementRecord* movements;
     VehicleRecord* vehicles;
     Utils* utils;
     EmployeeRecord* employees;
+    InterventionRecord* interventions;
+
+public:
 
     /**
      * The SystemNetwork constructor initializes all of its attributes using its' corresponding classes' constructors.

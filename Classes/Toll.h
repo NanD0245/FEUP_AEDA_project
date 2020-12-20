@@ -3,8 +3,10 @@
 #define AEDA2020_PORTAGENS_TOLLS_H
 
 #include "Lane.h"
+#include "Technician.h"
 #include <string>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -29,6 +31,7 @@ protected:
     float highway_kilometer;
     bool type;
     vector<Lane *> lanes;
+    priority_queue<Technician> technicians;
 public:
     /**
      * Initializes a new Toll object with the input provided by the user

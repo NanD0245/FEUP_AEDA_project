@@ -4,7 +4,10 @@
 
 #include "Technician.h"
 
-Technician::Technician(string name, string specialty) : name(name), specialty(specialty) {}
+Technician::Technician(string name, string specialty) : name(name), specialty(specialty) {
+    performance = 0;
+    num_intervetion = 0;
+}
 
 string Technician::getName() const {return name; }
 
@@ -17,4 +20,8 @@ void Technician::setSpecialty(string specialty) {this->specialty = specialty; }
 float Technician::getPerformance() const {return performance; }
 
 void Technician::setPerformance(float performance) {this->performance = performance; }
+
+int Technician::getNumIntervetion() const {return num_intervetion; }
+
+void Technician::addIntervention() {num_intervetion++; }
 
