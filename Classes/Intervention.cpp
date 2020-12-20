@@ -29,7 +29,7 @@ Highway * Intervention::getHighway() const {return highway; }
 
 Toll * Intervention::getToll() const {return toll; }
 
-bool Intervention::operator<(Intervention i1) {
+bool Intervention::operator<(const Intervention& i1) const {
     if (*date < *i1.getDate())
         return true;
     else if (date->equal(*i1.getDate()) && highway->getInfo() < i1.getHighway()->getInfo())

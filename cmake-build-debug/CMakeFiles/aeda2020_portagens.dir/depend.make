@@ -15,6 +15,7 @@ CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o: ../Classes/Employee.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o: ../Classes/Highway.cpp
 CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o: ../Classes/Highway.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o: ../Classes/Lane.h
+CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o: ../Classes/Technician.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Highway.cpp.o: ../Classes/Toll.h
 
 CMakeFiles/aeda2020_portagens.dir/Classes/HighwayRecord.cpp.o: ../Classes/Employee.h
@@ -22,6 +23,7 @@ CMakeFiles/aeda2020_portagens.dir/Classes/HighwayRecord.cpp.o: ../Classes/Highwa
 CMakeFiles/aeda2020_portagens.dir/Classes/HighwayRecord.cpp.o: ../Classes/HighwayRecord.cpp
 CMakeFiles/aeda2020_portagens.dir/Classes/HighwayRecord.cpp.o: ../Classes/HighwayRecord.h
 CMakeFiles/aeda2020_portagens.dir/Classes/HighwayRecord.cpp.o: ../Classes/Lane.h
+CMakeFiles/aeda2020_portagens.dir/Classes/HighwayRecord.cpp.o: ../Classes/Technician.h
 CMakeFiles/aeda2020_portagens.dir/Classes/HighwayRecord.cpp.o: ../Classes/Toll.h
 
 CMakeFiles/aeda2020_portagens.dir/Classes/Intervention.cpp.o: ../Classes/Date.h
@@ -57,6 +59,7 @@ CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o: ../Classes/HighwayReco
 CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o: ../Classes/Lane.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o: ../Classes/Movement.cpp
 CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o: ../Classes/Movement.h
+CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o: ../Classes/Technician.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o: ../Classes/Toll.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Movement.cpp.o: ../Classes/Vehicle.h
 
@@ -68,6 +71,7 @@ CMakeFiles/aeda2020_portagens.dir/Classes/MovementRecord.cpp.o: ../Classes/Lane.
 CMakeFiles/aeda2020_portagens.dir/Classes/MovementRecord.cpp.o: ../Classes/Movement.h
 CMakeFiles/aeda2020_portagens.dir/Classes/MovementRecord.cpp.o: ../Classes/MovementRecord.cpp
 CMakeFiles/aeda2020_portagens.dir/Classes/MovementRecord.cpp.o: ../Classes/MovementRecord.h
+CMakeFiles/aeda2020_portagens.dir/Classes/MovementRecord.cpp.o: ../Classes/Technician.h
 CMakeFiles/aeda2020_portagens.dir/Classes/MovementRecord.cpp.o: ../Classes/Toll.h
 CMakeFiles/aeda2020_portagens.dir/Classes/MovementRecord.cpp.o: ../Classes/Vehicle.h
 
@@ -104,6 +108,7 @@ CMakeFiles/aeda2020_portagens.dir/Classes/Technician.cpp.o: ../Classes/Technicia
 
 CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o: ../Classes/Employee.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o: ../Classes/Lane.h
+CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o: ../Classes/Technician.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o: ../Classes/Toll.cpp
 CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o: ../Classes/Toll.h
 

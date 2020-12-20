@@ -28,10 +28,11 @@ public:
     Toll* getToll() const;
     bool getState() const;
     void changeState();
+
     Date* getDate() const;
     float getDuration() const;
     void setDuration(float duration);
-    bool operator<(Intervention i1);
+    bool operator<(const Intervention& i1) const;
 };
 
 
