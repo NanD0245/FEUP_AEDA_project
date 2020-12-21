@@ -12,8 +12,8 @@ class InterventionRecord {
     BST<Intervention> interventions;
 public:
     InterventionRecord();
-    bool addIntervetion(Intervention i1);
-    bool removeIntervention(Intervention i1);
+    bool addIntervetion(const Intervention& i1);
+    bool removeIntervention(const Intervention& i1);
 
 };
 

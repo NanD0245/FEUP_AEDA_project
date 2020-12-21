@@ -77,6 +77,7 @@ CMakeFiles/aeda2020_portagens.dir/Classes/MovementRecord.cpp.o: ../Classes/Vehic
 
 CMakeFiles/aeda2020_portagens.dir/Classes/Owner.cpp.o: ../Classes/Owner.cpp
 CMakeFiles/aeda2020_portagens.dir/Classes/Owner.cpp.o: ../Classes/Owner.h
+CMakeFiles/aeda2020_portagens.dir/Classes/Owner.cpp.o: ../Classes/Vehicle.h
 
 CMakeFiles/aeda2020_portagens.dir/Classes/OwnerRecord.cpp.o: ../Classes/Owner.h
 CMakeFiles/aeda2020_portagens.dir/Classes/OwnerRecord.cpp.o: ../Classes/OwnerRecord.cpp

@@ -20,6 +20,7 @@ public:
     void setPerformance(float performance);
     int getNumIntervetion() const;
     void addIntervention();
+    bool operator<(const Technician& t1) const;
 
 };
 

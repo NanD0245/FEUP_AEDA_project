@@ -6,11 +6,11 @@
 
 InterventionRecord::InterventionRecord() : interventions(Intervention("", nullptr, nullptr, nullptr, nullptr,0)) {}
 
-bool InterventionRecord::addIntervetion(Intervention i1) {
+bool InterventionRecord::addIntervetion(const Intervention& i1) {
     return interventions.insert(i1) ? true : false;
 }
 
-bool InterventionRecord::removeIntervention(Intervention i1) {
+bool InterventionRecord::removeIntervention(const Intervention& i1) {
     return interventions.remove(i1) ? true : false;
 }
 

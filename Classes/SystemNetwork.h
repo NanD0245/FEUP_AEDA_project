@@ -433,6 +433,24 @@ public:
      * writes file '../Cache/systemNetworks.txt' according to the objects that make up the program's data
      */
     void write();
+
+    void manageTechnicians();
+    void manageInterventions();
+    void manageOwners();
+
+    void addIntervention();
+    void readInterventions();
+
+    void createTechnician();
+    void updateTechnician();
+    void readTechnicians();
+    void deleteTechnician();
+
+    void createOwner();
+    void updateOwner();
+    void readOwners();
+    void deleteOwner();
+    void manageOwner();
 };
 
 

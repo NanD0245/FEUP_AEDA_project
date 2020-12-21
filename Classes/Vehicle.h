@@ -94,6 +94,8 @@ public:
      * @param tax sets 'tax' attribute
      */
     void setTax(float tax);
+
+    bool operator==(Vehicle v1);
 };
 
 

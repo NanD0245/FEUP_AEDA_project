@@ -25,3 +25,7 @@ int Technician::getNumIntervetion() const {return num_intervetion; }
 
 void Technician::addIntervention() {num_intervetion++; }
 
+bool Technician::operator<(const Technician& t1) const {
+    return performance < t1.getPerformance();
+}
+

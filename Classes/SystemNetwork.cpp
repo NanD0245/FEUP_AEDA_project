@@ -1964,3 +1964,125 @@ void SystemNetwork::LaneMoreMoves() {
     cout << highway->showHighway() << " - Toll name: "<< toll->getName() << " - " << lane->showLane() << " - Total moves = " << total_moves << endl;
     utils->waitForInput();
 }
+
+void SystemNetwork::manageInterventions() {
+    int index;
+    do {
+        index = utils->ShowMenu({"Add Intervention", "Read Interventions"});
+        switch(index) {
+            case 1:
+                addIntervention();
+                break;
+            case 2:
+                readInterventions();
+                break;
+        }
+    } while(index);
+}
+
+void SystemNetwork::manageTechnicians() {
+    int index;
+    do {
+        index = utils->ShowMenu({"Create Technician", "Read Technician", "Update Technician", "Delete Technician"});
+        switch(index) {
+            case 1:
+                createTechnician();
+                break;
+            case 2:
+                readTechnicians();
+                break;
+            case 3:
+                updateTechnician();
+                break;
+            case 4:
+                deleteTechnician();
+                break;
+        }
+    } while(index);
+}
+
+void SystemNetwork::manageOwners() {
+    int index;
+    do {
+        index = utils->ShowMenu({"Create Owner", "Read Owner", "Update Owner", "Delete Owner"});//, "Manage Owner"});
+        switch(index) {
+            case 1:
+                createOwner();
+                break;
+            case 2:
+                readOwners();
+                break;
+            case 3:
+                updateOwner();
+                break;
+            case 4:
+                deleteOwner();
+                break;
+            /*case 5:
+                manageOwner();
+                break;*/
+        }
+    } while(index);
+}
+
+/*void SystemNetwork::manageOwner() {
+    int index;
+    do {
+        index = utils->ShowMenu({"Add Vehicle", "Delete Vehicle", "Read Vehicles"});
+        switch(index) {
+            case 1:
+                //add vehicle
+                break;
+            case 2:
+                //delete vehicle
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+        }
+    } while(index);
+}*/
+
+void SystemNetwork::addIntervention() {
+
+}
+
+void SystemNetwork::readInterventions() {
+
+}
+
+void SystemNetwork::createTechnician() {
+
+}
+
+void SystemNetwork::readTechnicians() {
+
+}
+
+void SystemNetwork::updateTechnician() {
+
+}
+
+void SystemNetwork::deleteTechnician() {
+
+}
+
+void SystemNetwork::createOwner() {
+
+}
+
+void SystemNetwork::updateOwner() {
+
+}
+
+void SystemNetwork::readOwners() {
+
+}
+
+void SystemNetwork::deleteOwner() {
+
+}
+
