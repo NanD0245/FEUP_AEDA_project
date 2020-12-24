@@ -8,20 +8,12 @@ OwnerRecord::OwnerRecord() {owners.clear(); }
 
 int OwnerRecord::getNumOwners() const {return owners.size(); }
 
-bool OwnerRecord::addOwner(string name, string email) {
+bool OwnerRecord::addOwner(string name) {
     for (const auto & owner : owners)
-        if (owner.getEmail() == email) return false;
-    pair<unordered_set<Owner>::iterator, bool> a = owners.insert(Owner(name, email));
+        if (owner.getName() == name) return false;
+    pair<unordered_set<Owner>::iterator, bool> a = owners.insert(Owner(name));
     if (get<1>(a))
         return true;
     return false;
 }
 
-bool OwnerRecord::deleteOwner(string email) {
-    for (auto it = owners.begin(); it != owners.end(); it++)
-        if (it->getEmail() == email) {
-            owners.erase(it);
-            return true;
-        }
-    return false;
-}

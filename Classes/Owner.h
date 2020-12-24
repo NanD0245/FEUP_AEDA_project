@@ -13,19 +13,16 @@ using namespace std;
 
 class Owner {
     string name;
-    string email;
     vector<Vehicle*> vehicles;
 public:
-    Owner(string name, string email);
+    Owner(string name);
     string getName() const;
     void setName(string name);
-    string getEmail() const;
-    void setEmail(string email);
     int getNumVehicles() const;
     bool addVehicle(Vehicle* vehicle);
     bool addVehicle(string plate, int v_class, float tax);
     bool deleteVehicle(string plate);
-    bool operator==(Owner o1);
+    bool operator==(const Owner& o1);
 };
 
 

@@ -4,15 +4,11 @@
 
 #include "Owner.h"
 
-Owner::Owner(string name, string email) : name(name), email(email) {vehicles.clear(); }
+Owner::Owner(string name) : name(name) {vehicles.clear(); }
 
 string Owner::getName() const {return name; }
 
 void Owner::setName(string name) {this->name = name; }
-
-string Owner::getEmail() const {return email; }
-
-void Owner::setEmail(string email) {this->email = email; }
 
 int Owner::getNumVehicles() const {return vehicles.size(); }
 
@@ -41,6 +37,6 @@ bool Owner::deleteVehicle(string plate) {
     return false;
 }
 
-bool Owner::operator==(Owner o1) {
-    return email == o1.getEmail();
+bool Owner::operator==(const Owner& o1) {
+    return name == o1.getName();
 }

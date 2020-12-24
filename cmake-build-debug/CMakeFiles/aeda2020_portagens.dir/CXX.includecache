@@ -32,13 +32,25 @@ vector
 string
 -
 
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.cpp
+Highway.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.h
+
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.h
 Toll.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Toll.h
 
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.cpp
+HighwayRecord.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.h
+
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.h
 Highway.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.h
+
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Intervention.cpp
+Intervention.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Intervention.h
 
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Intervention.h
 iostream
@@ -49,6 +61,10 @@ HighwayRecord.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.h
 Technician.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Technician.h
+
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/InterventionRecord.cpp
+InterventionRecord.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/InterventionRecord.h
 
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/InterventionRecord.h
 Intervention.h
@@ -62,6 +78,10 @@ Employee.h
 string
 -
 
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.cpp
+Movement.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.h
+
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.h
 Vehicle.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.h
@@ -72,11 +92,35 @@ Date.h
 cmath
 -
 
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/MovementRecord.cpp
+MovementRecord.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/MovementRecord.h
+
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/MovementRecord.h
 Movement.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.h
 vector
 -
+
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Owner.h
+string
+-
+vector
+-
+Vehicle.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.h
+
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/OwnerRecord.h
+unordered_set
+-
+Vehicle.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.h
+Owner.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Owner.h
+
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.cpp
+SystemNetwork.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.h
 
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.h
 HighwayRecord.h
@@ -93,6 +137,8 @@ Exceptions.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Exceptions.h
 InterventionRecord.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/InterventionRecord.h
+OwnerRecord.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/OwnerRecord.h
 iostream
 -
 fstream
@@ -104,6 +150,12 @@ algorithm
 
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Technician.h
 string
+-
+
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Toll.cpp
+Toll.h
+/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Toll.h
+iostream
 -
 
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Toll.h

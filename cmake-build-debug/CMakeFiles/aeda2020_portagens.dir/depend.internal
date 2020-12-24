@@ -96,6 +96,8 @@ CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Lane.h
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.h
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/MovementRecord.h
+ /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Owner.h
+ /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/OwnerRecord.h
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.cpp
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.h
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Technician.h
@@ -135,6 +137,8 @@ CMakeFiles/aeda2020_portagens.dir/main.cpp.o
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Lane.h
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.h
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/MovementRecord.h
+ /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Owner.h
+ /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/OwnerRecord.h
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.h
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Technician.h
  /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Toll.h

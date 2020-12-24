@@ -8,6 +8,7 @@
 #include "Utils.h"
 #include "Exceptions.h"
 #include "InterventionRecord.h"
+#include "OwnerRecord.h"
 
 #include <iostream>
 #include <fstream>
@@ -437,6 +438,7 @@ public:
     void manageTechnicians();
     void manageInterventions();
     void manageOwners();
+    void manageOwner(Owner& o1);
 
     void addIntervention();
     void readInterventions();
@@ -450,7 +452,11 @@ public:
     void updateOwner();
     void readOwners();
     void deleteOwner();
-    void manageOwner();
+
+    void addVehicleOwner(Owner& o1);
+    void updateVehicleOwner(Owner& o1);
+    void readVehiclesOwner(Owner& o1);
+    void deleteVehicleOwner(Owner& o1);
 };
 
 

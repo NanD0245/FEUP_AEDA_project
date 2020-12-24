@@ -88,6 +88,57 @@ void Toll::addLane(Lane * l){
     lanes.push_back(l);
 }
 
+bool Toll::checkTechnicianName(string name) {
+    priority_queue<Technician> p = technicians;
+    while(!p.empty()) {
+        if (p.top().getName() == name)
+            return false;
+        p.pop();
+    }
+    return true;
+}
+
+bool Toll::addTechnician(string name, string specialty) {
+    technicians.push(Technician(name,specialty));
+    return true;
+}
+
+vector<string> Toll::readTechnicians() {
+    vector<string> techs;
+    priority_queue<Technician> p = technicians;
+    while(!p.empty()) {
+        techs.push_back(p.top().showTechnician());
+        p.pop();
+    }
+    return techs;
+}
+
+Technician Toll::getTechenician(string name) {
+    priority_queue<Technician> p = technicians;
+    Technician a("","");
+    while (!p.empty()) {
+        if (technicians.top().getName() == name)
+            return technicians.top();
+        p.pop();
+    }
+    return a;
+}
+
+bool Toll::deleteTechnician(string name) {
+    bool check = false;
+    priority_queue<Technician> p;
+    while (!technicians.empty()) {
+        if (technicians.top().getName() != name) {
+            check = true;
+            p.push(technicians.top());
+        }
+        technicians.pop();
+    }
+    technicians = p;
+    if (check)
+        return true;
+    return false;
+}
 
 
 TollEntrance::TollEntrance(string name, string geolocal, float highway_kilometer) : Toll(name,geolocal,highway_kilometer,false) {}

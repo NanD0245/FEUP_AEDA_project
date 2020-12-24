@@ -29,3 +29,10 @@ bool Technician::operator<(const Technician& t1) const {
     return performance < t1.getPerformance();
 }
 
+string Technician::getInfo() const {return name + " - " + specialty + " - " + to_string(performance) + " - " + to_string(num_intervetion); }
+
+string Technician::showTechnician() const {
+    return "Name: " + name + " - " + "Specialty: " + specialty + " - " + "Performance: " + to_string(performance)
+                                        + "Number of Interventions: " + " - " + to_string(num_intervetion);
+}
+

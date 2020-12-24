@@ -144,6 +144,12 @@ public:
     virtual void addLane() {};
     virtual void addLane(Lane * l);
     virtual void addLane(Employee * e) {};
+
+    bool checkTechnicianName(string name);
+    bool addTechnician(string name, string specialty);
+    Technician getTechenician(string name);
+    vector<string> readTechnicians();
+    bool deleteTechnician(string name);
 };
 
 

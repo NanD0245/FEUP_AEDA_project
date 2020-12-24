@@ -95,6 +95,8 @@ CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Interv
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Lane.h
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Movement.h
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/MovementRecord.h
+CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Owner.h
+CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/OwnerRecord.h
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/SystemNetwork.cpp
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/SystemNetwork.h
 CMakeFiles/aeda2020_portagens.dir/Classes/SystemNetwork.cpp.o: ../Classes/Technician.h
@@ -134,6 +136,8 @@ CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/InterventionRecord.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Lane.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Movement.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/MovementRecord.h
+CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Owner.h
+CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/OwnerRecord.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/SystemNetwork.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Technician.h
 CMakeFiles/aeda2020_portagens.dir/main.cpp.o: ../Classes/Toll.h

@@ -14,14 +14,14 @@ struct ownerHash
     int operator() (const Owner& o1) const
     {
         int v = 0;
-        for (char i: o1.getEmail())
+        for (char i: o1.getName())
             v = 37*v + i;
         return v;
     }
 
     bool operator() (const Owner& o1, const Owner& o2) const
     {
-        return o1.getEmail() == o2.getEmail();
+        return o1.getName() == o2.getName();
     }
 };
 
@@ -29,8 +29,7 @@ class OwnerRecord {
     unordered_set<Owner,ownerHash,ownerHash> owners;
 public:
     OwnerRecord();
-    bool addOwner(string name, string email);
-    bool deleteOwner(string email);
+    bool addOwner(string name);
     int getNumOwners() const;
 };
 

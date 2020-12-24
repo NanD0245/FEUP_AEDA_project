@@ -10,8 +10,6 @@ SystemNetwork::SystemNetwork() {
     employees = new EmployeeRecord();
 }
 
-
-
 void SystemNetwork::write(){
     vector<Toll *> t;
     vector<Lane *> l;
@@ -2004,47 +2002,38 @@ void SystemNetwork::manageTechnicians() {
 void SystemNetwork::manageOwners() {
     int index;
     do {
-        index = utils->ShowMenu({"Create Owner", "Read Owner", "Update Owner", "Delete Owner"});//, "Manage Owner"});
+        index = utils->ShowMenu({"Read Owners","Manage Owner"});
         switch(index) {
             case 1:
-                createOwner();
-                break;
-            case 2:
                 readOwners();
                 break;
-            case 3:
-                updateOwner();
+            case 2:
+                //manageOwner();
                 break;
-            case 4:
-                deleteOwner();
-                break;
-            /*case 5:
-                manageOwner();
-                break;*/
         }
     } while(index);
 }
 
-/*void SystemNetwork::manageOwner() {
+void SystemNetwork::manageOwner(Owner &o1) {
     int index;
     do {
-        index = utils->ShowMenu({"Add Vehicle", "Delete Vehicle", "Read Vehicles"});
+        index = utils->ShowMenu({"Add Vehicle", "Read Vehicles", "Update Vehicle", "Remove Vehicle"});//, "Manage Owner"});
         switch(index) {
             case 1:
-                //add vehicle
+                addVehicleOwner(o1);
                 break;
             case 2:
-                //delete vehicle
+                readVehiclesOwner(o1);
                 break;
             case 3:
+                updateVehicleOwner(o1);
                 break;
             case 4:
-                break;
-            case 5:
+                deleteVehicleOwner(o1);
                 break;
         }
     } while(index);
-}*/
+}
 
 void SystemNetwork::addIntervention() {
 
@@ -2055,11 +2044,70 @@ void SystemNetwork::readInterventions() {
 }
 
 void SystemNetwork::createTechnician() {
-
+    int index;
+    Highway* h = chooseHighway();
+    Toll* t = chooseToll(h);
+    string s_name, s_type;
+    while (s_name != "EXIT") {
+        cout << "Input the employee name: (if you want to exit without creating a employee please input EXIT)" << endl;
+        getline(cin, s_name);
+        if (s_name == "EXIT")
+            continue;
+        else if (!s_name.empty() && t->checkTechnicianName(s_name)) {
+            index = utils->ShowMenu({"Review Technician","Electronics Technician","Informatic Technician"});
+            if (index == 0) break;
+            switch (index) {
+                case 1:
+                    s_type = "review";
+                    break;
+                case 2:
+                    s_type = "eletronic";
+                    break;
+                case 3:
+                    s_type = "informatic";
+                    break;
+            }
+            t->addTechnician(s_name,s_type);
+            cout << "Technician created with success!" << endl;
+            utils->waitForInput();
+            break;
+        }
+        else if (s_name!= "EXIT")
+            cout << "ERROR: name of employee already exists." << endl;
+    }
 }
 
 void SystemNetwork::readTechnicians() {
-
+    int index;
+    vector<string> techs,techs1;
+    index = utils->ShowMenu({"All technicians", "Technicians on a specific toll"});
+    switch (index) {
+        case 1:
+            for (size_t i = 0; i < highways->getNumHighways(); i++) {
+                Highway* highway = highways->getHighwayIndex(i);
+                for (size_t j = 0; j < highway->getNumTolls(); j++) {
+                    Toll* toll = highway->getTollIndex(j);
+                    techs1 = toll->readTechnicians();
+                    for (string s : techs1)
+                        techs.push_back(s);
+                }
+            }
+            cout << "Technicians: " << techs.size() << endl;
+            for (string s : techs) {
+                cout << s << endl;
+            }
+            break;
+        case 2:
+            Highway* h = chooseHighway();
+            Toll* t = chooseToll(h);
+            techs = t->readTechnicians();
+            cout << "Technicians: " << techs.size() << endl;
+            for (string s : techs) {
+                cout << s << endl;
+            }
+            break;
+    }
+    utils->waitForInput();
 }
 
 void SystemNetwork::updateTechnician() {
@@ -2070,19 +2118,23 @@ void SystemNetwork::deleteTechnician() {
 
 }
 
-void SystemNetwork::createOwner() {
-
-}
-
-void SystemNetwork::updateOwner() {
-
-}
-
 void SystemNetwork::readOwners() {
 
 }
 
-void SystemNetwork::deleteOwner() {
+void SystemNetwork::addVehicleOwner(Owner &o1) {
+
+}
+
+void SystemNetwork::readVehiclesOwner(Owner &o1) {
+
+}
+
+void SystemNetwork::updateVehicleOwner(Owner &o1) {
+
+}
+
+void SystemNetwork::deleteVehicleOwner(Owner &o1) {
 
 }
 
