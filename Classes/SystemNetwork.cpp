@@ -8,6 +8,7 @@ SystemNetwork::SystemNetwork() {
     vehicles = new VehicleRecord();
     utils = new Utils();
     employees = new EmployeeRecord();
+    interventions = new InterventionRecord();
 }
 
 void SystemNetwork::write(){
@@ -1358,10 +1359,7 @@ void SystemNetwork::addEntryMovement() {
     Highway* highway = nullptr;
     Toll *toll = nullptr;
 
-    time_t timer = time(0);
-    tm *now = localtime(&timer);
-    string s_date = to_string(now->tm_mday) + "/" + to_string(now->tm_mon) + "/" + to_string(now->tm_year+1900)  + " " + to_string(now->tm_hour) + ":" + to_string(now->tm_min) + ":" + to_string(now->tm_sec);
-    Date* date = new Date(s_date);
+    Date* date = utils->getDate();
     while (s_plate != "EXIT" && index != 0) {
         if (vehicles->getTaxes(1) == -1 || vehicles->getTaxes(2) == -1 || vehicles->getTaxes(3) == -1 || vehicles->getTaxes(4) == -1) {
             cout << "ERROR: Before this you have to input the taxes for each vehicle class" << index << endl;
@@ -1495,11 +1493,7 @@ void SystemNetwork::addExitMovement() {
             }
         } while(toll->getNumLanes() == 0 || !toll->getType());
         if (s_plate == "EXIT") continue;
-        time_t timer = time(0);
-        tm *now = localtime(&timer);
-        string s_date = to_string(now->tm_mday) + "/" + to_string(now->tm_mon) + "/" + to_string(now->tm_year+1900)  + " " + to_string(now->tm_hour) + ":" + to_string(now->tm_min) + ":" + to_string(now->tm_sec);
-        //cout << s_date << endl;
-        Date* date = new Date(s_date);
+        Date* date = utils->getDate();
         lane_index = adviceOutLane(entry->getVehicle(), toll, date);
         cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
         do {
@@ -1966,12 +1960,15 @@ void SystemNetwork::LaneMoreMoves() {
 void SystemNetwork::manageInterventions() {
     int index;
     do {
-        index = utils->ShowMenu({"Add Intervention", "Read Interventions"});
+        index = utils->ShowMenu({"Add Intervention", "Conclude Intervention", "Read Interventions"});
         switch(index) {
             case 1:
                 addIntervention();
                 break;
             case 2:
+                concludeIntervention();
+                break;
+            case 3:
                 readInterventions();
                 break;
         }
@@ -2036,6 +2033,48 @@ void SystemNetwork::manageOwner(Owner &o1) {
 }
 
 void SystemNetwork::addIntervention() {
+    string s_type;
+    Highway* highway = chooseHighway();
+    if (highway == nullptr) {
+        utils->waitForInput();
+        return;
+    }
+    Toll* toll = chooseToll(highway);
+    if (toll == nullptr) {
+        utils->waitForInput();
+        return;
+    }
+    int index = utils->ShowMenu({"Review Technician","Electronics Technician","Informatic Technician"});
+    if (index == 0) {
+        utils->waitForInput();
+        return;
+    }
+    switch (index) {
+        case 1:
+            s_type = "review";
+            break;
+        case 2:
+            s_type = "eletronic";
+            break;
+        case 3:
+            s_type = "informatic";
+            break;
+    }
+    Date* start_date = utils->getDate();
+    Technician technician = toll->getTechnicianSpeciality(s_type);
+    if (technician.getSpecialty().empty()) {
+        vector<Toll *> tolls = highway->sortTollDistance(toll);
+        for (Toll* tol : tolls) {
+            technician = tol->getTechnicianSpeciality(s_type);
+            if (!technician.getSpecialty().empty())
+                break;
+        }
+    }
+    Intervention i(s_type,&technician,start_date, highway, toll);
+    interventions->addIntervetion(i);
+}
+
+void SystemNetwork::concludeIntervention() {
 
 }
 
@@ -2139,7 +2178,7 @@ void SystemNetwork::updateTechnician() {
     }
     t_name = t_name.substr(6,t_name.size()-2);
     t_name.pop_back();
-    Technician technician = t->getTechenician(t_name);
+    Technician technician = t->getTechnicianName(t_name);
     index = utils->ShowMenu({"Update Name", "Update Specialty"});
     string s_name,s_type;
     switch (index) {

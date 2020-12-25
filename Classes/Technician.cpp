@@ -26,7 +26,7 @@ int Technician::getNumIntervetion() const {return num_intervetion; }
 void Technician::addIntervention() {num_intervetion++; }
 
 bool Technician::operator<(const Technician& t1) const {
-    return performance < t1.getPerformance();
+    return performance > t1.getPerformance();
 }
 
 string Technician::getInfo() const {return name + " - " + specialty + " - " + to_string(performance) + " - " + to_string(num_intervetion); }

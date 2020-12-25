@@ -4,7 +4,7 @@
 
 #include "InterventionRecord.h"
 
-InterventionRecord::InterventionRecord() : interventions(Intervention("", nullptr, nullptr, nullptr, nullptr,0)) {}
+InterventionRecord::InterventionRecord() : interventions(Intervention("", nullptr, nullptr, nullptr, nullptr)) {}
 
 bool InterventionRecord::addIntervetion(const Intervention& i1) {
     return interventions.insert(i1) ? true : false;

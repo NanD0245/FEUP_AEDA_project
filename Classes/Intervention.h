@@ -14,12 +14,12 @@ class Intervention {
     string type; // revisão ; avaria(eletrónica ; informática)
     Highway* highway;
     Toll* toll;
-    Date* date;
+    Date* start_date, *end_date;
     Technician* technician;
     float duration;
     bool state; // em espera ; concluido
 public:
-    Intervention(string type, Technician* technician, Date* date, Highway* highway, Toll* toll , float duration, bool state = 0);
+    Intervention(string type, Technician* technician, Date* date, Highway* highway, Toll* toll);
     string getType() const;
     void setType(string type);
     Technician* getTechnician() const;
@@ -29,7 +29,8 @@ public:
     bool getState() const;
     void changeState();
 
-    Date* getDate() const;
+    Date* getStartDate() const;
+    Date* getEndDate() const;
     float getDuration() const;
     void setDuration(float duration);
     bool operator<(const Intervention& i1) const;

@@ -118,11 +118,22 @@ vector<string> Toll::readTechnicians() {
     return techs;
 }
 
-Technician Toll::getTechenician(string name) {
+Technician Toll::getTechnicianName(string name) {
     priority_queue<Technician> p = technicians;
     Technician a("","");
     while (!p.empty()) {
         if (technicians.top().getName() == name)
+            return technicians.top();
+        p.pop();
+    }
+    return a;
+}
+
+Technician Toll::getTechnicianSpeciality(string speciality) {
+    priority_queue<Technician> p = technicians;
+    Technician a("","");
+    while (!p.empty()) {
+        if (technicians.top().getSpecialty() == speciality)
             return technicians.top();
         p.pop();
     }

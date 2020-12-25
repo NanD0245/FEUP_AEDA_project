@@ -115,6 +115,7 @@ CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o: ../Classes/Technician.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o: ../Classes/Toll.cpp
 CMakeFiles/aeda2020_portagens.dir/Classes/Toll.cpp.o: ../Classes/Toll.h
 
+CMakeFiles/aeda2020_portagens.dir/Classes/Utils.cpp.o: ../Classes/Date.h
 CMakeFiles/aeda2020_portagens.dir/Classes/Utils.cpp.o: ../Classes/Utils.cpp
 CMakeFiles/aeda2020_portagens.dir/Classes/Utils.cpp.o: ../Classes/Utils.h
 

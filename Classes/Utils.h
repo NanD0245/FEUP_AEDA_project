@@ -1,6 +1,7 @@
 #ifndef AEDA2020_PORTAGENS_UTILS_H
 #define AEDA2020_PORTAGENS_UTILS_H
 
+#include "Date.h"
 #include <string>
 #include <vector>
 
@@ -56,6 +57,8 @@ public:
      * Waits for the user to press enter in order to continue program execution
      */
     void waitForInput();
+
+    Date* getDate();
 };
 
 

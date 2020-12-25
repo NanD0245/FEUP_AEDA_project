@@ -441,6 +441,7 @@ public:
     void manageOwner(Owner& o1);
 
     void addIntervention();
+    void concludeIntervention();
     void readInterventions();
 
     void createTechnician();

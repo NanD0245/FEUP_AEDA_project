@@ -120,3 +120,14 @@ void Utils::waitForInput() {
 }
 
 
+Date * Utils::getDate() {
+    time_t timer = time(0);
+    tm *now = localtime(&timer);
+    string s_date =
+            to_string(now->tm_mday) + "/" + to_string(now->tm_mon) + "/" + to_string(now->tm_year + 1900) + " " +
+            to_string(now->tm_hour) + ":" + to_string(now->tm_min) + ":" + to_string(now->tm_sec);
+    Date *date = new Date(s_date);
+    return date;
+}
+
+

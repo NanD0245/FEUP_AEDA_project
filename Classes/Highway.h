@@ -106,6 +106,8 @@ public:
      * @return true if both Highways have the same 'name', false otherwise
      */
     bool operator==(const Highway &l2);
+
+    vector<Toll*> sortTollDistance(Toll* toll);
 };
 
 

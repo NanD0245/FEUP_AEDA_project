@@ -8,7 +8,7 @@ using namespace std;
 class Technician {
     string name;
     string specialty; // revisão ; avaria(eletrónica ; informática)
-    float performance; //tempo médio
+    float performance; //tempo médio (quanto menor for melhor)
     int num_intervetion;
 public:
     Technician(string name, string specialty);
