@@ -32,25 +32,13 @@ vector
 string
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.cpp
-Highway.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.h
-
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.h
 Toll.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Toll.h
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.cpp
-HighwayRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.h
-
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.h
 Highway.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.h
-
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Intervention.cpp
-Intervention.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Intervention.h
 
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Intervention.h
 iostream
@@ -61,10 +49,6 @@ HighwayRecord.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.h
 Technician.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Technician.h
-
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/InterventionRecord.cpp
-InterventionRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/InterventionRecord.h
 
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/InterventionRecord.h
 Intervention.h
@@ -78,10 +62,6 @@ Employee.h
 string
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.cpp
-Movement.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.h
-
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.h
 Vehicle.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.h
@@ -91,10 +71,6 @@ Date.h
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Date.h
 cmath
 -
-
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/MovementRecord.cpp
-MovementRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/MovementRecord.h
 
 /home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/MovementRecord.h
 Movement.h
@@ -194,23 +170,5 @@ iostream
 stack
 -
 queue
--
-
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/main.cpp
-Classes/EmployeeRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/EmployeeRecord.h
-Classes/VehicleRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/VehicleRecord.h
-Classes/Date.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Date.h
-Classes/HighwayRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.h
-Classes/MovementRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/MovementRecord.h
-Classes/SystemNetwork.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.h
-windows.h
--
-wincon.h
 -
 

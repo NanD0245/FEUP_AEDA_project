@@ -2046,10 +2046,14 @@ void SystemNetwork::readInterventions() {
 void SystemNetwork::createTechnician() {
     int index;
     Highway* h = chooseHighway();
+    if (h == nullptr)
+        return;
     Toll* t = chooseToll(h);
+    if (t == nullptr)
+        return;
     string s_name, s_type;
     while (s_name != "EXIT") {
-        cout << "Input the employee name: (if you want to exit without creating a employee please input EXIT)" << endl;
+        cout << "Input the technician name: (if you want to exit without creating a employee please input EXIT)" << endl;
         getline(cin, s_name);
         if (s_name == "EXIT")
             continue;
@@ -2073,7 +2077,7 @@ void SystemNetwork::createTechnician() {
             break;
         }
         else if (s_name!= "EXIT")
-            cout << "ERROR: name of employee already exists." << endl;
+            cout << "ERROR: name of technician already exists." << endl;
     }
 }
 
@@ -2088,34 +2092,122 @@ void SystemNetwork::readTechnicians() {
                 for (size_t j = 0; j < highway->getNumTolls(); j++) {
                     Toll* toll = highway->getTollIndex(j);
                     techs1 = toll->readTechnicians();
+                    string s_ht = " - " + highway->showHighway() + " - " + "Toll: " + toll->getName();
                     for (string s : techs1)
-                        techs.push_back(s);
+                        techs.push_back(s+s_ht);
                 }
             }
             cout << "Technicians: " << techs.size() << endl;
             for (string s : techs) {
                 cout << s << endl;
             }
+            utils->waitForInput();
             break;
         case 2:
             Highway* h = chooseHighway();
+            if (h == nullptr)
+                return;
             Toll* t = chooseToll(h);
+            if (t == nullptr)
+                return;
             techs = t->readTechnicians();
             cout << "Technicians: " << techs.size() << endl;
             for (string s : techs) {
-                cout << s << endl;
+                cout << s << " - " << h->showHighway() << " - Toll: "<< t->getName() << endl;
             }
+            utils->waitForInput();
             break;
     }
-    utils->waitForInput();
 }
 
 void SystemNetwork::updateTechnician() {
-
+    Highway* h = chooseHighway();
+    if (h == nullptr)
+        return;
+    Toll* t = chooseToll(h);
+    if (t == nullptr)
+        return;
+    vector<string> techs = t->readTechnicians();
+    int index = utils->ShowMenu(techs) -1;
+    if (index == -1) return;
+    string t_name = "";
+    cout << techs[index] << endl;
+    for (char a: techs[index]) {
+        if (a == '-')
+            break;
+        t_name += a;
+    }
+    t_name = t_name.substr(6,t_name.size()-2);
+    t_name.pop_back();
+    Technician technician = t->getTechenician(t_name);
+    index = utils->ShowMenu({"Update Name", "Update Specialty"});
+    string s_name,s_type;
+    switch (index) {
+        case 1:
+            cout << "Input the technician name: (if you want to exit without creating a employee please input EXIT)" << endl;
+            while (s_name != "EXIT") {
+                getline(cin, s_name);
+                if (s_name == "EXIT")
+                    continue;
+                else if (!s_name.empty() && t->checkTechnicianName(s_name)) {
+                    technician.setName(s_name);
+                    t->deleteTechnician(t_name);
+                    t->addTechnician(technician);
+                    cout << "Technician created with success!" << endl;
+                    break;
+                }
+            }
+            utils->waitForInput();
+            break;
+        case 2:
+            cout << "Input the technician name: (if you want to exit without creating a employee please input EXIT)" << endl;
+            index = utils->ShowMenu({"Review Technician","Electronics Technician","Informatic Technician"});
+            if (index == 0) break;
+            switch (index) {
+                case 1:
+                    s_type = "review";
+                    break;
+                case 2:
+                    s_type = "eletronic";
+                    break;
+                case 3:
+                    s_type = "informatic";
+                    break;
+            }
+            if (index > 0) {
+                technician.setSpecialty(s_type);
+                t->deleteTechnician(t_name);
+                t->addTechnician(technician);
+                cout << "Technician created with success!" << endl;
+            }
+            utils->waitForInput();
+            break;
+    }
 }
 
 void SystemNetwork::deleteTechnician() {
-
+    Highway* h = chooseHighway();
+    if (h == nullptr)
+        return;
+    Toll* t = chooseToll(h);
+    if (t == nullptr)
+        return;
+    vector<string> techs =  t->readTechnicians();
+    int index = utils->ShowMenu(techs) - 1;
+    if (index == -1) return;
+    string t_name;
+    cout << techs[index] << endl;
+    for (char a: techs[index]) {
+        if (a == '-')
+            break;
+        t_name += a;
+    }
+    t_name = t_name.substr(6,t_name.size()-2);
+    t_name.pop_back();
+    if (t->deleteTechnician(t_name))
+        cout << "Technician deleted with success!" << endl;
+    else cout << "ERROR: Technician doesn't exist." << endl;
+    utils->waitForInput();
 }
 
 void SystemNetwork::readOwners() {

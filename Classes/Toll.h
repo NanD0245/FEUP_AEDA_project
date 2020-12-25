@@ -147,6 +147,7 @@ public:
 
     bool checkTechnicianName(string name);
     bool addTechnician(string name, string specialty);
+    bool addTechnician(Technician technician);
     Technician getTechenician(string name);
     vector<string> readTechnicians();
     bool deleteTechnician(string name);

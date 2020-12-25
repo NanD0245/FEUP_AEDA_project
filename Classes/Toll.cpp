@@ -103,6 +103,11 @@ bool Toll::addTechnician(string name, string specialty) {
     return true;
 }
 
+bool Toll::addTechnician(Technician technician) {
+    technicians.push(technician);
+    return true;
+}
+
 vector<string> Toll::readTechnicians() {
     vector<string> techs;
     priority_queue<Technician> p = technicians;
@@ -128,10 +133,9 @@ bool Toll::deleteTechnician(string name) {
     bool check = false;
     priority_queue<Technician> p;
     while (!technicians.empty()) {
-        if (technicians.top().getName() != name) {
-            check = true;
+        if (technicians.top().getName() != name)
             p.push(technicians.top());
-        }
+        else check = true;
         technicians.pop();
     }
     technicians = p;

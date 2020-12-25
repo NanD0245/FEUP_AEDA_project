@@ -33,6 +33,6 @@ string Technician::getInfo() const {return name + " - " + specialty + " - " + to
 
 string Technician::showTechnician() const {
     return "Name: " + name + " - " + "Specialty: " + specialty + " - " + "Performance: " + to_string(performance)
-                                        + "Number of Interventions: " + " - " + to_string(num_intervetion);
+                                        + " - " + "Number of Interventions: " + to_string(num_intervetion);
 }
 
