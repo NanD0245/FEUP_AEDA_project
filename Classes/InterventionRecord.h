@@ -14,6 +14,9 @@ public:
     InterventionRecord();
     bool addIntervetion(const Intervention& i1);
     bool removeIntervention(const Intervention& i1);
+    vector<string> showInterventions();
+    vector<string> showInterventionsNotConcluded();
+    Intervention getIntervention(int indexIn);
 
 };
 

@@ -107,3 +107,9 @@ bool Date::operator<(Date d1) const {
 bool Date::equal(Date d1) const {
     return year == d1.getYear() && month == d1.getMonth() && day == d1.getDay();
 }
+
+int Date::operator-(const Date &d1) {
+    int min1 = (d1.getYear()-1)*365*1440 + (d1.getMonth()-1)*30.4375*1440 + (d1.getDay()-1)*1440 + (d1.getHour()-1)*60 + d1.getMinute();
+    int min = (year-1)*365*1440 + (month-1)*30.4375*1440 + (day-1)*1440 + (hour-1)*60 + minute;
+    return min - min1;
+}

@@ -79,7 +79,6 @@ int main(int argc, char* argv[]) {
     SystemNetwork system;
     Utils utils;
     int index;
-
     system.read(file);
     do {
         utils.clrScreen();

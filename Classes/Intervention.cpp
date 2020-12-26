@@ -14,10 +14,6 @@ string Intervention::getType() const {return type; }
 
 void Intervention::setType(string type) {this->type = type; }
 
-Technician* Intervention::getTechnician() const {return technician; }
-
-void Intervention::setTechnician(Technician* technician) {this->technician = technician; }
-
 float Intervention::getDuration() const {return duration; }
 
 void Intervention::setDuration(float duration) {this->duration = duration; }
@@ -43,7 +39,23 @@ bool Intervention::operator<(const Intervention& i1) const {
         return true;
     else if (start_date->equal(*i1.getStartDate()) && highway->getInfo() == i1.getHighway()->getInfo() && toll->getName() == i1.getToll()->getName())
         return type < i1.getType();
-    //falta ordenar pela portagem
-    //em caso de empate ordenar por revisão -> eletrónica ->informática
     return false;
+}
+
+string Intervention::showIntervention() {
+    string s = "Start Date: " + start_date->getInfo() + " - Specialty: " + type + " - " + highway->showHighway() +
+            " - Toll Name: " + toll->getName() + " - Technician: " + technician->showTechnician();
+    if (state)
+        s += "\n\t\tEnd Date: " + end_date->getInfo() + " - Duration: " + to_string(duration);
+    return s;
+}
+
+void Intervention::concludeIntervention(Date *endDate) {
+    this->end_date = endDate;
+    duration = *end_date - *start_date;
+    float time = technician->getPerformance() * technician->getNumIntervetion() + duration;
+    technician->addIntervention();
+    int num = technician->getNumIntervetion();
+    technician->setPerformance(time/num);
+    state = true;
 }

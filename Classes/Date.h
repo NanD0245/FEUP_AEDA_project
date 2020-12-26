@@ -88,6 +88,7 @@ public:
                                     // just compare year, month and day !!
     bool equal(Date d1) const;      // only used with BST!!!
                                     // just compare year, month and day !!
+    int operator-(Date const& d1);
 };
 
 

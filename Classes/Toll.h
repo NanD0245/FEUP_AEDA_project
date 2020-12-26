@@ -10,6 +10,13 @@
 
 using namespace std;
 
+class MyCompare {
+public:
+    bool operator()(Technician *a, Technician *b) {
+        return (*a) < (*b);
+    }
+};
+
 /**
  * The class Toll is a class that has information about each
  * and every toll
@@ -31,7 +38,7 @@ protected:
     float highway_kilometer;
     bool type;
     vector<Lane *> lanes;
-    priority_queue<Technician> technicians;
+    priority_queue<Technician*, vector<Technician*>, MyCompare> technicians;
 public:
     /**
      * Initializes a new Toll object with the input provided by the user
@@ -147,9 +154,9 @@ public:
 
     bool checkTechnicianName(string name);
     bool addTechnician(string name, string specialty);
-    bool addTechnician(Technician technician);
-    Technician getTechnicianName(string name);
-    Technician getTechnicianSpeciality(string type);
+    bool addTechnician(Technician* technician);
+    Technician* getTechnicianName(string name);
+    Technician* getTechnicianSpeciality(string type);
     vector<string> readTechnicians();
     bool deleteTechnician(string name);
 };

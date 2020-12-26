@@ -2061,25 +2061,39 @@ void SystemNetwork::addIntervention() {
             break;
     }
     Date* start_date = utils->getDate();
-    Technician technician = toll->getTechnicianSpeciality(s_type);
-    if (technician.getSpecialty().empty()) {
+    cout << "cheguei1" << endl;
+    Technician* technician = toll->getTechnicianSpeciality(s_type);
+    if (technician->getSpecialty().empty()) {
         vector<Toll *> tolls = highway->sortTollDistance(toll);
         for (Toll* tol : tolls) {
             technician = tol->getTechnicianSpeciality(s_type);
-            if (!technician.getSpecialty().empty())
+            if (!technician->getSpecialty().empty())
                 break;
         }
     }
-    Intervention i(s_type,&technician,start_date, highway, toll);
-    interventions->addIntervetion(i);
+    cout << "cheguei" << endl;
+    Intervention i(s_type,technician,start_date, highway, toll);
+    if (interventions->addIntervetion(i))
+        cout << "Intervention started with success!" << endl;
+    utils->waitForInput();
 }
 
 void SystemNetwork::concludeIntervention() {
-
+    int index = utils->ShowMenu(interventions->showInterventionsNotConcluded()) -1;
+    if (index == -1 )return;
+    Intervention i = interventions->getIntervention(index);
+    interventions->removeIntervention(i);
+    Date* end_date = utils->getDate();
+    i.concludeIntervention(end_date);
+    interventions->addIntervetion(i);
+    cout << "Intervention concluded with success!" << endl;
+    utils->waitForInput();
 }
 
 void SystemNetwork::readInterventions() {
-
+   vector<string> v = interventions->showInterventions();
+   for (string s: v)
+       cout << s << endl;
 }
 
 void SystemNetwork::createTechnician() {
@@ -2178,7 +2192,7 @@ void SystemNetwork::updateTechnician() {
     }
     t_name = t_name.substr(6,t_name.size()-2);
     t_name.pop_back();
-    Technician technician = t->getTechnicianName(t_name);
+    Technician* technician = t->getTechnicianName(t_name);
     index = utils->ShowMenu({"Update Name", "Update Specialty"});
     string s_name,s_type;
     switch (index) {
@@ -2189,7 +2203,7 @@ void SystemNetwork::updateTechnician() {
                 if (s_name == "EXIT")
                     continue;
                 else if (!s_name.empty() && t->checkTechnicianName(s_name)) {
-                    technician.setName(s_name);
+                    technician->setName(s_name);
                     t->deleteTechnician(t_name);
                     t->addTechnician(technician);
                     cout << "Technician created with success!" << endl;
@@ -2214,7 +2228,7 @@ void SystemNetwork::updateTechnician() {
                     break;
             }
             if (index > 0) {
-                technician.setSpecialty(s_type);
+                technician->setSpecialty(s_type);
                 t->deleteTechnician(t_name);
                 t->addTechnician(technician);
                 cout << "Technician created with success!" << endl;

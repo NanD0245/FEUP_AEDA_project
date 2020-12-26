@@ -20,19 +20,19 @@ class Intervention {
     bool state; // em espera ; concluido
 public:
     Intervention(string type, Technician* technician, Date* date, Highway* highway, Toll* toll);
+    void concludeIntervention(Date* end_date);
     string getType() const;
     void setType(string type);
-    Technician* getTechnician() const;
-    void setTechnician(Technician* technician);
     Highway * getHighway() const;
     Toll* getToll() const;
     bool getState() const;
     void changeState();
-
     Date* getStartDate() const;
     Date* getEndDate() const;
     float getDuration() const;
     void setDuration(float duration);
+    string showIntervention();
+    string getInfo();
     bool operator<(const Intervention& i1) const;
 };
 

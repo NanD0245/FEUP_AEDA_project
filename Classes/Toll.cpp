@@ -89,9 +89,9 @@ void Toll::addLane(Lane * l){
 }
 
 bool Toll::checkTechnicianName(string name) {
-    priority_queue<Technician> p = technicians;
+    priority_queue<Technician*, vector<Technician*>, MyCompare> p = technicians;
     while(!p.empty()) {
-        if (p.top().getName() == name)
+        if (p.top()->getName() == name)
             return false;
         p.pop();
     }
@@ -99,52 +99,52 @@ bool Toll::checkTechnicianName(string name) {
 }
 
 bool Toll::addTechnician(string name, string specialty) {
-    technicians.push(Technician(name,specialty));
+    technicians.push(new Technician(name,specialty));
     return true;
 }
 
-bool Toll::addTechnician(Technician technician) {
+bool Toll::addTechnician(Technician* technician) {
     technicians.push(technician);
     return true;
 }
 
 vector<string> Toll::readTechnicians() {
     vector<string> techs;
-    priority_queue<Technician> p = technicians;
+    priority_queue<Technician*, vector<Technician*>, MyCompare> p = technicians;
     while(!p.empty()) {
-        techs.push_back(p.top().showTechnician());
+        techs.push_back(p.top()->showTechnician());
         p.pop();
     }
     return techs;
 }
 
-Technician Toll::getTechnicianName(string name) {
-    priority_queue<Technician> p = technicians;
+Technician* Toll::getTechnicianName(string name) {
+    priority_queue<Technician*, vector<Technician*>, MyCompare> p = technicians;
     Technician a("","");
     while (!p.empty()) {
-        if (technicians.top().getName() == name)
+        if (technicians.top()->getName() == name)
             return technicians.top();
         p.pop();
     }
-    return a;
+    return nullptr;
 }
 
-Technician Toll::getTechnicianSpeciality(string speciality) {
-    priority_queue<Technician> p = technicians;
+Technician* Toll::getTechnicianSpeciality(string speciality) {
+    priority_queue<Technician*, vector<Technician*>, MyCompare> p = technicians;
     Technician a("","");
     while (!p.empty()) {
-        if (technicians.top().getSpecialty() == speciality)
+        if (technicians.top()->getSpecialty() == speciality)
             return technicians.top();
         p.pop();
     }
-    return a;
+    return nullptr;
 }
 
 bool Toll::deleteTechnician(string name) {
     bool check = false;
-    priority_queue<Technician> p;
+    priority_queue<Technician*, vector<Technician*>, MyCompare> p;
     while (!technicians.empty()) {
-        if (technicians.top().getName() != name)
+        if (technicians.top()->getName() != name)
             p.push(technicians.top());
         else check = true;
         technicians.pop();
