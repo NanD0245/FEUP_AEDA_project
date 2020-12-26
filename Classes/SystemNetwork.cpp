@@ -3,14 +3,13 @@
 using namespace std;
 
 SystemNetwork::SystemNetwork() {
-    highways = new Highways();
-    movements = new Movements();
-    vehicles = new Vehicles();
+    highways = new HighwayRecord();
+    movements = new MovementRecord();
+    vehicles = new VehicleRecord();
     utils = new Utils();
-    employees = new Employees();
+    employees = new EmployeeRecord();
+    interventions = new InterventionRecord();
 }
-
-
 
 void SystemNetwork::write(){
     vector<Toll *> t;
@@ -1050,6 +1049,17 @@ Lane* SystemNetwork::chooseLane(Toll* toll) {
     return toll->getLane(index);
 }
 
+Lane * SystemNetwork::chooseLane(Toll *toll, int index) {
+    index = chooseIndexLane(toll,index);
+    while((index < -1)) {
+        cout << "Invalid Number." << endl;
+        index = utils->getNumber(toll->getNumLanes()) -1;
+    }
+    if (index == -1)
+        return nullptr;
+    return toll->getLane(index);
+}
+
 int SystemNetwork::chooseIndexLane(Toll* toll) const {
     string s_type, s_menu;
     vector<string> v1;
@@ -1062,7 +1072,17 @@ int SystemNetwork::chooseIndexLane(Toll* toll) const {
     return utils->ShowMenu(v1)-1;
 }
 
-
+int SystemNetwork::chooseIndexLane(Toll* toll,int index) const {
+    string s_type, s_menu;
+    vector<string> v1;
+    cout << "Lanes: " << toll->getNumLanes() << endl;
+    for (size_t i = 0; i < toll->getNumLanes(); i++) {
+        s_menu = toll->getLane(i)->showLane();
+        v1.push_back(s_menu);
+    }
+    utils->clrScreen();
+    return utils->ShowMenu(v1,index)-1;
+}
 
 void SystemNetwork::createEmployee() {
     string s_name;
@@ -1339,15 +1359,12 @@ void SystemNetwork::addEntryMovement() {
     Highway* highway = nullptr;
     Toll *toll = nullptr;
 
-    time_t timer = time(0);
-    tm *now = localtime(&timer);
-    string s_date = to_string(now->tm_mday) + "/" + to_string(now->tm_mon) + "/" + to_string(now->tm_year+1900)  + " " + to_string(now->tm_hour) + ":" + to_string(now->tm_min) + ":" + to_string(now->tm_sec);
-    Date* date = new Date(s_date);
+    Date* date = utils->getDate();
     while (s_plate != "EXIT" && index != 0) {
         if (vehicles->getTaxes(1) == -1 || vehicles->getTaxes(2) == -1 || vehicles->getTaxes(3) == -1 || vehicles->getTaxes(4) == -1) {
             cout << "ERROR: Before this you have to input the taxes for each vehicle class" << index << endl;
             s_plate = "EXIT";
-            utils->waitForInput();
+            //utils->waitForInput();
             continue;
         }
         s_plate = utils->getPlate();
@@ -1381,7 +1398,7 @@ void SystemNetwork::addEntryMovement() {
             highway = chooseHighway();
             if (highway == nullptr) {
                 s_plate = "EXIT";
-                utils->waitForInput();
+                //utils->waitForInput();
                 break;
             }
             if (highway->getNumTolls() == 0) {
@@ -1393,7 +1410,7 @@ void SystemNetwork::addEntryMovement() {
             toll = chooseToll(highway);
             if (toll == nullptr) {
                 s_plate = "EXIT";
-                utils->waitForInput();
+                //utils->waitForInput();
                 break;
             }
             if (toll->getType()) {
@@ -1404,9 +1421,9 @@ void SystemNetwork::addEntryMovement() {
             }
         } while(toll->getNumLanes() == 0 || toll->getType());
         if (s_plate == "EXIT") continue;
-        lane_index = adviceEntryLane(toll, date);
-        cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
-        Lane *lane = chooseLane(toll);
+        //lane_index = adviceEntryLane(toll, date);
+        //cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
+        Lane *lane = chooseLane(toll,adviceEntryLane(toll, date));
         if (lane == nullptr) {
             s_plate = "EXIT";
             continue;
@@ -1430,7 +1447,7 @@ void SystemNetwork::addExitMovement() {
     while (s_plate != "EXIT") {
         if (movements->getNumMovements() == 0) {
             cout << "ERROR: Before you do this you have to add a entry movement" << endl;
-            utils->waitForInput();
+            //utils->waitForInput();
             s_plate = "EXIT";
             continue;
         }
@@ -1458,7 +1475,7 @@ void SystemNetwork::addExitMovement() {
         }
         if (entry == nullptr) {
             cout << "ERROR: Vehicle isn't in a highway." << endl;
-            utils->waitForInput();
+            //utils->waitForInput();
             continue;
         }
         highway = entry->getHighway();
@@ -1476,11 +1493,7 @@ void SystemNetwork::addExitMovement() {
             }
         } while(toll->getNumLanes() == 0 || !toll->getType());
         if (s_plate == "EXIT") continue;
-        time_t timer = time(0);
-        tm *now = localtime(&timer);
-        string s_date = to_string(now->tm_mday) + "/" + to_string(now->tm_mon) + "/" + to_string(now->tm_year+1900)  + " " + to_string(now->tm_hour) + ":" + to_string(now->tm_min) + ":" + to_string(now->tm_sec);
-        //cout << s_date << endl;
-        Date* date = new Date(s_date);
+        Date* date = utils->getDate();
         lane_index = adviceOutLane(entry->getVehicle(), toll, date);
         cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
         do {
@@ -1496,7 +1509,7 @@ void SystemNetwork::addExitMovement() {
 
         if (lane == nullptr) {
             s_plate = "EXIT";
-            utils->waitForInput();
+            //utils->waitForInput();
             continue;
         }
 
@@ -1943,3 +1956,330 @@ void SystemNetwork::LaneMoreMoves() {
     cout << highway->showHighway() << " - Toll name: "<< toll->getName() << " - " << lane->showLane() << " - Total moves = " << total_moves << endl;
     utils->waitForInput();
 }
+
+void SystemNetwork::manageInterventions() {
+    int index;
+    do {
+        index = utils->ShowMenu({"Add Intervention", "Conclude Intervention", "Read Interventions"});
+        switch(index) {
+            case 1:
+                addIntervention();
+                break;
+            case 2:
+                concludeIntervention();
+                break;
+            case 3:
+                readInterventions();
+                break;
+        }
+    } while(index);
+}
+
+void SystemNetwork::manageTechnicians() {
+    int index;
+    do {
+        index = utils->ShowMenu({"Create Technician", "Read Technician", "Update Technician", "Delete Technician"});
+        switch(index) {
+            case 1:
+                createTechnician();
+                break;
+            case 2:
+                readTechnicians();
+                break;
+            case 3:
+                updateTechnician();
+                break;
+            case 4:
+                deleteTechnician();
+                break;
+        }
+    } while(index);
+}
+
+void SystemNetwork::manageOwners() {
+    int index;
+    do {
+        index = utils->ShowMenu({"Read Owners","Manage Owner"});
+        switch(index) {
+            case 1:
+                readOwners();
+                break;
+            case 2:
+                //manageOwner();
+                break;
+        }
+    } while(index);
+}
+
+void SystemNetwork::manageOwner(Owner &o1) {
+    int index;
+    do {
+        index = utils->ShowMenu({"Add Vehicle", "Read Vehicles", "Update Vehicle", "Remove Vehicle"});//, "Manage Owner"});
+        switch(index) {
+            case 1:
+                addVehicleOwner(o1);
+                break;
+            case 2:
+                readVehiclesOwner(o1);
+                break;
+            case 3:
+                updateVehicleOwner(o1);
+                break;
+            case 4:
+                deleteVehicleOwner(o1);
+                break;
+        }
+    } while(index);
+}
+
+void SystemNetwork::addIntervention() {
+    string s_type;
+    Highway* highway = chooseHighway();
+    if (highway == nullptr) {
+        utils->waitForInput();
+        return;
+    }
+    Toll* toll = chooseToll(highway);
+    if (toll == nullptr) {
+        utils->waitForInput();
+        return;
+    }
+    int index = utils->ShowMenu({"Review Technician","Electronics Technician","Informatic Technician"});
+    if (index == 0) {
+        utils->waitForInput();
+        return;
+    }
+    switch (index) {
+        case 1:
+            s_type = "review";
+            break;
+        case 2:
+            s_type = "eletronic";
+            break;
+        case 3:
+            s_type = "informatic";
+            break;
+    }
+    Date* start_date = utils->getDate();
+    cout << "cheguei1" << endl;
+    Technician* technician = toll->getTechnicianSpeciality(s_type);
+    if (technician->getSpecialty().empty()) {
+        vector<Toll *> tolls = highway->sortTollDistance(toll);
+        for (Toll* tol : tolls) {
+            technician = tol->getTechnicianSpeciality(s_type);
+            if (!technician->getSpecialty().empty())
+                break;
+        }
+    }
+    cout << "cheguei" << endl;
+    Intervention i(s_type,technician,start_date, highway, toll);
+    if (interventions->addIntervetion(i))
+        cout << "Intervention started with success!" << endl;
+    utils->waitForInput();
+}
+
+void SystemNetwork::concludeIntervention() {
+    int index = utils->ShowMenu(interventions->showInterventionsNotConcluded()) -1;
+    if (index == -1 )return;
+    Intervention i = interventions->getIntervention(index);
+    interventions->removeIntervention(i);
+    Date* end_date = utils->getDate();
+    i.concludeIntervention(end_date);
+    interventions->addIntervetion(i);
+    cout << "Intervention concluded with success!" << endl;
+    utils->waitForInput();
+}
+
+void SystemNetwork::readInterventions() {
+   vector<string> v = interventions->showInterventions();
+   for (string s: v)
+       cout << s << endl;
+}
+
+void SystemNetwork::createTechnician() {
+    int index;
+    Highway* h = chooseHighway();
+    if (h == nullptr)
+        return;
+    Toll* t = chooseToll(h);
+    if (t == nullptr)
+        return;
+    string s_name, s_type;
+    while (s_name != "EXIT") {
+        cout << "Input the technician name: (if you want to exit without creating a employee please input EXIT)" << endl;
+        getline(cin, s_name);
+        if (s_name == "EXIT")
+            continue;
+        else if (!s_name.empty() && t->checkTechnicianName(s_name)) {
+            index = utils->ShowMenu({"Review Technician","Electronics Technician","Informatic Technician"});
+            if (index == 0) break;
+            switch (index) {
+                case 1:
+                    s_type = "review";
+                    break;
+                case 2:
+                    s_type = "eletronic";
+                    break;
+                case 3:
+                    s_type = "informatic";
+                    break;
+            }
+            t->addTechnician(s_name,s_type);
+            cout << "Technician created with success!" << endl;
+            utils->waitForInput();
+            break;
+        }
+        else if (s_name!= "EXIT")
+            cout << "ERROR: name of technician already exists." << endl;
+    }
+}
+
+void SystemNetwork::readTechnicians() {
+    int index;
+    vector<string> techs,techs1;
+    index = utils->ShowMenu({"All technicians", "Technicians on a specific toll"});
+    switch (index) {
+        case 1:
+            for (size_t i = 0; i < highways->getNumHighways(); i++) {
+                Highway* highway = highways->getHighwayIndex(i);
+                for (size_t j = 0; j < highway->getNumTolls(); j++) {
+                    Toll* toll = highway->getTollIndex(j);
+                    techs1 = toll->readTechnicians();
+                    string s_ht = " - " + highway->showHighway() + " - " + "Toll: " + toll->getName();
+                    for (string s : techs1)
+                        techs.push_back(s+s_ht);
+                }
+            }
+            cout << "Technicians: " << techs.size() << endl;
+            for (string s : techs) {
+                cout << s << endl;
+            }
+            utils->waitForInput();
+            break;
+        case 2:
+            Highway* h = chooseHighway();
+            if (h == nullptr)
+                return;
+            Toll* t = chooseToll(h);
+            if (t == nullptr)
+                return;
+            techs = t->readTechnicians();
+            cout << "Technicians: " << techs.size() << endl;
+            for (string s : techs) {
+                cout << s << " - " << h->showHighway() << " - Toll: "<< t->getName() << endl;
+            }
+            utils->waitForInput();
+            break;
+    }
+}
+
+void SystemNetwork::updateTechnician() {
+    Highway* h = chooseHighway();
+    if (h == nullptr)
+        return;
+    Toll* t = chooseToll(h);
+    if (t == nullptr)
+        return;
+    vector<string> techs = t->readTechnicians();
+    int index = utils->ShowMenu(techs) -1;
+    if (index == -1) return;
+    string t_name = "";
+    cout << techs[index] << endl;
+    for (char a: techs[index]) {
+        if (a == '-')
+            break;
+        t_name += a;
+    }
+    t_name = t_name.substr(6,t_name.size()-2);
+    t_name.pop_back();
+    Technician* technician = t->getTechnicianName(t_name);
+    index = utils->ShowMenu({"Update Name", "Update Specialty"});
+    string s_name,s_type;
+    switch (index) {
+        case 1:
+            cout << "Input the technician name: (if you want to exit without creating a employee please input EXIT)" << endl;
+            while (s_name != "EXIT") {
+                getline(cin, s_name);
+                if (s_name == "EXIT")
+                    continue;
+                else if (!s_name.empty() && t->checkTechnicianName(s_name)) {
+                    technician->setName(s_name);
+                    t->deleteTechnician(t_name);
+                    t->addTechnician(technician);
+                    cout << "Technician created with success!" << endl;
+                    break;
+                }
+            }
+            utils->waitForInput();
+            break;
+        case 2:
+            cout << "Input the technician name: (if you want to exit without creating a employee please input EXIT)" << endl;
+            index = utils->ShowMenu({"Review Technician","Electronics Technician","Informatic Technician"});
+            if (index == 0) break;
+            switch (index) {
+                case 1:
+                    s_type = "review";
+                    break;
+                case 2:
+                    s_type = "eletronic";
+                    break;
+                case 3:
+                    s_type = "informatic";
+                    break;
+            }
+            if (index > 0) {
+                technician->setSpecialty(s_type);
+                t->deleteTechnician(t_name);
+                t->addTechnician(technician);
+                cout << "Technician created with success!" << endl;
+            }
+            utils->waitForInput();
+            break;
+    }
+}
+
+void SystemNetwork::deleteTechnician() {
+    Highway* h = chooseHighway();
+    if (h == nullptr)
+        return;
+    Toll* t = chooseToll(h);
+    if (t == nullptr)
+        return;
+    vector<string> techs =  t->readTechnicians();
+    int index = utils->ShowMenu(techs) - 1;
+    if (index == -1) return;
+    string t_name;
+    cout << techs[index] << endl;
+    for (char a: techs[index]) {
+        if (a == '-')
+            break;
+        t_name += a;
+    }
+    t_name = t_name.substr(6,t_name.size()-2);
+    t_name.pop_back();
+    if (t->deleteTechnician(t_name))
+        cout << "Technician deleted with success!" << endl;
+    else cout << "ERROR: Technician doesn't exist." << endl;
+    utils->waitForInput();
+}
+
+void SystemNetwork::readOwners() {
+
+}
+
+void SystemNetwork::addVehicleOwner(Owner &o1) {
+
+}
+
+void SystemNetwork::readVehiclesOwner(Owner &o1) {
+
+}
+
+void SystemNetwork::updateVehicleOwner(Owner &o1) {
+
+}
+
+void SystemNetwork::deleteVehicleOwner(Owner &o1) {
+
+}
+

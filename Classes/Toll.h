@@ -3,10 +3,19 @@
 #define AEDA2020_PORTAGENS_TOLLS_H
 
 #include "Lane.h"
+#include "Technician.h"
 #include <string>
 #include <vector>
+#include <queue>
 
 using namespace std;
+
+class MyCompare {
+public:
+    bool operator()(Technician *a, Technician *b) {
+        return (*a) < (*b);
+    }
+};
 
 /**
  * The class Toll is a class that has information about each
@@ -29,6 +38,7 @@ protected:
     float highway_kilometer;
     bool type;
     vector<Lane *> lanes;
+    priority_queue<Technician*, vector<Technician*>, MyCompare> technicians;
 public:
     /**
      * Initializes a new Toll object with the input provided by the user
@@ -141,6 +151,14 @@ public:
     virtual void addLane() {};
     virtual void addLane(Lane * l);
     virtual void addLane(Employee * e) {};
+
+    bool checkTechnicianName(string name);
+    bool addTechnician(string name, string specialty);
+    bool addTechnician(Technician* technician);
+    Technician* getTechnicianName(string name);
+    Technician* getTechnicianSpeciality(string type);
+    vector<string> readTechnicians();
+    bool deleteTechnician(string name);
 };
 
 

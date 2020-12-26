@@ -16,14 +16,14 @@
  */
 using namespace std;
 
-class Vehicles {
+class VehicleRecord {
     vector<Vehicle *> vehicles;
     float taxes[4];
 public:
     /**
      * The constructor of Vehicles class initializes the 'vehicles' container as empty
      */
-    Vehicles();
+    VehicleRecord();
 
     /**
      * @return the number of vehicles already in the 'vehicles' container

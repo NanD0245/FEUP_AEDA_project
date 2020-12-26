@@ -1,12 +1,14 @@
 #ifndef AEDA2020_PORTAGENS_SYSTEMNETWORK_H
 #define AEDA2020_PORTAGENS_SYSTEMNETWORK_H
 
-#include "Highways.h"
-#include "Movements.h"
-#include "Vehicles.h"
-#include "Employees.h"
+#include "HighwayRecord.h"
+#include "MovementRecord.h"
+#include "VehicleRecord.h"
+#include "EmployeeRecord.h"
 #include "Utils.h"
 #include "Exceptions.h"
+#include "InterventionRecord.h"
+#include "OwnerRecord.h"
 
 #include <iostream>
 #include <fstream>
@@ -28,12 +30,15 @@ using namespace std;
  * @param employees is the Employee object that stores all the different Employee objects and their info
  */
 class SystemNetwork {
-public:
-    Highways* highways;
-    Movements* movements;
-    Vehicles* vehicles;
+
+    HighwayRecord* highways;
+    MovementRecord* movements;
+    VehicleRecord* vehicles;
     Utils* utils;
-    Employees* employees;
+    EmployeeRecord* employees;
+    InterventionRecord* interventions;
+
+public:
 
     /**
      * The SystemNetwork constructor initializes all of its attributes using its' corresponding classes' constructors.
@@ -223,12 +228,16 @@ public:
      */
     int chooseIndexLane(Toll* toll) const;
 
+    int chooseIndexLane(Toll* toll,int index) const;
+
     /**
      * Allows the user to input a number (index) which selects a Lane. As long as the index isn't -1, if it's an invalid number
      * the program continues to ask the user for a valid index.
      * @return nullptr if index is -1, the selected Lane otherwise
      */
     Lane* chooseLane(Toll* toll);
+
+    Lane* chooseLane(Toll* toll, int index);
 
     /**
      * Allows the user to create an Employee object.
@@ -425,6 +434,30 @@ public:
      * writes file '../Cache/systemNetworks.txt' according to the objects that make up the program's data
      */
     void write();
+
+    void manageTechnicians();
+    void manageInterventions();
+    void manageOwners();
+    void manageOwner(Owner& o1);
+
+    void addIntervention();
+    void concludeIntervention();
+    void readInterventions();
+
+    void createTechnician();
+    void updateTechnician();
+    void readTechnicians();
+    void deleteTechnician();
+
+    void createOwner();
+    void updateOwner();
+    void readOwners();
+    void deleteOwner();
+
+    void addVehicleOwner(Owner& o1);
+    void updateVehicleOwner(Owner& o1);
+    void readVehiclesOwner(Owner& o1);
+    void deleteVehicleOwner(Owner& o1);
 };
 
 

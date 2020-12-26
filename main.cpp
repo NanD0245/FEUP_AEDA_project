@@ -1,10 +1,10 @@
-#include <iostream>
+/*#include <iostream>
 //#include "Classes/Toll.h"
-#include "Classes/Employees.h"
-#include "Classes/Vehicles.h"
+#include "Classes/EmployeeRecord.h"
+#include "Classes/VehicleRecord.h"
 #include "Classes/Date.h"
-#include "Classes/Highways.h"
-#include "Classes/Movements.h"
+#include "Classes/HighwayRecord.h"
+#include "Classes/MovementRecord.h"*/
 #include "Classes/SystemNetwork.h"
 
 #define file "../Cache/systemNetworks.txt"
@@ -79,12 +79,13 @@ int main(int argc, char* argv[]) {
     SystemNetwork system;
     Utils utils;
     int index;
-
     system.read(file);
     do {
         utils.clrScreen();
 
-        index = utils.ShowMenu({"Manage Movements", "Manage Highways", "Manage Employees" ,"Manage Vehicles","Input Taxes for vehicles", "Statistics"});
+        index = utils.ShowMenu({"Manage Movements", "Manage Highways", "Manage Employees" , "Manage Vehicles",
+                                "Input Taxes for vehicles", "Manage Interventions", "Manage Technicians",
+                                "Manage Owners", "Statistics"});
         switch (index) {
             case(1):
                 system.manageMovements();
@@ -99,10 +100,18 @@ int main(int argc, char* argv[]) {
                 system.manageVehicle();
                 break;
             case 5:
-                utils.clrScreen();
                 system.getTaxesFromUser();
                 break;
             case 6:
+                system.manageInterventions();
+                break;
+            case 7:
+                system.manageTechnicians();
+                break;
+            case 8:
+                system.manageOwners();
+                break;
+            case 9:
                 system.manageStatistics();
                 break;
         }

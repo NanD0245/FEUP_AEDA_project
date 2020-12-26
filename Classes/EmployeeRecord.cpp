@@ -1,20 +1,20 @@
-#include "Employees.h"
+#include "EmployeeRecord.h"
 
 using namespace std;
 
-int Employees::code = 0;
+int EmployeeRecord::code = 0;
 
-Employees::Employees() {
+EmployeeRecord::EmployeeRecord() {
     employees.clear();
 }
 
-int Employees::getCode() const {return code;}
+int EmployeeRecord::getCode() const {return code;}
 
-void Employees::setCode(int code) {this->code = code;}
+void EmployeeRecord::setCode(int code) {this->code = code;}
 
-int Employees::getNumEmployees() const {return employees.size();}
+int EmployeeRecord::getNumEmployees() const {return employees.size();}
 
-Employee * Employees::getEmployee(int code) {
+Employee * EmployeeRecord::getEmployee(int code) {
     for (size_t i=0 ; i < employees.size(); i++) {
         if (employees[i]->getCode() == code)
             return employees[i];
@@ -22,7 +22,7 @@ Employee * Employees::getEmployee(int code) {
     return nullptr;
 }
 
-Employee * Employees::getEmployee(string name) {
+Employee * EmployeeRecord::getEmployee(string name) {
     for (size_t i=0 ; i < employees.size(); i++) {
         if (employees[i]->getName() == name)
             return employees[i];
@@ -30,13 +30,13 @@ Employee * Employees::getEmployee(string name) {
     return nullptr;
 }
 
-Employee * Employees::getEmployeeIndex(int i) {
+Employee * EmployeeRecord::getEmployeeIndex(int i) {
     if (i < employees.size())
         return employees[i];
     return nullptr;
 }
 
-bool Employees::checkEmployeeName(string name) {
+bool EmployeeRecord::checkEmployeeName(string name) {
     for (size_t i = 0; i < employees.size(); i++) {
         if (employees[i]->getName() == name)
             return false;
@@ -44,7 +44,7 @@ bool Employees::checkEmployeeName(string name) {
     return true;
 }
 
-bool Employees::addEmployee(string name) {
+bool EmployeeRecord::addEmployee(string name) {
     for (size_t i = 0; i < employees.size(); i++)
         if (employees[i]->getName() == name)
             return false;
@@ -54,7 +54,7 @@ bool Employees::addEmployee(string name) {
     return true;
 }
 
-bool Employees::addEmployee(Employee * e){
+bool EmployeeRecord::addEmployee(Employee * e){
     for (size_t i = 0; i < employees.size(); i++)
         if (employees[i]->getName() == e->getName())
             return false;
@@ -62,7 +62,7 @@ bool Employees::addEmployee(Employee * e){
     return true;
 }
 
-bool Employees::removeEmployee(int i) {
+bool EmployeeRecord::removeEmployee(int i) {
     if (i>=employees.size())
         return false;
     employees.erase(employees.begin()+i);

@@ -11,13 +11,13 @@
  *
  * @param highways contains all the highways (objects from Highway class) that exist
  */
-class Highways {
+class HighwayRecord {
     vector<Highway *> highways;
 public:
     /**
      * The constructor of Highways class initializes the 'highways' container as empty
      */
-    Highways();
+    HighwayRecord();
 
     /**
      * @return the number of highways already in the 'highways' container

@@ -81,3 +81,18 @@ bool Highway::checkTollName(string name) {
 }
 
 bool Highway::operator==(const Highway &l2) { return name == l2.getInfo(); }
+
+vector<Toll *> Highway::sortTollDistance(Toll* toll) {
+    vector<Toll *> t;
+    vector<Toll *> t_copy = tolls;
+    while (!t_copy.empty()) {
+        int index = 0;
+        for (size_t i = 0; i < t_copy.size(); i++) {
+            if (abs(toll->getKilometer() - t_copy[i]->getKilometer()) < abs(toll->getKilometer() - t_copy[index]->getKilometer()))
+                index = i;
+        }
+        t.push_back(t_copy[index]);
+        t_copy.erase(t_copy.begin() + index);
+    }
+    return t;
+}

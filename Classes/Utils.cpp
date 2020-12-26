@@ -36,13 +36,27 @@ int Utils::getNumber(int max) {
 }
 
 int Utils::ShowMenu(vector<string> menu) {
-    clrScreen();
+    //clrScreen();
     cout << "TOLL MANAGEMENT SYSTEM" << endl << endl;
     cout << "Please choose one of the options below: " << endl << endl;
     for (size_t i = 0; i < menu.size(); i++) {
         cout << (i+1) << " - " << menu[i] << endl;
     }
     cout << "0 - Exit" << endl << endl;
+    int index = getNumber(menu.size());
+    clrScreen();
+    return index;
+}
+
+int Utils::ShowMenu(vector<string> menu, int lane_index) {
+    //clrScreen();
+    cout << "TOLL MANAGEMENT SYSTEM" << endl << endl;
+    cout << "Please choose one of the options below: " << endl << endl;
+    for (size_t i = 0; i < menu.size(); i++) {
+        cout << (i+1) << " - " << menu[i] << endl;
+    }
+    cout << "0 - Exit" << endl << endl;
+    cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
     int index = getNumber(menu.size());
     clrScreen();
     return index;
@@ -103,6 +117,17 @@ void Utils::waitForInput() {
     cout << '\n' << "Press enter to continue...";
     getline(cin, a);
     cout << "\x1b[A";
+}
+
+
+Date * Utils::getDate() {
+    time_t timer = time(0);
+    tm *now = localtime(&timer);
+    string s_date =
+            to_string(now->tm_mday) + "/" + to_string(now->tm_mon) + "/" + to_string(now->tm_year + 1900) + " " +
+            to_string(now->tm_hour) + ":" + to_string(now->tm_min) + ":" + to_string(now->tm_sec);
+    Date *date = new Date(s_date);
+    return date;
 }
 
 

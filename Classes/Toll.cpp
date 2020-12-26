@@ -88,6 +88,72 @@ void Toll::addLane(Lane * l){
     lanes.push_back(l);
 }
 
+bool Toll::checkTechnicianName(string name) {
+    priority_queue<Technician*, vector<Technician*>, MyCompare> p = technicians;
+    while(!p.empty()) {
+        if (p.top()->getName() == name)
+            return false;
+        p.pop();
+    }
+    return true;
+}
+
+bool Toll::addTechnician(string name, string specialty) {
+    technicians.push(new Technician(name,specialty));
+    return true;
+}
+
+bool Toll::addTechnician(Technician* technician) {
+    technicians.push(technician);
+    return true;
+}
+
+vector<string> Toll::readTechnicians() {
+    vector<string> techs;
+    priority_queue<Technician*, vector<Technician*>, MyCompare> p = technicians;
+    while(!p.empty()) {
+        techs.push_back(p.top()->showTechnician());
+        p.pop();
+    }
+    return techs;
+}
+
+Technician* Toll::getTechnicianName(string name) {
+    priority_queue<Technician*, vector<Technician*>, MyCompare> p = technicians;
+    Technician a("","");
+    while (!p.empty()) {
+        if (technicians.top()->getName() == name)
+            return technicians.top();
+        p.pop();
+    }
+    return nullptr;
+}
+
+Technician* Toll::getTechnicianSpeciality(string speciality) {
+    priority_queue<Technician*, vector<Technician*>, MyCompare> p = technicians;
+    Technician a("","");
+    while (!p.empty()) {
+        if (technicians.top()->getSpecialty() == speciality)
+            return technicians.top();
+        p.pop();
+    }
+    return nullptr;
+}
+
+bool Toll::deleteTechnician(string name) {
+    bool check = false;
+    priority_queue<Technician*, vector<Technician*>, MyCompare> p;
+    while (!technicians.empty()) {
+        if (technicians.top()->getName() != name)
+            p.push(technicians.top());
+        else check = true;
+        technicians.pop();
+    }
+    technicians = p;
+    if (check)
+        return true;
+    return false;
+}
 
 
 TollEntrance::TollEntrance(string name, string geolocal, float highway_kilometer) : Toll(name,geolocal,highway_kilometer,false) {}

@@ -15,13 +15,13 @@ using namespace std;
  *
  * @param movements contains all the movements (objects from Movements class) that exist
  */
-class Movements {
+class MovementRecord {
     vector<Movement *> movements;
 public:
     /**
      * The constructor of Movements class initializes the 'highways' container as empty
      */
-    Movements();
+    MovementRecord();
 
     /**
      * @return the number of movements already in the 'movements' container

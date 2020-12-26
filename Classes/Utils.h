@@ -1,6 +1,7 @@
 #ifndef AEDA2020_PORTAGENS_UTILS_H
 #define AEDA2020_PORTAGENS_UTILS_H
 
+#include "Date.h"
 #include <string>
 #include <vector>
 
@@ -38,6 +39,8 @@ public:
      */
     int ShowMenu(vector<string> menu);
 
+    int ShowMenu(vector<string> menu, int lane_index);
+
     /**
      * Allows the user to input a float to use in some Classes' methods
      * @return float inputted by the user
@@ -54,6 +57,8 @@ public:
      * Waits for the user to press enter in order to continue program execution
      */
     void waitForInput();
+
+    Date* getDate();
 };
 
 

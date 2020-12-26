@@ -83,6 +83,12 @@ public:
      * @return true if current date is after the date of object d1, false otherwise
      */
     bool operator>(Date d1) const;
+
+    bool operator<(Date d1) const;  // only used with the BST!!!
+                                    // just compare year, month and day !!
+    bool equal(Date d1) const;      // only used with BST!!!
+                                    // just compare year, month and day !!
+    int operator-(Date const& d1);
 };
 
 
