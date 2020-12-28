@@ -37,6 +37,22 @@ bool Owner::deleteVehicle(string plate) {
     return false;
 }
 
+bool Owner::deleteVehicle(int index) {
+    if (index >= vehicles.size())
+        return false;
+    vehicles.erase(vehicles.begin()+index);
+    return true;
+}
+
 bool Owner::operator==(const Owner& o1) {
     return name == o1.getName();
+}
+
+vector<Vehicle*> Owner::getVehicles() {return vehicles; }
+
+vector<string> Owner::showVehicles() {
+    vector<string> s;
+    for (Vehicle* v : vehicles)
+        s.push_back(v->showVehicle());
+    return s;
 }

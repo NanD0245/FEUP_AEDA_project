@@ -22,6 +22,9 @@ public:
     bool addVehicle(Vehicle* vehicle);
     bool addVehicle(string plate, int v_class, float tax);
     bool deleteVehicle(string plate);
+    bool deleteVehicle(int index);
+    vector<Vehicle*> getVehicles();
+    vector<string> showVehicles();
     bool operator==(const Owner& o1);
 };
 

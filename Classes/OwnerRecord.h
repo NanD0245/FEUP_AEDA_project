@@ -30,7 +30,12 @@ class OwnerRecord {
 public:
     OwnerRecord();
     bool addOwner(string name);
+    bool deleteOwner(Owner o1);
+    Owner getOwner(int index);
     int getNumOwners() const;
+    vector<string> showOwners();
+    bool addVehicleOwner(string name, Vehicle* vehicle);
+    bool checkPlate(string plate);
 };
 
 

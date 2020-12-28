@@ -37,6 +37,7 @@ class SystemNetwork {
     Utils* utils;
     EmployeeRecord* employees;
     InterventionRecord* interventions;
+    OwnerRecord* owners;
 
 public:
 
@@ -438,7 +439,7 @@ public:
     void manageTechnicians();
     void manageInterventions();
     void manageOwners();
-    void manageOwner(Owner& o1);
+    void manageOwner(Owner o1);
 
     void addIntervention();
     void concludeIntervention();
