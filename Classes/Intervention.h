@@ -32,7 +32,7 @@ public:
     float getDuration() const;
     void setDuration(float duration);
     string showIntervention();
-    string getInfo();
+    string getInfo() const;
     bool operator<(const Intervention& i1) const;
 };
 

@@ -11,11 +11,13 @@ int OwnerRecord::getNumOwners() const {return owners.size(); }
 bool OwnerRecord::addOwner(string name) {
     for (const auto & owner : owners)
         if (owner.getName() == name) return false;
-    pair<unordered_set<Owner>::iterator, bool> a = owners.insert(Owner(name));
+    auto a = owners.insert(Owner(name));
     if (get<1>(a))
         return true;
     return false;
 }
+
+unordered_set<Owner,ownerHash,ownerHash> OwnerRecord::getOwners() const{return owners;}
 
 bool OwnerRecord::addVehicleOwner(string name, Vehicle *vehicle) {
     Owner a("");

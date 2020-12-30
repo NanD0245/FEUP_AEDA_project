@@ -59,3 +59,7 @@ void Intervention::concludeIntervention(Date *endDate) {
     technician->setPerformance(time/num);
     state = true;
 }
+
+string Intervention::getInfo() const{
+    return type + " - " + highway->getInfo() + " - " + toll->getInfo() + " - " + start_date->getInfo() + " - " + end_date->getInfo() + " - " + technician->getInfo() + " - " + to_string(duration) + " - " + to_string(state);
+}

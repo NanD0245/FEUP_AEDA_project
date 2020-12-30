@@ -48,6 +48,16 @@ bool Owner::operator==(const Owner& o1) {
     return name == o1.getName();
 }
 
+string Owner::getInfo() const{
+    string s = name+" : ";
+    for(int i=0;i<vehicles.size();i++){
+        s+=vehicles[i]->getPlate();
+        if(i!=vehicles.size() -1){
+            s+=" - ";
+        }
+    }
+}
+
 vector<Vehicle*> Owner::getVehicles() {return vehicles; }
 
 vector<string> Owner::showVehicles() {

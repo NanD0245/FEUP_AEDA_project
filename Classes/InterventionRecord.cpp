@@ -44,3 +44,5 @@ Intervention InterventionRecord::getIntervention(int indexIn) {
     }
     return Intervention("", nullptr, nullptr, nullptr, nullptr);
 }
+
+BST<Intervention> InterventionRecord::getInterventions(){return interventions;}

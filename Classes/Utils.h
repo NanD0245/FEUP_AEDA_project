@@ -2,6 +2,7 @@
 #define AEDA2020_PORTAGENS_UTILS_H
 
 #include "Date.h"
+#include <ctime>
 #include <string>
 #include <vector>
 

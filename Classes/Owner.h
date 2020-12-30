@@ -26,6 +26,8 @@ public:
     vector<Vehicle*> getVehicles();
     vector<string> showVehicles();
     bool operator==(const Owner& o1);
+
+    string getInfo() const;
 };
 
 

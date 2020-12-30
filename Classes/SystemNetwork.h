@@ -38,6 +38,7 @@ class SystemNetwork {
     EmployeeRecord* employees;
     InterventionRecord* interventions;
     OwnerRecord* owners;
+    //TechnicianRecord* technicians;
 
 public:
 

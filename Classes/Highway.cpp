@@ -88,7 +88,15 @@ vector<Toll *> Highway::sortTollDistance(Toll* toll) {
     while (!t_copy.empty()) {
         int index = 0;
         for (size_t i = 0; i < t_copy.size(); i++) {
-            if (abs(toll->getKilometer() - t_copy[i]->getKilometer()) < abs(toll->getKilometer() - t_copy[index]->getKilometer()))
+            float f1 = toll->getKilometer() - t_copy[i]->getKilometer();
+            if(f1 <0){
+                f1=-f1;
+            }
+            float f2= toll->getKilometer() - t_copy[index]->getKilometer();
+            if(f2 <0){
+                f2=-f2;
+            }
+            if (f1<f2)
                 index = i;
         }
         t.push_back(t_copy[index]);

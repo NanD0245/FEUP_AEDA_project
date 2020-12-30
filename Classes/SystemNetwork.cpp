@@ -56,6 +56,26 @@ void SystemNetwork::write(){
         f<<employees->getEmployeeIndex(i)->getInfo()<<endl;
     }
 
+    //OWNER
+    f<<endl<<"OWNERS"<<endl;
+    int i=1;
+    for(auto it = owners->getOwners().begin(); it!=owners->getOwners().end();it++){
+        f<<"Owner nr"<<i<<":"<<endl;
+        i++;
+        f<<it->getInfo();
+    }
+
+    //TECHNICIAN
+
+    //INTERVENTION
+    f<<endl<<"INTERVENIONS"<<endl;
+    int j=1;
+    BSTItrIn<Intervention> it(interventions->getInterventions());
+    for(; !it.isAtEnd();it.advance()){
+        f<< "Intervention nr"<<j<<":"<<endl;
+        j++;
+        f<<it.retrieve().getInfo()<<endl;
+    }
     f.close();
 }
 

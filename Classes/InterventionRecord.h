@@ -17,6 +17,7 @@ public:
     vector<string> showInterventions();
     vector<string> showInterventionsNotConcluded();
     Intervention getIntervention(int indexIn);
+    BST<Intervention> getInterventions();
 
 };
 

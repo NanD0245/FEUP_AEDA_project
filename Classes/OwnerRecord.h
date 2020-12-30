@@ -36,6 +36,7 @@ public:
     vector<string> showOwners();
     bool addVehicleOwner(string name, Vehicle* vehicle);
     bool checkPlate(string plate);
+    unordered_set<Owner,ownerHash,ownerHash> getOwners() const;
 };
 
 
