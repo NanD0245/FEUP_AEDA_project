@@ -9,6 +9,7 @@ SystemNetwork::SystemNetwork() {
     utils = new Utils();
     employees = new EmployeeRecord();
     interventions = new InterventionRecord();
+    owners = new OwnerRecord();
 }
 
 void SystemNetwork::write(){
@@ -1352,7 +1353,7 @@ int SystemNetwork::adviceOutLane(Vehicle* vehicle, Toll * toll, Date * date) {
 
 void SystemNetwork::addEntryMovement() {
 
-    string s_plate;
+    string s_plate,s_name;
     int index = -1, lane_index;
     Vehicle* vehicle = nullptr;
 
@@ -1394,6 +1395,15 @@ void SystemNetwork::addEntryMovement() {
             cout << "ERROR: This vehicle is already in a highway." << endl;
             continue;
         }
+        while (s_name.empty()) {
+            cout << "Input the owner of the vehicle: (if you want to exit without creating a employee please input EXIT)"
+                 << endl;
+            getline(cin, s_name);
+        }
+        if (s_name == "EXIT")
+            s_plate = "EXIT";
+        owners->addOwner(s_name);
+        owners->addVehicleOwner(s_name,vehicle);
         do {
             highway = chooseHighway();
             if (highway == nullptr) {
@@ -2005,16 +2015,17 @@ void SystemNetwork::manageOwners() {
                 readOwners();
                 break;
             case 2:
-                //manageOwner();
+                index = utils->ShowMenu(owners->showOwners())-1;
+                manageOwner(owners->getOwner(index));
                 break;
         }
     } while(index);
 }
 
-void SystemNetwork::manageOwner(Owner &o1) {
+void SystemNetwork::manageOwner(Owner o1) {
     int index;
     do {
-        index = utils->ShowMenu({"Add Vehicle", "Read Vehicles", "Update Vehicle", "Remove Vehicle"});//, "Manage Owner"});
+        index = utils->ShowMenu({"Add Vehicle", "Read Vehicles", /*"Update Vehicle",*/ "Remove Vehicle"});//, "Manage Owner"});
         switch(index) {
             case 1:
                 addVehicleOwner(o1);
@@ -2022,9 +2033,9 @@ void SystemNetwork::manageOwner(Owner &o1) {
             case 2:
                 readVehiclesOwner(o1);
                 break;
-            case 3:
+            /*case 3:
                 updateVehicleOwner(o1);
-                break;
+                break;*/
             case 4:
                 deleteVehicleOwner(o1);
                 break;
@@ -2061,17 +2072,20 @@ void SystemNetwork::addIntervention() {
             break;
     }
     Date* start_date = utils->getDate();
-    cout << "cheguei1" << endl;
     Technician* technician = toll->getTechnicianSpeciality(s_type);
-    if (technician->getSpecialty().empty()) {
+    if (technician == nullptr) {
         vector<Toll *> tolls = highway->sortTollDistance(toll);
         for (Toll* tol : tolls) {
             technician = tol->getTechnicianSpeciality(s_type);
-            if (!technician->getSpecialty().empty())
+            if (technician != nullptr)
                 break;
         }
     }
-    cout << "cheguei" << endl;
+    if (technician == nullptr) {
+        cout << "ERROR: There's no technician of this specialty on this highway." << endl;
+        utils->waitForInput();
+        return;
+    }
     Intervention i(s_type,technician,start_date, highway, toll);
     if (interventions->addIntervetion(i))
         cout << "Intervention started with success!" << endl;
@@ -2183,8 +2197,7 @@ void SystemNetwork::updateTechnician() {
     vector<string> techs = t->readTechnicians();
     int index = utils->ShowMenu(techs) -1;
     if (index == -1) return;
-    string t_name = "";
-    cout << techs[index] << endl;
+    string t_name;
     for (char a: techs[index]) {
         if (a == '-')
             break;
@@ -2264,22 +2277,61 @@ void SystemNetwork::deleteTechnician() {
 }
 
 void SystemNetwork::readOwners() {
-
+    vector<string> v = owners->showOwners();
+    for (string s: v)
+        cout << s << endl;
 }
 
 void SystemNetwork::addVehicleOwner(Owner &o1) {
-
+    string s_plate;
+    int v_class, greenlane;
+    while (s_plate != "EXIT") {
+        s_plate = utils->getPlate();
+        if (s_plate != "EXIT") {
+            if (!owners->checkPlate(s_plate) && !vehicles->checkPlate(s_plate)) {
+                cout << "Choose the vehicle class: " << endl;
+                v_class = utils->ShowMenu(
+                        {"Classe 1 - Motas", "Classe 2 - Light vehicle (passengers or goods)", "Class 3 - Bus",
+                         "Class 4 - Heavy goods vehicle "});
+                if (v_class != 0) {
+                    cout << "Choose one of the options: " << endl;
+                    greenlane = utils->ShowMenu(
+                            {"To travel on Green lanes or Normal lanes", "To travel just on Normal lanes"});
+                    if (greenlane != 0) {
+                        if (greenlane == 1) {
+                            auto* v = new Vehicle(s_plate,v_class,true);
+                            vehicles->addVehicle(s_plate, v_class, true); //ver se é preciso mudar isto
+                            o1.addVehicle(v);
+                        } else {
+                            auto* v = new Vehicle(s_plate,v_class,true);
+                            vehicles->addVehicle(s_plate, v_class);
+                            o1.addVehicle(v);
+                        }
+                        cout << "Vehicle created with success!" << endl;
+                        utils->waitForInput();
+                        break;
+                    } else if (greenlane == 0)
+                        s_plate = "EXIT";
+                } else if (v_class == 0)
+                    s_plate = "EXIT";
+            }
+        }
+        if (!(s_plate == "EXIT" || v_class == 0 || greenlane == 0))
+            cout << "ERROR: plate of vehicle already exists." << endl;
+    }
 }
+
+
 
 void SystemNetwork::readVehiclesOwner(Owner &o1) {
-
-}
-
-void SystemNetwork::updateVehicleOwner(Owner &o1) {
-
+    for (Vehicle* vehicle : o1.getVehicles())
+        cout << vehicle->showVehicle() << endl;
 }
 
 void SystemNetwork::deleteVehicleOwner(Owner &o1) {
-
+    int index = utils->ShowMenu(o1.showVehicles());
+    if (o1.deleteVehicle(index))
+        cout << "Vehicle deleted with success!" << endl;
+    utils->waitForInput();
 }
 
