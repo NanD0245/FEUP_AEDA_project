@@ -23,6 +23,9 @@ void SystemNetwork::write(){
         for(int j=0;j<highways->getHighwayIndex(i)->getNumTolls();j++){
             f<< "  Toll nr"<<j+1<<":"<<endl;
             f<<"  "<<highways->getHighwayIndex(i)->getTollIndex(j)->getInfo()<<endl;
+            for(int l=0;l<highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2().size();l++){
+                f<< "    Technician nr"<<l+1<<": "<< highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2()[i];
+            }
             for(int k=0;k<highways->getHighwayIndex(i)->getTollIndex(j)->getNumLanes();k++){
                 f<< "    Lane nr"<<k+1<<":"<<endl;
                 f<<"    "<<highways->getHighwayIndex(i)->getTollIndex(j)->getLane(k)->getInfo()<<endl;
@@ -58,17 +61,28 @@ void SystemNetwork::write(){
 
     //OWNER
     f<<endl<<"OWNERS"<<endl;
-    int i=1;
+    int k=1;
     for(auto it = owners->getOwners().begin(); it!=owners->getOwners().end();it++){
-        f<<"Owner nr"<<i<<":"<<endl;
-        i++;
-        f<<it->getInfo();
+        f<<"Owner nr"<<k<<":"<<endl;
+        k++;
+        f<<it->getInfo()<<endl;
     }
 
-    //TECHNICIAN
+    /*//TECHNICIAN
+    //tolls podem n ter technicians?
+    f<<endl<<"TECHNICIANS"<<endl;
+    for(int i=0;i<highways->getNumHighways();i++){
+        Highway* hw = highways->getHighwayIndex(i);
+        f<<hw->getInfo() << endl;
+        for(int i=0;i<hw->getNumTolls();i++){
+            Toll* t = hw->getTollIndex(i);
+            f<<t->getName() + " : ";
+            auto v = t->readTechnicians();
+        }
+    }*/
 
     //INTERVENTION
-    f<<endl<<"INTERVENIONS"<<endl;
+    f<<endl<<"INTERVENTIONS"<<endl;
     int j=1;
     BSTItrIn<Intervention> it(interventions->getInterventions());
     for(; !it.isAtEnd();it.advance()){
@@ -84,8 +98,8 @@ void SystemNetwork::read(string file) {
 
     int number,code;
     bool tf,movement_type;
-    string s,name,geolocal,plate,date1,date2,date;
-    float highway_kilometer,tax1,tax2,tax3,tax4;
+    string s,name,speciality, geolocal,plate,date1,date2,date, type, hname, tname;
+    float highway_kilometer,tax1,tax2,tax3,tax4 , performance, duration;
 
     Toll* t;
     Lane* l;
@@ -93,6 +107,9 @@ void SystemNetwork::read(string file) {
     Date *d;
     Highway* h;
     Employee* e;
+    Technician* tech;
+    Owner *ow;
+    Intervention *itv;
 
     Toll* tt;
     Lane* ll;
@@ -143,6 +160,28 @@ void SystemNetwork::read(string file) {
                     t = new TollEntrance(name, geolocal, highway_kilometer);
                 }
                 f >> s;
+                while(s == "Technician"){
+                    f >> s;//discard (nr:)
+                    f >> name;
+                    f >> s;//discard (-)
+                    f >> speciality;
+                    f >> s;//discard (-)
+                    f >> performance;
+                    f >> s;//discard (-)
+                    f >> number;
+
+                    tech = new Technician(name,speciality);
+                    tech->setPerformance(performance);
+                    tech->setIntervention(number);
+                    t->addTechnician(tech);
+
+                    f >> s;
+
+                    if(s != "Technician"){
+                        break;
+                    }
+                }
+
                 while (s == "Lane") {//Lane
                     f >> s;//discard (nr:)
                     f >> number;
@@ -315,6 +354,63 @@ void SystemNetwork::read(string file) {
             if(f.eof()){
                 break;
             }
+            f>>s;
+        }
+    }
+
+    if(s == "OWNERS"){
+        f>>s;
+        while(s=="Owner"){
+            f>>s;//discard
+            f>>name;
+            f>>s;//discard
+            ow = new Owner(name);
+            getline(f,s);
+            name="";
+            for(int i=0;i<s.size();i++){
+                if(s[i]!=' '){
+                    ow->addVehicle(vehicles->getVehicle(name));
+                    name="";
+                    i+=2;
+                }
+                else{
+                   name+=s[i];
+                }
+            }
+            owners->addOwner(*ow);
+            f>>s;
+        }
+    }
+
+    if(s=="INTERVENTIONS"){
+        f>>s;
+        while(s=="Intervention"){
+            f>>s;//discard
+            f>>type;
+            f>>s;//discard
+            f>>hname;
+            f>>s;//discard
+            f>>tname;
+            f>>s;//discard
+            f>>date1;
+            f>>s;//discard
+            f>>date2;
+            f>>s;//discard
+            f>>name;
+            f>>s;//discard
+            f>>duration;
+            f>>s;//discard
+            f>>tf;
+
+            h = highways->getHighway(hname);
+            t = h->getToll(tname);
+            d = new Date(date1);
+            dd = new Date(date2);
+
+            tech = t->getTechnicianName(name);
+
+            itv = new Intervention(type,h,t,d,dd,tech,duration,tf);
+            interventions->addIntervetion(*itv);
             f>>s;
         }
     }

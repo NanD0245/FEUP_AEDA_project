@@ -30,6 +30,7 @@ class OwnerRecord {
 public:
     OwnerRecord();
     bool addOwner(string name);
+    bool addOwner(Owner o);
     bool deleteOwner(Owner o1);
     Owner getOwner(int index);
     int getNumOwners() const;

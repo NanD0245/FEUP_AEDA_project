@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Date.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Date.h
 iostream
 -
 string
@@ -14,13 +14,13 @@ string
 sstream
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Employee.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Employee.h
 string
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/EmployeeRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/EmployeeRecord.h
 Employee.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Employee.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Employee.h
 iostream
 -
 string
@@ -28,93 +28,93 @@ string
 vector
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Exceptions.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Exceptions.h
 string
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Highway.h
 Toll.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Toll.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Toll.h
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/HighwayRecord.h
 Highway.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Highway.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Highway.h
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Intervention.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Intervention.h
 iostream
 -
 Date.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Date.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Date.h
 HighwayRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/HighwayRecord.h
 Technician.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Technician.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Technician.h
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/InterventionRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/InterventionRecord.h
 Intervention.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Intervention.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Intervention.h
 bst.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/bst.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/bst.h
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Lane.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Lane.h
 Employee.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Employee.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Employee.h
 string
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Movement.h
 Vehicle.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Vehicle.h
 HighwayRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/HighwayRecord.h
 Date.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Date.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Date.h
 cmath
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/MovementRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/MovementRecord.h
 Movement.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Movement.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Movement.h
 vector
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Owner.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Owner.h
 string
 -
 vector
 -
 Vehicle.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Vehicle.h
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/OwnerRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/OwnerRecord.h
 unordered_set
 -
 Vehicle.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Vehicle.h
 Owner.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Owner.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Owner.h
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.cpp
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/SystemNetwork.cpp
 SystemNetwork.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/SystemNetwork.h
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/SystemNetwork.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/SystemNetwork.h
 HighwayRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/HighwayRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/HighwayRecord.h
 MovementRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/MovementRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/MovementRecord.h
 VehicleRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/VehicleRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/VehicleRecord.h
 EmployeeRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/EmployeeRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/EmployeeRecord.h
 Utils.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Utils.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Utils.h
 Exceptions.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Exceptions.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Exceptions.h
 InterventionRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/InterventionRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/InterventionRecord.h
 OwnerRecord.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/OwnerRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/OwnerRecord.h
 iostream
 -
 fstream
@@ -124,15 +124,15 @@ ctime
 algorithm
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Technician.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Technician.h
 string
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Toll.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Toll.h
 Lane.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Lane.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Lane.h
 Technician.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Technician.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Technician.h
 string
 -
 vector
@@ -140,27 +140,29 @@ vector
 queue
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Utils.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Utils.h
 Date.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Date.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Date.h
+ctime
+-
 string
 -
 vector
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Vehicle.h
 string
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/VehicleRecord.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/VehicleRecord.h
 Vehicle.h
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/Vehicle.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/Vehicle.h
 vector
 -
 iostream
 -
 
-/home/mim/Documents/FEUP/2ano/Cadeiras/1Semestre/AEDA/GIT_portagens/aeda2020-portagens/Classes/bst.h
+C:/Users/tomas/OneDrive/Ambiente de Trabalho/MIEIC/AEDA/proj1/projeto1/aeda2020-portagens/Classes/bst.h
 iostream
 -
 stack

@@ -20,6 +20,7 @@ class Intervention {
     bool state; // em espera ; concluido
 public:
     Intervention(string type, Technician* technician, Date* date, Highway* highway, Toll* toll);
+    Intervention(string type, Highway* highway, Toll* toll, Date* start_date, Date* end_date, Technician* technician, float duration, bool state );
     void concludeIntervention(Date* end_date);
     string getType() const;
     void setType(string type);

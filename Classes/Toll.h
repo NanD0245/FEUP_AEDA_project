@@ -158,6 +158,7 @@ public:
     Technician* getTechnicianName(string name);
     Technician* getTechnicianSpeciality(string type);
     vector<string> readTechnicians();
+    vector<string> readTechniciansv2();
     bool deleteTechnician(string name);
 };
 

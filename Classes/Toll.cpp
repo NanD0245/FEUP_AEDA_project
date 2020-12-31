@@ -118,6 +118,16 @@ vector<string> Toll::readTechnicians() {
     return techs;
 }
 
+vector<string> Toll::readTechniciansv2() {
+    vector<string> techs;
+    priority_queue<Technician*, vector<Technician*>, MyCompare> p = technicians;
+    while(!p.empty()) {
+        techs.push_back(p.top()->getInfo());
+        p.pop();
+    }
+    return techs;
+}
+
 Technician* Toll::getTechnicianName(string name) {
     priority_queue<Technician*, vector<Technician*>, MyCompare> p = technicians;
     Technician a("","");

@@ -17,6 +17,13 @@ bool OwnerRecord::addOwner(string name) {
     return false;
 }
 
+bool OwnerRecord::addOwner(Owner o){
+    auto a = owners.insert(o);
+    if (get<1>(a))
+        return true;
+    return false;
+}
+
 unordered_set<Owner,ownerHash,ownerHash> OwnerRecord::getOwners() const{return owners;}
 
 bool OwnerRecord::addVehicleOwner(string name, Vehicle *vehicle) {

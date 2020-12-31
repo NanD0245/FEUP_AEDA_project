@@ -10,6 +10,11 @@ Intervention::Intervention(string type, Technician* technician, Date* date, High
     state = false;
 };
 
+Intervention::Intervention(string type, Highway *highway, Toll *toll, Date *start_date, Date *end_date,
+                           Technician *technician, float duration, bool state) : type(type),
+                            technician(technician), start_date(start_date), end_date(end_date), highway(highway), toll(toll) ,
+                            duration(duration) , state(state) {}
+
 string Intervention::getType() const {return type; }
 
 void Intervention::setType(string type) {this->type = type; }
@@ -61,5 +66,5 @@ void Intervention::concludeIntervention(Date *endDate) {
 }
 
 string Intervention::getInfo() const{
-    return type + " - " + highway->getInfo() + " - " + toll->getInfo() + " - " + start_date->getInfo() + " - " + end_date->getInfo() + " - " + technician->getInfo() + " - " + to_string(duration) + " - " + to_string(state);
+    return type + " - " + highway->getInfo() + " - " + toll->getName() + " - " + start_date->getInfo() + " - " + end_date->getInfo() + " - " + technician->getName()+ " - " + to_string(duration) + " - " + to_string(state);
 }
