@@ -62,10 +62,11 @@ void SystemNetwork::write(){
     //OWNER
     f<<endl<<"OWNERS"<<endl;
     int k=1;
-    for(auto it = owners->getOwners().begin(); it!=owners->getOwners().end();it++){
+    auto a = owners->getOwners();
+    for(const auto & it : a){
         f<<"Owner nr"<<k<<":"<<endl;
         k++;
-        f<<it->getInfo()<<endl;
+        f<<it.getInfo()<<endl;
     }
 
     /*//TECHNICIAN
@@ -238,7 +239,6 @@ void SystemNetwork::read(string file) {
             }
         }
     }
-
     if(s=="VEHICLES"){
         f>>s;
         f>>tax1;
@@ -258,7 +258,6 @@ void SystemNetwork::read(string file) {
             f>>s;
         }
     }
-
 
     if(s=="MOVEMENTS"){
         f>>s;
@@ -357,7 +356,6 @@ void SystemNetwork::read(string file) {
             f>>s;
         }
     }
-
     if(s == "OWNERS"){
         f>>s;
         while(s=="Owner"){
@@ -381,7 +379,6 @@ void SystemNetwork::read(string file) {
             f>>s;
         }
     }
-
     if(s=="INTERVENTIONS"){
         f>>s;
         while(s=="Intervention"){
@@ -414,7 +411,6 @@ void SystemNetwork::read(string file) {
             f>>s;
         }
     }
-
     f.close();
 
 }
@@ -1500,10 +1496,10 @@ void SystemNetwork::addEntryMovement() {
                     counter++;
                 }
             }
-            if (counter % 2 == 1 || counter == 0) {
+            if (counter % 2 == 1) {
                 vehicle = nullptr;
             }
-            else if (counter % 2 == 0 && counter != 0) {
+            else if (counter % 2 == 0 && counter == 0) {
                 vehicle = vehicles->getVehicle(s_plate);
             }
         }
