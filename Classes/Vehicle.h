@@ -95,6 +95,8 @@ public:
      */
     void setTax(float tax);
 
+    string getInfov2() const;
+
     bool operator==(Vehicle v1);
 };
 

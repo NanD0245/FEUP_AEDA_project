@@ -51,11 +51,12 @@ bool Owner::operator==(const Owner& o1) {
 string Owner::getInfo() const{
     string s = name+" : ";
     for(int i=0;i<vehicles.size();i++){
-        s+=vehicles[i]->getPlate();
-        if(i!=vehicles.size() -1){
-            s+=" - ";
-        }
+        s+=vehicles[i]->getInfov2() + " - ";
     }
+    s.pop_back();
+    s.pop_back();
+    s.pop_back();
+    return s;
 }
 
 vector<Vehicle*> Owner::getVehicles() {return vehicles; }
