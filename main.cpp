@@ -82,6 +82,9 @@ int main(int argc, char* argv[]) {
     system.read(file);
 
 
+
+
+
     system.highways->addHighway("A1");
     Highway* h1 = system.highways->getHighwayIndex(0);
     system.highways->addHighway("A2");
@@ -153,6 +156,38 @@ int main(int argc, char* argv[]) {
     Lane* l15 = system.highways->getHighwayIndex(1)->getTollIndex(3)->getLane(0);
     system.highways->getHighwayIndex(1)->getTollIndex(3)->addLane();
     Lane* l16 = system.highways->getHighwayIndex(1)->getTollIndex(3)->getLane(1);
+    Date* d1 = new Date("12/5/2020 20:00:05");
+    Date* d2 = new Date("12/5/2020 23:30:00");
+    Date* d3 = new Date("12/5/2020 8:00:05");
+    Date* d4 = new Date("12/5/2020 11:30:00");
+    system.movements->addMovement(new MovementEntry(v1,h1,t1,l1,d3)); //v1,v4,v5;  l3,l7,l12,l15
+    system.movements->addMovement(new MovementEntry(v3,h1,t3,l5,d1));
+    system.movements->addMovement(new MovementOut(v3,h1,t2,l3,d2,system.movements->getMovementIndex(1)));
+    system.movements->addMovement(new MovementEntry(v3,h1,t1,l1,d1));
+    system.movements->addMovement(new MovementOut(v1,h1,t4,l7,d4,system.movements->getMovementIndex(0)));
+    system.movements->addMovement(new MovementOut(v3,h1,t4,l8,d1,system.movements->getMovementIndex(3)));
+    system.movements->addMovement(new MovementEntry(v4,h2,t5,l9,d1));
+    system.movements->addMovement(new MovementOut(v4,h2,t8,l15,d1,system.movements->getMovementIndex(6)));
+    system.movements->addMovement(new MovementEntry(v5,h2,t7,l14,d1));
+    system.movements->addMovement(new MovementOut(v5,h2,t6,l11,d1,system.movements->getMovementIndex(8)));
+    Technician* a = new Technician("Fernando", "review");
+    t1->addTechnician(a);
+    Technician* b = new Technician("Luis", "informatic");
+    t1->addTechnician(b);
+    Technician* c = new Technician("Santos", "informatic");
+    t5->addTechnician(c);
+    Technician* d = new Technician("Rego", "eletronic");
+    t5->addTechnician(d);
+    Intervention* A = new Intervention("informatic",h1,t2,d1,d2,b,*d2 - *d1,true);
+    Intervention* B = new Intervention("informatic",h2,t6,d3,d4,c,*d4 - *d3,true);
+    Intervention* C = new Intervention("informatic",h1,t1,d1,d2,b,*d2 - *d1,true);
+    Intervention* D = new Intervention("informatic",h2,t1,d1,d2,b,*d2 - *d1,true);
+    Intervention* E = new Intervention("review",h1,t2,d1,d2,b,*d2 - *d1,true);
+    system.interventions->addIntervetion(*A);
+    system.interventions->addIntervetion(*B);
+    system.interventions->addIntervetion(*C);
+    system.interventions->addIntervetion(*D);
+    system.interventions->addIntervetion(*E);
 
     do {
         utils.clrScreen();

@@ -36,14 +36,29 @@ Highway * Intervention::getHighway() const {return highway; }
 Toll * Intervention::getToll() const {return toll; }
 
 bool Intervention::operator<(const Intervention& i1) const {
-    if (*start_date < *i1.getStartDate())
+    cout << start_date->getInfo() << " - " << end_date->getInfo() << endl;
+    if (*start_date < *i1.getStartDate()) {
+        cout << "entrei1"<< endl;
+        return true;}
+    else if (*start_date == *i1.getStartDate() && highway->getInfo() < i1.getHighway()->getInfo()) {
+        cout << "entrei2" << endl;
         return true;
-    else if (start_date->equal(*i1.getStartDate()) && highway->getInfo() < i1.getHighway()->getInfo())
+    }
+    else if (*start_date == *i1.getStartDate() && highway->getInfo() == i1.getHighway()->getInfo() && toll->getName() < i1.getToll()->getName()) {
+        cout << "entrei3" << endl;
         return true;
-    else if (start_date->equal(*i1.getStartDate()) && highway->getInfo() == i1.getHighway()->getInfo() && toll->getName() < i1.getToll()->getName())
-        return true;
-    else if (start_date->equal(*i1.getStartDate()) && highway->getInfo() == i1.getHighway()->getInfo() && toll->getName() == i1.getToll()->getName())
-        return type < i1.getType();
+    }
+    else if (*start_date == *i1.getStartDate() && highway->getInfo() == i1.getHighway()->getInfo() && toll->getName() == i1.getToll()->getName()) {
+        cout << "entrei4" << endl;
+        if (type == "review")
+            return true;
+        else if (i1.getType() == "informatic")
+            return true;
+        else if (type == "informatic")
+            return false;
+        else if (i1.getType() == "review")
+            return false;
+    }
     return false;
 }
 

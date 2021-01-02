@@ -65,7 +65,7 @@ int Date::getSecond() const {return second;}
 string Date::getInfo() const {return s_date;}
 
 bool Date::operator==(Date d1) const {
-    return year == d1.getYear() && month == d1.getMonth() && day == d1.getDay();
+    return year == d1.getYear() && month == d1.getMonth() && day == d1.getDay() && hour == d1.hour && minute == d1.minute && second == d1.second;
 }
 
 bool Date::operator>(Date d1) const {
@@ -100,6 +100,12 @@ bool Date::operator<(Date d1) const {
     else if (year == d1.getYear() && month < d1.getMonth())
         return true;
     else if (year == d1.getYear() && month == d1.getMonth() && day < d1.getDay())
+        return true;
+    else if (year == d1.getYear() && month == d1.getMonth() && day == d1.getDay() && hour < d1.getHour())
+        return true;
+    else if (year == d1.getYear() && month == d1.getMonth() && day == d1.getDay() && hour == d1.getHour() && minute < d1.getMinute())
+        return true;
+    else if (year == d1.getYear() && month == d1.getMonth() && day == d1.getDay() && hour == d1.getHour() && minute == d1.getMinute() && second < d1.getSecond())
         return true;
     return false;
 }

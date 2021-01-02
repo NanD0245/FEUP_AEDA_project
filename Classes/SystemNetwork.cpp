@@ -83,9 +83,11 @@ void SystemNetwork::write(){
     }*/
 
     //INTERVENTION
+    cout << "cheguei" << endl;
     f<<endl<<"INTERVENTIONS"<<endl;
     int j=1;
-    BSTItrIn<Intervention> it(interventions->getInterventions());
+    BST<Intervention> bst = interventions->getInterventions();
+    auto it = BSTItrIn<Intervention>(bst);
     for(; !it.isAtEnd();it.advance()){
         f<< "Intervention nr"<<j<<":"<<endl;
         j++;
