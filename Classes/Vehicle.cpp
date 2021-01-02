@@ -18,6 +18,10 @@ string Vehicle::getInfo() const {
     return plate + " - " + to_string(v_class) + " - " + to_string(greenlane);
 }
 
+string Vehicle::getInfov2() const {
+    return plate + " " + to_string(v_class) + " " + to_string(greenlane);
+}
+
 string Vehicle::showVehicle() const {
     string s_greenlane;
     s_greenlane = greenlane ? "True" : "False";

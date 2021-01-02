@@ -24,7 +24,7 @@ void SystemNetwork::write(){
             f<< "  Toll nr"<<j+1<<":"<<endl;
             f<<"  "<<highways->getHighwayIndex(i)->getTollIndex(j)->getInfo()<<endl;
             for(int l=0;l<highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2().size();l++){
-                f<< "    Technician nr"<<l+1<<": "<< highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2()[i];
+                f<< "    Technician nr"<<l+1<<": "<< highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2()[i]<<endl;
             }
             for(int k=0;k<highways->getHighwayIndex(i)->getTollIndex(j)->getNumLanes();k++){
                 f<< "    Lane nr"<<k+1<<":"<<endl;
@@ -59,7 +59,12 @@ void SystemNetwork::write(){
         f<<employees->getEmployeeIndex(i)->getInfo()<<endl;
     }
 
-    //OWNER
+
+    /*f<<endl<<"OWNERS"<<endl;
+    for(int i=0;i<owners->getNumOwners();i++){
+        f<<"Owner nr"<<i+1<<":"<<endl;
+        f<<owners->getOwner(i).getInfo()<<endl;
+    }*/
     f<<endl<<"OWNERS"<<endl;
     int k=1;
     auto a = owners->getOwners();
@@ -69,20 +74,7 @@ void SystemNetwork::write(){
         f<<it.getInfo()<<endl;
     }
 
-    /*//TECHNICIAN
-    //tolls podem n ter technicians?
-    f<<endl<<"TECHNICIANS"<<endl;
-    for(int i=0;i<highways->getNumHighways();i++){
-        Highway* hw = highways->getHighwayIndex(i);
-        f<<hw->getInfo() << endl;
-        for(int i=0;i<hw->getNumTolls();i++){
-            Toll* t = hw->getTollIndex(i);
-            f<<t->getName() + " : ";
-            auto v = t->readTechnicians();
-        }
-    }*/
-
-    //INTERVENTION
+    //SUM WRONG
     cout << "cheguei" << endl;
     f<<endl<<"INTERVENTIONS"<<endl;
     int j=1;
@@ -101,7 +93,7 @@ void SystemNetwork::read(string file) {
 
     int number,code;
     bool tf,movement_type;
-    string s,name,speciality, geolocal,plate,date1,date2,date, type, hname, tname;
+    string s,name,speciality, geolocal,plate,date1,date2,date, type, hname, tname, line;
     float highway_kilometer,tax1,tax2,tax3,tax4 , performance, duration;
 
     Toll* t;
@@ -142,14 +134,14 @@ void SystemNetwork::read(string file) {
                 f >> s;//discard (nr:)
                 f >> s;
                 name = "";
-                while (!(s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
+                while (!(s == "Technician" || s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
                     name += s + " ";
                     f >> s;
                 }
                 name.pop_back();
                 f >> s;
                 geolocal = "";
-                while (!(s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
+                while (!(s == "Technician" || s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
                     geolocal += s + " ";
                     f >> s;
                 }
@@ -165,7 +157,13 @@ void SystemNetwork::read(string file) {
                 f >> s;
                 while(s == "Technician"){
                     f >> s;//discard (nr:)
-                    f >> name;
+                    f >> s;
+                    name = "";
+                    while (!(s == "Technician" || s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
+                        name += s + " ";
+                        f >> s;
+                    }
+                    name.pop_back();
                     f >> s;//discard (-)
                     f >> speciality;
                     f >> s;//discard (-)
@@ -179,10 +177,6 @@ void SystemNetwork::read(string file) {
                     t->addTechnician(tech);
 
                     f >> s;
-
-                    if(s != "Technician"){
-                        break;
-                    }
                 }
 
                 while (s == "Lane") {//Lane
@@ -352,9 +346,6 @@ void SystemNetwork::read(string file) {
             }
             e=new Employee(name,code);
             employees->addEmployee(e);
-            if(f.eof()){
-                break;
-            }
             f>>s;
         }
     }
@@ -365,16 +356,18 @@ void SystemNetwork::read(string file) {
             f>>name;
             f>>s;//discard
             ow = new Owner(name);
-            getline(f,s);
-            name="";
-            for(int i=0;i<s.size();i++){
-                if(s[i]!=' '){
-                    ow->addVehicle(vehicles->getVehicle(name));
-                    name="";
-                    i+=2;
-                }
-                else{
-                   name+=s[i];
+            getline(f,line);
+            stringstream l(line);
+            while(!l.eof()) {
+                l >> plate;
+                l >> number;
+                l >> tf;
+                v = vehicles->getVehicle(plate);
+                if (v == NULL) {
+                    v = new Vehicle(plate, number, vehicles->getTaxes(number));
+                    ow->addVehicle(v);
+                } else {
+                    ow->addVehicle(v);
                 }
             }
             owners->addOwner(*ow);
@@ -382,6 +375,10 @@ void SystemNetwork::read(string file) {
         }
     }
     if(s=="INTERVENTIONS"){
+        if(f.eof()){
+            f.close();
+            return;
+        }
         f>>s;
         while(s=="Intervention"){
             f>>s;//discard
@@ -410,6 +407,9 @@ void SystemNetwork::read(string file) {
 
             itv = new Intervention(type,h,t,d,dd,tech,duration,tf);
             interventions->addIntervetion(*itv);
+            if(f.eof()){
+                break;
+            }
             f>>s;
         }
     }
