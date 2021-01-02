@@ -1422,7 +1422,7 @@ int SystemNetwork::adviceEntryLane(Toll * toll, Date * date) {
         counter = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
             if (*movements->getMovementIndex(j)->getToll() ==  *toll) {
-                if (*(movements->getMovementIndex(j)->getDate()) == *date)
+                if (movements->getMovementIndex(j)->getDate()->dayEqual(*date))
                     if (*movements->getMovementIndex(j)->getLane() == *toll->getLane(i))
                         counter++;
             }
@@ -1448,7 +1448,7 @@ int SystemNetwork::adviceOutLane(Vehicle* vehicle, Toll * toll, Date * date) {
         counter = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
             if (*movements->getMovementIndex(j)->getToll() ==  *toll) {
-                if (*(movements->getMovementIndex(j)->getDate()) == *date)
+                if (movements->getMovementIndex(j)->getDate()->dayEqual(*date))
                     if (*movements->getMovementIndex(j)->getLane() == *toll->getLane(i))
                         counter++;
             }
