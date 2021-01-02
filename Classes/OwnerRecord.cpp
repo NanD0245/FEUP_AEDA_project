@@ -55,7 +55,7 @@ bool OwnerRecord::deleteOwner(Owner o1) {
 
 Owner OwnerRecord::getOwner(int index) {
     auto it = owners.begin();
-    while (!index) {
+    while (!(!index)) {
         it++;
         index--;
     }

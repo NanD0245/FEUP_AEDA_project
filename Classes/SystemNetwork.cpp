@@ -1500,10 +1500,12 @@ void SystemNetwork::addEntryMovement() {
                     counter++;
                 }
             }
+            cout << counter << endl;
             if (counter % 2 == 1) {
+                cout << "entrei" << endl;
                 vehicle = nullptr;
             }
-            else if (counter % 2 == 0 && counter == 0) {
+            else if (counter % 2 == 0 || counter == 0) {
                 vehicle = vehicles->getVehicle(s_plate);
             }
         }
@@ -2399,42 +2401,40 @@ void SystemNetwork::readOwners() {
 }
 
 void SystemNetwork::addVehicleOwner(Owner &o1) {
-    string s_plate;
-    int v_class, greenlane;
-    while (s_plate != "EXIT") {
-        s_plate = utils->getPlate();
-        if (s_plate != "EXIT") {
-            if (!owners->checkPlate(s_plate) && !vehicles->checkPlate(s_plate)) {
-                cout << "Choose the vehicle class: " << endl;
-                v_class = utils->ShowMenu(
-                        {"Classe 1 - Motas", "Classe 2 - Light vehicle (passengers or goods)", "Class 3 - Bus",
-                         "Class 4 - Heavy goods vehicle "});
-                if (v_class != 0) {
-                    cout << "Choose one of the options: " << endl;
-                    greenlane = utils->ShowMenu(
-                            {"To travel on Green lanes or Normal lanes", "To travel just on Normal lanes"});
-                    if (greenlane != 0) {
-                        if (greenlane == 1) {
-                            auto* v = new Vehicle(s_plate,v_class,true);
-                            vehicles->addVehicle(s_plate, v_class, true); //ver se é preciso mudar isto
-                            o1.addVehicle(v);
-                        } else {
-                            auto* v = new Vehicle(s_plate,v_class,true);
-                            vehicles->addVehicle(s_plate, v_class);
-                            o1.addVehicle(v);
-                        }
-                        cout << "Vehicle created with success!" << endl;
-                        utils->waitForInput();
-                        break;
-                    } else if (greenlane == 0)
-                        s_plate = "EXIT";
-                } else if (v_class == 0)
-                    s_plate = "EXIT";
+    owners->deleteOwner(o1);
+    vector<Vehicle*> v;
+    vector<string> s;
+    for (int i = 0; i < vehicles->getNumVehicles(); i++) {
+        bool check = false;
+        unordered_set<Owner, ownerHash,ownerHash> a = owners->getOwners();
+        for (Owner o: a) {
+            for (Vehicle* vv : o.getVehicles()) {
+                if (*vv == *vehicles->getVehicleIndex(i)) {
+                    check = true;
+                    break;
+                }
             }
+            if (check) break;
         }
-        if (!(s_plate == "EXIT" || v_class == 0 || greenlane == 0))
-            cout << "ERROR: plate of vehicle already exists." << endl;
+        if (!check) {
+            v.push_back(vehicles->getVehicleIndex(i));
+            s.push_back(vehicles->getVehicleIndex(i)->showVehicle());
+        }
     }
+    if (v.empty()) {
+        cout << "ERROR: There is no vehicle without owner. If you want a vehicle you have to create in Manage Vehicles." << endl;
+        utils->waitForInput();
+    }
+    int index = utils->ShowMenu(s) -1;
+    if (index < 0) {
+        utils->waitForInput();
+        return;
+    }
+    if (o1.addVehicle(v[index]))
+        cout << "ASDASDASDASD" << endl;
+    cout << "Vehicle added with success!" << endl;
+    owners->addOwner(o1);
+    utils->waitForInput();
 }
 
 void SystemNetwork::readVehiclesOwner(Owner &o1) {
@@ -2443,9 +2443,12 @@ void SystemNetwork::readVehiclesOwner(Owner &o1) {
 }
 
 void SystemNetwork::deleteVehicleOwner(Owner &o1) {
+    owners->deleteOwner(o1);
     int index = utils->ShowMenu(o1.showVehicles());
-    if (o1.deleteVehicle(index))
+    if (o1.deleteVehicle(index)) {
+        owners->addOwner(o1);
         cout << "Vehicle deleted with success!" << endl;
+    }
     utils->waitForInput();
 }
 

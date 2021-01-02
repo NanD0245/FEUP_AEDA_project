@@ -66,6 +66,8 @@ Vehicle nr4:
 A4 - 3 - 1
 Vehicle nr5: 
 A5 - 4 - 1
+Vehicle nr6: 
+A6 - 3 - 1
 
 MOVEMENTS
 Movement nr1: 
@@ -78,6 +80,8 @@ Movement nr4:
 12/5/2020 20:00:05 - A2 - P3 - 0 - A4 - 158.899994 - 31.779999 - 12/5/2020 20:00:05 - A2 - P1 - 0 - A4
 Movement nr5: 
 12/5/2020 20:00:05 - A2 - P2 - 0 - A5 - 158.600006 - 47.580002 - 12/5/2020 20:00:05 - A2 - P4 - 1 - A5
+Movement nr6: 
+2/0/2021 19:55:47 - A1 - P2 - 0 - A1 - 0.000000 - 0.000000 - 2/0/2021 19:55:32 - A1 - P1 - 0 - A1
 
 EMPLOYEES
 Employee nr1:
@@ -90,6 +94,8 @@ Employee nr4:
 Rego - 3
 
 OWNERS
+Owner nr1:
+Fernando : A1 1 1 A3 2 0
 
 INTERVENTIONS
 Intervention nr1:
