@@ -23,9 +23,10 @@ void SystemNetwork::write(){
         for(int j=0;j<highways->getHighwayIndex(i)->getNumTolls();j++){
             f<< "  Toll nr"<<j+1<<":"<<endl;
             f<<"  "<<highways->getHighwayIndex(i)->getTollIndex(j)->getInfo()<<endl;
-            for(int l=0;l<highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2().size();l++){
-                f<< "    Technician nr"<<l+1<<": "<< highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2()[i]<<endl;
+            for(int n=0;n < highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2().size();n++){
+                f<< "    Technician nr"<<n+1<<": "<< highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2()[n]<<endl;
             }
+
             for(int k=0;k<highways->getHighwayIndex(i)->getTollIndex(j)->getNumLanes();k++){
                 f<< "    Lane nr"<<k+1<<":"<<endl;
                 f<<"    "<<highways->getHighwayIndex(i)->getTollIndex(j)->getLane(k)->getInfo()<<endl;
@@ -75,7 +76,6 @@ void SystemNetwork::write(){
     }
 
     //SUM WRONG
-    cout << "cheguei" << endl;
     f<<endl<<"INTERVENTIONS"<<endl;
     int j=1;
     BST<Intervention> bst = interventions->getInterventions();
@@ -93,7 +93,7 @@ void SystemNetwork::read(string file) {
 
     int number,code;
     bool tf,movement_type;
-    string s,name,speciality, geolocal,plate,date1,date2,date, type, hname, tname, line;
+    string s,name,speciality, geolocal,plate,date1,date2,date3,date4,date, type, hname, tname, line;
     float highway_kilometer,tax1,tax2,tax3,tax4 , performance, duration;
 
     Toll* t;
@@ -164,7 +164,6 @@ void SystemNetwork::read(string file) {
                         f >> s;
                     }
                     name.pop_back();
-                    f >> s;//discard (-)
                     f >> speciality;
                     f >> s;//discard (-)
                     f >> performance;
@@ -389,21 +388,24 @@ void SystemNetwork::read(string file) {
             f>>tname;
             f>>s;//discard
             f>>date1;
-            f>>s;//discard
             f>>date2;
             f>>s;//discard
+            f>>date3;
+            f>>date4;
+            f>>s;
             f>>name;
             f>>s;//discard
             f>>duration;
             f>>s;//discard
             f>>tf;
-
             h = highways->getHighway(hname);
             t = h->getToll(tname);
+            date1 += " " + date2;
             d = new Date(date1);
-            dd = new Date(date2);
+            date3 += " " + date4;
+            dd = new Date(date3);
 
-            tech = t->getTechnicianName(name);
+            tech = h->getTechnicianName(name);
 
             itv = new Intervention(type,h,t,d,dd,tech,duration,tf);
             interventions->addIntervetion(*itv);
@@ -2238,7 +2240,7 @@ void SystemNetwork::createTechnician() {
         getline(cin, s_name);
         if (s_name == "EXIT")
             continue;
-        else if (!s_name.empty() && t->checkTechnicianName(s_name)) {
+        else if (!s_name.empty() && highways->checkTechnicianName(s_name)) {
             index = utils->ShowMenu({"Review Technician","Electronics Technician","Informatic Technician"});
             if (index == 0) break;
             switch (index) {
@@ -2434,8 +2436,6 @@ void SystemNetwork::addVehicleOwner(Owner &o1) {
             cout << "ERROR: plate of vehicle already exists." << endl;
     }
 }
-
-
 
 void SystemNetwork::readVehiclesOwner(Owner &o1) {
     for (Vehicle* vehicle : o1.getVehicles())

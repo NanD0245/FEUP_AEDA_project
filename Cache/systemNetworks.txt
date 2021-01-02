@@ -2,9 +2,8 @@ HIGHWAYS
 Highway nr1: A1
   Toll nr1:
   P1 - Porto - 0.500000 - 0
-    Technician nr1: tomas - - - 0.000000 - 32762
-    Technician nr2: tomas - - - 0.000000 - 32762
-    Technician nr3: tomas - - - 0.000000 - 32762
+    Technician nr1: Fernando - review - 0.000000 - 0
+    Technician nr2: Luis - informatic - 0.000000 - 0
     Lane nr1:
     0 - 0
     Lane nr2:
@@ -30,7 +29,7 @@ Highway nr1: A1
 Highway nr2: A2
   Toll nr1:
   P1 - Lisboa - 0.300000 - 0
-    Technician nr1: Rego - eletronic - 0.000000 - 0
+    Technician nr1: Santos - informatic - 0.000000 - 0
     Technician nr2: Rego - eletronic - 0.000000 - 0
     Lane nr1:
     0 - 0
@@ -102,4 +101,4 @@ review - A1 - P2 - 12/5/2020 20:00:05 - 12/5/2020 23:30:00 - Luis - 210.000000 -
 Intervention nr4:
 informatic - A1 - P2 - 12/5/2020 20:00:05 - 12/5/2020 23:30:00 - Luis - 210.000000 - 1
 Intervention nr5:
-informatic - A2 - P1 - 12/5/2020 20:00:05 - 12/5/2020 23:30:00 - Luis - 210.000000 - 1
+informatic - A2 - P1 - 12/5/2020 20:00:05 - 12/5/2020 23:30:00 - Santos - 210.000000 - 1

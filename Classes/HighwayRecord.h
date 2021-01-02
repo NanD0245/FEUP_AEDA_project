@@ -72,6 +72,8 @@ public:
      * container, false otherwise
      */
     bool removeHighway(int i);
+
+    bool checkTechnicianName(string name);
 };
 
 

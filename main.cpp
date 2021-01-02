@@ -86,7 +86,7 @@ int main(int argc, char* argv[]) {
 
 
 
-    system.highways->addHighway("A1");
+    /*system.highways->addHighway("A1");
     Highway* h1 = system.highways->getHighwayIndex(0);
     system.highways->addHighway("A2");
     Highway* h2 = system.highways->getHighwayIndex(1);
@@ -188,7 +188,7 @@ int main(int argc, char* argv[]) {
     system.interventions->addIntervetion(*B);
     system.interventions->addIntervetion(*C);
     system.interventions->addIntervetion(*D);
-    system.interventions->addIntervetion(*E);
+    system.interventions->addIntervetion(*E);*/
 
     do {
         utils.clrScreen();

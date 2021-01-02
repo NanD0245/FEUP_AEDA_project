@@ -107,6 +107,8 @@ public:
      */
     bool operator==(const Highway &l2);
 
+    bool checkTechnicianName(string name);
+    Technician* getTechnicianName(string name);
     vector<Toll*> sortTollDistance(Toll* toll);
 };
 

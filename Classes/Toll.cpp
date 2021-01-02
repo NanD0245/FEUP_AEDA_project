@@ -132,8 +132,8 @@ Technician* Toll::getTechnicianName(string name) {
     priority_queue<Technician*, vector<Technician*>, MyCompare> p = technicians;
     Technician a("","");
     while (!p.empty()) {
-        if (technicians.top()->getName() == name)
-            return technicians.top();
+        if (p.top()->getName() == name)
+            return p.top();
         p.pop();
     }
     return nullptr;

@@ -46,3 +46,11 @@ bool HighwayRecord::removeHighway(int i) {
     highways.erase(highways.begin()+i);
     return true;
 }
+
+bool HighwayRecord::checkTechnicianName(string name) {
+    for (Highway* h :highways) {
+        if (!h->checkTechnicianName(name))
+            return false;
+    }
+    return true;
+}
