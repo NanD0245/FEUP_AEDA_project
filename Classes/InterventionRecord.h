@@ -50,9 +50,6 @@ public:
      * @return a binary tree with all interventions
      */
     BST<Intervention> getInterventions();
-
-    bool deleteIntervention(int indexIn);
-
 };
 
 

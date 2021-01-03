@@ -171,8 +171,6 @@ public:
      * Movement::showMovement() + " - Distance: " + distance + " - Price: " + price + "\n\t\t" + "Entry Movement: " + entry->showMovement()
      */
     string showMovement() const;
-    Movement * getEntry() const;
-    //bool operator==(const MovementOut &m1);
 };
 
 #endif //AEDA2020_PORTAGENS_MOVEMENT_H

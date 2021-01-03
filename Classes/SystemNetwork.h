@@ -228,14 +228,22 @@ public:
      */
     int chooseIndexLane(Toll* toll) const;
 
+    /**
+     *
+     * @return a menu that prints all the Lane objects that belong to a certain Toll 'toll'
+     * and their respective indexes
+     * @param toll is the selected Toll object
+     * @param index is the index of the chosen Lane
+     */
     int chooseIndexLane(Toll* toll,int index) const;
 
     /**
      * Allows the user to input a number (index) which selects a Lane. As long as the index isn't -1, if it's an invalid number
      * the program continues to ask the user for a valid index.
+     * @param index is the index of the Lane
+     * @param toll is the Toll to which the Lanes belong
      * @return nullptr if index is -1, the selected Lane otherwise
      */
-    Lane* chooseLane(Toll* toll);
 
     Lane* chooseLane(Toll* toll, int index);
 
