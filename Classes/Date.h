@@ -33,6 +33,8 @@ public:
      */
     Date(string date);
 
+    Date(int year, int month, int day);
+
     /**
      * @return 'year' attribute
      */

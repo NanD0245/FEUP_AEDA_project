@@ -439,27 +439,33 @@ public:
 
     void manageTechnicians();
     void manageInterventions();
+    void manageReadInterventions();
     void manageOwners();
+    void manageReadOwners();
     void manageOwner(Owner o1);
 
     void addIntervention();
     void concludeIntervention();
     void readInterventions();
+    void readInterventionsDay();
+    void readInterventionsTechnician();
+    void readInterventionsType();
 
     void createTechnician();
     void updateTechnician();
     void readTechnicians();
     void deleteTechnician();
 
-    void createOwner();
-    void updateOwner();
     void readOwners();
-    void deleteOwner();
+    void readOwnersNumVehicles();
+    void readOwnerVehicle();
 
     void addVehicleOwner(Owner& o1);
-    void updateVehicleOwner(Owner& o1);
     void readVehiclesOwner(Owner& o1);
     void deleteVehicleOwner(Owner& o1);
+
+    void ownerMoreVehicles();
+
 };
 
 

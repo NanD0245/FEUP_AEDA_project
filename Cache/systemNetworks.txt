@@ -82,6 +82,8 @@ Movement nr5:
 12/5/2020 20:00:05 - A2 - P2 - 0 - A5 - 158.600006 - 47.580002 - 12/5/2020 20:00:05 - A2 - P4 - 1 - A5
 Movement nr6: 
 2/0/2021 19:55:47 - A1 - P2 - 0 - A1 - 0.000000 - 0.000000 - 2/0/2021 19:55:32 - A1 - P1 - 0 - A1
+Movement nr7: 
+3/0/2021 0:38:59 - A2 - P2 - 1 - A2 - 0.400000 - 0.060000 - 3/0/2021 0:37:53 - A2 - P1 - 1 - A2
 
 EMPLOYEES
 Employee nr1:
@@ -96,6 +98,8 @@ Rego - 3
 OWNERS
 Owner nr1:
 Fernando : A1 1 1 A3 2 0
+Owner nr2:
+Luis : A2 2 0
 
 INTERVENTIONS
 Intervention nr1:

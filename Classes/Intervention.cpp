@@ -35,6 +35,8 @@ Highway * Intervention::getHighway() const {return highway; }
 
 Toll * Intervention::getToll() const {return toll; }
 
+Technician* Intervention::getTechnician() const {return technician; }
+
 bool Intervention::operator<(const Intervention& i1) const {
     if (*start_date < *i1.getStartDate()) {
         return true;}
@@ -74,6 +76,8 @@ void Intervention::concludeIntervention(Date *endDate) {
     technician->setPerformance(time/num);
     state = true;
 }
+
+
 
 string Intervention::getInfo() const{
     return type + " - " + highway->getInfo() + " - " + toll->getName() + " - " + start_date->getInfo() + " - " + end_date->getInfo() + " - " + technician->getName()+ " - " + to_string(duration) + " - " + to_string(state);

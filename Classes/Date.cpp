@@ -50,6 +50,12 @@ Date::Date(string date) : s_date(date) {
     }
 }
 
+Date::Date(int year, int month, int day) : year(year), month(month), day(day) {
+    hour = 0;
+    minute = 0;
+    second = 0;
+}
+
 int Date::getYear() const {return year;}
 
 int Date::getMonth() const {return month;}

@@ -30,6 +30,7 @@ public:
     void changeState();
     Date* getStartDate() const;
     Date* getEndDate() const;
+    Technician* getTechnician() const;
     float getDuration() const;
     void setDuration(float duration);
     string showIntervention();

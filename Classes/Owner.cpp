@@ -50,13 +50,10 @@ bool Owner::operator==(const Owner& o1) {
 #include <iostream>
 string Owner::getInfo() const{
     string s = name+" : ";
-    cout << vehicles.size() << endl;
     for(auto vehicle : vehicles){
-        cout << "a" << endl;
         s+=vehicle->getInfov2() + " ";
     }
     s.pop_back();
-    cout << s << "!!!" << endl;
     return s;
 }
 
