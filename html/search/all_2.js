@@ -20,8 +20,7 @@ var searchData=
   ['createemployee_50',['createEmployee',['../class_system_network.html#ab3852be75f14f0e4e3523679860406c8',1,'SystemNetwork']]],
   ['createhighway_51',['createHighway',['../class_system_network.html#a83c50e6076d5e6d839cd0f02efccc1f6',1,'SystemNetwork']]],
   ['createlane_52',['createLane',['../class_system_network.html#a5d61222efa7a37c93ebe117c9f2b2b50',1,'SystemNetwork']]],
-  ['createowner_53',['createOwner',['../class_system_network.html#a68ccd7bd5b693557445d975b5688f753',1,'SystemNetwork']]],
-  ['createtechnician_54',['createTechnician',['../class_system_network.html#af2c899e720715497d19dda370ee7ba4b',1,'SystemNetwork']]],
-  ['createtoll_55',['createToll',['../class_system_network.html#a4cfe44e39154bd858c8e4badbf86a1a4',1,'SystemNetwork']]],
-  ['createvehicle_56',['createVehicle',['../class_system_network.html#a4f0909602469c1c9f791fca9cc9a12d1',1,'SystemNetwork']]]
+  ['createtechnician_53',['createTechnician',['../class_system_network.html#af2c899e720715497d19dda370ee7ba4b',1,'SystemNetwork']]],
+  ['createtoll_54',['createToll',['../class_system_network.html#a4cfe44e39154bd858c8e4badbf86a1a4',1,'SystemNetwork']]],
+  ['createvehicle_55',['createVehicle',['../class_system_network.html#a4f0909602469c1c9f791fca9cc9a12d1',1,'SystemNetwork']]]
 ];
