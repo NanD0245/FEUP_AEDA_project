@@ -408,7 +408,6 @@ void SystemNetwork::read(string file) {
             tech = h->getTechnicianName(name);
 
             itv = new Intervention(type,h,t,d,dd,tech,duration,tf);
-
             interventions->addIntervention(*itv);
             if(f.eof()){
                 break;

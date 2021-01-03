@@ -446,6 +446,7 @@ public:
      * Allows the user to add, read or conclude interventions.
      */
     void manageInterventions();
+<<<<<<< HEAD
 
     /**
      * Allows the user to read all owners or select one of them to manage
@@ -465,6 +466,11 @@ public:
      * Allows the user to add a vehicle to a certain owner, read all vehicles that a owner has, or
      * remove one of the owner's vehicles
      */
+=======
+    void manageReadInterventions();
+    void manageOwners();
+    void manageReadOwners();
+>>>>>>> 81d92333dbf4ec5537d5a4c11bb2df260a8247bd
     void manageOwner(Owner o1);
 
     /**
@@ -481,6 +487,9 @@ public:
      * Reads all interventions
      */
     void readInterventions();
+    void readInterventionsDay();
+    void readInterventionsTechnician();
+    void readInterventionsType();
 
     /**
      * Reads interventions on a single day
@@ -517,6 +526,7 @@ public:
      */
     void deleteTechnician();
 
+<<<<<<< HEAD
     /**
      * Creates a new Owner object
      */
@@ -536,6 +546,11 @@ public:
      * Deletes a Owner object
      */
     void deleteOwner();
+=======
+    void readOwners();
+    void readOwnersNumVehicles();
+    void readOwnerVehicle();
+>>>>>>> 81d92333dbf4ec5537d5a4c11bb2df260a8247bd
 
     /**
      * Reads owners by number of vehicles
@@ -570,7 +585,6 @@ public:
      * @param o1 is the Owner object
      */
     void deleteVehicleOwner(Owner& o1);
-
     /**
      * Shows the user the owner with the most vehicles
      */

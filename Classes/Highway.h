@@ -106,7 +106,7 @@ public:
      * @return true if both Highways have the same 'name', false otherwise
      */
     bool operator==(const Highway &l2);
-
+    
     /**
      * Checks if there's Technician with name 'name'
      * @param name is 'name' attribute
