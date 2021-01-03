@@ -388,22 +388,16 @@ void SystemNetwork::read(string file) {
         while(s=="Intervention"){
             f>>s;//discard
             f>>type;
-            cout << type << endl;
             f>>s;//discard
             f>>hname;
-            cout << hname << endl;
             f>>s;//discard
             f>>tname;
-            cout << tname << endl;
             f>>s;//discard
             f>>date1;
-            cout << date1 << " ";
             f>>date2;
-            cout << date2 << endl;
             f>>s;//discard
             f>>date3;
             f>>date4;
-            cout << date3 << " " << date4 << endl;
             f>>s;
             name = "";
             do {
@@ -411,12 +405,9 @@ void SystemNetwork::read(string file) {
                 name += s + " ";
             } while (s != "-");
             name = name.substr(0,name.size()-3);
-            cout << name << endl;
             f>>duration;
-            cout << duration << endl;
             f>>s;//discard
             f>>tf;
-            cout << tf << endl;
             h = highways->getHighway(hname);
             t = h->getToll(tname);
             date1 += " " + date2;
