@@ -92,7 +92,7 @@ void SystemNetwork::write(){
 
 void SystemNetwork::read(string file) {
     ifstream f(file);
-
+    if (!f.is_open()) {throw FileDoesNotExist(file); }
     int number,code;
     bool tf,movement_type;
     string s,name,speciality, geolocal,plate,date1,date2,date3,date4,date, type, hname, tname, line;
@@ -354,8 +354,12 @@ void SystemNetwork::read(string file) {
         f>>s;
         while(s=="Owner"){
             f>>s;//discard
-            f>>name;
-            f>>s;//discard
+            name = "";
+            while (s != ":") {
+                f >> s;
+                name += s + " ";
+            }
+            name = name.substr(0,name.size()-3);
             ow = new Owner(name);
             getline(f,line);
             stringstream l(line);
@@ -395,8 +399,12 @@ void SystemNetwork::read(string file) {
             f>>date3;
             f>>date4;
             f>>s;
-            f>>name;
-            f>>s;//discard
+            name = "";
+            do {
+                f >> s;
+                name += s + " ";
+            } while (s != "-");
+            name = name.substr(0,name.size()-3);
             f>>duration;
             f>>s;//discard
             f>>tf;
