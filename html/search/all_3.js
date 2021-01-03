@@ -1,14 +1,17 @@
 var searchData=
 [
-  ['date_32',['Date',['../class_date.html',1,'Date'],['../class_movement.html#a9d761c143421303b3d88539d186956a3',1,'Movement::date()'],['../class_date.html#a5532efafed41fd5f8e013a61313200dc',1,'Date::Date()']]],
-  ['date_2ecpp_33',['Date.cpp',['../_date_8cpp.html',1,'']]],
-  ['date_2eh_34',['Date.h',['../_date_8h.html',1,'']]],
-  ['definelanetype_35',['defineLaneType',['../class_vehicle.html#a67431edc0d7a663163684d39f337c32b',1,'Vehicle']]],
-  ['deleteemployee_36',['deleteEmployee',['../class_system_network.html#a8cda0b51f5d0f5e5befb2b5ffbe04bb4',1,'SystemNetwork']]],
-  ['deletehighway_37',['deleteHighway',['../class_system_network.html#a4f0dd6f5c4479fe0e44eea031c63232a',1,'SystemNetwork']]],
-  ['deletelane_38',['deleteLane',['../class_system_network.html#a4420dcc4820086d5b15eabd1325ebf58',1,'SystemNetwork']]],
-  ['deletetoll_39',['deleteToll',['../class_system_network.html#ae3cddba2f56ee15e31ce3ca9f8dd5d9f',1,'SystemNetwork']]],
-  ['deletevehicle_40',['deleteVehicle',['../class_system_network.html#affc3c7260e2fc580b32d829818a38dae',1,'SystemNetwork']]],
-  ['dontexistanyexitmovement_41',['DontExistAnyExitMovement',['../class_dont_exist_any_exit_movement.html',1,'DontExistAnyExitMovement'],['../class_dont_exist_any_exit_movement.html#aa70a60603043cc40b1cdbf4fdb452e7c',1,'DontExistAnyExitMovement::DontExistAnyExitMovement()']]],
-  ['dontexistanymovement_42',['DontExistAnyMovement',['../class_dont_exist_any_movement.html',1,'DontExistAnyMovement'],['../class_dont_exist_any_movement.html#af525b78ac56e14d6083fdd54d0485aac',1,'DontExistAnyMovement::DontExistAnyMovement()']]]
+  ['date_57',['Date',['../class_date.html',1,'Date'],['../class_movement.html#a73fc78564c9badbcea68f2f2331c74db',1,'Movement::date()'],['../class_date.html#a722f840708b9801e1e790e56c5e865e8',1,'Date::Date()']]],
+  ['date_2ecpp_58',['Date.cpp',['../_date_8cpp.html',1,'']]],
+  ['date_2eh_59',['Date.h',['../_date_8h.html',1,'']]],
+  ['definelanetype_60',['defineLaneType',['../class_vehicle.html#a8ab23c14c296ae2cffcf8f1494e6d3e2',1,'Vehicle']]],
+  ['deleteemployee_61',['deleteEmployee',['../class_system_network.html#a662ee7bf020afd4cd967d5366e984173',1,'SystemNetwork']]],
+  ['deletehighway_62',['deleteHighway',['../class_system_network.html#a0649769f172b84a0dded22aff03f428a',1,'SystemNetwork']]],
+  ['deletelane_63',['deleteLane',['../class_system_network.html#a26073212b4682bb428489a6f57ac4272',1,'SystemNetwork']]],
+  ['deleteowner_64',['deleteOwner',['../class_owner_record.html#a7a90a0712539274cc017c81e8da19bb6',1,'OwnerRecord::deleteOwner()'],['../class_system_network.html#a161cc26606420929e36424958e72f8bf',1,'SystemNetwork::deleteOwner()']]],
+  ['deletetechnician_65',['deleteTechnician',['../class_system_network.html#a47625ff61554114ea9924f7d16331d66',1,'SystemNetwork::deleteTechnician()'],['../class_toll.html#a0a0285fd665b5fbadea3f95535853b31',1,'Toll::deleteTechnician()']]],
+  ['deletetoll_66',['deleteToll',['../class_system_network.html#a6b5e2a29df2c9655f41dde6450aaa240',1,'SystemNetwork']]],
+  ['deletevehicle_67',['deleteVehicle',['../class_owner.html#ab8793b1871a7674eec57c2fee63a38f5',1,'Owner::deleteVehicle(string plate)'],['../class_owner.html#a9365110e7a6b416556d36f567f2a0887',1,'Owner::deleteVehicle(int index)'],['../class_system_network.html#a40716cb30a43c2b0979b276c68138214',1,'SystemNetwork::deleteVehicle()']]],
+  ['deletevehicleowner_68',['deleteVehicleOwner',['../class_system_network.html#a093ce2e900e6224cc0287569f8f1093e',1,'SystemNetwork']]],
+  ['dontexistanyexitmovement_69',['DontExistAnyExitMovement',['../class_dont_exist_any_exit_movement.html',1,'DontExistAnyExitMovement'],['../class_dont_exist_any_exit_movement.html#a6e2c9e871ee5ba240476e3fcdd6bb8e0',1,'DontExistAnyExitMovement::DontExistAnyExitMovement()']]],
+  ['dontexistanymovement_70',['DontExistAnyMovement',['../class_dont_exist_any_movement.html',1,'DontExistAnyMovement'],['../class_dont_exist_any_movement.html#a464d17b5656dfaef37ab14697c03096d',1,'DontExistAnyMovement::DontExistAnyMovement()']]]
 ];

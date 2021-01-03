@@ -11,12 +11,44 @@
 class InterventionRecord {
     BST<Intervention> interventions;
 public:
+    /**
+     * Creates the Binary Tree (empty) which contains all interventions
+     */
     InterventionRecord();
-    bool addIntervetion(const Intervention& i1);
+
+    /**
+     * Adds an intervention to the interventions tree
+     * @param i1 is the Intervention object to add
+     * @return true if it was able to add, false otherwise
+     */
+    bool addIntervention(const Intervention& i1);
+
+    /**
+     * Removes an intervention from the interventions tree
+     * @param i1 is the Intervention object to remove
+     * @return true if it was able to remove, false otherwise
+     */
     bool removeIntervention(const Intervention& i1);
+
+    /**
+     * @return a vector of strings with information about all interventions
+     */
     vector<string> showInterventions();
+
+    /**
+     * @return a vector of strings with information about all interventions which haven't concluded yet
+     */
     vector<string> showInterventionsNotConcluded();
+
+    /**
+     * @param indexIn to search in the binary tree
+     * @return the Intervention object at the index provided
+     */
     Intervention getIntervention(int indexIn);
+
+    /**
+     * @return a binary tree with all interventions
+     */
     BST<Intervention> getInterventions();
 
 };

@@ -152,11 +152,45 @@ public:
     virtual void addLane(Lane * l);
     virtual void addLane(Employee * e) {};
 
+    /**
+     * Finds if there already is a technician with the name "name"
+     * @param name is a string which is the name to find
+     * @return false if there is a technician with that name, true otherwise
+     */
     bool checkTechnicianName(string name);
+
+    /**
+     * Adds a new Technician object with name "name" and specialty "specialty" to the technicians container
+     * @param name is a string with the name that the technician will have
+     * @param specialty is a string which is the specialty that the technician will have
+     * @return true if it was able to add, false otherwise
+     */
     bool addTechnician(string name, string specialty);
+    /**
+     * Adds a Technician object to the technicians container
+     * @param technician object to add
+     * @return true if it was able to add, false otherwise
+     */
     bool addTechnician(Technician* technician);
+
+    /**
+     * Returns a Technician object with the name provided, if it exists
+     * @param name of the Technician object to find
+     * @return Technician object if it was found, nullptr otherwise
+     */
     Technician* getTechnicianName(string name);
+
+    /**
+     * Returns a Technician object with the specialty provided, if it exists
+     * @param type of the Technician object to find
+     * @return Technician object if it was found, nullptr otherwise
+     */
     Technician* getTechnicianSpeciality(string type);
+
+    /**
+     *
+     * @return
+     */
     vector<string> readTechnicians();
     vector<string> readTechniciansv2();
     bool deleteTechnician(string name);

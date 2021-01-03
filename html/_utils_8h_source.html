@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Classes/Utils.h Source File</title>
+<title>Portagens: Classes/Utils.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Portagens
    </div>
   </td>
  </tr>
@@ -69,32 +69,53 @@ $(function() {
 <div class="title">Utils.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_utils_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by mim on 03/11/20.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef AEDA2020_PORTAGENS_UTILS_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define AEDA2020_PORTAGENS_UTILS_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_utils.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_utils.html">Utils</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_utils.html#a45a5d4d04a981fcd6313e1565584788c">   13</a></span>&#160;    <a class="code" href="class_utils.html#a45a5d4d04a981fcd6313e1565584788c">Utils</a>() =<span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> ShowMenu(vector&lt;string&gt; menu);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> getNumber(<span class="keywordtype">int</span> max);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">float</span> getFloat();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">string</span> getPlate();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> waitForInput();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> clrScreen();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif //AEDA2020_PORTAGENS_UTILS_H</span></div>
+<a href="_utils_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AEDA2020_PORTAGENS_UTILS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AEDA2020_PORTAGENS_UTILS_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_date_8h.html">Date.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_utils.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_utils.html">Utils</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_utils.html#a6029104898a37fd8530e0f0579f13178">   22</a></span>&#160;    <a class="code" href="class_utils.html#a6029104898a37fd8530e0f0579f13178">Utils</a>() =<span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> clrScreen();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> getNumber(<span class="keywordtype">int</span> max);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> ShowMenu(vector&lt;string&gt; menu);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> ShowMenu(vector&lt;string&gt; menu, <span class="keywordtype">int</span> lane_index);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">float</span> getFloat();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">string</span> getPlate();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> waitForInput();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_date.html">Date</a>* getDate();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif //AEDA2020_PORTAGENS_UTILS_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_utils_html_a45a5d4d04a981fcd6313e1565584788c"><div class="ttname"><a href="class_utils.html#a45a5d4d04a981fcd6313e1565584788c">Utils::Utils</a></div><div class="ttdeci">Utils()=default</div></div>
-<div class="ttc" id="aclass_utils_html"><div class="ttname"><a href="class_utils.html">Utils</a></div><div class="ttdef"><b>Definition:</b> Utils.h:11</div></div>
+<div class="ttc" id="aclass_utils_html_a06e07547b1249bab0014b93163e4ad12"><div class="ttname"><a href="class_utils.html#a06e07547b1249bab0014b93163e4ad12">Utils::getPlate</a></div><div class="ttdeci">string getPlate()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:94</div></div>
+<div class="ttc" id="aclass_utils_html"><div class="ttname"><a href="class_utils.html">Utils</a></div><div class="ttdef"><b>Definition:</b> Utils.h:16</div></div>
+<div class="ttc" id="aclass_utils_html_a3886bce14d8a9ddcac75c12c5725109d"><div class="ttname"><a href="class_utils.html#a3886bce14d8a9ddcac75c12c5725109d">Utils::getDate</a></div><div class="ttdeci">Date * getDate()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:123</div></div>
+<div class="ttc" id="a_utils_8h_html"><div class="ttname"><a href="_utils_8h.html">Utils.h</a></div></div>
+<div class="ttc" id="aclass_utils_html_a36e507250b7f2c49fa76ab0d5918ca62"><div class="ttname"><a href="class_utils.html#a36e507250b7f2c49fa76ab0d5918ca62">Utils::getFloat</a></div><div class="ttdeci">float getFloat()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:67</div></div>
+<div class="ttc" id="aclass_utils_html_a989d0d1c0204c17bb47b45a39943f9b4"><div class="ttname"><a href="class_utils.html#a989d0d1c0204c17bb47b45a39943f9b4">Utils::waitForInput</a></div><div class="ttdeci">void waitForInput()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:115</div></div>
+<div class="ttc" id="aclass_utils_html_ad500f1c053304e048d4b2c42cca0af28"><div class="ttname"><a href="class_utils.html#ad500f1c053304e048d4b2c42cca0af28">Utils::clrScreen</a></div><div class="ttdeci">void clrScreen()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:7</div></div>
+<div class="ttc" id="aclass_utils_html_a390da50f5cea8295ab808f4d977a680a"><div class="ttname"><a href="class_utils.html#a390da50f5cea8295ab808f4d977a680a">Utils::getNumber</a></div><div class="ttdeci">int getNumber(int max)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:11</div></div>
+<div class="ttc" id="a_date_8h_html"><div class="ttname"><a href="_date_8h.html">Date.h</a></div></div>
+<div class="ttc" id="aclass_utils_html_a6029104898a37fd8530e0f0579f13178"><div class="ttname"><a href="class_utils.html#a6029104898a37fd8530e0f0579f13178">Utils::Utils</a></div><div class="ttdeci">Utils()=default</div></div>
+<div class="ttc" id="aclass_utils_html_a620f920e88fd3244c5fa1ff21b1e0bf2"><div class="ttname"><a href="class_utils.html#a620f920e88fd3244c5fa1ff21b1e0bf2">Utils::ShowMenu</a></div><div class="ttdeci">int ShowMenu(vector&lt; string &gt; menu)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:38</div></div>
+<div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.h:21</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

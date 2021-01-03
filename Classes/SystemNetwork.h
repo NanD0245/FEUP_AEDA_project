@@ -437,28 +437,99 @@ public:
      */
     void write();
 
+    /**
+     * Allows the user to create, read, update or delete the Technician objects.
+     */
     void manageTechnicians();
+
+    /**
+     * Allows the user to add, read or conclude interventions.
+     */
     void manageInterventions();
+
+    /**
+     * Allows the user to read all owners or select one of them to manage
+     */
     void manageOwners();
+    /**
+     * Allows the user to add a vehicle to a certain owner, read all vehicles that a owner has, or
+     * remove one of the owner's vehicles
+     */
     void manageOwner(Owner o1);
 
+    /**
+     * Adds an intervention
+     */
     void addIntervention();
+
+    /**
+     * Concludes an intervention
+     */
     void concludeIntervention();
+
+    /**
+     * Reads all interventions
+     */
     void readInterventions();
 
+    /**
+     * Creates a new Technician object
+     */
     void createTechnician();
+
+    /**
+     * Updates a Technician object chosen by the user
+     */
     void updateTechnician();
+
+    /**
+     * Shows all Technician objects and their information to the user
+     */
     void readTechnicians();
+
+    /**
+     * Deletes a Technician object chosen by the user
+     */
     void deleteTechnician();
 
+    /**
+     * Creates a new Owner object
+     */
     void createOwner();
+
+    /**
+     * Updates a Owner object chosen by the user
+     */
     void updateOwner();
+
+    /**
+     * Shows all Owner objects and their information to the user
+     */
     void readOwners();
+
+    /**
+     * Deletes a Owner object
+     */
     void deleteOwner();
 
+    /**
+     * Adds a certain vehicle to the Owner o1
+     * @param o1 is a Owner object
+     */
     void addVehicleOwner(Owner& o1);
+
     void updateVehicleOwner(Owner& o1);
+
+    /**
+     * Shows the vehicle that owner o1 has
+     * @param o1 is an Owner object
+     */
     void readVehiclesOwner(Owner& o1);
+
+    /**
+     * Deletes the vehicle that owner o1 has
+     * @param o1 is the Owner object
+     */
     void deleteVehicleOwner(Owner& o1);
 };
 

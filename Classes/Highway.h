@@ -106,7 +106,11 @@ public:
      * @return true if both Highways have the same 'name', false otherwise
      */
     bool operator==(const Highway &l2);
-
+    /**
+     * @brief Returns a vector sorted by highest Distance
+     * @param toll is the object of class Toll
+     * @return true if both Highways have the same 'name', false otherwise
+     */
     vector<Toll*> sortTollDistance(Toll* toll);
 };
 

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['lane_352',['Lane',['../class_lane.html#a2ecbf2e418c2239f2f94b8b35654a542',1,'Lane::Lane(int lane_number, bool green_lane)'],['../class_lane.html#affd642d537d96c03cb7fe8c8d46d37b4',1,'Lane::Lane()']]],
-  ['laneemployee_353',['LaneEmployee',['../class_lane_employee.html#a456b0f593edb465db64b33307e7eb1bd',1,'LaneEmployee']]],
-  ['lanemoremoves_354',['LaneMoreMoves',['../class_system_network.html#a1d262502e18d63d3f69fc3ad25264b5f',1,'SystemNetwork']]]
+  ['highway_524',['Highway',['../class_highway.html#a37b61b12cd915dccec3b3a4e9b205840',1,'Highway']]],
+  ['highwaymoremoves_525',['HighwayMoreMoves',['../class_system_network.html#a69c37f44e76ee930c9fae82c8c494078',1,'SystemNetwork']]],
+  ['highwayrecord_526',['HighwayRecord',['../class_highway_record.html#a825ac8b77969e84c68aedf24592709a7',1,'HighwayRecord']]]
 ];

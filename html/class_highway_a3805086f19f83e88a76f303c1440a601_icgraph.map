@@ -1,0 +1,11 @@
+<map id="showHighway" name="showHighway">
+<area shape="rect" id="node1" title=" " alt="" coords="531,162,632,189"/>
+<area shape="rect" id="node2" href="$class_system_network.html#ae4e43cb3a4359c5168d09166e71d814f" title=" " alt="" coords="283,5,467,47"/>
+<area shape="rect" id="node3" href="$class_system_network.html#a69c37f44e76ee930c9fae82c8c494078" title=" " alt="" coords="275,71,475,112"/>
+<area shape="rect" id="node4" href="$class_system_network.html#acdb04cd395fe9252c1d4e8bea4bfd5c7" title=" " alt="" coords="267,137,483,163"/>
+<area shape="rect" id="node5" href="$class_system_network.html#a7890eaad90cdb99520ec4f1b37cb0209" title=" " alt="" coords="267,187,483,214"/>
+<area shape="rect" id="node6" href="$class_intervention.html#a5dc2d22376e7c6f17cb9e27570696673" title=" " alt="" coords="279,238,470,265"/>
+<area shape="rect" id="node9" href="$class_system_network.html#a409558ea6eb1de4e7db8da23adb8231c" title=" " alt="" coords="271,289,479,315"/>
+<area shape="rect" id="node7" href="$class_intervention_record.html#ae52d1c95ee54ca58b39900fbe1e7bfa8" title=" " alt="" coords="46,197,178,239"/>
+<area shape="rect" id="node8" href="$class_intervention_record.html#a5ecc62c644427fb1b840e3caf0cfc9a2" title=" " alt="" coords="5,263,219,304"/>
+</map>

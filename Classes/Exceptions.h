@@ -71,4 +71,24 @@ public:
     string getName() const {return name;}
 };
 
+/**
+ * Class relative to the exception of no existing file
+ *
+ * @param file is a that is the file's location and name (e.g. "file.txt")
+ */
+class FileDoesNotExist {
+    string file;
+public:
+    /**
+     * Creates a new FileDoesNotExist exception object
+     *
+     * @param file is the 'file' attribute which the Exception tries to find
+     */
+    FileDoesNotExist(string file) : file(file) {}
+    /**
+     * @return file name
+     */
+    string getFile() const {return file;}
+};
+
 #endif //AEDA2020_PORTAGENS_EXCEPTIONS_H

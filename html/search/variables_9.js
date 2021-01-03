@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['vehicle_452',['vehicle',['../class_movement.html#a786891e3810c8848b7bfb3b178a0ee29',1,'Movement']]],
-  ['vehicles_453',['vehicles',['../class_system_network.html#ad7c76ce07342bf4d26cac3d2316446c9',1,'SystemNetwork']]]
+  ['technicians_665',['technicians',['../class_toll.html#a0534329f41617e45e30aab90faca9f8f',1,'Toll']]],
+  ['toll_666',['toll',['../class_movement.html#a702f44e075be8a5fcd4e4300d9ad74c8',1,'Movement']]],
+  ['type_667',['type',['../class_movement.html#a565421f589059ae13581e05b505cf5f0',1,'Movement::type()'],['../class_toll.html#a565421f589059ae13581e05b505cf5f0',1,'Toll::type()']]]
 ];

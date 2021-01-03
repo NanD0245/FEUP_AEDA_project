@@ -1,0 +1,10 @@
+<map id="SystemNetwork" name="SystemNetwork">
+<area shape="rect" id="node1" title=" " alt="" coords="259,157,373,184"/>
+<area shape="rect" id="node2" href="$class_owner_record.html" title=" " alt="" coords="19,5,119,32"/>
+<area shape="rect" id="node3" href="$class_vehicle_record.html" title=" " alt="" coords="16,56,123,83"/>
+<area shape="rect" id="node4" href="$class_highway_record.html" title=" " alt="" coords="13,107,125,133"/>
+<area shape="rect" id="node5" href="$class_intervention_record.html" title=" " alt="" coords="5,157,133,184"/>
+<area shape="rect" id="node6" href="$class_employee_record.html" title=" " alt="" coords="9,208,130,235"/>
+<area shape="rect" id="node7" href="$class_movement_record.html" title=" " alt="" coords="8,259,131,285"/>
+<area shape="rect" id="node8" href="$class_utils.html" title=" " alt="" coords="45,309,93,336"/>
+</map>

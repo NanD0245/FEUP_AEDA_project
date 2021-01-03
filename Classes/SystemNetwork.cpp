@@ -407,7 +407,7 @@ void SystemNetwork::read(string file) {
             tech = t->getTechnicianName(name);
 
             itv = new Intervention(type,h,t,d,dd,tech,duration,tf);
-            interventions->addIntervetion(*itv);
+            interventions->addIntervention(*itv);
             f>>s;
         }
     }
@@ -2199,7 +2199,7 @@ void SystemNetwork::addIntervention() {
         return;
     }
     Intervention i(s_type,technician,start_date, highway, toll);
-    if (interventions->addIntervetion(i))
+    if (interventions->addIntervention(i))
         cout << "Intervention started with success!" << endl;
     utils->waitForInput();
 }
@@ -2211,7 +2211,7 @@ void SystemNetwork::concludeIntervention() {
     interventions->removeIntervention(i);
     Date* end_date = utils->getDate();
     i.concludeIntervention(end_date);
-    interventions->addIntervetion(i);
+    interventions->addIntervention(i);
     cout << "Intervention concluded with success!" << endl;
     utils->waitForInput();
 }

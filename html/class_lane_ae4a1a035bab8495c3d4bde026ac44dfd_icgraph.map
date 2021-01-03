@@ -1,0 +1,14 @@
+<map id="getLaneNumber" name="getLaneNumber">
+<area shape="rect" id="node1" title=" " alt="" coords="491,157,604,184"/>
+<area shape="rect" id="node2" href="$class_movement.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="290,56,417,83"/>
+<area shape="rect" id="node6" href="$class_lane.html#a2d3c37e1b8cdccdbebecc2e11f023aed" title="Overloads the &#39;==&#39; operator to be able to know if two different Lane objects are the same." alt="" coords="311,107,396,133"/>
+<area shape="rect" id="node7" href="$class_toll.html#ab95f9f59c0da5818db6be9307ab05d42" title=" " alt="" coords="272,157,435,184"/>
+<area shape="rect" id="node9" href="$class_toll.html#a9b7e5f012533f1bbc08594d1a9a2f0e9" title=" " alt="" coords="275,208,431,235"/>
+<area shape="rect" id="node10" href="$class_movement.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="264,259,443,285"/>
+<area shape="rect" id="node3" href="$class_movement_record.html#a8cebe0bbed6c9a1aa30fb50073121086" title=" " alt="" coords="5,5,216,32"/>
+<area shape="rect" id="node4" href="$class_movement_entry.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="31,56,190,83"/>
+<area shape="rect" id="node5" href="$class_movement_out.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="37,107,185,133"/>
+<area shape="rect" id="node8" href="$class_system_network.html#a09692106f30b480d0052276a3b29a77e" title=" " alt="" coords="16,169,205,196"/>
+<area shape="rect" id="node11" href="$class_movement_entry.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="6,245,215,272"/>
+<area shape="rect" id="node12" href="$class_movement_out.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="11,296,210,323"/>
+</map>

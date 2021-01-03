@@ -1,0 +1,8 @@
+<map id="getInfo" name="getInfo">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,65,133"/>
+<area shape="rect" id="node2" href="$class_date.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="141,5,235,32"/>
+<area shape="rect" id="node3" href="$class_highway.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="129,56,247,83"/>
+<area shape="rect" id="node4" href="$class_lane.html#ae4a1a035bab8495c3d4bde026ac44dfd" title=" " alt="" coords="113,107,263,133"/>
+<area shape="rect" id="node5" href="$class_toll.html#a134d85a189d667e7a481614c1aa67860" title=" " alt="" coords="137,157,239,184"/>
+<area shape="rect" id="node6" href="$class_vehicle.html#acf0dd15cc13fd064fcb168c4ecf66597" title=" " alt="" coords="127,208,249,235"/>
+</map>

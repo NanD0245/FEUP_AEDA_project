@@ -59,6 +59,10 @@ public:
      */
     void waitForInput();
 
+    /**
+     * Allows the user to input a string that represents the date
+     * @return date inputted by the user
+     */
     Date* getDate();
 };
 

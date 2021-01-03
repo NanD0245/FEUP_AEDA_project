@@ -95,6 +95,11 @@ public:
      */
     void setTax(float tax);
 
+    /**
+     * @brief Overloads the '==' operator to be able to know if two different vehicles are the same
+     * @param d1 Object of class Vehicle to compare the current object to
+     * @return true if the plate is the same, false otherwise
+     */
     bool operator==(Vehicle v1);
 };
 

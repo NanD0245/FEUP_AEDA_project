@@ -1,0 +1,9 @@
+<map id="showInterventions" name="showInterventions">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,129,83"/>
+<area shape="rect" id="node2" href="$class_b_s_t_itr_in.html#abd8dc5116c72de81f7ab35b3b3544a79" title=" " alt="" coords="211,31,334,57"/>
+<area shape="rect" id="node3" href="$class_intervention.html#a5dc2d22376e7c6f17cb9e27570696673" title=" " alt="" coords="177,81,368,108"/>
+<area shape="rect" id="node4" href="$class_date.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="461,5,555,32"/>
+<area shape="rect" id="node5" href="$class_toll.html#a134d85a189d667e7a481614c1aa67860" title=" " alt="" coords="457,56,559,83"/>
+<area shape="rect" id="node6" href="$class_highway.html#a3805086f19f83e88a76f303c1440a601" title=" " alt="" coords="429,107,587,133"/>
+<area shape="rect" id="node7" href="$class_technician.html#aea0331fb110226e2994ce2345aaf4d63" title=" " alt="" coords="416,157,600,184"/>
+</map>

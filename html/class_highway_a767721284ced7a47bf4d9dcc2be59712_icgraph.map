@@ -1,0 +1,17 @@
+<map id="getInfo" name="getInfo">
+<area shape="rect" id="node1" title=" " alt="" coords="491,183,551,209"/>
+<area shape="rect" id="node2" href="$class_highway.html#a60bc4e03ef9edc5fcce3442ce87a04b3" title=" " alt="" coords="322,56,385,83"/>
+<area shape="rect" id="node5" href="$class_intervention.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="287,107,420,133"/>
+<area shape="rect" id="node7" href="$class_movement.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="290,157,417,184"/>
+<area shape="rect" id="node11" href="$class_intervention.html#afb7d055c8050fc207dd6b8a8b728ec41" title=" " alt="" coords="278,208,429,235"/>
+<area shape="rect" id="node12" href="$class_highway.html#a7e5da9f1f1008f1fcb755449e44e90b6" title="Overloads the &#39;==&#39; operator to be able to know if two different Highways are the same." alt="" coords="311,259,396,285"/>
+<area shape="rect" id="node13" href="$class_movement.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="264,309,443,336"/>
+<area shape="rect" id="node3" href="$class_system_network.html#a4cfe44e39154bd858c8e4badbf86a1a4" title=" " alt="" coords="21,5,200,32"/>
+<area shape="rect" id="node4" href="$class_system_network.html#abff65a4d1d457463fba2cd5bef862cdc" title=" " alt="" coords="37,56,184,83"/>
+<area shape="rect" id="node6" href="$class_system_network.html#aac759501cf6c7895a70eecbef0226ae1" title=" " alt="" coords="36,107,185,133"/>
+<area shape="rect" id="node8" href="$class_movement_record.html#a8cebe0bbed6c9a1aa30fb50073121086" title=" " alt="" coords="5,157,216,184"/>
+<area shape="rect" id="node9" href="$class_movement_entry.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="31,208,190,235"/>
+<area shape="rect" id="node10" href="$class_movement_out.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="37,259,185,285"/>
+<area shape="rect" id="node14" href="$class_movement_entry.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="6,309,215,336"/>
+<area shape="rect" id="node15" href="$class_movement_out.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="11,360,210,387"/>
+</map>
