@@ -47,6 +47,13 @@ bool Intervention::operator<(const Intervention& i1) const {
         return true;
     }
     else if (*start_date == *i1.getStartDate() && highway->getInfo() == i1.getHighway()->getInfo() && toll->getName() == i1.getToll()->getName()) {
+        if (type == "review" && (i1.getType() == "eletronic" || i1.getType() == "informatic"))
+            return true;
+        else if (type == "eletronic" && i1.getType() == "informatic")
+            return true;
+        return false;
+        /*if (type == i1.getType())
+            return false;
         if (type == "review")
             return true;
         else if (i1.getType() == "informatic")
@@ -54,7 +61,7 @@ bool Intervention::operator<(const Intervention& i1) const {
         else if (type == "informatic")
             return false;
         else if (i1.getType() == "review")
-            return false;
+            return false;*/
     }
     return false;
 }
@@ -73,7 +80,7 @@ void Intervention::concludeIntervention(Date *endDate) {
     float time = technician->getPerformance() * technician->getNumIntervetion() + duration;
     technician->addIntervention();
     int num = technician->getNumIntervetion();
-    technician->setPerformance(time/num);
+    technician->setPerformance(time/(float)num);
     state = true;
 }
 

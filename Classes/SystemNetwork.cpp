@@ -81,9 +81,11 @@ void SystemNetwork::write(){
     BST<Intervention> bst = interventions->getInterventions();
     auto it = BSTItrIn<Intervention>(bst);
     for(; !it.isAtEnd();it.advance()){
-        f<< "Intervention nr"<<j<<":"<<endl;
-        j++;
-        f<<it.retrieve().getInfo()<<endl;
+        if (it.retrieve().getState()) {
+            f << "Intervention nr" << j << ":" << endl;
+            j++;
+            f << it.retrieve().getInfo() << endl;
+        }
     }
     f.close();
 }
@@ -429,25 +431,31 @@ void SystemNetwork::manageHighways() {
             case 1:
                 utils->clrScreen();
                 createHighway();
+                utils->clrScreen();
                 break;
             case 2:
                 utils->clrScreen();
                 updateHighway();
+                utils->clrScreen();
                 break;
             case 3:
                 utils->clrScreen();
                 deleteHighway();
+                utils->clrScreen();
                 break;
             case 4:
                 utils->clrScreen();
                 readHighways();
+                utils->clrScreen();
                 break;
             case 5:
                 utils->clrScreen();
                 auto *h1 = chooseHighway();
+                utils->clrScreen();
                 if (h1 == nullptr)
                     break;
                 manageHighway(h1);
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -461,25 +469,31 @@ void SystemNetwork::manageHighway(Highway* highway) {
             case 1:
                 utils->clrScreen();
                 createToll(highway);
+                utils->clrScreen();
                 break;
             case 2:
                 utils->clrScreen();
                 updateToll(highway);
+                utils->clrScreen();
                 break;
             case 3:
                 utils->clrScreen();
                 deleteToll(highway);
+                utils->clrScreen();
                 break;
             case 4:
                 utils->clrScreen();
                 readTolls(highway);
+                utils->clrScreen();
                 break;
             case 5:
                 utils->clrScreen();
                 auto *t1 = chooseToll(highway);
+                utils->clrScreen();
                 if (t1 == nullptr)
                     break;
                 manageToll(t1);
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -493,18 +507,22 @@ void SystemNetwork::manageToll(Toll *toll) {
             case 1:
                 utils->clrScreen();
                 createLane(toll);
+                utils->clrScreen();
                 break;
             case 2:
                 utils->clrScreen();
                 updateLane(toll);
+                utils->clrScreen();
                 break;
             case 3:
                 utils->clrScreen();
                 deleteLane(toll);
+                utils->clrScreen();
                 break;
             case 4:
                 utils->clrScreen();
                 readLanes(toll);
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -518,18 +536,22 @@ void SystemNetwork::manageEmployee() {
             case 1:
                 utils->clrScreen();
                 createEmployee();
+                utils->clrScreen();
                 break;
             case 2:
                 utils->clrScreen();
                 updateEmployee();
+                utils->clrScreen();
                 break;
             case 3:
                 utils->clrScreen();
                 deleteEmployee();
+                utils->clrScreen();
                 break;
             case 4:
                 utils->clrScreen();
                 readEmployees();
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -543,18 +565,22 @@ void SystemNetwork::manageVehicle() {
             case 1:
                 utils->clrScreen();
                 createVehicle();
+                utils->clrScreen();
                 break;
             case 2:
                 utils->clrScreen();
                 updateVehicle();
+                utils->clrScreen();
                 break;
             case 3:
                 utils->clrScreen();
                 deleteVehicle();
+                utils->clrScreen();
                 break;
             case 4:
                 utils->clrScreen();
                 readVehicles();
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -568,14 +594,17 @@ void SystemNetwork::manageMovements() {
             case 1:
                 utils->clrScreen();
                 addEntryMovement();
+                utils->clrScreen();
                 break;
             case 2:
                 utils->clrScreen();
                 addExitMovement();
+                utils->clrScreen();
                 break;
             case 3:
                 utils->clrScreen();
                 manageReadMovements();
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -591,23 +620,28 @@ void SystemNetwork::manageReadMovements() {
             case 1:
                 utils->clrScreen();
                 manageMovementsHighway();
+                utils->clrScreen();
                 break;
             case 2:
                 utils->clrScreen();
                 manageMovementsToll();
+                utils->clrScreen();
                 break;
             case 3:
                 utils->clrScreen();
                 manageMovementsLane();
+                utils->clrScreen();
                 break;
             case 4:
                 utils->clrScreen();
                 manageMovementsCar();
+                utils->clrScreen();
                 break;
             case 5:
                 utils->clrScreen();
                 try {
                     showEmployeeMovements();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyMovement &e) {
                     cout << "EXCEPTION: There are no employee movements." << endl;
@@ -633,11 +667,13 @@ void SystemNetwork::manageMovementsHighway() {
                 catch (DontExistAnyMovement &e) {
                     cout << "EXCEPTION: There are no movements." << endl;
                 }
+                utils->clrScreen();
                 break;
             case 2:
                 utils->clrScreen();
                 try {
                     showMovementsByHighwayPrice();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyExitMovement &e) {
                     cout << "EXCEPTION: There are no exit movements." << endl;
@@ -647,6 +683,7 @@ void SystemNetwork::manageMovementsHighway() {
                 utils->clrScreen();
                 try {
                     showMovementsByDate();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyMovement &e) {
                     cout << "EXCEPTION: There are no exit movements." << endl;
@@ -665,9 +702,11 @@ void SystemNetwork::manageMovementsToll() {
             case 1:
                 utils->clrScreen();
                 a1 = chooseHighway();
+                utils->clrScreen();
                 if (a1 == nullptr) break;
                 try {
                     showMovementsByTollName(a1);
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyMovement &e) {
                     cout << "EXCEPTION: There are no movements." << endl;
@@ -676,9 +715,11 @@ void SystemNetwork::manageMovementsToll() {
             case 2:
                 utils->clrScreen();
                 a1 = chooseHighway();
+                utils->clrScreen();
                 if (a1 == nullptr) break;
                 try {
                     showMovementsByTollPrice(a1);
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyExitMovement &e) {
                     cout << "EXCEPTION: There are no exit movements." << endl;
@@ -687,9 +728,11 @@ void SystemNetwork::manageMovementsToll() {
             case 3:
                 utils->clrScreen();
                 a1 = chooseHighway();
+                utils->clrScreen();
                 if (a1 == nullptr) break;
                 try {
                     showMovementsByTollType(a1);
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyMovement &e) {
                     cout << "EXCEPTION: There are no movements." << endl;
@@ -709,11 +752,14 @@ void SystemNetwork::manageMovementsLane() {
             case 1:
                 utils->clrScreen();
                 a1 = chooseHighway();
+                utils->clrScreen();
                 if (a1 == nullptr) break;
                 t1 = chooseToll(a1);
+                utils->clrScreen();
                 if (t1 == nullptr) break;
                 try {
                     showMovementsbyLaneNumber(t1);
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyMovement &e) {
                     cout << "EXCEPTION: There are no movements." << endl;
@@ -722,11 +768,14 @@ void SystemNetwork::manageMovementsLane() {
             case 2:
                 utils->clrScreen();
                 a1 = chooseHighway();
+                utils->clrScreen();
                 if (a1 == nullptr) break;
                 t1 = chooseToll(a1);
+                utils->clrScreen();
                 if (t1 == nullptr) break;
                 try {
                     showMovementsbyLanePrice(t1);
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyExitMovement &e) {
                     cout << "EXCEPTION: There are no exit movements." << endl;
@@ -745,6 +794,7 @@ void SystemNetwork::manageMovementsCar() {
                 utils->clrScreen();
                 try {
                     showCarMovementsbyPrice();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyExitMovement &e) {
                     cout << "EXCEPTION: There are no exit movements." << endl;
@@ -757,6 +807,7 @@ void SystemNetwork::manageMovementsCar() {
                 utils->clrScreen();
                 try {
                     showCarMovementsbyDistance();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyExitMovement &e) {
                     cout << "EXCEPTION: There are no exit movements." << endl;
@@ -769,6 +820,7 @@ void SystemNetwork::manageMovementsCar() {
                 utils->clrScreen();
                 try {
                     showCarMovementsbyDate();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyMovement &e) {
                     cout << "EXCEPTION: There are no movements." << endl;
@@ -792,6 +844,7 @@ void SystemNetwork::manageStatistics() {
                 utils->clrScreen();
                 try {
                     BestWorthHighway();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyExitMovement &e) {
                     cout << "EXCEPTION: There are no exit movements." << endl;
@@ -801,6 +854,7 @@ void SystemNetwork::manageStatistics() {
                 utils->clrScreen();
                 try {
                     BestWorthToll();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyExitMovement &e) {
                     cout << "EXCEPTION: There are no exit movements." << endl;
@@ -810,6 +864,7 @@ void SystemNetwork::manageStatistics() {
                 utils->clrScreen();
                 try {
                     BestWorthLane();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyExitMovement &e) {
                     cout << "EXCEPTION: There are no exit movements." << endl;
@@ -819,6 +874,7 @@ void SystemNetwork::manageStatistics() {
                 utils->clrScreen();
                 try {
                     carSpentMoreMoney();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyExitMovement &e) {
                     cout << "EXCEPTION: There are no exit movements." << endl;
@@ -828,6 +884,7 @@ void SystemNetwork::manageStatistics() {
                 utils->clrScreen();
                 try {
                     HighwayMoreMoves();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyMovement &e) {
                     cout << "EXCEPTION: There are no movements." << endl;
@@ -837,6 +894,7 @@ void SystemNetwork::manageStatistics() {
                 utils->clrScreen();
                 try {
                     TollMoreMoves();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyMovement &e) {
                     cout << "EXCEPTION: There are no movements." << endl;
@@ -846,6 +904,7 @@ void SystemNetwork::manageStatistics() {
                 utils->clrScreen();
                 try {
                     LaneMoreMoves();
+                    utils->clrScreen();
                 }
                 catch (DontExistAnyMovement &e) {
                     cout << "EXCEPTION: There are no movements." << endl;
@@ -854,6 +913,7 @@ void SystemNetwork::manageStatistics() {
             case 8:
                 utils->clrScreen();
                 ownerMoreVehicles();
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -892,7 +952,7 @@ void SystemNetwork::updateHighway() {
         while (s_name != "EXIT") {
             cout << "Input the highway name: (if you want to exit without updating a highway please input EXIT)" << endl;
             getline(cin, s_name);
-            if (s_name != "EXIT" && highways->checkHighwayName(s_name)) {
+            if (s_name != "EXIT" && !highways->checkHighwayName(s_name)) {
                 highways->getHighwayIndex(index)->setName(s_name);
                 cout << "Highway updated with success!" << endl;
                 utils->waitForInput();
@@ -946,7 +1006,7 @@ void SystemNetwork::createToll(Highway *highway) {
     while (!(s_name == "EXIT" || kilometer == -1 || i_type == 0)) {
         cout << "Input the toll's name: (if you want to exit without creating a toll please input EXIT)" << endl;
         getline(cin, s_name);
-        if (s_name != "EXIT" && highway->checkTollName(s_name)) {
+        if (s_name != "EXIT" && !highway->checkTollName(s_name)) {
             cout << "Input the toll's geographic location: (if you want to exit without creating a toll please input EXIT)"<< endl;
             getline(cin, s_geolocal);
             if (s_geolocal != "EXIT") {
@@ -967,7 +1027,7 @@ void SystemNetwork::createToll(Highway *highway) {
             }
         }
         if(!(s_name == "EXIT" || kilometer == -1 || i_type == 0))
-            cout << "ERROR: name of highway already exists." << endl;
+            cout << "ERROR: name of toll already exists." << endl;
     }
 }
 
@@ -1433,11 +1493,7 @@ int SystemNetwork::adviceEntryLane(Toll * toll, Date * date) {
                         counter++;
             }
         }
-        if (min == -1) {
-            min = counter;
-            index = i;
-        }
-        else if (counter < min) {
+        if (min == -1 || counter < min) {
             min = counter;
             index = i;
         }
@@ -1516,7 +1572,7 @@ void SystemNetwork::addEntryMovement() {
             continue;
         }
         while (s_name.empty()) {
-            cout << "Input the owner of the vehicle: (if you want to exit without creating a employee please input EXIT)"
+            cout << endl << "Input the owner of the vehicle: (if you want to exit without creating a employee please input EXIT)"
                  << endl;
             getline(cin, s_name);
         }
@@ -1625,7 +1681,7 @@ void SystemNetwork::addExitMovement() {
         lane_index = adviceOutLane(entry->getVehicle(), toll, date);
         cout << "Our advice: Lane " << lane_index << ". (Lane with less traffic)" << endl;
         do {
-            lane = chooseLane(toll);
+            lane = chooseLane(toll,adviceEntryLane(toll, date));
             if (lane == nullptr) {
                 s_plate = "EXIT";
                 break;
@@ -2116,16 +2172,23 @@ void SystemNetwork::LaneMoreMoves() {
 void SystemNetwork::manageInterventions() {
     int index;
     do {
+        utils->clrScreen();
         index = utils->ShowMenu({"Add Intervention", "Conclude Intervention", "Read Interventions"});
         switch(index) {
             case 1:
+                utils->clrScreen();
                 addIntervention();
+                utils->clrScreen();
                 break;
             case 2:
+                utils->clrScreen();
                 concludeIntervention();
+                utils->clrScreen();
                 break;
             case 3:
+                utils->clrScreen();
                 manageReadInterventions();
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -2139,16 +2202,24 @@ void SystemNetwork::manageReadInterventions() {
         index = utils->ShowMenu({"Read All Interventions", "Read One-day Interventions", "Interventions by Type", "Interventions by a Technician"});
         switch(index) {
             case 1:
+                utils->clrScreen();
                 readInterventions();
+                utils->clrScreen();
                 break;
             case 2:
+                utils->clrScreen();
                 readInterventionsDay();
+                utils->clrScreen();
                 break;
             case 3:
+                utils->clrScreen();
                 readInterventionsType();
+                utils->clrScreen();
                 break;
             case 4:
+                utils->clrScreen();
                 readInterventionsTechnician();
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -2162,16 +2233,24 @@ void SystemNetwork::manageTechnicians() {
         index = utils->ShowMenu({"Create Technician", "Read Technician", "Update Technician", "Delete Technician"});
         switch(index) {
             case 1:
+                utils->clrScreen();
                 createTechnician();
+                utils->clrScreen();
                 break;
             case 2:
+                utils->clrScreen();
                 readTechnicians();
+                utils->clrScreen();
                 break;
             case 3:
+                utils->clrScreen();
                 updateTechnician();
+                utils->clrScreen();
                 break;
             case 4:
+                utils->clrScreen();
                 deleteTechnician();
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -2185,12 +2264,17 @@ void SystemNetwork::manageOwners() {
         index = utils->ShowMenu({"Read Owners","Manage Owner"});
         switch(index) {
             case 1:
+                utils->clrScreen();
                 manageReadOwners();
+                utils->clrScreen();
                 break;
             case 2:
+                utils->clrScreen();
                 index = utils->ShowMenu(owners->showOwners())-1;
+                utils->clrScreen();
                 if (index < 0) break;
                 manageOwner(owners->getOwner(index));
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -2204,13 +2288,19 @@ void SystemNetwork::manageReadOwners() {
         index = utils->ShowMenu({"Read all owners","Read owners by quantity of vehicles", "Owner of a vehicle"});
         switch(index) {
             case 1:
+                utils->clrScreen();
                 readOwners();
+                utils->clrScreen();
                 break;
             case 2:
+                utils->clrScreen();
                 readOwnersNumVehicles();
+                utils->clrScreen();
                 break;
             case 3:
+                utils->clrScreen();
                 readOwnerVehicle();
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -2224,13 +2314,19 @@ void SystemNetwork::manageOwner(Owner o1) {
         index = utils->ShowMenu({"Add Vehicle", "Read Vehicles","Remove Vehicle"});
         switch(index) {
             case 1:
+                utils->clrScreen();
                 addVehicleOwner(o1);
+                utils->clrScreen();
                 break;
             case 2:
+                utils->clrScreen();
                 readVehiclesOwner(o1);
+                utils->clrScreen();
                 break;
             case 3:
+                utils->clrScreen();
                 deleteVehicleOwner(o1);
+                utils->clrScreen();
                 break;
         }
     } while(index);
@@ -2307,6 +2403,7 @@ void SystemNetwork::readInterventions() {
    vector<string> v = interventions->showInterventions();
    for (string s: v)
        cout << s << endl;
+   utils->waitForInput();
 }
 
 
@@ -2314,10 +2411,22 @@ void SystemNetwork::readInterventions() {
 void SystemNetwork::readInterventionsDay() {
     cout << "Please input the year of interventions." << endl;
     int year = utils->getNumber(2021);
+    if (year == -1) {
+        utils->waitForInput();
+        return;
+    }
     cout << "Please input the month of interventions." << endl;
     int month = utils->getNumber(12);
+    if (month == -1) {
+        utils->waitForInput();
+        return;
+    }
     cout << "Please input the day of interventions." << endl;
     int day = utils->getNumber(31);
+    if (day == -1) {
+        utils->waitForInput();
+        return;
+    }
     Date* date = new Date(year,month,day);
     BST<Intervention> bst = interventions->getInterventions();
     bool check = false;
@@ -2406,6 +2515,7 @@ void SystemNetwork::createTechnician() {
         if (s_name == "EXIT")
             continue;
         else if (!s_name.empty() && highways->checkTechnicianName(s_name)) {
+            utils->clrScreen();
             index = utils->ShowMenu({"Review Technician","Electronics Technician","Informatic Technician"});
             if (index == 0) break;
             switch (index) {
@@ -2501,17 +2611,17 @@ void SystemNetwork::updateTechnician() {
                 if (s_name == "EXIT")
                     continue;
                 else if (!s_name.empty() && t->checkTechnicianName(s_name)) {
-                    technician->setName(s_name);
                     t->deleteTechnician(t_name);
+                    technician->setName(s_name);
                     t->addTechnician(technician);
-                    cout << "Technician created with success!" << endl;
+                    cout << "Technician updated with success!" << endl;
                     break;
                 }
             }
             utils->waitForInput();
             break;
         case 2:
-            cout << "Input the technician name: (if you want to exit without creating a employee please input EXIT)" << endl;
+            cout << "Input the technician specialty: (if you want to exit without creating a employee please input EXIT)" << endl;
             index = utils->ShowMenu({"Review Technician","Electronics Technician","Informatic Technician"});
             if (index == 0) break;
             switch (index) {
@@ -2529,7 +2639,7 @@ void SystemNetwork::updateTechnician() {
                 technician->setSpecialty(s_type);
                 t->deleteTechnician(t_name);
                 t->addTechnician(technician);
-                cout << "Technician created with success!" << endl;
+                cout << "Technician updated with success!" << endl;
             }
             utils->waitForInput();
             break;
@@ -2568,6 +2678,7 @@ void SystemNetwork::readOwners() {
     vector<string> v = owners->showOwners();
     for (const string& s: v)
         cout << s << endl;
+    utils->waitForInput();
 }
 
 
@@ -2653,15 +2764,17 @@ void SystemNetwork::addVehicleOwner(Owner &o1) {
 
 
 void SystemNetwork::readVehiclesOwner(Owner &o1) {
+
     for (Vehicle* vehicle : o1.getVehicles())
         cout << vehicle->showVehicle() << endl;
+    utils->waitForInput();
 }
 
 
 
 void SystemNetwork::deleteVehicleOwner(Owner &o1) {
     owners->deleteOwner(o1);
-    int index = utils->ShowMenu(o1.showVehicles());
+    int index = utils->ShowMenu(o1.showVehicles()) -1;
     if (o1.deleteVehicle(index)) {
         owners->addOwner(o1);
         cout << "Vehicle deleted with success!" << endl;

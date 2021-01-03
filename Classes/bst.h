@@ -1,5 +1,5 @@
-#ifndef AEDA2020_PORTAGENS_BST_H
-#define AEDA2020_PORTAGENS_BST_H
+#ifndef _BST_H_
+#define _BST_H_
 
 #include <iostream>
 #include <stack>
@@ -556,4 +556,5 @@ bool iteratorBST<Comparable>:: operator!=(const iteratorBST<Comparable> &it2) co
     return itrStack != it2.itrStack;
 }
 
-#endif //AEDA2020_PORTAGENS_BST_H
+
+#endif

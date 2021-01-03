@@ -38,10 +38,11 @@ bool Owner::deleteVehicle(string plate) {
 }
 
 bool Owner::deleteVehicle(int index) {
-    if (index >= vehicles.size())
+    if (index >= vehicles.size() || index < 0)
         return false;
-    vehicles.erase(vehicles.begin()+index);
-    return true;
+    if (vehicles.erase(vehicles.begin()+index) != vehicles.end())
+        return true;
+    return false;
 }
 
 bool Owner::operator==(const Owner& o1) {

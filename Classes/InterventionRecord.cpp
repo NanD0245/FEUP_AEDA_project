@@ -3,15 +3,16 @@
 //
 
 #include "InterventionRecord.h"
+#include "Utils.h"
 
-InterventionRecord::InterventionRecord() : interventions(Intervention("", nullptr, nullptr, nullptr, nullptr)) {}
+InterventionRecord::InterventionRecord() : interventions(Intervention("", new Highway(""), new Toll("","",0,0), new Date(0,0,0),new Date(0,0,0),new Technician("",""),0,false)) {}
 
 bool InterventionRecord::addIntervention(const Intervention& i1) {
-    return interventions.insert(i1) ? true : false;
+    return interventions.insert(i1);
 }
 
 bool InterventionRecord::removeIntervention(const Intervention& i1) {
-    return interventions.remove(i1) ? true : false;
+    return interventions.remove(i1);
 }
 
 vector<string> InterventionRecord::showInterventions() {
@@ -38,9 +39,11 @@ vector<string> InterventionRecord::showInterventionsNotConcluded() {
 
 Intervention InterventionRecord::getIntervention(int indexIn) {
     for (auto it = BSTItrIn<Intervention>(interventions); !it.isAtEnd(); it.advance()){
-        if (!indexIn)
+        if (indexIn == 0 && !it.retrieve().getState()) {
             return it.retrieve();
-        indexIn--;
+        }
+        if (!it.retrieve().getState())
+            indexIn--;
     }
     return Intervention("", nullptr, nullptr, nullptr, nullptr);
 }

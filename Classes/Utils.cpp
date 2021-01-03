@@ -16,8 +16,9 @@ int Utils::getNumber(int max) {
         do {
             getline(cin, s_index);
         } while(s_index.empty());
+        if (s_index == "EXIT") return -1;
         for (size_t i = 0; i < s_index.size(); i++) {
-            if (s_index[i] < 48 || s_index[i] > 57 || s_index == "") {
+            if (s_index[i] < 48 || s_index[i] > 57) {
                 cout << "Error: Invalid input." << endl;
                 check = true;
                 break;
@@ -44,7 +45,8 @@ int Utils::ShowMenu(vector<string> menu) {
     }
     cout << "0 - Exit" << endl << endl;
     int index = getNumber(menu.size());
-    clrScreen();
+    if (index != 0)
+        clrScreen();
     return index;
 }
 
