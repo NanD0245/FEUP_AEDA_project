@@ -30,7 +30,6 @@ using namespace std;
  * @param employees is the Employee object that stores all the different Employee objects and their info
  */
 class SystemNetwork {
-public:
     HighwayRecord* highways;
     MovementRecord* movements;
     VehicleRecord* vehicles;
@@ -38,9 +37,8 @@ public:
     EmployeeRecord* employees;
     InterventionRecord* interventions;
     OwnerRecord* owners;
-    //TechnicianRecord* technicians;
 
-//public:
+public:
 
     /**
      * The SystemNetwork constructor initializes all of its attributes using its' corresponding classes' constructors.
