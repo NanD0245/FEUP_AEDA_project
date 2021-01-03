@@ -92,7 +92,7 @@ void SystemNetwork::write(){
 
 void SystemNetwork::read(string file) {
     ifstream f(file);
-
+    if (!f.is_open()) {throw FileDoesNotExist(file); }
     int number,code;
     bool tf,movement_type;
     string s,name,speciality, geolocal,plate,date1,date2,date3,date4,date, type, hname, tname, line;
@@ -354,8 +354,12 @@ void SystemNetwork::read(string file) {
         f>>s;
         while(s=="Owner"){
             f>>s;//discard
-            f>>name;
-            f>>s;//discard
+            name = "";
+            while (s != ":") {
+                f >> s;
+                name += s + " ";
+            }
+            name = name.substr(0,name.size()-3);
             ow = new Owner(name);
             getline(f,line);
             stringstream l(line);
@@ -384,22 +388,35 @@ void SystemNetwork::read(string file) {
         while(s=="Intervention"){
             f>>s;//discard
             f>>type;
+            cout << type << endl;
             f>>s;//discard
             f>>hname;
+            cout << hname << endl;
             f>>s;//discard
             f>>tname;
+            cout << tname << endl;
             f>>s;//discard
             f>>date1;
+            cout << date1 << " ";
             f>>date2;
+            cout << date2 << endl;
             f>>s;//discard
             f>>date3;
             f>>date4;
+            cout << date3 << " " << date4 << endl;
             f>>s;
-            f>>name;
-            f>>s;//discard
+            name = "";
+            do {
+                f >> s;
+                name += s + " ";
+            } while (s != "-");
+            name = name.substr(0,name.size()-3);
+            cout << name << endl;
             f>>duration;
+            cout << duration << endl;
             f>>s;//discard
             f>>tf;
+            cout << tf << endl;
             h = highways->getHighway(hname);
             t = h->getToll(tname);
             date1 += " " + date2;

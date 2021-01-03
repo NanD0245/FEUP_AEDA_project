@@ -15,7 +15,7 @@ Highway nr1: A1
     1 - 1
   Toll nr3:
   P4 - Aveiro - 55.299999 - 0
-    Technician nr1: Luis - review - 0.000000 - 2
+    Technician nr1: Luis Rego - review - 0.000000 - 2
     Lane nr1:
     0 - 0
     Lane nr2:
@@ -109,7 +109,7 @@ oscar : A2 2 0
 
 INTERVENTIONS
 Intervention nr1:
-review - A1 - P1 - 3/0/2021 21:8:17 - 3/0/2021 21:8:23 - Luis - 0.000000 - 1
+review - A1 - P1 - 3/0/2021 21:8:17 - 3/0/2021 21:8:23 - Luis Rego - 0.000000 - 1
 Intervention nr2:
 informatic - A2 - P4 - 3/0/2021 21:27:36 - 3/0/2021 21:27:45 - Rego - 0.000000 - 1
 Intervention nr3:

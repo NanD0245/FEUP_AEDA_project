@@ -51,8 +51,6 @@ public:
      */
     BST<Intervention> getInterventions();
 
-    bool deleteIntervention(int indexIn);
-
 };
 
 
