@@ -83,9 +83,6 @@ int main(int argc, char* argv[]) {
     system.read(file);
 
 
-
-
-
     /*system.highways->addHighway("A1");
     Highway* h1 = system.highways->getHighwayIndex(0);
     system.highways->addHighway("A2");

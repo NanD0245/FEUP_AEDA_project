@@ -47,7 +47,7 @@ bool Owner::deleteVehicle(int index) {
 bool Owner::operator==(const Owner& o1) {
     return name == o1.getName();
 }
-#include <iostream>
+
 string Owner::getInfo() const{
     string s = name+" : ";
     for(auto vehicle : vehicles){
