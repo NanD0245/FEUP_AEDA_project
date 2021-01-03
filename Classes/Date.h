@@ -33,6 +33,8 @@ public:
      */
     Date(string date);
 
+    Date(int year, int month, int day);
+
     /**
      * @return 'year' attribute
      */
@@ -73,7 +75,7 @@ public:
     /**
      * @brief Overloads the '==' operator to be able to know if two different dates are the same
      * @param d1 Object of class Date to compare the current object to
-     * @return true if the year, month and day are the same on both objects, false otherwise
+     * @return true if the year, month, day, hour, minute, second are the same on both objects, false otherwise
      */
     bool operator==(Date d1) const;
 
@@ -86,7 +88,7 @@ public:
 
     bool operator<(Date d1) const;  // only used with the BST!!!
                                     // just compare year, month and day !!
-    bool equal(Date d1) const;      // only used with BST!!!
+    bool dayEqual(Date d1) const;      // only used with BST!!!
                                     // just compare year, month and day !!
     int operator-(Date const& d1);
 };

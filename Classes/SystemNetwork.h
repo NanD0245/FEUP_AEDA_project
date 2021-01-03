@@ -451,6 +451,16 @@ public:
      * Allows the user to read all owners or select one of them to manage
      */
     void manageOwners();
+
+    /**
+     * Allows the user to read all interventions, on a single day, by type, or by a single technician
+     */
+    void manageReadInterventions();
+
+    /**
+     * Allows the user to read all owners, by quantity of vehicles or by ownership of a specific vehicle
+     */
+    void manageReadOwners();
     /**
      * Allows the user to add a vehicle to a certain owner, read all vehicles that a owner has, or
      * remove one of the owner's vehicles
@@ -471,6 +481,21 @@ public:
      * Reads all interventions
      */
     void readInterventions();
+
+    /**
+     * Reads interventions on a single day
+     */
+    void readInterventionsDay();
+
+    /**
+     * Reads interventions by a technician
+     */
+    void readInterventionsTechnician();
+
+    /**
+     * Reads interventions by type
+     */
+    void readInterventionsType();
 
     /**
      * Creates a new Technician object
@@ -513,11 +538,25 @@ public:
     void deleteOwner();
 
     /**
+     * Reads owners by number of vehicles
+     */
+    void readOwnersNumVehicles();
+
+    /**
+     * Reads an owner by ownership of a specific vehicle
+     */
+    void readOwnerVehicle();
+
+    /**
      * Adds a certain vehicle to the Owner o1
      * @param o1 is a Owner object
      */
     void addVehicleOwner(Owner& o1);
 
+    /**
+     * Updates the owner of a certain vehicle
+     * @param o1 is the new owner
+     */
     void updateVehicleOwner(Owner& o1);
 
     /**
@@ -531,6 +570,12 @@ public:
      * @param o1 is the Owner object
      */
     void deleteVehicleOwner(Owner& o1);
+
+    /**
+     * Shows the user the owner with the most vehicles
+     */
+    void ownerMoreVehicles();
+
 };
 
 

@@ -2,6 +2,8 @@ HIGHWAYS
 Highway nr1: A1
   Toll nr1:
   P1 - Porto - 0.500000 - 0
+    Technician nr1: Fernando - review - 0.000000 - 0
+    Technician nr2: Luis - informatic - 0.000000 - 0
     Lane nr1:
     0 - 0
     Lane nr2:
@@ -27,6 +29,8 @@ Highway nr1: A1
 Highway nr2: A2
   Toll nr1:
   P1 - Lisboa - 0.300000 - 0
+    Technician nr1: Santos - informatic - 0.000000 - 0
+    Technician nr2: Rego - eletronic - 0.000000 - 0
     Lane nr1:
     0 - 0
     Lane nr2:
@@ -62,8 +66,24 @@ Vehicle nr4:
 A4 - 3 - 1
 Vehicle nr5: 
 A5 - 4 - 1
+Vehicle nr6: 
+A6 - 3 - 1
 
 MOVEMENTS
+Movement nr1: 
+12/5/2020 23:30:00 - A1 - P2 - 0 - A3 - 54.799999 - 8.220000 - 12/5/2020 20:00:05 - A1 - P4 - 0 - A3
+Movement nr2: 
+12/5/2020 11:30:00 - A1 - P3 - 0 - A1 - 55.099998 - 6.612000 - 12/5/2020 8:00:05 - A1 - P1 - 0 - A1
+Movement nr3: 
+12/5/2020 20:00:05 - A1 - P3 - 1 - A3 - 55.099998 - 8.265000 - 12/5/2020 20:00:05 - A1 - P1 - 0 - A3
+Movement nr4: 
+12/5/2020 20:00:05 - A2 - P3 - 0 - A4 - 158.899994 - 31.779999 - 12/5/2020 20:00:05 - A2 - P1 - 0 - A4
+Movement nr5: 
+12/5/2020 20:00:05 - A2 - P2 - 0 - A5 - 158.600006 - 47.580002 - 12/5/2020 20:00:05 - A2 - P4 - 1 - A5
+Movement nr6: 
+2/0/2021 19:55:47 - A1 - P2 - 0 - A1 - 0.000000 - 0.000000 - 2/0/2021 19:55:32 - A1 - P1 - 0 - A1
+Movement nr7: 
+3/0/2021 0:38:59 - A2 - P2 - 1 - A2 - 0.400000 - 0.060000 - 3/0/2021 0:37:53 - A2 - P1 - 1 - A2
 
 EMPLOYEES
 Employee nr1:
@@ -77,6 +97,18 @@ Rego - 3
 
 OWNERS
 Owner nr1:
-Rego - 3
+Fernando : A1 1 1 A3 2 0
+Owner nr2:
+Luis : A2 2 0
 
 INTERVENTIONS
+Intervention nr1:
+informatic - A2 - P2 - 12/5/2020 8:00:05 - 12/5/2020 11:30:00 - Santos - 210.000000 - 1
+Intervention nr2:
+informatic - A1 - P1 - 12/5/2020 20:00:05 - 12/5/2020 23:30:00 - Luis - 210.000000 - 1
+Intervention nr3:
+review - A1 - P2 - 12/5/2020 20:00:05 - 12/5/2020 23:30:00 - Luis - 210.000000 - 1
+Intervention nr4:
+informatic - A1 - P2 - 12/5/2020 20:00:05 - 12/5/2020 23:30:00 - Luis - 210.000000 - 1
+Intervention nr5:
+informatic - A2 - P1 - 12/5/2020 20:00:05 - 12/5/2020 23:30:00 - Santos - 210.000000 - 1

@@ -1,9 +1,8 @@
 <map id="getYear" name="getYear">
-<area shape="rect" id="node1" title=" " alt="" coords="337,107,404,133"/>
-<area shape="rect" id="node2" href="$class_date.html#abcf918573e3a845415cb832f9c1cc6ed" title=" " alt="" coords="220,5,273,32"/>
-<area shape="rect" id="node4" href="$class_date.html#a48ce4b74108077a73ccffc6622e4570c" title=" " alt="" coords="210,56,283,83"/>
-<area shape="rect" id="node5" href="$class_date.html#af467e41464ffc6a1b952a9c1e856a1cc" title=" " alt="" coords="208,107,285,133"/>
-<area shape="rect" id="node6" href="$class_date.html#a5a6128da69ba5ab894043f8dec7ad2d7" title="Overloads the &#39;==&#39; operator to be able to know if two different dates are the same." alt="" coords="204,157,289,184"/>
-<area shape="rect" id="node7" href="$class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="208,208,285,235"/>
-<area shape="rect" id="node3" href="$class_intervention.html#afb7d055c8050fc207dd6b8a8b728ec41" title=" " alt="" coords="5,5,156,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="139,107,205,133"/>
+<area shape="rect" id="node2" href="$class_date.html#a9455f420fbc21b963eedc80d2d696c2f" title=" " alt="" coords="10,5,86,32"/>
+<area shape="rect" id="node3" href="$class_date.html#a48ce4b74108077a73ccffc6622e4570c" title=" " alt="" coords="11,56,85,83"/>
+<area shape="rect" id="node4" href="$class_date.html#af467e41464ffc6a1b952a9c1e856a1cc" title=" " alt="" coords="9,107,87,133"/>
+<area shape="rect" id="node5" href="$class_date.html#a5a6128da69ba5ab894043f8dec7ad2d7" title="Overloads the &#39;==&#39; operator to be able to know if two different dates are the same." alt="" coords="5,157,91,184"/>
+<area shape="rect" id="node6" href="$class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="9,208,87,235"/>
 </map>

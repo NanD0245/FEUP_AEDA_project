@@ -83,6 +83,12 @@ public:
     Date* getEndDate() const;
 
     /**
+     * @return Technician object associated with current Intervention
+     */
+
+
+    Technician* getTechnician() const;
+    /**
      * @return duration attribute
      */
     float getDuration() const;

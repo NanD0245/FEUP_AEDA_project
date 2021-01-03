@@ -5,7 +5,7 @@ var searchData=
   ['checkemployeename_35',['checkEmployeeName',['../class_employee_record.html#a257085246850522442d7ade1c8f31474',1,'EmployeeRecord']]],
   ['checkhighwayname_36',['checkHighwayName',['../class_highway_record.html#a7a2e12791ed9255223936ecffc75be03',1,'HighwayRecord']]],
   ['checkplate_37',['checkPlate',['../class_owner_record.html#adb25708ce5e1fcfec74d924f602b1581',1,'OwnerRecord::checkPlate()'],['../class_vehicle_record.html#adb25708ce5e1fcfec74d924f602b1581',1,'VehicleRecord::checkPlate()']]],
-  ['checktechnicianname_38',['checkTechnicianName',['../class_toll.html#ab7f01a9c32fa1c20b439681707e468ea',1,'Toll']]],
+  ['checktechnicianname_38',['checkTechnicianName',['../class_highway.html#ab7f01a9c32fa1c20b439681707e468ea',1,'Highway::checkTechnicianName()'],['../class_highway_record.html#ab7f01a9c32fa1c20b439681707e468ea',1,'HighwayRecord::checkTechnicianName()'],['../class_toll.html#ab7f01a9c32fa1c20b439681707e468ea',1,'Toll::checkTechnicianName()']]],
   ['checktollname_39',['checkTollName',['../class_highway.html#a3aae234dffa902de08280074fb6597e0',1,'Highway']]],
   ['choosehighway_40',['chooseHighway',['../class_system_network.html#a3df2514f2e90ad3427daee92f1175e07',1,'SystemNetwork']]],
   ['chooseindexemployee_41',['chooseIndexEmployee',['../class_system_network.html#af1df87c42fe7574739def0580c706eed',1,'SystemNetwork']]],

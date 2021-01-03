@@ -23,9 +23,10 @@ void SystemNetwork::write(){
         for(int j=0;j<highways->getHighwayIndex(i)->getNumTolls();j++){
             f<< "  Toll nr"<<j+1<<":"<<endl;
             f<<"  "<<highways->getHighwayIndex(i)->getTollIndex(j)->getInfo()<<endl;
-            for(int l=0;l<highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2().size();l++){
-                f<< "    Technician nr"<<l+1<<": "<< highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2()[i];
+            for(int n=0;n < highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2().size();n++){
+                f<< "    Technician nr"<<n+1<<": "<< highways->getHighwayIndex(i)->getTollIndex(j)->readTechniciansv2()[n]<<endl;
             }
+
             for(int k=0;k<highways->getHighwayIndex(i)->getTollIndex(j)->getNumLanes();k++){
                 f<< "    Lane nr"<<k+1<<":"<<endl;
                 f<<"    "<<highways->getHighwayIndex(i)->getTollIndex(j)->getLane(k)->getInfo()<<endl;
@@ -59,7 +60,12 @@ void SystemNetwork::write(){
         f<<employees->getEmployeeIndex(i)->getInfo()<<endl;
     }
 
-    //OWNER
+
+    /*f<<endl<<"OWNERS"<<endl;
+    for(int i=0;i<owners->getNumOwners();i++){
+        f<<"Owner nr"<<i+1<<":"<<endl;
+        f<<owners->getOwner(i).getInfo()<<endl;
+    }*/
     f<<endl<<"OWNERS"<<endl;
     int k=1;
     auto a = owners->getOwners();
@@ -69,23 +75,11 @@ void SystemNetwork::write(){
         f<<it.getInfo()<<endl;
     }
 
-    /*//TECHNICIAN
-    //tolls podem n ter technicians?
-    f<<endl<<"TECHNICIANS"<<endl;
-    for(int i=0;i<highways->getNumHighways();i++){
-        Highway* hw = highways->getHighwayIndex(i);
-        f<<hw->getInfo() << endl;
-        for(int i=0;i<hw->getNumTolls();i++){
-            Toll* t = hw->getTollIndex(i);
-            f<<t->getName() + " : ";
-            auto v = t->readTechnicians();
-        }
-    }*/
-
-    //INTERVENTION
+    //SUM WRONG
     f<<endl<<"INTERVENTIONS"<<endl;
     int j=1;
-    BSTItrIn<Intervention> it(interventions->getInterventions());
+    BST<Intervention> bst = interventions->getInterventions();
+    auto it = BSTItrIn<Intervention>(bst);
     for(; !it.isAtEnd();it.advance()){
         f<< "Intervention nr"<<j<<":"<<endl;
         j++;
@@ -99,7 +93,7 @@ void SystemNetwork::read(string file) {
 
     int number,code;
     bool tf,movement_type;
-    string s,name,speciality, geolocal,plate,date1,date2,date, type, hname, tname;
+    string s,name,speciality, geolocal,plate,date1,date2,date3,date4,date, type, hname, tname, line;
     float highway_kilometer,tax1,tax2,tax3,tax4 , performance, duration;
 
     Toll* t;
@@ -140,14 +134,14 @@ void SystemNetwork::read(string file) {
                 f >> s;//discard (nr:)
                 f >> s;
                 name = "";
-                while (!(s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
+                while (!(s == "Technician" || s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
                     name += s + " ";
                     f >> s;
                 }
                 name.pop_back();
                 f >> s;
                 geolocal = "";
-                while (!(s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
+                while (!(s == "Technician" || s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
                     geolocal += s + " ";
                     f >> s;
                 }
@@ -163,8 +157,13 @@ void SystemNetwork::read(string file) {
                 f >> s;
                 while(s == "Technician"){
                     f >> s;//discard (nr:)
-                    f >> name;
-                    f >> s;//discard (-)
+                    f >> s;
+                    name = "";
+                    while (!(s == "Technician" || s == "-" || s == "Lane" ||s == "Toll" || s == "Highway" || s == "VEHICLE" || s == "MOVEMENTS" || s == "EMPLOYEES")) {
+                        name += s + " ";
+                        f >> s;
+                    }
+                    name.pop_back();
                     f >> speciality;
                     f >> s;//discard (-)
                     f >> performance;
@@ -177,10 +176,6 @@ void SystemNetwork::read(string file) {
                     t->addTechnician(tech);
 
                     f >> s;
-
-                    if(s != "Technician"){
-                        break;
-                    }
                 }
 
                 while (s == "Lane") {//Lane
@@ -350,9 +345,6 @@ void SystemNetwork::read(string file) {
             }
             e=new Employee(name,code);
             employees->addEmployee(e);
-            if(f.eof()){
-                break;
-            }
             f>>s;
         }
     }
@@ -363,16 +355,18 @@ void SystemNetwork::read(string file) {
             f>>name;
             f>>s;//discard
             ow = new Owner(name);
-            getline(f,s);
-            name="";
-            for(int i=0;i<s.size();i++){
-                if(s[i]!=' '){
-                    ow->addVehicle(vehicles->getVehicle(name));
-                    name="";
-                    i+=2;
-                }
-                else{
-                   name+=s[i];
+            getline(f,line);
+            stringstream l(line);
+            while(!l.eof()) {
+                l >> plate;
+                l >> number;
+                l >> tf;
+                v = vehicles->getVehicle(plate);
+                if (v == NULL) {
+                    v = new Vehicle(plate, number, vehicles->getTaxes(number));
+                    ow->addVehicle(v);
+                } else {
+                    ow->addVehicle(v);
                 }
             }
             owners->addOwner(*ow);
@@ -380,6 +374,10 @@ void SystemNetwork::read(string file) {
         }
     }
     if(s=="INTERVENTIONS"){
+        if(f.eof()){
+            f.close();
+            return;
+        }
         f>>s;
         while(s=="Intervention"){
             f>>s;//discard
@@ -390,24 +388,31 @@ void SystemNetwork::read(string file) {
             f>>tname;
             f>>s;//discard
             f>>date1;
-            f>>s;//discard
             f>>date2;
             f>>s;//discard
+            f>>date3;
+            f>>date4;
+            f>>s;
             f>>name;
             f>>s;//discard
             f>>duration;
             f>>s;//discard
             f>>tf;
-
             h = highways->getHighway(hname);
             t = h->getToll(tname);
+            date1 += " " + date2;
             d = new Date(date1);
-            dd = new Date(date2);
+            date3 += " " + date4;
+            dd = new Date(date3);
 
-            tech = t->getTechnicianName(name);
+            tech = h->getTechnicianName(name);
 
             itv = new Intervention(type,h,t,d,dd,tech,duration,tf);
+
             interventions->addIntervention(*itv);
+            if(f.eof()){
+                break;
+            }
             f>>s;
         }
     }
@@ -782,7 +787,7 @@ void SystemNetwork::manageStatistics() {
     do {
         index = utils->ShowMenu({"Best Worth Highway", "Best Worth Toll", "Best Worth Lane",
                                  "Vehicle that spend most money","Highway with more movements", "Toll with more movements",
-                                 "Lane with more movements"});
+                                 "Lane with more movements","Owner with more vehicles"});
         switch (index) {
             case 1:
                 utils->clrScreen();
@@ -846,6 +851,10 @@ void SystemNetwork::manageStatistics() {
                 catch (DontExistAnyMovement &e) {
                     cout << "EXCEPTION: There are no movements." << endl;
                 }
+                break;
+            case 8:
+                utils->clrScreen();
+                ownerMoreVehicles();
                 break;
         }
     } while(index);
@@ -1420,7 +1429,7 @@ int SystemNetwork::adviceEntryLane(Toll * toll, Date * date) {
         counter = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
             if (*movements->getMovementIndex(j)->getToll() ==  *toll) {
-                if (*(movements->getMovementIndex(j)->getDate()) == *date)
+                if (movements->getMovementIndex(j)->getDate()->dayEqual(*date))
                     if (*movements->getMovementIndex(j)->getLane() == *toll->getLane(i))
                         counter++;
             }
@@ -1446,7 +1455,7 @@ int SystemNetwork::adviceOutLane(Vehicle* vehicle, Toll * toll, Date * date) {
         counter = 0;
         for (size_t j = 0; j < movements->getNumMovements(); j++) {
             if (*movements->getMovementIndex(j)->getToll() ==  *toll) {
-                if (*(movements->getMovementIndex(j)->getDate()) == *date)
+                if (movements->getMovementIndex(j)->getDate()->dayEqual(*date))
                     if (*movements->getMovementIndex(j)->getLane() == *toll->getLane(i))
                         counter++;
             }
@@ -1496,10 +1505,12 @@ void SystemNetwork::addEntryMovement() {
                     counter++;
                 }
             }
+            cout << counter << endl;
             if (counter % 2 == 1) {
+                cout << "entrei" << endl;
                 vehicle = nullptr;
             }
-            else if (counter % 2 == 0 && counter == 0) {
+            else if (counter % 2 == 0 || counter == 0) {
                 vehicle = vehicles->getVehicle(s_plate);
             }
         }
@@ -2091,7 +2102,28 @@ void SystemNetwork::manageInterventions() {
                 concludeIntervention();
                 break;
             case 3:
+                manageReadInterventions();
+                break;
+        }
+    } while(index);
+}
+
+void SystemNetwork::manageReadInterventions() {
+    int index;
+    do {
+        index = utils->ShowMenu({"Read All Interventions", "Read One-day Interventions", "Interventions by Type", "Interventions by a Technician"});
+        switch(index) {
+            case 1:
                 readInterventions();
+                break;
+            case 2:
+                readInterventionsDay();
+                break;
+            case 3:
+                readInterventionsType();
+                break;
+            case 4:
+                readInterventionsTechnician();
                 break;
         }
     } while(index);
@@ -2124,11 +2156,31 @@ void SystemNetwork::manageOwners() {
         index = utils->ShowMenu({"Read Owners","Manage Owner"});
         switch(index) {
             case 1:
-                readOwners();
+                manageReadOwners();
                 break;
             case 2:
                 index = utils->ShowMenu(owners->showOwners())-1;
+                if (index < 0) break;
                 manageOwner(owners->getOwner(index));
+                break;
+        }
+    } while(index);
+}
+
+
+void SystemNetwork::manageReadOwners() {
+    int index;
+    do {
+        index = utils->ShowMenu({"Read all owners","Read owners by quantity of vehicles", "Owner of a vehicle"});
+        switch(index) {
+            case 1:
+                readOwners();
+                break;
+            case 2:
+                readOwnersNumVehicles();
+                break;
+            case 3:
+                readOwnerVehicle();
                 break;
         }
     } while(index);
@@ -2137,7 +2189,7 @@ void SystemNetwork::manageOwners() {
 void SystemNetwork::manageOwner(Owner o1) {
     int index;
     do {
-        index = utils->ShowMenu({"Add Vehicle", "Read Vehicles", /*"Update Vehicle",*/ "Remove Vehicle"});//, "Manage Owner"});
+        index = utils->ShowMenu({"Add Vehicle", "Read Vehicles","Remove Vehicle"});
         switch(index) {
             case 1:
                 addVehicleOwner(o1);
@@ -2145,10 +2197,7 @@ void SystemNetwork::manageOwner(Owner o1) {
             case 2:
                 readVehiclesOwner(o1);
                 break;
-            /*case 3:
-                updateVehicleOwner(o1);
-                break;*/
-            case 4:
+            case 3:
                 deleteVehicleOwner(o1);
                 break;
         }
@@ -2222,6 +2271,83 @@ void SystemNetwork::readInterventions() {
        cout << s << endl;
 }
 
+void SystemNetwork::readInterventionsDay() {
+    cout << "Please input the year of interventions" << endl;
+    int year = utils->getNumber(2021);
+    cout << "Please input the month of interventions" << endl;
+    int month = utils->getNumber(12);
+    cout << "Please input the day of interventions" << endl;
+    int day = utils->getNumber(31);
+    Date* date = new Date(year,month,day);
+    BST<Intervention> bst = interventions->getInterventions();
+    bool check = false;
+    for (auto it = BSTItrIn<Intervention>(bst); !it.isAtEnd(); it.advance())
+        if (it.retrieve().getStartDate()->dayEqual(*date)) {
+            check = true;
+            Intervention i = it.retrieve();
+            cout << i.showIntervention() << endl;
+        }
+    if (!check)
+        cout << "There is no intervention on this day." << endl;
+    utils->waitForInput();
+}
+
+
+void SystemNetwork::readInterventionsTechnician() {
+    string s_name;
+    cout << "Input the technician name: (if you want to exit without creating a employee please input EXIT)" << endl;
+    do {
+        getline(cin, s_name);
+    } while(s_name.empty());
+    if (s_name == "EXIT") return;
+    BST<Intervention> bst = interventions->getInterventions();
+    for (auto it = BSTItrIn<Intervention>(bst); !it.isAtEnd(); it.advance()) {
+        if (it.retrieve().getTechnician()->getName() == s_name) {
+            string s = "Start Date: " + it.retrieve().getStartDate()->getInfo() + " - Specialty: " + it.retrieve().getType() +
+                    " - " + it.retrieve().getHighway()->showHighway() +
+                    " - Toll Name: " + it.retrieve().getToll()->getName() + " - Technician: " + it.retrieve().getTechnician()->showTechnician();
+            if (it.retrieve().getState())
+                s += "\n\t\tEnd Date: " + it.retrieve().getEndDate()->getInfo() + " - Duration: " + to_string(it.retrieve().getDuration());
+            cout << s << endl;
+        }
+    }
+    utils->waitForInput();
+}
+
+
+void SystemNetwork::readInterventionsType() {
+    string s_type;
+    int index = utils->ShowMenu({"Review Technician","Electronics Technician","Informatic Technician"});
+    if (index == 0) {
+        utils->waitForInput();
+        return;
+    }
+    switch (index) {
+        case 1:
+            s_type = "review";
+            break;
+        case 2:
+            s_type = "eletronic";
+            break;
+        case 3:
+            s_type = "informatic";
+            break;
+    }
+    BST<Intervention> bst = interventions->getInterventions();
+    for (auto it = BSTItrIn<Intervention>(bst); !it.isAtEnd(); it.advance()) {
+        if (it.retrieve().getType() == s_type) {
+            string s = "Start Date: " + it.retrieve().getStartDate()->getInfo() + " - Specialty: " + it.retrieve().getType() +
+                       " - " + it.retrieve().getHighway()->showHighway() +
+                       " - Toll Name: " + it.retrieve().getToll()->getName() + " - Technician: " + it.retrieve().getTechnician()->showTechnician();
+            if (it.retrieve().getState())
+                s += "\n\t\tEnd Date: " + it.retrieve().getEndDate()->getInfo() + " - Duration: " + to_string(it.retrieve().getDuration());
+            cout << s << endl;
+        }
+    }
+    utils->waitForInput();
+}
+
+
 void SystemNetwork::createTechnician() {
     int index;
     Highway* h = chooseHighway();
@@ -2236,7 +2362,7 @@ void SystemNetwork::createTechnician() {
         getline(cin, s_name);
         if (s_name == "EXIT")
             continue;
-        else if (!s_name.empty() && t->checkTechnicianName(s_name)) {
+        else if (!s_name.empty() && highways->checkTechnicianName(s_name)) {
             index = utils->ShowMenu({"Review Technician","Electronics Technician","Informatic Technician"});
             if (index == 0) break;
             switch (index) {
@@ -2394,46 +2520,83 @@ void SystemNetwork::readOwners() {
         cout << s << endl;
 }
 
-void SystemNetwork::addVehicleOwner(Owner &o1) {
-    string s_plate;
-    int v_class, greenlane;
-    while (s_plate != "EXIT") {
-        s_plate = utils->getPlate();
-        if (s_plate != "EXIT") {
-            if (!owners->checkPlate(s_plate) && !vehicles->checkPlate(s_plate)) {
-                cout << "Choose the vehicle class: " << endl;
-                v_class = utils->ShowMenu(
-                        {"Classe 1 - Motas", "Classe 2 - Light vehicle (passengers or goods)", "Class 3 - Bus",
-                         "Class 4 - Heavy goods vehicle "});
-                if (v_class != 0) {
-                    cout << "Choose one of the options: " << endl;
-                    greenlane = utils->ShowMenu(
-                            {"To travel on Green lanes or Normal lanes", "To travel just on Normal lanes"});
-                    if (greenlane != 0) {
-                        if (greenlane == 1) {
-                            auto* v = new Vehicle(s_plate,v_class,true);
-                            vehicles->addVehicle(s_plate, v_class, true); //ver se é preciso mudar isto
-                            o1.addVehicle(v);
-                        } else {
-                            auto* v = new Vehicle(s_plate,v_class,true);
-                            vehicles->addVehicle(s_plate, v_class);
-                            o1.addVehicle(v);
-                        }
-                        cout << "Vehicle created with success!" << endl;
-                        utils->waitForInput();
-                        break;
-                    } else if (greenlane == 0)
-                        s_plate = "EXIT";
-                } else if (v_class == 0)
-                    s_plate = "EXIT";
-            }
-        }
-        if (!(s_plate == "EXIT" || v_class == 0 || greenlane == 0))
-            cout << "ERROR: plate of vehicle already exists." << endl;
-    }
+
+void SystemNetwork::readOwnersNumVehicles() {
+    vector<Owner> v;
+    for (Owner o : owners->getOwners())
+        v.push_back(o);
+    sort(v.begin(),v.end(),[](Owner o1, Owner o2) {
+        if (o1.getNumVehicles() > o2.getNumVehicles())
+            return true;
+        return false;
+    });
+    for (Owner o : v)
+        cout << "Name: " << o.getName() << " - Number of Vehicles: " << o.getNumVehicles() << endl;
+    utils->waitForInput();
 }
 
 
+void SystemNetwork::readOwnerVehicle() {
+    string s_plate;
+    bool check =false;
+    s_plate = utils->getPlate();
+    if (s_plate == "EXIT")
+        return;
+    auto u = owners->getOwners();
+    for (Owner o: u) {
+        check = false;
+        for (Vehicle* v : o.getVehicles())
+            if (v->getPlate() == s_plate) {
+                check = true;
+                break;
+            }
+        if (check) {
+            cout << "Name: " << o.getName() << " - Number of Vehicles: " << o.getNumVehicles() << endl;
+            break;
+        }
+    }
+    if (!check)
+        cout << "ERROR: Owner not found." << endl;
+    utils->waitForInput();
+}
+
+
+void SystemNetwork::addVehicleOwner(Owner &o1) {
+    owners->deleteOwner(o1);
+    vector<Vehicle*> v;
+    vector<string> s;
+    for (int i = 0; i < vehicles->getNumVehicles(); i++) {
+        bool check = false;
+        unordered_set<Owner, ownerHash,ownerHash> a = owners->getOwners();
+        for (Owner o: a) {
+            for (Vehicle* vv : o.getVehicles()) {
+                if (*vv == *vehicles->getVehicleIndex(i)) {
+                    check = true;
+                    break;
+                }
+            }
+            if (check) break;
+        }
+        if (!check) {
+            v.push_back(vehicles->getVehicleIndex(i));
+            s.push_back(vehicles->getVehicleIndex(i)->showVehicle());
+        }
+    }
+    if (v.empty()) {
+        cout << "ERROR: There is no vehicle without owner. If you want a vehicle you have to create in Manage Vehicles." << endl;
+        utils->waitForInput();
+    }
+    int index = utils->ShowMenu(s) -1;
+    if (index < 0) {
+        utils->waitForInput();
+        return;
+    }
+    if (o1.addVehicle(v[index]))
+        cout << "ASDASDASDASD" << endl;
+    cout << "Vehicle added with success!" << endl;
+    owners->addOwner(o1);
+    utils->waitForInput();
+}
 
 void SystemNetwork::readVehiclesOwner(Owner &o1) {
     for (Vehicle* vehicle : o1.getVehicles())
@@ -2441,9 +2604,29 @@ void SystemNetwork::readVehiclesOwner(Owner &o1) {
 }
 
 void SystemNetwork::deleteVehicleOwner(Owner &o1) {
+    owners->deleteOwner(o1);
     int index = utils->ShowMenu(o1.showVehicles());
-    if (o1.deleteVehicle(index))
+    if (o1.deleteVehicle(index)) {
+        owners->addOwner(o1);
         cout << "Vehicle deleted with success!" << endl;
+    }
     utils->waitForInput();
 }
 
+void SystemNetwork::ownerMoreVehicles() {
+    auto u = owners->getOwners();
+    if (u.empty()) {
+        cout << "ERROR: There are no owners" << endl;
+        return;
+    }
+    Owner owner = *u.begin();
+    for (Owner o: u) {
+        if (o.getNumVehicles() > owner.getNumVehicles())
+            owner = o;
+    }
+    cout << "Name: " << owner.getName() << "\nVehicles: ";
+    vector<Vehicle*> v = owner.getVehicles();
+    for (Vehicle* vv: v)
+        cout << vv->showVehicle() << endl;
+    utils->waitForInput();
+}

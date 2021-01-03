@@ -106,6 +106,19 @@ public:
      * @return true if both Highways have the same 'name', false otherwise
      */
     bool operator==(const Highway &l2);
+
+    /**
+     * Checks if there's Technician with name 'name'
+     * @param name is 'name' attribute
+     * @return false if it found one, true otherwise
+     */
+    bool checkTechnicianName(string name);
+    /**
+     * Finds Technician according to its name
+     * @param name of the Technician to find
+     * @return Technician object if it was found, nullptr otherwise
+     */
+    Technician* getTechnicianName(string name);
     /**
      * @brief Returns a vector sorted by highest Distance
      * @param toll is the object of class Toll

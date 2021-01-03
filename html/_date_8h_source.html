@@ -89,48 +89,50 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_date.html">Date</a>(<span class="keywordtype">string</span> date);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> getYear() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> getMonth() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">int</span> getDay() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> getHour() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">int</span> getMinute() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> getSecond() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">string</span> getInfo() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">bool</span> operator==(<a class="code" href="class_date.html">Date</a> d1) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span> operator&gt;(<a class="code" href="class_date.html">Date</a> d1) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> operator&lt;(<a class="code" href="class_date.html">Date</a> d1) <span class="keyword">const</span>;  <span class="comment">// only used with the BST!!!</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                    <span class="comment">// just compare year, month and day !!</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">bool</span> equal(<a class="code" href="class_date.html">Date</a> d1) <span class="keyword">const</span>;      <span class="comment">// only used with BST!!!</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_date.html">Date</a>(<span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> getYear() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> getMonth() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> getDay() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> getHour() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> getMinute() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">int</span> getSecond() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">string</span> getInfo() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">bool</span> operator==(<a class="code" href="class_date.html">Date</a> d1) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> operator&gt;(<a class="code" href="class_date.html">Date</a> d1) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">bool</span> operator&lt;(<a class="code" href="class_date.html">Date</a> d1) <span class="keyword">const</span>;  <span class="comment">// only used with the BST!!!</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                    <span class="comment">// just compare year, month and day !!</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> operator-(<a class="code" href="class_date.html">Date</a> <span class="keyword">const</span>&amp; d1);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif //AEDA2020_PORTAGENS_DATE_H</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">bool</span> dayEqual(<a class="code" href="class_date.html">Date</a> d1) <span class="keyword">const</span>;      <span class="comment">// only used with BST!!!</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                    <span class="comment">// just compare year, month and day !!</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> operator-(<a class="code" href="class_date.html">Date</a> <span class="keyword">const</span>&amp; d1);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif //AEDA2020_PORTAGENS_DATE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_date_html_af03879be57a9dd56e0d96b57451bde0d"><div class="ttname"><a href="class_date.html#af03879be57a9dd56e0d96b57451bde0d">Date::getYear</a></div><div class="ttdeci">int getYear() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:53</div></div>
-<div class="ttc" id="aclass_date_html_a48ce4b74108077a73ccffc6622e4570c"><div class="ttname"><a href="class_date.html#a48ce4b74108077a73ccffc6622e4570c">Date::operator-</a></div><div class="ttdeci">int operator-(Date const &amp;d1)</div><div class="ttdef"><b>Definition:</b> Date.cpp:111</div></div>
-<div class="ttc" id="aclass_date_html_a5a6128da69ba5ab894043f8dec7ad2d7"><div class="ttname"><a href="class_date.html#a5a6128da69ba5ab894043f8dec7ad2d7">Date::operator==</a></div><div class="ttdeci">bool operator==(Date d1) const</div><div class="ttdoc">Overloads the '==' operator to be able to know if two different dates are the same.</div><div class="ttdef"><b>Definition:</b> Date.cpp:67</div></div>
-<div class="ttc" id="aclass_date_html_a1fc6f38817e7cdbfb7164377c978356c"><div class="ttname"><a href="class_date.html#a1fc6f38817e7cdbfb7164377c978356c">Date::getMonth</a></div><div class="ttdeci">int getMonth() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:55</div></div>
-<div class="ttc" id="aclass_date_html_a767721284ced7a47bf4d9dcc2be59712"><div class="ttname"><a href="class_date.html#a767721284ced7a47bf4d9dcc2be59712">Date::getInfo</a></div><div class="ttdeci">string getInfo() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:65</div></div>
-<div class="ttc" id="aclass_date_html_abcf918573e3a845415cb832f9c1cc6ed"><div class="ttname"><a href="class_date.html#abcf918573e3a845415cb832f9c1cc6ed">Date::equal</a></div><div class="ttdeci">bool equal(Date d1) const</div><div class="ttdef"><b>Definition:</b> Date.cpp:107</div></div>
-<div class="ttc" id="aclass_date_html_a693adca157a375f55c1322f99dfd4ce4"><div class="ttname"><a href="class_date.html#a693adca157a375f55c1322f99dfd4ce4">Date::getMinute</a></div><div class="ttdeci">int getMinute() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:61</div></div>
+<div class="ttc" id="aclass_date_html_af03879be57a9dd56e0d96b57451bde0d"><div class="ttname"><a href="class_date.html#af03879be57a9dd56e0d96b57451bde0d">Date::getYear</a></div><div class="ttdeci">int getYear() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:59</div></div>
+<div class="ttc" id="aclass_date_html_a48ce4b74108077a73ccffc6622e4570c"><div class="ttname"><a href="class_date.html#a48ce4b74108077a73ccffc6622e4570c">Date::operator-</a></div><div class="ttdeci">int operator-(Date const &amp;d1)</div><div class="ttdef"><b>Definition:</b> Date.cpp:123</div></div>
+<div class="ttc" id="aclass_date_html_a5a6128da69ba5ab894043f8dec7ad2d7"><div class="ttname"><a href="class_date.html#a5a6128da69ba5ab894043f8dec7ad2d7">Date::operator==</a></div><div class="ttdeci">bool operator==(Date d1) const</div><div class="ttdoc">Overloads the '==' operator to be able to know if two different dates are the same.</div><div class="ttdef"><b>Definition:</b> Date.cpp:73</div></div>
+<div class="ttc" id="aclass_date_html_a1fc6f38817e7cdbfb7164377c978356c"><div class="ttname"><a href="class_date.html#a1fc6f38817e7cdbfb7164377c978356c">Date::getMonth</a></div><div class="ttdeci">int getMonth() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:61</div></div>
+<div class="ttc" id="aclass_date_html_a767721284ced7a47bf4d9dcc2be59712"><div class="ttname"><a href="class_date.html#a767721284ced7a47bf4d9dcc2be59712">Date::getInfo</a></div><div class="ttdeci">string getInfo() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:71</div></div>
+<div class="ttc" id="aclass_date_html_a693adca157a375f55c1322f99dfd4ce4"><div class="ttname"><a href="class_date.html#a693adca157a375f55c1322f99dfd4ce4">Date::getMinute</a></div><div class="ttdeci">int getMinute() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:67</div></div>
+<div class="ttc" id="aclass_date_html_a9455f420fbc21b963eedc80d2d696c2f"><div class="ttname"><a href="class_date.html#a9455f420fbc21b963eedc80d2d696c2f">Date::dayEqual</a></div><div class="ttdeci">bool dayEqual(Date d1) const</div><div class="ttdef"><b>Definition:</b> Date.cpp:119</div></div>
 <div class="ttc" id="a_date_8h_html"><div class="ttname"><a href="_date_8h.html">Date.h</a></div></div>
-<div class="ttc" id="aclass_date_html_a0fe77bb24a2c18834fea732becdd44b9"><div class="ttname"><a href="class_date.html#a0fe77bb24a2c18834fea732becdd44b9">Date::getHour</a></div><div class="ttdeci">int getHour() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:59</div></div>
-<div class="ttc" id="aclass_date_html_aa8df2fd1e1c7066f30e4bc32d343d5c5"><div class="ttname"><a href="class_date.html#aa8df2fd1e1c7066f30e4bc32d343d5c5">Date::getDay</a></div><div class="ttdeci">int getDay() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:57</div></div>
-<div class="ttc" id="aclass_date_html_af467e41464ffc6a1b952a9c1e856a1cc"><div class="ttname"><a href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc">Date::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(Date d1) const</div><div class="ttdef"><b>Definition:</b> Date.cpp:97</div></div>
-<div class="ttc" id="aclass_date_html_adb4b5339222df5b0d46af5fbf4e72b44"><div class="ttname"><a href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44">Date::operator&gt;</a></div><div class="ttdeci">bool operator&gt;(Date d1) const</div><div class="ttdoc">overloads the '&gt;' operator to be able to know if one date is after the other</div><div class="ttdef"><b>Definition:</b> Date.cpp:71</div></div>
+<div class="ttc" id="aclass_date_html_a0fe77bb24a2c18834fea732becdd44b9"><div class="ttname"><a href="class_date.html#a0fe77bb24a2c18834fea732becdd44b9">Date::getHour</a></div><div class="ttdeci">int getHour() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:65</div></div>
+<div class="ttc" id="aclass_date_html_aa8df2fd1e1c7066f30e4bc32d343d5c5"><div class="ttname"><a href="class_date.html#aa8df2fd1e1c7066f30e4bc32d343d5c5">Date::getDay</a></div><div class="ttdeci">int getDay() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:63</div></div>
+<div class="ttc" id="aclass_date_html_af467e41464ffc6a1b952a9c1e856a1cc"><div class="ttname"><a href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc">Date::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(Date d1) const</div><div class="ttdef"><b>Definition:</b> Date.cpp:103</div></div>
+<div class="ttc" id="aclass_date_html_adb4b5339222df5b0d46af5fbf4e72b44"><div class="ttname"><a href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44">Date::operator&gt;</a></div><div class="ttdeci">bool operator&gt;(Date d1) const</div><div class="ttdoc">overloads the '&gt;' operator to be able to know if one date is after the other</div><div class="ttdef"><b>Definition:</b> Date.cpp:77</div></div>
 <div class="ttc" id="aclass_date_html_a722f840708b9801e1e790e56c5e865e8"><div class="ttname"><a href="class_date.html#a722f840708b9801e1e790e56c5e865e8">Date::Date</a></div><div class="ttdeci">Date(string date)</div><div class="ttdoc">Constructor of date class, initializes date to be equal to the string provided.</div><div class="ttdef"><b>Definition:</b> Date.cpp:5</div></div>
-<div class="ttc" id="aclass_date_html_a0ebf7dbbb5575d1aff0ab6317e46bf67"><div class="ttname"><a href="class_date.html#a0ebf7dbbb5575d1aff0ab6317e46bf67">Date::getSecond</a></div><div class="ttdeci">int getSecond() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:63</div></div>
+<div class="ttc" id="aclass_date_html_a0ebf7dbbb5575d1aff0ab6317e46bf67"><div class="ttname"><a href="class_date.html#a0ebf7dbbb5575d1aff0ab6317e46bf67">Date::getSecond</a></div><div class="ttdeci">int getSecond() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:69</div></div>
 <div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.h:21</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

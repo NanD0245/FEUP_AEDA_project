@@ -95,6 +95,9 @@ public:
      */
     void setTax(float tax);
 
+
+    string getInfov2() const;
+
     /**
      * @brief Overloads the '==' operator to be able to know if two different vehicles are the same
      * @param d1 Object of class Vehicle to compare the current object to

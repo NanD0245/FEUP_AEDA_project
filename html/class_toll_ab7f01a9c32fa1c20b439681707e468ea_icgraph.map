@@ -1,5 +1,4 @@
 <map id="checkTechnicianName" name="checkTechnicianName">
-<area shape="rect" id="node1" title=" " alt="" coords="276,31,429,57"/>
-<area shape="rect" id="node2" href="$class_system_network.html#af2c899e720715497d19dda370ee7ba4b" title=" " alt="" coords="7,5,227,32"/>
-<area shape="rect" id="node3" href="$class_system_network.html#af73d12ead786a03d044827010c28ab61" title=" " alt="" coords="5,56,228,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="276,5,429,32"/>
+<area shape="rect" id="node2" href="$class_system_network.html#af73d12ead786a03d044827010c28ab61" title=" " alt="" coords="5,5,228,32"/>
 </map>

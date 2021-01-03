@@ -47,15 +47,14 @@ bool Owner::deleteVehicle(int index) {
 bool Owner::operator==(const Owner& o1) {
     return name == o1.getName();
 }
-
+#include <iostream>
 string Owner::getInfo() const{
     string s = name+" : ";
-    for(int i=0;i<vehicles.size();i++){
-        s+=vehicles[i]->getPlate();
-        if(i!=vehicles.size() -1){
-            s+=" - ";
-        }
+    for(auto vehicle : vehicles){
+        s+=vehicle->getInfov2() + " ";
     }
+    s.pop_back();
+    return s;
 }
 
 vector<Vehicle*> Owner::getVehicles() {return vehicles; }

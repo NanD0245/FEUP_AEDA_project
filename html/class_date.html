@@ -75,6 +75,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a722f840708b9801e1e790e56c5e865e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_date.html#a722f840708b9801e1e790e56c5e865e8">Date</a> (string date)</td></tr>
 <tr class="memdesc:a722f840708b9801e1e790e56c5e865e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of date class, initializes date to be equal to the string provided.  <a href="class_date.html#a722f840708b9801e1e790e56c5e865e8">More...</a><br /></td></tr>
 <tr class="separator:a722f840708b9801e1e790e56c5e865e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bc88fd74d1980ea8e7a86db85b5a3e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_date.html#a9bc88fd74d1980ea8e7a86db85b5a3e7">Date</a> (int year, int month, int day)</td></tr>
+<tr class="separator:a9bc88fd74d1980ea8e7a86db85b5a3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af03879be57a9dd56e0d96b57451bde0d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_date.html#af03879be57a9dd56e0d96b57451bde0d">getYear</a> () const</td></tr>
 <tr class="separator:af03879be57a9dd56e0d96b57451bde0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fc6f38817e7cdbfb7164377c978356c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_date.html#a1fc6f38817e7cdbfb7164377c978356c">getMonth</a> () const</td></tr>
@@ -97,8 +99,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adb4b5339222df5b0d46af5fbf4e72b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af467e41464ffc6a1b952a9c1e856a1cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc">operator&lt;</a> (<a class="el" href="class_date.html">Date</a> d1) const</td></tr>
 <tr class="separator:af467e41464ffc6a1b952a9c1e856a1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcf918573e3a845415cb832f9c1cc6ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_date.html#abcf918573e3a845415cb832f9c1cc6ed">equal</a> (<a class="el" href="class_date.html">Date</a> d1) const</td></tr>
-<tr class="separator:abcf918573e3a845415cb832f9c1cc6ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9455f420fbc21b963eedc80d2d696c2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_date.html#a9455f420fbc21b963eedc80d2d696c2f">dayEqual</a> (<a class="el" href="class_date.html">Date</a> d1) const</td></tr>
+<tr class="separator:a9455f420fbc21b963eedc80d2d696c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48ce4b74108077a73ccffc6622e4570c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_date.html#a48ce4b74108077a73ccffc6622e4570c">operator-</a> (<a class="el" href="class_date.html">Date</a> const &amp;d1)</td></tr>
 <tr class="separator:a48ce4b74108077a73ccffc6622e4570c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -113,7 +115,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a722f840708b9801e1e790e56c5e865e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a722f840708b9801e1e790e56c5e865e8">&#9670;&nbsp;</a></span>Date()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a722f840708b9801e1e790e56c5e865e8">&#9670;&nbsp;</a></span>Date() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,15 +140,49 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="abcf918573e3a845415cb832f9c1cc6ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcf918573e3a845415cb832f9c1cc6ed">&#9670;&nbsp;</a></span>equal()</h2>
+<a id="a9bc88fd74d1980ea8e7a86db85b5a3e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bc88fd74d1980ea8e7a86db85b5a3e7">&#9670;&nbsp;</a></span>Date() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool equal </td>
+          <td class="memname"><a class="el" href="class_date.html">Date</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>year</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>month</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>day</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9455f420fbc21b963eedc80d2d696c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9455f420fbc21b963eedc80d2d696c2f">&#9670;&nbsp;</a></span>dayEqual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dayEqual </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_date.html">Date</a>&#160;</td>
           <td class="paramname"><em>d1</em></td><td>)</td>
@@ -157,21 +193,12 @@ Public Member Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_date_abcf918573e3a845415cb832f9c1cc6ed_cgraph.png" border="0" usemap="#aclass_date_abcf918573e3a845415cb832f9c1cc6ed_cgraph" alt=""/></div>
-<map name="class_date_abcf918573e3a845415cb832f9c1cc6ed_cgraph" id="aclass_date_abcf918573e3a845415cb832f9c1cc6ed_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,59,83"/>
-<area shape="rect" href="class_date.html#aa8df2fd1e1c7066f30e4bc32d343d5c5" title=" " alt="" coords="113,5,176,32"/>
-<area shape="rect" href="class_date.html#a1fc6f38817e7cdbfb7164377c978356c" title=" " alt="" coords="107,56,183,83"/>
-<area shape="rect" href="class_date.html#af03879be57a9dd56e0d96b57451bde0d" title=" " alt="" coords="111,107,178,133"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_date_abcf918573e3a845415cb832f9c1cc6ed_icgraph.png" border="0" usemap="#aclass_date_abcf918573e3a845415cb832f9c1cc6ed_icgraph" alt=""/></div>
-<map name="class_date_abcf918573e3a845415cb832f9c1cc6ed_icgraph" id="aclass_date_abcf918573e3a845415cb832f9c1cc6ed_icgraph">
-<area shape="rect" title=" " alt="" coords="204,5,257,32"/>
-<area shape="rect" href="class_intervention.html#afb7d055c8050fc207dd6b8a8b728ec41" title=" " alt="" coords="5,5,156,32"/>
+<div class="center"><img src="class_date_a9455f420fbc21b963eedc80d2d696c2f_cgraph.png" border="0" usemap="#aclass_date_a9455f420fbc21b963eedc80d2d696c2f_cgraph" alt=""/></div>
+<map name="class_date_a9455f420fbc21b963eedc80d2d696c2f_cgraph" id="aclass_date_a9455f420fbc21b963eedc80d2d696c2f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,81,83"/>
+<area shape="rect" href="class_date.html#aa8df2fd1e1c7066f30e4bc32d343d5c5" title=" " alt="" coords="136,5,199,32"/>
+<area shape="rect" href="class_date.html#a1fc6f38817e7cdbfb7164377c978356c" title=" " alt="" coords="129,56,205,83"/>
+<area shape="rect" href="class_date.html#af03879be57a9dd56e0d96b57451bde0d" title=" " alt="" coords="134,107,201,133"/>
 </map>
 </div>
 
@@ -197,13 +224,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_date_aa8df2fd1e1c7066f30e4bc32d343d5c5_icgraph.png" border="0" usemap="#aclass_date_aa8df2fd1e1c7066f30e4bc32d343d5c5_icgraph" alt=""/></div>
 <map name="class_date_aa8df2fd1e1c7066f30e4bc32d343d5c5_icgraph" id="aclass_date_aa8df2fd1e1c7066f30e4bc32d343d5c5_icgraph">
-<area shape="rect" title=" " alt="" coords="337,107,400,133"/>
-<area shape="rect" href="class_date.html#abcf918573e3a845415cb832f9c1cc6ed" title=" " alt="" coords="220,5,273,32"/>
-<area shape="rect" href="class_date.html#a48ce4b74108077a73ccffc6622e4570c" title=" " alt="" coords="210,56,283,83"/>
-<area shape="rect" href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc" title=" " alt="" coords="208,107,285,133"/>
-<area shape="rect" href="class_date.html#a5a6128da69ba5ab894043f8dec7ad2d7" title="Overloads the &#39;==&#39; operator to be able to know if two different dates are the same." alt="" coords="204,157,289,184"/>
-<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="208,208,285,235"/>
-<area shape="rect" href="class_intervention.html#afb7d055c8050fc207dd6b8a8b728ec41" title=" " alt="" coords="5,5,156,32"/>
+<area shape="rect" title=" " alt="" coords="139,107,201,133"/>
+<area shape="rect" href="class_date.html#a9455f420fbc21b963eedc80d2d696c2f" title=" " alt="" coords="10,5,86,32"/>
+<area shape="rect" href="class_date.html#a48ce4b74108077a73ccffc6622e4570c" title=" " alt="" coords="11,56,85,83"/>
+<area shape="rect" href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc" title=" " alt="" coords="9,107,87,133"/>
+<area shape="rect" href="class_date.html#a5a6128da69ba5ab894043f8dec7ad2d7" title="Overloads the &#39;==&#39; operator to be able to know if two different dates are the same." alt="" coords="5,157,91,184"/>
+<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="9,208,87,235"/>
 </map>
 </div>
 
@@ -229,9 +255,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_date_a0fe77bb24a2c18834fea732becdd44b9_icgraph.png" border="0" usemap="#aclass_date_a0fe77bb24a2c18834fea732becdd44b9_icgraph" alt=""/></div>
 <map name="class_date_a0fe77bb24a2c18834fea732becdd44b9_icgraph" id="aclass_date_a0fe77bb24a2c18834fea732becdd44b9_icgraph">
-<area shape="rect" title=" " alt="" coords="131,31,197,57"/>
+<area shape="rect" title=" " alt="" coords="131,56,197,83"/>
 <area shape="rect" href="class_date.html#a48ce4b74108077a73ccffc6622e4570c" title=" " alt="" coords="7,5,81,32"/>
-<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="5,56,83,83"/>
+<area shape="rect" href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc" title=" " alt="" coords="5,56,83,83"/>
+<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="5,107,83,133"/>
 </map>
 </div>
 
@@ -259,19 +286,19 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_date_a767721284ced7a47bf4d9dcc2be59712_icgraph.png" border="0" usemap="#aclass_date_a767721284ced7a47bf4d9dcc2be59712_icgraph" alt=""/></div>
 <map name="class_date_a767721284ced7a47bf4d9dcc2be59712_icgraph" id="aclass_date_a767721284ced7a47bf4d9dcc2be59712_icgraph">
-<area shape="rect" title=" " alt="" coords="505,187,565,213"/>
-<area shape="rect" href="class_intervention.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="295,31,429,57"/>
-<area shape="rect" href="class_movement.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="299,132,425,159"/>
-<area shape="rect" href="class_intervention.html#a5dc2d22376e7c6f17cb9e27570696673" title=" " alt="" coords="267,216,457,243"/>
-<area shape="rect" href="class_movement.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="273,340,451,367"/>
-<area shape="rect" href="class_system_network.html#aac759501cf6c7895a70eecbef0226ae1" title=" " alt="" coords="37,5,187,32"/>
-<area shape="rect" href="class_movement_record.html#a8cebe0bbed6c9a1aa30fb50073121086" title=" " alt="" coords="7,56,217,83"/>
-<area shape="rect" href="class_movement_entry.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="33,107,191,133"/>
-<area shape="rect" href="class_movement_out.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="38,157,186,184"/>
-<area shape="rect" href="class_intervention_record.html#ae52d1c95ee54ca58b39900fbe1e7bfa8" title=" " alt="" coords="46,209,178,250"/>
-<area shape="rect" href="class_intervention_record.html#a5ecc62c644427fb1b840e3caf0cfc9a2" title=" " alt="" coords="5,274,219,315"/>
-<area shape="rect" href="class_movement_entry.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="7,340,217,367"/>
-<area shape="rect" href="class_movement_out.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="13,391,211,417"/>
+<area shape="rect" title=" " alt="" coords="535,135,595,161"/>
+<area shape="rect" href="class_intervention.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="325,56,458,83"/>
+<area shape="rect" href="class_movement.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="328,107,455,133"/>
+<area shape="rect" href="class_intervention.html#a5dc2d22376e7c6f17cb9e27570696673" title=" " alt="" coords="296,189,487,216"/>
+<area shape="rect" href="class_movement.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="302,340,481,367"/>
+<area shape="rect" href="class_movement_record.html#a8cebe0bbed6c9a1aa30fb50073121086" title=" " alt="" coords="21,5,232,32"/>
+<area shape="rect" href="class_movement_entry.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="47,56,206,83"/>
+<area shape="rect" href="class_movement_out.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="53,107,201,133"/>
+<area shape="rect" href="class_system_network.html#a7313cb79f7cd209fcc129c94847d84db" title=" " alt="" coords="5,157,248,184"/>
+<area shape="rect" href="class_intervention_record.html#ae52d1c95ee54ca58b39900fbe1e7bfa8" title=" " alt="" coords="61,209,193,250"/>
+<area shape="rect" href="class_intervention_record.html#a5ecc62c644427fb1b840e3caf0cfc9a2" title=" " alt="" coords="20,274,233,315"/>
+<area shape="rect" href="class_movement_entry.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="22,340,231,367"/>
+<area shape="rect" href="class_movement_out.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="27,391,226,417"/>
 </map>
 </div>
 
@@ -297,9 +324,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_date_a693adca157a375f55c1322f99dfd4ce4_icgraph.png" border="0" usemap="#aclass_date_a693adca157a375f55c1322f99dfd4ce4_icgraph" alt=""/></div>
 <map name="class_date_a693adca157a375f55c1322f99dfd4ce4_icgraph" id="aclass_date_a693adca157a375f55c1322f99dfd4ce4_icgraph">
-<area shape="rect" title=" " alt="" coords="131,31,209,57"/>
+<area shape="rect" title=" " alt="" coords="131,56,209,83"/>
 <area shape="rect" href="class_date.html#a48ce4b74108077a73ccffc6622e4570c" title=" " alt="" coords="7,5,81,32"/>
-<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="5,56,83,83"/>
+<area shape="rect" href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc" title=" " alt="" coords="5,56,83,83"/>
+<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="5,107,83,133"/>
 </map>
 </div>
 
@@ -325,13 +353,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_date_a1fc6f38817e7cdbfb7164377c978356c_icgraph.png" border="0" usemap="#aclass_date_a1fc6f38817e7cdbfb7164377c978356c_icgraph" alt=""/></div>
 <map name="class_date_a1fc6f38817e7cdbfb7164377c978356c_icgraph" id="aclass_date_a1fc6f38817e7cdbfb7164377c978356c_icgraph">
-<area shape="rect" title=" " alt="" coords="337,107,413,133"/>
-<area shape="rect" href="class_date.html#abcf918573e3a845415cb832f9c1cc6ed" title=" " alt="" coords="220,5,273,32"/>
-<area shape="rect" href="class_date.html#a48ce4b74108077a73ccffc6622e4570c" title=" " alt="" coords="210,56,283,83"/>
-<area shape="rect" href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc" title=" " alt="" coords="208,107,285,133"/>
-<area shape="rect" href="class_date.html#a5a6128da69ba5ab894043f8dec7ad2d7" title="Overloads the &#39;==&#39; operator to be able to know if two different dates are the same." alt="" coords="204,157,289,184"/>
-<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="208,208,285,235"/>
-<area shape="rect" href="class_intervention.html#afb7d055c8050fc207dd6b8a8b728ec41" title=" " alt="" coords="5,5,156,32"/>
+<area shape="rect" title=" " alt="" coords="139,107,215,133"/>
+<area shape="rect" href="class_date.html#a9455f420fbc21b963eedc80d2d696c2f" title=" " alt="" coords="10,5,86,32"/>
+<area shape="rect" href="class_date.html#a48ce4b74108077a73ccffc6622e4570c" title=" " alt="" coords="11,56,85,83"/>
+<area shape="rect" href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc" title=" " alt="" coords="9,107,87,133"/>
+<area shape="rect" href="class_date.html#a5a6128da69ba5ab894043f8dec7ad2d7" title="Overloads the &#39;==&#39; operator to be able to know if two different dates are the same." alt="" coords="5,157,91,184"/>
+<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="9,208,87,235"/>
 </map>
 </div>
 
@@ -357,8 +384,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_date_a0ebf7dbbb5575d1aff0ab6317e46bf67_icgraph.png" border="0" usemap="#aclass_date_a0ebf7dbbb5575d1aff0ab6317e46bf67_icgraph" alt=""/></div>
 <map name="class_date_a0ebf7dbbb5575d1aff0ab6317e46bf67_icgraph" id="aclass_date_a0ebf7dbbb5575d1aff0ab6317e46bf67_icgraph">
-<area shape="rect" title=" " alt="" coords="131,5,215,32"/>
-<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="5,5,83,32"/>
+<area shape="rect" title=" " alt="" coords="131,31,215,57"/>
+<area shape="rect" href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc" title=" " alt="" coords="5,5,83,32"/>
+<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="5,56,83,83"/>
 </map>
 </div>
 
@@ -384,13 +412,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_date_af03879be57a9dd56e0d96b57451bde0d_icgraph.png" border="0" usemap="#aclass_date_af03879be57a9dd56e0d96b57451bde0d_icgraph" alt=""/></div>
 <map name="class_date_af03879be57a9dd56e0d96b57451bde0d_icgraph" id="aclass_date_af03879be57a9dd56e0d96b57451bde0d_icgraph">
-<area shape="rect" title=" " alt="" coords="337,107,404,133"/>
-<area shape="rect" href="class_date.html#abcf918573e3a845415cb832f9c1cc6ed" title=" " alt="" coords="220,5,273,32"/>
-<area shape="rect" href="class_date.html#a48ce4b74108077a73ccffc6622e4570c" title=" " alt="" coords="210,56,283,83"/>
-<area shape="rect" href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc" title=" " alt="" coords="208,107,285,133"/>
-<area shape="rect" href="class_date.html#a5a6128da69ba5ab894043f8dec7ad2d7" title="Overloads the &#39;==&#39; operator to be able to know if two different dates are the same." alt="" coords="204,157,289,184"/>
-<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="208,208,285,235"/>
-<area shape="rect" href="class_intervention.html#afb7d055c8050fc207dd6b8a8b728ec41" title=" " alt="" coords="5,5,156,32"/>
+<area shape="rect" title=" " alt="" coords="139,107,205,133"/>
+<area shape="rect" href="class_date.html#a9455f420fbc21b963eedc80d2d696c2f" title=" " alt="" coords="10,5,86,32"/>
+<area shape="rect" href="class_date.html#a48ce4b74108077a73ccffc6622e4570c" title=" " alt="" coords="11,56,85,83"/>
+<area shape="rect" href="class_date.html#af467e41464ffc6a1b952a9c1e856a1cc" title=" " alt="" coords="9,107,87,133"/>
+<area shape="rect" href="class_date.html#a5a6128da69ba5ab894043f8dec7ad2d7" title="Overloads the &#39;==&#39; operator to be able to know if two different dates are the same." alt="" coords="5,157,91,184"/>
+<area shape="rect" href="class_date.html#adb4b5339222df5b0d46af5fbf4e72b44" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="9,208,87,235"/>
 </map>
 </div>
 
@@ -447,10 +474,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_date_af467e41464ffc6a1b952a9c1e856a1cc_cgraph.png" border="0" usemap="#aclass_date_af467e41464ffc6a1b952a9c1e856a1cc_cgraph" alt=""/></div>
 <map name="class_date_af467e41464ffc6a1b952a9c1e856a1cc_cgraph" id="aclass_date_af467e41464ffc6a1b952a9c1e856a1cc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,83,83"/>
-<area shape="rect" href="class_date.html#aa8df2fd1e1c7066f30e4bc32d343d5c5" title=" " alt="" coords="137,5,200,32"/>
-<area shape="rect" href="class_date.html#a1fc6f38817e7cdbfb7164377c978356c" title=" " alt="" coords="131,56,207,83"/>
-<area shape="rect" href="class_date.html#af03879be57a9dd56e0d96b57451bde0d" title=" " alt="" coords="135,107,202,133"/>
+<area shape="rect" title=" " alt="" coords="5,132,83,159"/>
+<area shape="rect" href="class_date.html#aa8df2fd1e1c7066f30e4bc32d343d5c5" title=" " alt="" coords="141,5,204,32"/>
+<area shape="rect" href="class_date.html#a0fe77bb24a2c18834fea732becdd44b9" title=" " alt="" coords="139,56,206,83"/>
+<area shape="rect" href="class_date.html#a693adca157a375f55c1322f99dfd4ce4" title=" " alt="" coords="133,107,212,133"/>
+<area shape="rect" href="class_date.html#a1fc6f38817e7cdbfb7164377c978356c" title=" " alt="" coords="135,157,211,184"/>
+<area shape="rect" href="class_date.html#a0ebf7dbbb5575d1aff0ab6317e46bf67" title=" " alt="" coords="131,208,215,235"/>
+<area shape="rect" href="class_date.html#af03879be57a9dd56e0d96b57451bde0d" title=" " alt="" coords="139,259,206,285"/>
 </map>
 </div>
 
@@ -479,7 +509,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the year, month and day are the same on both objects, false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the year, month, day, hour, minute, second are the same on both objects, false otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

@@ -82,6 +82,14 @@ bool Highway::checkTollName(string name) {
 
 bool Highway::operator==(const Highway &l2) { return name == l2.getInfo(); }
 
+bool Highway::checkTechnicianName(string name) {
+    for (Toll* t : tolls) {
+        if (!t->checkTechnicianName(name))
+            return false;
+    }
+    return true;
+}
+
 vector<Toll *> Highway::sortTollDistance(Toll* toll) {
     vector<Toll *> t;
     vector<Toll *> t_copy = tolls;
@@ -103,4 +111,13 @@ vector<Toll *> Highway::sortTollDistance(Toll* toll) {
         t_copy.erase(t_copy.begin() + index);
     }
     return t;
+}
+
+Technician * Highway::getTechnicianName(string name) {
+    for (size_t i = 0; i < tolls.size(); i++) {
+        Technician* tech = tolls[i]->getTechnicianName(name);
+        if (tech != nullptr)
+            return tech;
+    }
+    return nullptr;
 }

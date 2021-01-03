@@ -99,6 +99,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7e5da9f1f1008f1fcb755449e44e90b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highway.html#a7e5da9f1f1008f1fcb755449e44e90b6">operator==</a> (const <a class="el" href="class_highway.html">Highway</a> &amp;l2)</td></tr>
 <tr class="memdesc:a7e5da9f1f1008f1fcb755449e44e90b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the '==' operator to be able to know if two different Highways are the same.  <a href="class_highway.html#a7e5da9f1f1008f1fcb755449e44e90b6">More...</a><br /></td></tr>
 <tr class="separator:a7e5da9f1f1008f1fcb755449e44e90b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f01a9c32fa1c20b439681707e468ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highway.html#ab7f01a9c32fa1c20b439681707e468ea">checkTechnicianName</a> (string name)</td></tr>
+<tr class="separator:ab7f01a9c32fa1c20b439681707e468ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56aca9aff7e93d217f13bf803747369d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_technician.html">Technician</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highway.html#a56aca9aff7e93d217f13bf803747369d">getTechnicianName</a> (string name)</td></tr>
+<tr class="separator:a56aca9aff7e93d217f13bf803747369d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a924b6ba37451658c25c6e48c2bcead79"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_toll.html">Toll</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_highway.html#a924b6ba37451658c25c6e48c2bcead79">sortTollDistance</a> (<a class="el" href="class_toll.html">Toll</a> *toll)</td></tr>
 <tr class="memdesc:a924b6ba37451658c25c6e48c2bcead79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector sorted by highest Distance.  <a href="class_highway.html#a924b6ba37451658c25c6e48c2bcead79">More...</a><br /></td></tr>
 <tr class="separator:a924b6ba37451658c25c6e48c2bcead79"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,6 +238,31 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="ab7f01a9c32fa1c20b439681707e468ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f01a9c32fa1c20b439681707e468ea">&#9670;&nbsp;</a></span>checkTechnicianName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool checkTechnicianName </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks if there's <a class="el" href="class_technician.html">Technician</a> with name 'name' </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>is 'name' attribute </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false if it found one, true otherwise </dd></dl>
+
+</div>
+</div>
 <a id="a3aae234dffa902de08280074fb6597e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3aae234dffa902de08280074fb6597e0">&#9670;&nbsp;</a></span>checkTollName()</h2>
 
@@ -298,12 +327,11 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="class_movement.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="264,309,443,336"/>
 <area shape="rect" href="class_system_network.html#a4cfe44e39154bd858c8e4badbf86a1a4" title=" " alt="" coords="21,5,200,32"/>
 <area shape="rect" href="class_system_network.html#abff65a4d1d457463fba2cd5bef862cdc" title=" " alt="" coords="37,56,184,83"/>
-<area shape="rect" href="class_system_network.html#aac759501cf6c7895a70eecbef0226ae1" title=" " alt="" coords="36,107,185,133"/>
-<area shape="rect" href="class_movement_record.html#a8cebe0bbed6c9a1aa30fb50073121086" title=" " alt="" coords="5,157,216,184"/>
-<area shape="rect" href="class_movement_entry.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="31,208,190,235"/>
-<area shape="rect" href="class_movement_out.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="37,259,185,285"/>
-<area shape="rect" href="class_movement_entry.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="6,309,215,336"/>
-<area shape="rect" href="class_movement_out.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="11,360,210,387"/>
+<area shape="rect" href="class_movement_record.html#a8cebe0bbed6c9a1aa30fb50073121086" title=" " alt="" coords="5,107,216,133"/>
+<area shape="rect" href="class_movement_entry.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="31,157,190,184"/>
+<area shape="rect" href="class_movement_out.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="37,208,185,235"/>
+<area shape="rect" href="class_movement_entry.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="6,284,215,311"/>
+<area shape="rect" href="class_movement_out.html#a85cdbd067f520f866917e9d5c8ca8a6f" title=" " alt="" coords="11,335,210,361"/>
 </map>
 </div>
 
@@ -337,6 +365,40 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="class_system_network.html#a7890eaad90cdb99520ec4f1b37cb0209" title=" " alt="" coords="5,208,221,235"/>
 <area shape="rect" href="class_system_network.html#a5f39374b19c985ee211e9e489c6e5f01" title=" " alt="" coords="26,259,201,285"/>
 <area shape="rect" href="class_system_network.html#a5f39757fdd439a1f776e21c944de2ffb" title=" " alt="" coords="23,157,204,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a56aca9aff7e93d217f13bf803747369d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56aca9aff7e93d217f13bf803747369d">&#9670;&nbsp;</a></span>getTechnicianName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_technician.html">Technician</a> * getTechnicianName </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Finds <a class="el" href="class_technician.html">Technician</a> according to its name </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>of the <a class="el" href="class_technician.html">Technician</a> to find </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_technician.html">Technician</a> object if it was found, nullptr otherwise </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_highway_a56aca9aff7e93d217f13bf803747369d_icgraph.png" border="0" usemap="#aclass_highway_a56aca9aff7e93d217f13bf803747369d_icgraph" alt=""/></div>
+<map name="class_highway_a56aca9aff7e93d217f13bf803747369d_icgraph" id="aclass_highway_a56aca9aff7e93d217f13bf803747369d_icgraph">
+<area shape="rect" title=" " alt="" coords="200,5,336,32"/>
+<area shape="rect" href="class_system_network.html#abff65a4d1d457463fba2cd5bef862cdc" title=" " alt="" coords="5,5,152,32"/>
 </map>
 </div>
 
@@ -562,15 +624,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_highway_a3805086f19f83e88a76f303c1440a601_icgraph.png" border="0" usemap="#aclass_highway_a3805086f19f83e88a76f303c1440a601_icgraph" alt=""/></div>
 <map name="class_highway_a3805086f19f83e88a76f303c1440a601_icgraph" id="aclass_highway_a3805086f19f83e88a76f303c1440a601_icgraph">
-<area shape="rect" title=" " alt="" coords="531,162,632,189"/>
-<area shape="rect" href="class_system_network.html#ae4e43cb3a4359c5168d09166e71d814f" title=" " alt="" coords="283,5,467,47"/>
-<area shape="rect" href="class_system_network.html#a69c37f44e76ee930c9fae82c8c494078" title=" " alt="" coords="275,71,475,112"/>
-<area shape="rect" href="class_system_network.html#acdb04cd395fe9252c1d4e8bea4bfd5c7" title=" " alt="" coords="267,137,483,163"/>
-<area shape="rect" href="class_system_network.html#a7890eaad90cdb99520ec4f1b37cb0209" title=" " alt="" coords="267,187,483,214"/>
-<area shape="rect" href="class_intervention.html#a5dc2d22376e7c6f17cb9e27570696673" title=" " alt="" coords="279,238,470,265"/>
-<area shape="rect" href="class_system_network.html#a409558ea6eb1de4e7db8da23adb8231c" title=" " alt="" coords="271,289,479,315"/>
-<area shape="rect" href="class_intervention_record.html#ae52d1c95ee54ca58b39900fbe1e7bfa8" title=" " alt="" coords="46,197,178,239"/>
-<area shape="rect" href="class_intervention_record.html#a5ecc62c644427fb1b840e3caf0cfc9a2" title=" " alt="" coords="5,263,219,304"/>
+<area shape="rect" title=" " alt="" coords="560,162,661,189"/>
+<area shape="rect" href="class_system_network.html#ae4e43cb3a4359c5168d09166e71d814f" title=" " alt="" coords="312,5,496,47"/>
+<area shape="rect" href="class_system_network.html#a69c37f44e76ee930c9fae82c8c494078" title=" " alt="" coords="304,71,504,112"/>
+<area shape="rect" href="class_system_network.html#acdb04cd395fe9252c1d4e8bea4bfd5c7" title=" " alt="" coords="296,137,512,163"/>
+<area shape="rect" href="class_system_network.html#a7890eaad90cdb99520ec4f1b37cb0209" title=" " alt="" coords="296,187,512,214"/>
+<area shape="rect" href="class_intervention.html#a5dc2d22376e7c6f17cb9e27570696673" title=" " alt="" coords="309,238,499,265"/>
+<area shape="rect" href="class_system_network.html#a409558ea6eb1de4e7db8da23adb8231c" title=" " alt="" coords="300,289,508,315"/>
+<area shape="rect" href="class_system_network.html#a7313cb79f7cd209fcc129c94847d84db" title=" " alt="" coords="5,179,248,206"/>
+<area shape="rect" href="class_intervention_record.html#ae52d1c95ee54ca58b39900fbe1e7bfa8" title=" " alt="" coords="61,231,193,272"/>
+<area shape="rect" href="class_intervention_record.html#a5ecc62c644427fb1b840e3caf0cfc9a2" title=" " alt="" coords="20,296,233,337"/>
 </map>
 </div>
 
