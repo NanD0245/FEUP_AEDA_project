@@ -1,0 +1,7 @@
+<map id="SystemNetwork::createToll" name="SystemNetwork::createToll">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,184,83"/>
+<area shape="rect" id="node2" href="$class_highway.html#aed634ddc20573d64243897b075e67786" title=" " alt="" coords="256,31,376,57"/>
+<area shape="rect" id="node5" href="$class_highway.html#a50a624722cefb5a4f8edcfb9a47f7d7a" title=" " alt="" coords="232,81,400,108"/>
+<area shape="rect" id="node3" href="$class_highway.html#ac5f3d7cc80d053eb046c05c22eb6f7a3" title=" " alt="" coords="448,5,565,32"/>
+<area shape="rect" id="node4" href="$class_toll.html#ad160f9e335332b434ce92eb7b827d59d" title=" " alt="" coords="463,56,551,83"/>
+</map>

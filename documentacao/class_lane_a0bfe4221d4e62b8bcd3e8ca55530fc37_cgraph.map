@@ -1,0 +1,5 @@
+<map id="Lane::operator==" name="Lane::operator==">
+<area shape="rect" id="node1" title="Overloads the &#39;==&#39; operator to be able to know if two different Lane objects are the same." alt="" coords="5,31,127,57"/>
+<area shape="rect" id="node2" href="$class_lane.html#a3c15315b8333d3a6d7234b0d0a5db729" title=" " alt="" coords="180,5,319,32"/>
+<area shape="rect" id="node3" href="$class_lane.html#ae2dc6f1bb7be2097824180c45833b894" title=" " alt="" coords="175,56,324,83"/>
+</map>
