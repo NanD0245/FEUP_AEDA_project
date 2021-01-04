@@ -1,0 +1,9 @@
+<map id="SystemNetwork::addExitMovement" name="SystemNetwork::addExitMovement">
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,231,159"/>
+<area shape="rect" id="node2" href="$class_lane.html#a3c15315b8333d3a6d7234b0d0a5db729" title=" " alt="" coords="299,5,438,32"/>
+<area shape="rect" id="node3" href="$class_vehicle.html#a1742d8ad8a29735b95ea2fa196cad1a4" title=" " alt="" coords="279,56,459,83"/>
+<area shape="rect" id="node4" href="$class_movement.html#a4cf1aeb5b59cc3d7347f898d3d9f278d" title=" " alt="" coords="291,107,447,133"/>
+<area shape="rect" id="node5" href="$class_toll.html#a723d95bc9baf2c1f994917e7b2c7cc6d" title=" " alt="" coords="303,157,434,184"/>
+<area shape="rect" id="node6" href="$class_toll.html#a691cdb95f2129d3835c2c2d98a79fa12" title=" " alt="" coords="321,208,417,235"/>
+<area shape="rect" id="node7" href="$class_movement.html#a3c0cf008c1363372c3ecf31f9d0da046" title=" " alt="" coords="293,259,444,285"/>
+</map>

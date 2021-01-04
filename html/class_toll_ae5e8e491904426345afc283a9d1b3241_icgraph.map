@@ -1,9 +1,0 @@
-<map id="getType" name="getType">
-<area shape="rect" id="node1" title=" " alt="" coords="287,132,355,159"/>
-<area shape="rect" id="node2" href="$class_system_network.html#a61484b140e779cf4e0034ace9801117c" title=" " alt="" coords="5,5,239,32"/>
-<area shape="rect" id="node3" href="$class_system_network.html#a45562beb4bf43e1c8f6082e13ced1961" title=" " alt="" coords="9,56,235,83"/>
-<area shape="rect" id="node4" href="$class_system_network.html#a5d61222efa7a37c93ebe117c9f2b2b50" title=" " alt="" coords="29,107,215,133"/>
-<area shape="rect" id="node5" href="$class_toll.html#a308c298f85c1ab28f92ef0f0fefce2f3" title="Overloads the &#39;==&#39; operator to be able to know if two different Toll objects are the same." alt="" coords="79,157,165,184"/>
-<area shape="rect" id="node6" href="$class_system_network.html#a2af5849473d95bdd1ba12a7e37cc9e70" title=" " alt="" coords="6,209,238,250"/>
-<area shape="rect" id="node7" href="$class_system_network.html#a09692106f30b480d0052276a3b29a77e" title=" " alt="" coords="27,275,217,301"/>
-</map>

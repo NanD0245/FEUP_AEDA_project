@@ -1,7 +1,0 @@
-<map id="operator==" name="operator==">
-<area shape="rect" id="node1" title="Overloads the &#39;==&#39; operator to be able to know if two different Toll objects are the same." alt="" coords="5,81,91,108"/>
-<area shape="rect" id="node2" href="$class_toll.html#a07ac036769fbd440cad136b4c90dadfd" title=" " alt="" coords="141,5,231,32"/>
-<area shape="rect" id="node3" href="$class_toll.html#a2403c3c6b25e6d6818916618890f99ba" title=" " alt="" coords="139,56,233,83"/>
-<area shape="rect" id="node4" href="$class_toll.html#a134d85a189d667e7a481614c1aa67860" title=" " alt="" coords="149,107,223,133"/>
-<area shape="rect" id="node5" href="$class_toll.html#ae5e8e491904426345afc283a9d1b3241" title=" " alt="" coords="152,157,220,184"/>
-</map>

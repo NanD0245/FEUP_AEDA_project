@@ -1,8 +1,0 @@
-<map id="showMovement" name="showMovement">
-<area shape="rect" id="node1" title=" " alt="" coords="5,107,116,133"/>
-<area shape="rect" id="node2" href="$class_date.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="191,5,286,32"/>
-<area shape="rect" id="node3" href="$class_highway.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="180,56,297,83"/>
-<area shape="rect" id="node4" href="$class_lane.html#ae4a1a035bab8495c3d4bde026ac44dfd" title=" " alt="" coords="164,107,313,133"/>
-<area shape="rect" id="node5" href="$class_toll.html#a134d85a189d667e7a481614c1aa67860" title=" " alt="" coords="187,157,290,184"/>
-<area shape="rect" id="node6" href="$class_vehicle.html#acf0dd15cc13fd064fcb168c4ecf66597" title=" " alt="" coords="178,208,299,235"/>
-</map>

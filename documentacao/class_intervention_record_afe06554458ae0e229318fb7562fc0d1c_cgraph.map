@@ -1,0 +1,9 @@
+<map id="InterventionRecord::showInterventionsNotConcluded" name="InterventionRecord::showInterventionsNotConcluded">
+<area shape="rect" id="node1" title=" " alt="" coords="5,49,219,90"/>
+<area shape="rect" id="node2" href="$class_b_s_t_itr_in.html#a6f9a43217862c263a9bf15b9a08b889a" title=" " alt="" coords="301,31,423,57"/>
+<area shape="rect" id="node3" href="$class_intervention.html#ad7075f5fef3426aadef4d2b0ab33d0b2" title=" " alt="" coords="267,81,457,108"/>
+<area shape="rect" id="node4" href="$class_date.html#accb575c0a72c2151ea00e5a1b9c44d12" title=" " alt="" coords="550,5,645,32"/>
+<area shape="rect" id="node5" href="$class_toll.html#a7f6186f5f44b51aa41ab95d1981966a6" title=" " alt="" coords="546,56,649,83"/>
+<area shape="rect" id="node6" href="$class_highway.html#abb95c54560b5623351a0897d7f6e5512" title=" " alt="" coords="518,107,677,133"/>
+<area shape="rect" id="node7" href="$class_technician.html#a7c8ea39292160d015d29e676a6d829af" title=" " alt="" coords="505,157,689,184"/>
+</map>

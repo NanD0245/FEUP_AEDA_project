@@ -95,6 +95,9 @@ public:
      */
     void setTax(float tax);
 
+    /**
+     * @return string in the format : plate + " " + v_class + " " + greenlane
+     */
     string getInfov2() const;
 
     /**

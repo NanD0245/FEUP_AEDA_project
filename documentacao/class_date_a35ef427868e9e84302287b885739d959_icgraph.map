@@ -1,0 +1,6 @@
+<map id="Date::getMinute" name="Date::getMinute">
+<area shape="rect" id="node1" title=" " alt="" coords="165,56,280,83"/>
+<area shape="rect" id="node2" href="$class_date.html#a59aee1068ef55e42e57fbf914b25b524" title=" " alt="" coords="7,5,115,32"/>
+<area shape="rect" id="node3" href="$class_date.html#a2fdc0ec866aa7e1b3f8e1a7468663827" title=" " alt="" coords="5,56,117,83"/>
+<area shape="rect" id="node4" href="$class_date.html#aa71c76d80b90438a9b507e8fba4beaa4" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="5,107,117,133"/>
+</map>

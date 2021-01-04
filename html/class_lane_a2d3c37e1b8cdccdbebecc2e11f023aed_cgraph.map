@@ -1,5 +1,0 @@
-<map id="operator==" name="operator==">
-<area shape="rect" id="node1" title="Overloads the &#39;==&#39; operator to be able to know if two different Lane objects are the same." alt="" coords="5,31,91,57"/>
-<area shape="rect" id="node2" href="$class_lane.html#a3c94ffc857d946a9f498fca3870ce9f5" title=" " alt="" coords="144,5,247,32"/>
-<area shape="rect" id="node3" href="$class_lane.html#ae4a1a035bab8495c3d4bde026ac44dfd" title=" " alt="" coords="139,56,252,83"/>
-</map>

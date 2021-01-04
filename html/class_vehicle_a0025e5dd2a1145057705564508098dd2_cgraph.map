@@ -1,4 +1,0 @@
-<map id="operator==" name="operator==">
-<area shape="rect" id="node1" title="Overloads the &#39;==&#39; operator to be able to know if two different vehicles are the same." alt="" coords="5,5,91,32"/>
-<area shape="rect" id="node2" href="$class_vehicle.html#acf0dd15cc13fd064fcb168c4ecf66597" title=" " alt="" coords="139,5,209,32"/>
-</map>

@@ -50,7 +50,6 @@ public:
      * @return a binary tree with all interventions
      */
     BST<Intervention> getInterventions();
-
 };
 
 

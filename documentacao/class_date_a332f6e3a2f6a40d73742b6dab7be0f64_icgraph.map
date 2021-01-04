@@ -1,0 +1,8 @@
+<map id="Date::getMonth" name="Date::getMonth">
+<area shape="rect" id="node1" title=" " alt="" coords="173,107,284,133"/>
+<area shape="rect" id="node2" href="$class_date.html#ad15293b6819664f350fd74731091d2ab" title=" " alt="" coords="10,5,121,32"/>
+<area shape="rect" id="node3" href="$class_date.html#a59aee1068ef55e42e57fbf914b25b524" title=" " alt="" coords="11,56,119,83"/>
+<area shape="rect" id="node4" href="$class_date.html#a2fdc0ec866aa7e1b3f8e1a7468663827" title=" " alt="" coords="9,107,121,133"/>
+<area shape="rect" id="node5" href="$class_date.html#a36c4f33b4faafe80309294bacbb11164" title="Overloads the &#39;==&#39; operator to be able to know if two different dates are the same." alt="" coords="5,157,125,184"/>
+<area shape="rect" id="node6" href="$class_date.html#aa71c76d80b90438a9b507e8fba4beaa4" title="overloads the &#39;&gt;&#39; operator to be able to know if one date is after the other" alt="" coords="9,208,121,235"/>
+</map>

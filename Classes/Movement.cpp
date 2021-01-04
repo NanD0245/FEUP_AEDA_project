@@ -61,8 +61,6 @@ MovementOut::MovementOut(Vehicle *vehicle1, Highway *highway1, Toll *toll1, Lane
 
 float MovementOut::getDistance() const {return distance;}
 
-Movement * MovementOut::getEntry() const {return entry;}
-
 float MovementOut::getPrice() const {return price;}
 
 string MovementOut::getInfo() const {

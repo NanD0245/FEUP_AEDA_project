@@ -1,0 +1,6 @@
+<map id="SystemNetwork::chooseIndexToll" name="SystemNetwork::chooseIndexToll">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,220,57"/>
+<area shape="rect" id="node2" href="$class_highway.html#a172d7f77bac8b64553079dcfccba30de" title=" " alt="" coords="464,5,615,32"/>
+<area shape="rect" id="node3" href="$class_highway.html#a56cad2a0557319c7b3d19324f8b7c932" title=" " alt="" coords="268,31,416,57"/>
+<area shape="rect" id="node4" href="$class_toll.html#af60e69a087b4319e3547710ecb5b14fa" title=" " alt="" coords="292,81,392,108"/>
+</map>

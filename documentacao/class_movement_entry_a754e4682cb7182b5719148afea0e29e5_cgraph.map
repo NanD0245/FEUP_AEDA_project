@@ -1,0 +1,9 @@
+<map id="MovementEntry::getInfo" name="MovementEntry::getInfo">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,164,133"/>
+<area shape="rect" id="node2" href="$class_movement.html#a308293cdef4f8fece89bc17e9267bc72" title=" " alt="" coords="212,107,339,133"/>
+<area shape="rect" id="node3" href="$class_date.html#accb575c0a72c2151ea00e5a1b9c44d12" title=" " alt="" coords="414,5,509,32"/>
+<area shape="rect" id="node4" href="$class_highway.html#ac5f3d7cc80d053eb046c05c22eb6f7a3" title=" " alt="" coords="403,56,520,83"/>
+<area shape="rect" id="node5" href="$class_lane.html#ae2dc6f1bb7be2097824180c45833b894" title=" " alt="" coords="387,107,536,133"/>
+<area shape="rect" id="node6" href="$class_toll.html#a7f6186f5f44b51aa41ab95d1981966a6" title=" " alt="" coords="410,157,513,184"/>
+<area shape="rect" id="node7" href="$class_vehicle.html#a4148f98ff676837827bc5eee2ed1b0bd" title=" " alt="" coords="401,208,522,235"/>
+</map>

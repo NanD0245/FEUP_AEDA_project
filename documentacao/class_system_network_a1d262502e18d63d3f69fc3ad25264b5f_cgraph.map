@@ -1,0 +1,6 @@
+<map id="SystemNetwork::LaneMoreMoves" name="SystemNetwork::LaneMoreMoves">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,221,83"/>
+<area shape="rect" id="node2" href="$class_toll.html#a7f6186f5f44b51aa41ab95d1981966a6" title=" " alt="" coords="297,5,400,32"/>
+<area shape="rect" id="node3" href="$class_highway.html#abb95c54560b5623351a0897d7f6e5512" title=" " alt="" coords="269,56,428,83"/>
+<area shape="rect" id="node4" href="$class_lane.html#a4b88dd7e90b0c5e93ff0ef00aea3ac39" title=" " alt="" coords="291,107,407,133"/>
+</map>

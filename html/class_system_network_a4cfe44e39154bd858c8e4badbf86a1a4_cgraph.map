@@ -1,7 +1,0 @@
-<map id="createToll" name="createToll">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,84,83"/>
-<area shape="rect" id="node2" href="$class_highway.html#a60bc4e03ef9edc5fcce3442ce87a04b3" title=" " alt="" coords="156,31,276,57"/>
-<area shape="rect" id="node5" href="$class_highway.html#a3aae234dffa902de08280074fb6597e0" title=" " alt="" coords="132,81,300,108"/>
-<area shape="rect" id="node3" href="$class_highway.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="348,5,465,32"/>
-<area shape="rect" id="node4" href="$class_toll.html#a767721284ced7a47bf4d9dcc2be59712" title=" " alt="" coords="363,56,451,83"/>
-</map>
