@@ -1,7 +1,0 @@
-<map id="getGreenLane" name="getGreenLane">
-<area shape="rect" id="node1" title=" " alt="" coords="279,81,381,108"/>
-<area shape="rect" id="node2" href="$class_system_network.html#a45562beb4bf43e1c8f6082e13ced1961" title=" " alt="" coords="5,5,231,32"/>
-<area shape="rect" id="node3" href="$class_system_network.html#afb37f285596adc88cd3cc0f47df100b5" title=" " alt="" coords="15,56,221,83"/>
-<area shape="rect" id="node4" href="$class_lane.html#a2d3c37e1b8cdccdbebecc2e11f023aed" title="Overloads the &#39;==&#39; operator to be able to know if two different Lane objects are the same." alt="" coords="75,107,161,133"/>
-<area shape="rect" id="node5" href="$class_system_network.html#a09692106f30b480d0052276a3b29a77e" title=" " alt="" coords="23,157,213,184"/>
-</map>

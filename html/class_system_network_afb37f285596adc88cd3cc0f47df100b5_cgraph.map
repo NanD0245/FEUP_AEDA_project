@@ -1,7 +1,0 @@
-<map id="adviceOutLane" name="adviceOutLane">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,112,108"/>
-<area shape="rect" id="node2" href="$class_lane.html#a3c94ffc857d946a9f498fca3870ce9f5" title=" " alt="" coords="181,5,319,32"/>
-<area shape="rect" id="node3" href="$class_vehicle.html#a27c57b66ee7e35b55579ad8ea55a565e" title=" " alt="" coords="160,56,340,83"/>
-<area shape="rect" id="node4" href="$class_toll.html#a257d1934415b9c5eac0eea3c3a013f0a" title=" " alt="" coords="202,107,298,133"/>
-<area shape="rect" id="node5" href="$class_toll.html#a06d965cbbd987a711fb7a2c3c108be43" title=" " alt="" coords="185,157,315,184"/>
-</map>

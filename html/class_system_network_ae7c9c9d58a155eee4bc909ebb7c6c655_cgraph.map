@@ -1,6 +1,0 @@
-<map id="chooseIndexToll" name="chooseIndexToll">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,120,57"/>
-<area shape="rect" id="node2" href="$class_highway.html#ab86a17e13b1f1ace2762edcf3982627a" title=" " alt="" coords="364,5,515,32"/>
-<area shape="rect" id="node3" href="$class_highway.html#a9a043cea6f8726bba0721f9e57530133" title=" " alt="" coords="168,31,316,57"/>
-<area shape="rect" id="node4" href="$class_toll.html#a60ca249b40b68ce333e34bfe84ba773d" title=" " alt="" coords="192,81,292,108"/>
-</map>

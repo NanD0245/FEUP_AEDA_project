@@ -1,9 +1,0 @@
-<map id="MovementEntry" name="MovementEntry">
-<area shape="rect" id="node1" title=" " alt="" coords="155,171,267,197"/>
-<area shape="rect" id="node2" href="$class_movement.html" title=" " alt="" coords="171,95,252,121"/>
-<area shape="rect" id="node3" href="$class_highway.html" title=" " alt="" coords="5,5,76,32"/>
-<area shape="rect" id="node4" href="$class_vehicle.html" title=" " alt="" coords="100,5,165,32"/>
-<area shape="rect" id="node5" href="$class_toll.html" title=" " alt="" coords="190,5,233,32"/>
-<area shape="rect" id="node6" href="$class_lane.html" title=" " alt="" coords="257,5,307,32"/>
-<area shape="rect" id="node7" href="$class_date.html" title=" " alt="" coords="332,5,381,32"/>
-</map>

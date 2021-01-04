@@ -1,7 +1,0 @@
-<map id="getKilometer" name="getKilometer">
-<area shape="rect" id="node1" title=" " alt="" coords="500,56,595,83"/>
-<area shape="rect" id="node2" href="$class_movement_out.html#af77bec418aac334bb18fa3d1a770aebd" title=" " alt="" coords="261,5,452,32"/>
-<area shape="rect" id="node3" href="$class_toll.html#a308c298f85c1ab28f92ef0f0fefce2f3" title="Overloads the &#39;==&#39; operator to be able to know if two different Toll objects are the same." alt="" coords="314,56,399,83"/>
-<area shape="rect" id="node4" href="$class_highway.html#a924b6ba37451658c25c6e48c2bcead79" title="Returns a vector sorted by highest Distance." alt="" coords="271,107,443,133"/>
-<area shape="rect" id="node5" href="$class_system_network.html#a6277691ef11d4ed9b0422329c811795f" title=" " alt="" coords="5,107,213,133"/>
-</map>
