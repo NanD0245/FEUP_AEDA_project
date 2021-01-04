@@ -556,3 +556,8 @@ public:
 
 
 #endif //AEDA2020_PORTAGENS_SYSTEMNETWORK_H
+
+
+void addVehicleOwner(Owner& o1);
+void readVehiclesOwner(Owner& o1);
+void deleteVehicleOwner(Owner& o1);
