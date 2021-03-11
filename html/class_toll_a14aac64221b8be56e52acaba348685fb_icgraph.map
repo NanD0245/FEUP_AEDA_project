@@ -1,4 +1,0 @@
-<map id="Toll::getGeolocal" name="Toll::getGeolocal">
-<area shape="rect" id="node1" title=" " alt="" coords="167,5,285,32"/>
-<area shape="rect" id="node2" href="$class_toll.html#a429363691faa130fd175da479aae3d0a" title="Overloads the &#39;==&#39; operator to be able to know if two different Toll objects are the same." alt="" coords="5,5,119,32"/>
-</map>

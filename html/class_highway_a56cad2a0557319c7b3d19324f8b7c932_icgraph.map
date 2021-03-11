@@ -1,8 +1,0 @@
-<map id="Highway::getTollIndex" name="Highway::getTollIndex">
-<area shape="rect" id="node1" title=" " alt="" coords="269,107,417,133"/>
-<area shape="rect" id="node2" href="$class_system_network.html#ab7e540abc1947fdb2c396cde2c640a92" title=" " alt="" coords="6,5,221,32"/>
-<area shape="rect" id="node3" href="$class_system_network.html#a8862998ddcb9b6b936f845e7c77bbda9" title=" " alt="" coords="21,56,205,83"/>
-<area shape="rect" id="node4" href="$class_system_network.html#a696aa37c6be1822f0394292c09e9c09e" title=" " alt="" coords="5,107,221,133"/>
-<area shape="rect" id="node5" href="$class_system_network.html#abf513585d9cc10b1ccd3949130eec666" title=" " alt="" coords="26,157,201,184"/>
-<area shape="rect" id="node6" href="$class_system_network.html#af271f9bb4e5474ad8ed311985a018f9e" title=" " alt="" coords="23,208,204,235"/>
-</map>

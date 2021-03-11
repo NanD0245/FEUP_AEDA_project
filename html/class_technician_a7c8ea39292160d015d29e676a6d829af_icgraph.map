@@ -1,7 +1,0 @@
-<map id="Technician::showTechnician" name="Technician::showTechnician">
-<area shape="rect" id="node1" title=" " alt="" coords="535,64,719,91"/>
-<area shape="rect" id="node2" href="$class_intervention.html#ad7075f5fef3426aadef4d2b0ab33d0b2" title=" " alt="" coords="296,64,487,91"/>
-<area shape="rect" id="node3" href="$class_system_network.html#a95541cee462a5a42763ee897ddf95459" title=" " alt="" coords="5,5,248,32"/>
-<area shape="rect" id="node4" href="$class_intervention_record.html#a13c260935d4f1e99391117e5ac072546" title=" " alt="" coords="61,57,193,98"/>
-<area shape="rect" id="node5" href="$class_intervention_record.html#afe06554458ae0e229318fb7562fc0d1c" title=" " alt="" coords="20,122,233,163"/>
-</map>

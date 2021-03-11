@@ -1,4 +1,0 @@
-<map id="Highway::operator==" name="Highway::operator==">
-<area shape="rect" id="node1" title="Overloads the &#39;==&#39; operator to be able to know if two different Highways are the same." alt="" coords="5,5,148,32"/>
-<area shape="rect" id="node2" href="$class_highway.html#ac5f3d7cc80d053eb046c05c22eb6f7a3" title=" " alt="" coords="196,5,313,32"/>
-</map>

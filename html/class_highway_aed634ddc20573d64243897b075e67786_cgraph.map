@@ -1,5 +1,0 @@
-<map id="Highway::addToll" name="Highway::addToll">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,125,57"/>
-<area shape="rect" id="node2" href="$class_highway.html#ac5f3d7cc80d053eb046c05c22eb6f7a3" title=" " alt="" coords="173,5,291,32"/>
-<area shape="rect" id="node3" href="$class_toll.html#ad160f9e335332b434ce92eb7b827d59d" title=" " alt="" coords="188,56,276,83"/>
-</map>

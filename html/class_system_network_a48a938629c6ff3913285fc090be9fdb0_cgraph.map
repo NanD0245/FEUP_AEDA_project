@@ -1,6 +1,0 @@
-<map id="SystemNetwork::addIntervention" name="SystemNetwork::addIntervention">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,213,57"/>
-<area shape="rect" id="node2" href="$class_toll.html#afcc183178b1875643c7d2d06a8ddc736" title=" " alt="" coords="261,5,448,32"/>
-<area shape="rect" id="node3" href="$class_highway.html#aa97ecc2047c77d0f40921b10e7cc28df" title="Returns a vector sorted by highest Distance." alt="" coords="269,56,441,83"/>
-<area shape="rect" id="node4" href="$class_toll.html#a5b02933c2c4ebb2c92c4e7d878d77b6d" title=" " alt="" coords="496,56,619,83"/>
-</map>

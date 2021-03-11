@@ -1,9 +1,0 @@
-<map id="MovementOut::showMovement" name="MovementOut::showMovement">
-<area shape="rect" id="node1" title=" " alt="" coords="5,107,204,133"/>
-<area shape="rect" id="node2" href="$class_movement.html#a58c525d63dae5909fcfffb4ca2a602a9" title=" " alt="" coords="252,107,431,133"/>
-<area shape="rect" id="node3" href="$class_date.html#accb575c0a72c2151ea00e5a1b9c44d12" title=" " alt="" coords="506,5,601,32"/>
-<area shape="rect" id="node4" href="$class_highway.html#ac5f3d7cc80d053eb046c05c22eb6f7a3" title=" " alt="" coords="495,56,612,83"/>
-<area shape="rect" id="node5" href="$class_lane.html#ae2dc6f1bb7be2097824180c45833b894" title=" " alt="" coords="479,107,628,133"/>
-<area shape="rect" id="node6" href="$class_toll.html#a7f6186f5f44b51aa41ab95d1981966a6" title=" " alt="" coords="502,157,605,184"/>
-<area shape="rect" id="node7" href="$class_vehicle.html#a4148f98ff676837827bc5eee2ed1b0bd" title=" " alt="" coords="493,208,614,235"/>
-</map>
